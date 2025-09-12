@@ -1,0 +1,151 @@
+/* Footer Begins */
+
+#footer {
+    position: relative;
+    height: max-content;
+    width: 100vw;
+    background: #1a1919;
+}
+
+.footer {
+    height: 100%;
+    width: 100%;
+}
+
+.footerTop {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    padding: 20px 50px;
+}
+
+.footerTopLeft {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.footerLogoContainer {
+    height: 100px;
+    width: 250px;
+    cursor: pointer;
+}
+
+.footerLogoContainer img {
+    height: 100%;
+    width: 100%;
+}
+
+.footerTopRight {
+    height: max-content;
+    width: 60%;
+    display: flex;
+}
+
+.footerTopContent {
+    height: max-content;
+    width: 33%;
+}
+
+.footerTopContentHeader {
+    padding: 0 0 20px 0;
+    height: max-content;
+    width: 100%;
+}
+
+.footerTopContentHeader h3 {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.footerTopContentDetails {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footerTopContentDetails a {
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.footerTopContentDetails a:hover {
+    text-decoration: underline;
+    color: #ffa500;
+}
+
+.footerTopContentDetails a:last-child {
+    margin-bottom: 0;
+}
+
+.footerBottom {
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+.footerBottomLeft p {
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.footerBottomRight {
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+}
+
+.socialIconContainer {
+    height: 25px;
+    margin: 0 0 0 15px;
+}
+
+.socialIconContainer img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.footerBottomRight i {
+    color: #ffffff;
+    transition: 0.3s ease;
+}
+
+.footerBottomRight i:hover {
+    color: #ffa500;
+}
+
+@media only screen and (max-width: 750px) {
+    .footerTop {
+        flex-direction: column;
+        padding: 20px 20px;
+    }
+    .footerTopLeft {
+        width: 100%;
+        margin: 30px 0;
+    }
+    .footerTopRight {
+        width: 100%;
+    }
+    .footerBottom {
+        flex-direction: column-reverse;
+        padding: 20px 20px;
+    }
+    .footerBottomLeft p {
+        font-size: 12px;
+    }
+}
+
+/* Footer Ends */

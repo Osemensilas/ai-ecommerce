@@ -1,0 +1,111 @@
+.header {
+    height: 150px;
+    width: 100vw;
+}
+
+.headerTop{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;
+}
+
+.headerBottom{
+    height: 50%;
+    width: 100%;
+    background: var(--lightGrey);
+    padding: 0 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:  20px;
+}
+
+.logo{
+    object-fit: cover;
+    position: absolute;
+}
+
+.searchForm{
+    position: relative;
+    height: max-content;
+    width: max-content;
+}
+
+.searchInput{
+    height: 45px;
+    width: 450px;
+    border-radius: 10px;
+    border: 1px solid var(--grey);
+    outline: none;
+    padding: 0 40px;
+}
+
+.navList{
+    height: max-content;
+    width: max-content;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navItem{
+    height: max-content;
+    width: max-content;
+}
+
+.navItem a{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cta{
+    padding: 15px 20px;
+    background: var(--primary);
+    border-radius: 100px;
+    font-weight: 700;
+    color: var(--background);
+}
+
+.shoppingCartImg{
+    position: relative;
+    height: max-content;
+    width: max-content;
+}
+
+.shoppingCartImg p{
+    position: absolute;
+    top: -15px;
+    left: 90%;
+    font-size: 11px;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    background: var(--danger);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--background);
+}
+
+.filterForm{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.filterForm select{
+    height: 40px;
+    width: max-content;
+    padding: 0 20px;
+}
+
+.filterForm label{
+    color: var(--grey);
+}
