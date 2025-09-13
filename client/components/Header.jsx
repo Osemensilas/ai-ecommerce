@@ -8,10 +8,11 @@ const Header = () => {
         <header id="header" className={styles.header}>
             <div className={styles.headerTop}>
                 <Link href={"/"} className="logoLink">
-                    <Image src={"/"} fill className={styles.logo} />
+                    <Image src={"/logo3.png"} fill className={styles.logo} />
                 </Link>
                 <form className={styles.searchForm}>
                     <input type="text" className={styles.searchInput} placeholder="Search Product (e.g., Belts, Necklaces, Smart Tvs, ...)" />
+                    <button><i className="fa fa-search"></i></button>
                 </form>
                 <ul className={styles.navList}>
                     <li className={styles.navItem}>
@@ -36,8 +37,8 @@ const Header = () => {
                     </li>
                     <li className={styles.navItem}>
                         <Link href={"/"} className={styles.helpLink}>
-                            <i className="fa fa-help"></i>
-                            cart
+                            <i className="fa fa-question-circle"></i>
+                            Help
                         </Link>
                     </li>
                     <li className={styles.navItem}>
@@ -52,11 +53,11 @@ const Header = () => {
                         <option value="all products">All Products</option>
                     </select>
                 </form>
-                <ul>
-                    <li><button>Top Rates</button></li>
-                    <li><button>New Arrial</button></li>
-                    <li><button>Special Deals</button></li>
-                    <li><button>Gift Shop</button></li>
+                <ul className={styles.btnNavList}>
+                    <li className={styles.btnNavItem}><button>Top Rates</button></li>
+                    <li className={styles.btnNavItem}><button>New Arrial</button></li>
+                    <li className={styles.btnNavItem}><button>Special Deals</button></li>
+                    <li className={styles.btnNavItem}><button>Gift Shop</button></li>
                 </ul>
             </div>
         </header>

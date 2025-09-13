@@ -6,8 +6,9 @@
     --lightGrey: #e6e6e6;
     --grey: #b1b2b2;
     --text: #030708;
-    --primary: #3fa1c0;
+    --primary: #0c0483f5;
     --danger: #f00909f5;
+    --orange: #eea811;
 }
 
 * {
@@ -43,8 +44,8 @@ h5 {
 
 .logoLink{
     position: relative;
-    height: 60px;
-    width: 150px;
+    height: 50px;
+    width: 50px;
 }
 
 a{
