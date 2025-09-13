@@ -1,26 +1,15 @@
 .header {
-    height: 150px;
+    height: 75px;
     width: 100vw;
 }
 
 .headerTop{
-    height: 50%;
+    height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 60px;
-}
-
-.headerBottom{
-    height: 50%;
-    width: 100%;
-    background: var(--lightGrey);
-    padding: 0 60px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap:  20px;
 }
 
 .logo{
@@ -107,41 +96,4 @@
     justify-content: center;
     align-items: center;
     color: var(--background);
-}
-
-.filterForm{
-    height: max-content;
-    width: max-content;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.filterOptions{
-    height: 40px;
-    width: max-content;
-    padding: 0 20px;
-    border-radius: 50px;
-    border: 1px solid var(--grey);
-    outline: none;
-    font-size: 16px;
-}
-
-.filterForm label{
-    color: var(--grey);
-}
-
-.btnNavList{
-    height: max-content;
-    width: max-content;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    list-style: none;
-}
-
-.btnNavItem button{
-    background: transparent;
-    border: none;
-    font-size: 16px;
 }
