@@ -9,6 +9,9 @@
     --primary: #0c0483f5;
     --danger: #f00909f5;
     --orange: #eea811;
+    --stars: #fffb00;
+    --green: #0df20df5;
+    --lemon: #4fc9f0;
 }
 
 * {
@@ -59,4 +62,23 @@ input{
     font-size: 15px;
     font-weight: 300;
     color: var(--grey);
+}
+
+.productCarddetail{
+    position: absolute;
+    top: 10px;
+    left: 70%;
+    padding: 5px 10px;
+    border-radius: 50px;
+    font-size: 15px;
+}
+
+.productCarddetail.sale{
+    background: var(--green);
+    color: var(--background);
+}
+
+.productCarddetail.hot{
+    background: var(--danger);
+    color: var(--background);
 }

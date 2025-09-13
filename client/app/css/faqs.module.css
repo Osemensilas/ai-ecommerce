@@ -1,0 +1,78 @@
+/*Frequently begins*/
+
+.frequently {
+  height: max-content;
+  width: 100%;
+  padding: 50px 80px;
+}
+
+.frequentlyHeader {
+  height: max-content;
+  width: 100%;
+  padding: 0 0 50px 0;
+}
+
+.frequentlyHeader h2 {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.frequentlyContainer {
+  height: max-content;
+  width: 100%;
+}
+
+.frequentQuestion {
+  height: max-content;
+  width: 100%;
+  display: flex;
+  background: var(--lightGrey);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.frequentQuestionLeft {
+  height: max-content;
+  width: 70%;
+}
+
+.frequentQuestionRight {
+  height: 100%;
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.frequentQuestionLeft h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.frequequentQuestionLeftContent {
+  height: max-content;
+  width: 100%;
+  display: none;
+}
+
+.frequequentQuestionLeftContent.active {
+  transition: 0.3s ease-in-out;
+  display: block;
+}
+
+.frequequentQuestionLeftContent p {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.frequentDropDownContainer {
+  height: max-content;
+  width: max-content;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.frequentDropDownContainer.active {
+  transform: rotate(-180deg);
+}
