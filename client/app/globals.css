@@ -6,6 +6,7 @@
     --lightGrey: #e6e6e6;
     --grey: #b1b2b2;
     --text: #030708;
+    --lighterText: #807e7e;
     --primary: #0c0483f5;
     --danger: #f00909f5;
     --orange: #eea811;
@@ -81,4 +82,85 @@ input{
 .productCarddetail.hot{
     background: var(--danger);
     color: var(--background);
+}
+
+.productSize{
+    padding: 10px 5px;
+    border: 1px solid var(--grey);
+    background: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 10;
+}
+
+.productSize.out{
+    border: 1px solid var(--lightGrey);
+}
+
+.productSize.active{
+    border: none;
+    background: var(--orange);
+    color: var(--background);
+}
+
+.reduceBtn,
+.increaseBtn{
+    background: transparent;
+    color: var(--text);
+    transition: 0.3s ease-in-out;
+}
+
+.reduceBtn.active,
+.increaseBtn.active{
+    background: var(--text);
+    color: var(--background);
+    transition: 0.3s ease-in-out;
+}
+
+.priceInput{
+    padding: 15px 20px;
+    height: max-content;
+    width: 100px;
+    border: 1px solid var(--text);
+    border-radius: 5px;
+    font-size: 20px;
+    color: var(--text);
+    z-index: 10;
+}
+
+.reviewStars {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+
+.reviewStars i{
+    color: var(--orange);
+    font-size: 5px;
+}
+
+.reviewStars i.thirdStar{
+    color: var(--orange);
+    font-size: 10px;
+}
+
+.recentlyViewedContainer,
+.similarProductsContainer{
+    height: max-content;
+    width: 100%;
+}
+
+.similarHeader{
+    height: max-content;
+    width: 100%;
+    background: var(--orange);
+    padding: 20px 20px;
+    margin-bottom: 20px;
+}
+
+.similarHeader h2{
+  font-size: 25px;
+  color: var(--background);
+  font-weight: 700;
 }
