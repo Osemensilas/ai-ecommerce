@@ -73,6 +73,18 @@ const Product = () => {
             setQuantity(1);
         }
     };
+
+    const seeProductInfo = () => {
+        let productDescription = document.querySelector(`.${styles.productDescriptionContainer}`);
+        
+        productDescription.classList.add(styles.active);
+    }
+
+    const removeDescription = () => {
+        let productDescription = document.querySelector(`.${styles.productDescriptionContainer}`);
+        
+        productDescription.classList.remove(styles.active);
+    }
     
     return ( 
         <>
@@ -167,7 +179,7 @@ const Product = () => {
                             <Image src={image3} onClick={image3Clicked} alt="product image" className={styles.productImage} fill />
                         </div>
                     </div> 
-                    <h2>Product Information</h2>
+                    <button onClick={seeProductInfo} style={{border: 'none', cursor: 'pointer', marginTop: '20px'}}><h2>Product Information</h2></button>
                 </div>
                 <div className={styles.customerFeedbackContainer}>
                     <header className={styles.customerFeedbackHeader}>
@@ -291,6 +303,42 @@ const Product = () => {
                 </div>
                 <SimilarProduct />
                 <RecentlyViewed />
+            </div>
+            <div className={styles.productDescriptionContainer}>
+                <div className={styles.prodDesContainer}>
+                    <div className={styles.productDescriptionContainerTop}>
+                        <button onClick={removeDescription}><i className="fa fa-times"></i></button>
+                    </div>
+                    <div className={styles.productDescriptionContainerBottom}>
+                        <div className={styles.productDescriptionTopContent}>
+                            <header className={styles.productDescriptionContentHeader}>
+                                <h2>Product Details</h2>
+                            </header>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, dicta repellat error provident aperiam eum, ut voluptatem temporibus soluta officia nemo. Quaerat dignissimos in molestias modi perferendis quae explicabo iste.</p>
+                        </div>
+                        <div className={styles.productDescriptionBottomContent}>
+                            <header className={styles.productDescriptionContentHeader}>
+                                <h2>Specification Details</h2>
+                            </header>
+                            <div className={styles.productDescriptionContentMain}>
+                                <div className={styles.productDescriptionContentMainLeft}>
+                                    <ul>
+                                        <li>SKU: FEKMC24895585NDSBFDVY84B9</li>
+                                        <li>Product Line: FEKMC24895585NDSBFDVY84B9</li>
+                                        <li>Production Country: Nigeria</li>
+                                        <li>Weight (Kg): 1</li>
+                                        <li>Color: Green</li>
+                                        <li>Care Label: Hand and Machine Wash</li>
+                                    </ul>
+                                </div>
+                                <div className={styles.productDescriptionContentMainRight}>
+                                    <h2>What's in the box?</h2>
+                                    <p>One unit of free flowing dress</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <FAQs></FAQs>
