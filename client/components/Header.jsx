@@ -1,14 +1,31 @@
+'use client';
+
 import styles from "../app/css/header.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const Header = () => {
+
+    const currentPath = usePathname();
+
+    useEffect(() => {
+        if (currentPath === '/login' || currentPath === '/signup' || currentPath === '/forget-password'
+            || currentPath === '/otp' || currentPath === '/reset-password'
+        ){
+            let header = document.querySelector(`.${styles.header}`);
+            
+            header.classList.add(styles.hide);
+        }
+    },[])
+
     return ( 
         <>
         <header id="header" className={styles.header}>
             <div className={styles.headerTop}>
                 <Link href={"/"} className="logoLink">
-                    <Image src={"/logo3.png"} fill className={styles.logo} />
+                    <Image src={"/logo3.png"} fill className={styles.logo} alt="logo" />
                 </Link>
                 <form className={styles.searchForm}>
                     <input type="text" className={styles.searchInput} placeholder="Search Product (e.g., Belts, Necklaces, Smart Tvs, ...)" />

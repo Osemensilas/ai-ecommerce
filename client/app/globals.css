@@ -162,3 +162,14 @@ input{
   color: var(--background);
   font-weight: 700;
 }
+
+#login{
+    height: max-content;
+    width: 100vw;
+    padding: 100px 0;
+}
+
+#header.hide,
+#footer.hide{
+    display: none;
+}

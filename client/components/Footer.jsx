@@ -1,8 +1,25 @@
+'use client';
+
 import styles from "../app/css/footer.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const Footer = () => {
+
+    const currentPath = usePathname();
+    
+    useEffect(() => {
+        if (currentPath === '/login' || currentPath === '/signup' || currentPath === '/forget-password'
+            || currentPath === '/otp' || currentPath === '/reset-password'
+        ){
+            let footer = document.querySelector(`.${styles.footer}`);
+            
+            footer.classList.add(styles.hide);
+        }
+    },[])
+
     return ( 
         <>
         <footer id="footer" className={styles.footer}>
@@ -10,7 +27,7 @@ const Footer = () => {
                 <form className={styles.footerForm}>
                     <div className={styles.footerFormTop}>
                         <div className={styles.footerLogo}>
-                            <Image src="/logo2.png" fill className={styles.logo} />
+                            <Image src="/logo2.png" fill className={styles.logo} alt="logo" />
                         </div>
                         <p>Bringing the farm to you with ease</p>
                     </div>

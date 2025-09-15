@@ -6,6 +6,10 @@
     color: var(--background);
 }
 
+.footer.hide{
+    display: none;
+}
+
 .footer h2{
     font-size: 14px;
     font-weight: 700;

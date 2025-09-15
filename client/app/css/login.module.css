@@ -1,0 +1,253 @@
+.signinTop{
+    height: max-content;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signinBottom{
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 80px;
+}
+
+.signinForm,
+.formTop{
+    width: max-content;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+}
+
+.resetForm{
+    width: max-content;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+.formLogoContainer{
+    position: relative;
+    height: 75px;
+    width: 75px;
+}
+
+.signinForm h2,
+.resetForm h2{
+    font-size: 20px;
+    color: var(--primary);
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.signinForm p,
+.resetForm p{
+    font-size: 15px;
+    text-align: center;
+}
+
+.formMiddle{
+    height: max-content;
+    width: 450px;
+}
+
+.formDetails{
+    position: relative;
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin-bottom: 10px;
+}
+
+.otpFormDetails{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.otpdetail{
+    height: 40px;
+    width: 40px;
+    border: 1px solid var(--grey);
+    padding: 0 15px;
+    outline: none;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.formDetails label{
+    color: var(--grey);
+    font-size: 16px;
+}
+
+.detail{
+    height: 40px;
+    width: 100%;
+    border: 1px solid var(--grey);
+    padding: 0 20px;
+    outline: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.forget{
+    height: max-content;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.forget a{
+    color: var(--grey);
+    font-size: 15px;
+}
+
+.formSubmitBtnContainer{
+    height: max-content;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.formSubmitBtn{
+    padding: 15px 0;
+    width: 100%;
+    height: max-content;
+    background: var(--primary);
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: var(--background);
+    font-size: 15px;
+}
+
+.formBottom{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formBottom p{
+    margin: 20px 0;
+    color: var(--grey);
+}
+
+.formSubmitBtnContainerThirdParty{
+    height: max-content;
+    width: 450px;
+    margin-bottom: 10px;
+}
+
+.formGoogleBtn,
+.formAppleBtn{
+    height: max-content;
+    width: 100%;
+    padding: 7px 0;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.formGoogleBtn img,
+.formAppleBtn img{
+    height: 30px;
+    width: 30px;
+}
+
+.formNewUser{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    font-size: 15px;
+}
+
+.formNewUser a{
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.signinBottom p{
+    font-size: 16px;
+}
+
+.formError{
+    height: max-content;
+    width: 100%;
+    text-align: center;
+    background: var(--danger);
+    border-radius: 5px;
+    color: var(--background);
+    font-size: 16px;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.active{
+    display: block;
+}
+
+.eyeBtn{
+    position: absolute;
+    top: 50%;
+    left: 92%;
+    height: max-content;
+    width: max-content;
+    font-size: 15px;
+    color: var(--grey);
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.timer{
+    padding: 20px 0;
+
+}
+
+.otpDidt{
+    height: max-content;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+}
+
+.otpDidt button{
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: var(--primary);
+    cursor: pointer;
+}
