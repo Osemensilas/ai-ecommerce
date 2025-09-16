@@ -25,7 +25,11 @@ const Header = () => {
         <header id="header" className={styles.header}>
             <div className={styles.headerTop}>
                 <Link href={"/"} className="logoLink">
+<<<<<<< HEAD
                     <Image src={"/logo3.png"} fill className={styles.logo} alt="logo" />
+=======
+                    <Image src={"/"} fill className={styles.logo} alt="" />
+>>>>>>> origin/main
                 </Link>
                 <form className={styles.searchForm}>
                     <input type="text" className={styles.searchInput} placeholder="Search Product (e.g., Belts, Necklaces, Smart Tvs, ...)" />

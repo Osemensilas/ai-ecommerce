@@ -3,8 +3,7 @@ import { ApiGatewayModule } from './api-gateway.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(ApiGatewayModule);
-  const port = process.env.PORT || 8000;
-  await app.listen(port);
-  console.log(`Server running on port ${port}`);
+  await app.listen(process.env.port ?? 8000);
+  console.log(`API Gateway is running on: ${await app.getUrl()}`);
 }
 bootstrap();
