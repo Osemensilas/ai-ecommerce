@@ -1,8 +1,4 @@
 import { ShoppingCart } from "lucide-react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { Card, CardContent, CardMedia, Typography, Button } from "@mui/material";
 
 const products = [
   {

@@ -4,11 +4,12 @@ import styles from "../app/css/header.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
 
     const currentPath = usePathname();
+    const [activeUser, setActiveUser] = useState(true);
 
     useEffect(() => {
         if (currentPath === '/login' || currentPath === '/signup' || currentPath === '/forget-password'
@@ -25,11 +26,7 @@ const Header = () => {
         <header id="header" className={styles.header}>
             <div className={styles.headerTop}>
                 <Link href={"/"} className="logoLink">
-<<<<<<< HEAD
                     <Image src={"/logo3.png"} fill className={styles.logo} alt="logo" />
-=======
-                    <Image src={"/"} fill className={styles.logo} alt="" />
->>>>>>> origin/main
                 </Link>
                 <form className={styles.searchForm}>
                     <input type="text" className={styles.searchInput} placeholder="Search Product (e.g., Belts, Necklaces, Smart Tvs, ...)" />
@@ -37,14 +34,17 @@ const Header = () => {
                 </form>
                 <ul className={styles.navList}>
                     <li className={styles.navItem}>
-                        <div className={styles.activeUser}>
-                            <div className="">
+                        <div className={`${styles.activeUser} ${activeUser ? "" : styles.hide}`}>
+                            <div className={styles.userActive}>
                                 <i className="fa fa-user"></i>
                                 Solo-HiTech
                             </div>
                         </div>
-                        <div className={styles.visitor}>
-
+                        <div className={`${styles.visitor} ${activeUser ? styles.hide : ""}`}>
+                            <Link href={"/login"} className="">
+                                <i className="fa fa-user"></i>
+                                Account
+                            </Link>
                         </div>
                     </li>
                     <li className={styles.navItem}>

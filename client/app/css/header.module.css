@@ -101,3 +101,12 @@
     align-items: center;
     color: var(--background);
 }
+
+.activeUser.hide,
+.visitor.hide{
+    display: none;
+}
+
+.userActive{
+    cursor: pointer;
+}
