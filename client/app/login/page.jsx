@@ -19,7 +19,7 @@ const Login = () => {
                 <form onSubmit={(e) => e.preventDefault()} className={styles.signinForm}>
                     <div className={styles.formTop}>
                         <div className={styles.formLogoContainer}>
-                            <Image src={"/logo3.png"} fill className={styles.logo} alt="logo" />
+                            <Image src={"/logo.jpg"} fill className={styles.logo} alt="logo"   />
                         </div>
                         <h2>Welcome to AhiaGlogal</h2>
                         <p>Type your email address or phone number to log in or create an AhiaGlogal account</p>

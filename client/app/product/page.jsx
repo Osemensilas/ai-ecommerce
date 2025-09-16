@@ -4,10 +4,12 @@ import productstyles from '../../app/css/product.module.css';
 import styles from '../../app/css/single.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import FAQs from '@/components/FAQs';
+// import FAQs from '@/components/FAQs';
 import RecentlyViewed from '@/components/RecentlyViewed';
 import SimilarProduct from '@/components/SimilarProduct';
 import { useState } from 'react';
+import Header from '@/components/Header';
+import FAQ from '@/components/Faq';
 
 const Product = () => {
 
@@ -88,6 +90,7 @@ const Product = () => {
     
     return ( 
         <>
+        <Header />
         <section id="product">
             <div className={productstyles.headerBottom}>
                 <form className={productstyles.filterForm}>
@@ -341,7 +344,7 @@ const Product = () => {
                 </div>
             </div>
         </section>
-        <FAQs></FAQs>
+        <FAQ />
         </>
      );
 }
