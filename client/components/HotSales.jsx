@@ -6,18 +6,17 @@ import { Card, CardContent, CardMedia, Typography, Button, Rating } from "@mui/m
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Grid } from "@mui/material";
-import Categories from "./Categories";
-import BestSelling from "./BestSelling";
 
 const products = [
-    { id: 1, name: "Oraimo Power Bank 20,000mAh", price: 14500, oldPrice: 20000, image: "blender.png", rating: 4.5 },
-    { id: 2, name: "Samsung Galaxy Buds Pro", price: 65000, oldPrice: 80000, image: "neckless.png", rating: 4.0 },
-    { id: 3, name: "Men's Sneakers - White", price: 12000, oldPrice: 18000, image: "redwig.png", rating: 3.5 },
-    { id: 4, name: "Hisense 32-Inch LED TV", price: 85000, oldPrice: 110000, image: "andrew pot.png", rating: 4.2 },
+    { id: 1, name: "Oraimo Power Bank 20,000mAh", price: 14500, oldPrice: 20000, image: "sound.png", rating: 4.5 },
+    { id: 2, name: "Samsung Galaxy Buds Pro", price: 65000, oldPrice: 80000, image: "typec.png", rating: 4.0 },
+    { id: 3, name: "Men's Sneakers - White", price: 12000, oldPrice: 18000, image: "petal.png", rating: 3.5 },
+    { id: 4, name: "Hisense 32-Inch LED TV", price: 85000, oldPrice: 110000, image: "/menblack.png", rating: 4.2 },
     { id: 5, name: "Nivea Body Lotion 400ml", price: 3500, oldPrice: 5000, image: "duvet.png", rating: 4.8 },
+ 
 ];
 
-export default function SpecialOffers() {
+export default function HotSales() {
     // const settings = {
     //     dots: true,
     //     infinite: true,
@@ -33,13 +32,14 @@ export default function SpecialOffers() {
     // };
 
     return (
-        <div style={{ padding: "3rem" , backgroundColor:"", marginTop:"-2rem"}}>
+           <div style={{ padding: "3rem" , backgroundColor:"", marginTop:"-5rem"}}>
+
             <Card sx={{
-                paddingRight: "0.5rem", borderRadius: 3, boxShadow: 3, width: "100%", display: "flex", alignItems: "center",
-                flexDirection: "", marginBottom: "16px", backgroundColor: "#f59342", justifyContent: "space-between", borderRadius:"none"
+                paddingRight: "1rem", borderRadius: 3, boxShadow: 3, width: "100%", display: "flex", alignItems: "center",
+                flexDirection: "", marginBottom: "16px", backgroundColor: "#924040ff", justifyContent: "space-between", borderRadius:"none"
             }}>
                 <Typography variant="h6" align="center" marginLeft={3} fontWeight="700" color="whitesmoke" fontFamily="sans-serif" gutterBottom>
-                    Special Offers
+                 Hot Deals
                 </Typography>
                 <Typography variant="" align="center" color="whitesmoke" fontWeight="500" gutterBottom>
                     View all
@@ -47,7 +47,7 @@ export default function SpecialOffers() {
 
             </Card>
 
-            <Grid container spacing={0} justifyContent="center" backgroundColor="#f5f5f5" padding={2} borderRadius={3}>
+            <Grid container spacing={2} justifyContent="center" backgroundColor="#f5f5f5" padding={5} borderRadius={3}>
 
                 {products.map((product) => (
                     <Grid item key={product.id} xs={12} sm={6} md={4} lg={3} sx={{ display: "flex", justifyContent: "center", }}>
@@ -115,7 +115,6 @@ export default function SpecialOffers() {
                         </Card>
                     </Grid>
                 ))}
-                <Categories />
             </Grid>
         </div>
     );
