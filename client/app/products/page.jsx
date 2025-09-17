@@ -3,9 +3,10 @@
 import styles from "../css/product.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import FAQs from "@/components/FAQs";
+// import FAQs from "@/components/FAQs";
 import { useState } from "react";
 import RecentlyViewed from "@/components/RecentlyViewed";
+import FAQ from "@/components/Faq";
 
 export default function Home() {
 
@@ -755,7 +756,7 @@ export default function Home() {
         </div>
     </div>
     <RecentlyViewed />
-    <FAQs />
+    <FAQ />
     </>
   );
 }
