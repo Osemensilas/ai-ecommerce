@@ -3,11 +3,18 @@
 import styles from "../css/product.module.css";
 import Link from "next/link";
 import Image from "next/image";
+<<<<<<< HEAD
 // import FAQ from "@/components/FAQ";
 import { useState } from "react";
 import RecentlyViewed from "@/components/RecentlyViewed";
 import FAQ from "@/components/Faq";
 import { useSearchParams } from "next/navigation";
+=======
+// import FAQs from "@/components/FAQs";
+import { useState } from "react";
+import RecentlyViewed from "@/components/RecentlyViewed";
+import FAQ from "@/components/Faq";
+>>>>>>> 1a4703e637f4f5fb5e1d952b1ec6fde10ab1f38c
 
 export default function Home() {
 
