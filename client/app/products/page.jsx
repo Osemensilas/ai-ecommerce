@@ -228,10 +228,9 @@ export default function Home() {
                     <div className={styles.productsLinks}>
                         {
                             navMenu.map((item, index) => (
-                                <div key={index}>
-                                    <Link href={item.url} className={`${styles.catHeading} ${
-                                        item.type === type.toLowerCase() ? styles.active : ""
-                                        }`}>{item.item}</Link>
+                                <div key={index} className={styles.navMenuMainContentContainer}>
+                                    <Link href={item.url} className={`${styles.catHeading} ${item.type === type ? styles.active : ""}`}>{item.item}</Link>
+                                    <div className={`${styles.navMenuBottomLine} ${item.type === type ? styles.active : ""}`}></div>
                                 </div>
                             ))
                         }

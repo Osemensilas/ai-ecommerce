@@ -380,6 +380,15 @@
 
 .catHeading.active{
   color: var(--primary);
-  text-decoration: underline;
   font-weight: 500;
+}
+
+.navMenuBottomLine.active{
+  height: 2px;
+  width: 100%;
+  background: var(--primary);
+}
+
+.navMenuMainContentContainer{
+  margin-left: 10px;
 }
