@@ -33,7 +33,7 @@ export default function Categories() {
         {categories.map((product, index) => (
           <Link href={`/products`} >
 
-            <Card
+            <Card        
               key={index}
               sx={{
                 borderRadius: 2,
