@@ -187,12 +187,12 @@ const Header = () => {
                                 <div className={styles.filterContentNav}>
                                     <h3>Baby & Maternity</h3>
                                     <div className={styles.filterContentNavigationList}>
-                                        <Link href="/products?category=baby and marternity&type=fresh product" onClick={removeCover}>Baby Clothing</Link>
-                                        <Link href="/products?category=baby and marternity&type=meat and seafood" onClick={removeCover}>Diapers & Wipes</Link>
-                                        <Link href="/products?category=baby and marternity&type=dairy and eggs" onClick={removeCover}>Feeding Supplies</Link>
-                                        <Link href="/products?category=baby and marternity&type=bakery" onClick={removeCover}>Nursery (Cribs & Bedding)</Link>
-                                        <Link href="/products?category=baby and marternity&type=pantry staples" onClick={removeCover}>Strollers and Car Seats</Link>
-                                        <Link href="/products?category=baby and marternity&type=beverages" onClick={removeCover}>Maternity Clothing</Link>
+                                        <Link href="/products?category=baby and marternity&type=baby clothing" onClick={removeCover}>Baby Clothing</Link>
+                                        <Link href="/products?category=baby and marternity&type=diapers and wipes" onClick={removeCover}>Diapers & Wipes</Link>
+                                        <Link href="/products?category=baby and marternity&type=feeding supplies" onClick={removeCover}>Feeding Supplies</Link>
+                                        <Link href="/products?category=baby and marternity&type=nursery" onClick={removeCover}>Nursery (Cribs & Bedding)</Link>
+                                        <Link href="/products?category=baby and marternity&type=strollers and car seats" onClick={removeCover}>Strollers and Car Seats</Link>
+                                        <Link href="/products?category=baby and marternity&type=maternity clothing" onClick={removeCover}>Maternity Clothing</Link>
                                     </div>
                                 </div>
                             </div>

@@ -5,15 +5,19 @@
 
 .pageLocation{
   height: 75px;
-  width: 100%;
+  width: max-content;
   padding: 0 60px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 5px;
 }
 
-.pageLocation p{
+.pageLocation:last-child{
+  padding: 0;
+}
+
+.pageLocation a,
+.pageLocation i{
   font-size: 16px;
   color: var(--grey);
 }
@@ -368,4 +372,8 @@
 .categoryFilterLabel label{
   font-size: 17px;
   color: var(--grey);
+}
+
+.hide{
+  display: none;
 }
