@@ -10,7 +10,6 @@ const Signup = () => {
     const [error, setError] = useState('Invalid email address');
     const [showPassword1, setShowPassword1] = useState(false);
     const [showPassword2, setShowPassword2] = useState(false);
-
     const togglePassword1 = () => setShowPassword1(prev => !prev);
     const togglePassword2 = () => setShowPassword2(prev => !prev);
 

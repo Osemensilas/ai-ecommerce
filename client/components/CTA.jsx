@@ -18,7 +18,7 @@ export default function CTA() {
         <HotSales />
         <NewOfers />
         <FAQ />
-        <Footer />
+        {/* <Footer /> */}
     </>
   )
 }

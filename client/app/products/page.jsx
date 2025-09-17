@@ -3,11 +3,18 @@
 import styles from "../css/product.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import FAQs from "@/components/FAQs";
+// import FAQ from "@/components/FAQ";
 import { useState } from "react";
 import RecentlyViewed from "@/components/RecentlyViewed";
+import FAQ from "@/components/Faq";
+import { useSearchParams } from "next/navigation";
 
 export default function Home() {
+
+     const searchParams = useSearchParams();
+
+    const category = searchParams.get("category");
+    const type = searchParams.get("type");
 
     const [minVal, setMinVal] = useState(0);
     const [maxVal, setMaxVal] = useState(500000);
@@ -34,27 +41,13 @@ export default function Home() {
   return (
     <>
     <div className={styles.page}>
-      <div className={styles.headerBottom}>
-        <form className={styles.filterForm}>
-            <label htmlFor="filter">Filter by Category</label>
-            <select name="filter" id="filter" className={styles.filterOptions}>
-                <option value="all products">All Products</option>
-            </select>
-        </form>
-        <ul className={styles.btnNavList}>
-            <li className={styles.btnNavItem}><button>Top Rates</button></li>
-            <li className={styles.btnNavItem}><button>New Arrial</button></li>
-            <li className={styles.btnNavItem}><button>Special Deals</button></li>
-            <li className={styles.btnNavItem}><button>Gift Shop</button></li>
-        </ul>
-      </div>
         <div className={styles.pageLocation}>
             <p>Beauty</p>
             <p><i className="fa fa-angle-right"></i></p>
             <p>Haircare</p>
         </div>
         <div className={styles.header}>
-            <h2>Beauty</h2>
+            <h2 style={{ textTransform: "capitalize" }}>{category}</h2>
         </div>
     </div>
     <div className={styles.products}>
@@ -65,9 +58,9 @@ export default function Home() {
                     <input type="range" value={minVal} onChange={priceChangedMin} min="0" max="500000" step="1000" />
                     <input type="range" value={maxVal} onChange={priceChangedMax} min="0" max="500000" step="1000" />
                     <div className={styles.rangeContainer}>
-                        <input type="text" value={Number(minVal).toLocaleString()} />
+                        <input type="text" onChange={() => setMinVal(e.target.value)} value={Number(minVal).toLocaleString()} />
                         <div className={styles.line}></div>
-                        <input type="text" value={Number(maxVal).toLocaleString()} />
+                        <input type="text" onChange={() => setMaxVal(e.target.value)} value={Number(maxVal).toLocaleString()} />
                     </div>
                 </form>
                 <h2>Brand</h2>
@@ -755,7 +748,7 @@ export default function Home() {
         </div>
     </div>
     <RecentlyViewed />
-    <FAQs />
+    <FAQ />
     </>
   );
 }

@@ -90,22 +90,7 @@ const Product = () => {
     
     return ( 
         <>
-        <Header />
         <section id="product">
-            <div className={productstyles.headerBottom}>
-                <form className={productstyles.filterForm}>
-                    <label htmlFor="filter">Filter by Category</label>
-                    <select name="filter" id="filter" className={productstyles.filterOptions}>
-                        <option value="all products">All Products</option>
-                    </select>
-                </form>
-                <ul className={productstyles.btnNavList}>
-                    <li className={productstyles.btnNavItem}><button>Top Rates</button></li>
-                    <li className={productstyles.btnNavItem}><button>New Arrial</button></li>
-                    <li className={productstyles.btnNavItem}><button>Special Deals</button></li>
-                    <li className={productstyles.btnNavItem}><button>Gift Shop</button></li>
-                </ul>
-            </div>
             <div className={productstyles.pageLocation}>
                 <p>Beauty</p>
                 <p><i className="fa fa-angle-right"></i></p>
