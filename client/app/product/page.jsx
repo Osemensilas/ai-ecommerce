@@ -90,11 +90,11 @@ const Product = () => {
     }
 
     const addToCartClicked = (e) => {
-        e.currentTarget.classList.add(`styles.hide`);
-
+        const cartBtn = document.querySelector(`.${styles.cartBtnMain}`);
         const addToCartContainer = document.querySelector(`.${styles.viewCartConatiner}`);
 
         addToCartContainer.classList.add(styles.show);
+        cartBtn.classList.remove(styles.show);
     }
     
     return ( 
@@ -160,7 +160,7 @@ const Product = () => {
                         </div>
                         <div className={styles.productContainerRightBottom}>
                             <form onSubmit={(e) => e.preventDefault()} className={styles.submitBtnForm}>
-                                <button onClick={addToCartClicked}><i className="fa fa-shopping-cart"></i>Add to Cart</button>
+                                <button onClick={addToCartClicked} className={`${styles.cartBtnMain} ${styles.show}`}><i className="fa fa-shopping-cart"></i>Add to Cart</button>
                                 <div className={styles.viewCartConatiner}>
                                     <Link href={"/"}>Continue Shopping</Link>
                                     <Link href={"/cart"}>Go to Cart</Link>
