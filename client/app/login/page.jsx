@@ -72,7 +72,7 @@ const Login = () => {
                             </button>
                         </div>
                         <div className={styles.forget}>
-                            <Link href="/">Forget Password?</Link>
+                            <Link href="/forget-password">Forget Password?</Link>
                         </div>
                         <div className={styles.formSubmitBtnContainer}>
                             <button type="submit" onClick={formSubmitted} className={styles.formSubmitBtn}>Login</button>

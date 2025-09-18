@@ -62,7 +62,6 @@ a{
 input{
     font-size: 15px;
     font-weight: 300;
-    color: var(--grey);
 }
 
 .productCarddetail{

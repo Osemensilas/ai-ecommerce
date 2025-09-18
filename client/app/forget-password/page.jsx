@@ -7,7 +7,26 @@ import { useEffect, useState } from 'react';
 
 const ForgetPassword = () => {
 
-    const [error, setError] = useState('Invalid email address');
+    const [error, setError] = useState('');
+    const [email, setEmail] = useState('');
+
+    const formSubmitted = () => {
+        let emailVal = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (email === ''){
+            setError("All field required");
+            return;
+        }else{
+            setError('');
+        }
+
+        if (!emailVal.test(email)){
+            setError("Invalid email address");
+            return
+        }else{
+            setError('');
+        }
+    }
 
     return ( 
         <>
@@ -27,14 +46,14 @@ const ForgetPassword = () => {
                         </div>
                         <div className={styles.formDetails}>
                             <label htmlFor="email">Email</label>
-                            <input type="text" id="email" className={styles.detail} placeholder="Enter your email" />
+                            <input type="text" id="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} className={styles.detail} placeholder="Enter your email" />
                         </div>
                         <div className={styles.formSubmitBtnContainer}>
-                            <button type="submit" className={styles.formSubmitBtn}>Login</button>
+                            <button type="submit" onClick={formSubmitted} className={styles.formSubmitBtn}>Submit</button>
                         </div>
                     </div>
                     <div className={styles.formNewUser}>
-                        <Link href={"/"}> <i className="fa fa-arrow-left"></i> Back to Login</Link>
+                        <Link href={"/login"}> <i className="fa fa-arrow-left"></i> Back to Login</Link>
                     </div>
                 </form>
             </div>
