@@ -10,6 +10,7 @@ import SimilarProduct from '@/components/SimilarProduct';
 import { useState } from 'react';
 import Header from '@/components/Header';
 import FAQ from '@/components/Faq';
+import Footer from '@/components/Footer';
 
 const Product = () => {
 
@@ -87,9 +88,18 @@ const Product = () => {
         
         productDescription.classList.remove(styles.active);
     }
+
+    const addToCartClicked = (e) => {
+        e.currentTarget.classList.add(`styles.hide`);
+
+        const addToCartContainer = document.querySelector(`.${styles.viewCartConatiner}`);
+
+        addToCartContainer.classList.add(styles.show);
+    }
     
     return ( 
         <>
+        <Header />
         <section id="product">
             <div className={productstyles.pageLocation}>
                 <p>Beauty</p>
@@ -149,8 +159,12 @@ const Product = () => {
                             </div>
                         </div>
                         <div className={styles.productContainerRightBottom}>
-                            <form className={styles.submitBtnForm}>
-                                <button><i className="fa fa-shopping-cart"></i>Add to Cart</button>
+                            <form onSubmit={(e) => e.preventDefault()} className={styles.submitBtnForm}>
+                                <button onClick={addToCartClicked}><i className="fa fa-shopping-cart"></i>Add to Cart</button>
+                                <div className={styles.viewCartConatiner}>
+                                    <Link href={"/"}>Continue Shopping</Link>
+                                    <Link href={"/cart"}>Go to Cart</Link>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -330,6 +344,7 @@ const Product = () => {
             </div>
         </section>
         <FAQ />
+        <Footer />
         </>
      );
 }

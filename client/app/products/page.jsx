@@ -718,7 +718,7 @@ const products = [
                                         </div>
                                         <p>{item.rating}</p>
                                     </div>
-                                    <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
+                                    <Link href={"/product?product_id=buhsbyrey7364977cjbi"}><i className="fa fa-arrow-right"></i> Add</Link>
                                 </div>
                             </div>
                         </div>
