@@ -5,8 +5,13 @@ import styles from "../app/css/header.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { Typography } from "@mui/material";
+import { useState, useEffect } from 'react';
+import { usePathname, useRouter } from "next/navigation";
+
 
 const Header = () => {
+
+    const [userPresent, setUserPresent] = useState(false);
 
     const filterClicked = () => {
         let filterContainer = document.querySelector(`.${styles.filterContainer}`);
@@ -58,6 +63,22 @@ const Header = () => {
         categoryOptions.classList.remove(styles.active);
     }
 
+    const currentPath = usePathname();
+
+    useEffect(() => {
+        if (currentPath === '/login' || currentPath === '/signup' || currentPath === '/forget-password'
+            || currentPath === '/otp' || currentPath === '/reset-password'
+        ){
+            let header = document.querySelector(`.${styles.header}`);
+            
+            header.classList.add(styles.hide);
+        }else{
+            let header = document.querySelector(`.${styles.header}`);
+            
+            header.classList.remove(styles.hide);
+        }
+    },[])
+
     return (
         <>
             <header id="header" className={styles.header}>
@@ -70,14 +91,17 @@ const Header = () => {
                     </form>
                     <ul className={styles.navList}>
                         <li className={styles.navItem}>
-                            <div className={styles.activeUser}>
+                            <div className={`${styles.activeUser} ${userPresent ? "" : styles.hide}`}>
                                 <div className="">
                                     <i className="fa fa-user"></i>
                                     Solo-HiTech
                                 </div>
                             </div>
-                            <div className={styles.visitor}>
-
+                            <div className={`${styles.visitor} ${userPresent ? styles.hide : ""}`}>
+                                <Link href="/login">
+                                    <i className="fa fa-user"></i>
+                                    Login
+                                </Link>
                             </div>
                         </li>
                         <li className={styles.navItem}>

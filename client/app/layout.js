@@ -15,9 +15,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="fa/fontawesome-free-6.6.0-web/css/all.css" />
       </Head>
       <body>
-        <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );

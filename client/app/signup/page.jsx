@@ -4,15 +4,55 @@ import styles from '../css/login.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { useRouter } from "next/navigation";
 
 const Signup = () => {
 
-    const [error, setError] = useState('Invalid email address');
+    const router = useRouter();
+
+    const [error, setError] = useState('');
     const [showPassword1, setShowPassword1] = useState(false);
     const [showPassword2, setShowPassword2] = useState(false);
+    const [formData, setFormData] = useState({
+        'email': '',
+        'password': '',
+        'password2': '',
+    })
+
     const togglePassword1 = () => setShowPassword1(prev => !prev);
     const togglePassword2 = () => setShowPassword2(prev => !prev);
 
+    const handleChanged = (e) => {
+        const {name, value} = e.target;
+
+        setFormData({...formData, [name]: value});
+    }
+
+    const formSubmitted = () => {
+        let emailVal = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (formData.email === '' || formData.password === '' || formData.password2 === ''){
+            setError("All field required");
+            return;
+        }else{
+            setError('');
+        }
+
+        if (!emailVal.test(formData.email)){
+            setError("Invalid email address");
+            return
+        }else{
+            setError('');
+        }
+
+        if (formData.password !== formData.password2){
+            setError("Passwords do not match");
+            return
+        }else{
+            setError('');
+        }
+        router.push('/');
+    }
 
     return ( 
         <>
@@ -31,24 +71,24 @@ const Signup = () => {
                         </div>
                         <div className={styles.formDetails}>
                             <label htmlFor="email">Email</label>
-                            <input type="text" id="email" className={styles.detail} placeholder="Enter your email" />
+                            <input type="text" id="email" name="email" value={formData.email} onChange={handleChanged} className={styles.detail} placeholder="Enter your email" />
                         </div>
                         <div className={styles.formDetails}>
                             <label htmlFor="password">Password</label>
-                            <input type={showPassword1 ? "text" : "password"}  id="password" className={styles.detail} placeholder="Enter your password" />
+                            <input type={showPassword1 ? "text" : "password"}  id="password" name="password" value={formData.password} onChange={handleChanged} className={styles.detail} placeholder="Enter your password" />
                             <button type="button" onClick={togglePassword1} className={styles.eyeBtn}>
                                 <i className={`fa ${showPassword1 ? "fa-eye-slash" : "fa-eye"}`}></i>
                             </button>
                         </div>
                         <div className={styles.formDetails}>
                             <label htmlFor="password2">Confirm Password</label>
-                            <input type={showPassword2 ? "text" : "password"} id="password2" className={styles.detail} placeholder="Enter your password" />
+                            <input type={showPassword2 ? "text" : "password"} id="password2" name="password2" value={formData.password2} onChange={handleChanged} className={styles.detail} placeholder="Enter your password" />
                             <button type="button" onClick={togglePassword2} className={styles.eyeBtn}>
                                 <i className={`fa ${showPassword2 ? "fa-eye-slash" : "fa-eye"}`}></i>
                             </button>
                         </div>
                         <div className={styles.formSubmitBtnContainer}>
-                            <button type="submit" className={styles.formSubmitBtn}>Login</button>
+                            <button type="submit" onClick={formSubmitted} className={styles.formSubmitBtn}>Login</button>
                         </div>
                     </div>
                     <div className={styles.formBottom}>
@@ -66,7 +106,7 @@ const Signup = () => {
                             </button>
                         </div>
                         <div className={styles.formNewUser}>
-                            Already have an account? <Link href={"/"}>Sign In</Link>
+                            Already have an account? <Link href={"/login"}>Sign In</Link>
                         </div>
                     </div>
                 </form>

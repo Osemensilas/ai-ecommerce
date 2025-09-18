@@ -7,6 +7,8 @@ import { useState, useEffect } from "react";
 import RecentlyViewed from "@/components/RecentlyViewed";
 import FAQ from "@/components/Faq";
 import { useSearchParams } from "next/navigation";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default function Home() {
 
@@ -550,6 +552,7 @@ const products = [
     
   return (
     <>
+    <Header />
     <div className={styles.page}>
         <div className={styles.pageLocation}>
             <Link href={`/products?category=${category}`} style={{ textTransform: "capitalize" }}>{category}</Link>
@@ -946,6 +949,7 @@ const products = [
     </div>
     <RecentlyViewed />
     <FAQ />
+    <Footer />
     </>
   );
 }
