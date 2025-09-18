@@ -19,23 +19,17 @@ export default function Home() {
     const [maxVal, setMaxVal] = useState(500000);
     const [navMenu, setNavMenu] = useState([]);
 
-    let initialVal = 0;
-    let finalVal = 500000;
+    const minGap = 1000; // prevents overlap
 
+    const handleMinChange = (e) => {
+    const value = Math.min(Number(e.target.value), maxVal - minGap);
+    setMinVal(value);
+    };
 
-  const priceChangedMin = (e) => {
-    const value = Number(e.target.value);
-    if (value <= maxVal) {
-      setMinVal(value);
-    }
-  };
-
-  const priceChangedMax = (e) => {
-    const value = Number(e.target.value);
-    if (value >= minVal) {
-      setMaxVal(value);
-    }
-  };
+    const handleMaxChange = (e) => {
+    const value = Math.max(Number(e.target.value), minVal + minGap);
+    setMaxVal(value);
+    };
 
   useEffect(() =>{
 
@@ -87,9 +81,228 @@ export default function Home() {
       { id: 5, item: "Strollers and Car Seats", url: "/products?category=baby and maternity&type=strollers and car seats", type: "strollers and car seats" },
       { id: 6, item: "Maternity Clothing", url: "/products?category=baby and maternity&type=maternity clothing", type: "maternity clothing" }
     ]
+  },
+  {
+    id: 5,
+    name: "computers",
+    items: [
+      { id: 1, item: "Monitor", url: "/products?category=computers&type=monitor", type: "monitor" },
+      { id: 2, item: "Digital Whiteboard", url: "/products?category=computers&type=digital whiteboard", type: "digital whiteboard" },
+      { id: 3, item: "Desktops", url: "/products?category=computers&type=desktops", type: "desktops" },
+      { id: 4, item: "Laptops", url: "/products?category=computers&type=laptops", type: "laptops" },
+      { id: 5, item: "Macbooks", url: "/products?category=computers&type=macbooks", type: "macbooks" },
+      { id: 6, item: "Computer Accessories", url: "/products?category=computers&type=computer accessories", type: "computer accessories" }
+    ]
+  },
+  {
+    id: 6,
+    name: "smart homes",
+    items: [
+      { id: 1, item: "Plugs & Outlets", url: "/products?category=smart homes&type=plugs and outlets", type: "plugs and outlets" },
+      { id: 2, item: "Detectors & Sensors", url: "/products?category=smart homes&type=detectors and sensors", type: "detectors and sensors" },
+      { id: 3, item: "Wifi & Networking", url: "/products?category=smart homes&type=wifi and networking", type: "wifi and networking" },
+      { id: 4, item: "Cameras", url: "/products?category=smart homes&type=cameras", type: "cameras" },
+      { id: 5, item: "Locks & Entry", url: "/products?category=smart homes&type=locks and entry", type: "locks and entry" },
+      { id: 6, item: "Home Lightening", url: "/products?category=smart homes&type=home lightening", type: "home lightening" }
+    ]
+  },
+  {
+    id: 7,
+    name: "electronics",
+    items: [
+      { id: 1, item: "Televisions", url: "/products?category=electronics&type=televisions", type: "televisions" },
+      { id: 2, item: "Cameras", url: "/products?category=electronics&type=cameras", type: "cameras" },
+      { id: 3, item: "Home Audio", url: "/products?category=electronics&type=home audio", type: "home audio" },
+      { id: 4, item: "Sewing Machine", url: "/products?category=electronics&type=sewing machine", type: "sewing machine" },
+      { id: 5, item: "Generators", url: "/products?category=electronics&type=generators", type: "generators" },
+      { id: 6, item: "Portable Power", url: "/products?category=electronics&type=portable power", type: "portable power" }
+    ]
+  },
+  {
+    id: 8,
+    name: "gaming",
+    items: [
+      { id: 1, item: "PlayStation Console", url: "/products?category=gaming&type=playstation console", type: "playstation console" },
+      { id: 2, item: "Gaming Headset", url: "/products?category=gaming&type=gaming headset", type: "gaming headset" },
+      { id: 3, item: "Controllers", url: "/products?category=gaming&type=controllers", type: "controllers" },
+      { id: 4, item: "Gaming Merchandise", url: "/products?category=gaming&type=gaming merchandise", type: "gaming merchandise" }
+    ]
+  },
+  {
+    id: 9,
+    name: "phones & tablets",
+    items: [
+      { id: 1, item: "iPhone", url: "/products?category=phones and tablets&type=iphone", type: "iphone" },
+      { id: 2, item: "Android", url: "/products?category=phones and tablets&type=android", type: "android" },
+      { id: 3, item: "Tablets", url: "/products?category=phones and tablets&type=tablets", type: "tablets" },
+      { id: 4, item: "Phone Accessories", url: "/products?category=phones and tablets&type=phone accessories", type: "phone accessories" }
+    ]
+  },
+  {
+    id: 10,
+    name: "wearables",
+    items: [
+      { id: 1, item: "Smartwatches", url: "/products?category=wearables&type=smartwatches", type: "smartwatches" },
+      { id: 2, item: "Fitness Bands", url: "/products?category=wearables&type=fitness bands", type: "fitness bands" },
+      { id: 3, item: "VR Headsets", url: "/products?category=wearables&type=vr headsets", type: "vr headsets" }
+    ]
+  },
+  {
+    id: 11,
+    name: "women's fashion",
+    items: [
+      { id: 1, item: "Clothing", url: "/products?category=women's fashion&type=clothing&sex=female", type: "clothing" },
+      { id: 2, item: "Shoes", url: "/products?category=women's fashion&type=shoes&sex=female", type: "shoes" },
+      { id: 3, item: "Jewelry", url: "/products?category=women's fashion&type=jewelry&sex=female", type: "jewelry" },
+      { id: 4, item: "Watches", url: "/products?category=women's fashion&type=watches&sex=female", type: "watches" }
+    ]
+  },
+  {
+    id: 12,
+    name: "men's fashion",
+    items: [
+      { id: 1, item: "Clothing", url: "/products?category=men's fashion&type=clothing&sex=male", type: "clothing" },
+      { id: 2, item: "Shoes", url: "/products?category=men's fashion&type=shoes&sex=male", type: "shoes" },
+      { id: 3, item: "Caps", url: "/products?category=men's fashion&type=caps&sex=male", type: "caps" },
+      { id: 4, item: "Watches", url: "/products?category=men's fashion&type=watches&sex=male", type: "watches" }
+    ]
+  },
+  {
+    id: 13,
+    name: "kids & baby fashion",
+    items: [
+      { id: 1, item: "Clothing", url: "/products?category=kids and baby fashion&type=clothing&sex=children", type: "clothing" },
+      { id: 2, item: "Shoes", url: "/products?category=kids and baby fashion&type=shoes&sex=children", type: "shoes" },
+      { id: 3, item: "Accessories", url: "/products?category=kids and baby fashion&type=accessories&sex=children", type: "accessories" }
+    ]
+  },
+  {
+    id: 14,
+    name: "dining & kitchen",
+    items: [
+      { id: 1, item: "Cookware", url: "/products?category=dining and kitchen&type=cookware", type: "cookware" },
+      { id: 2, item: "Utensils", url: "/products?category=dining and kitchen&type=utensils", type: "utensils" },
+      { id: 3, item: "Tableware", url: "/products?category=dining and kitchen&type=tableware", type: "tableware" }
+    ]
+  },
+  {
+    id: 15,
+    name: "home decor",
+    items: [
+      { id: 1, item: "Wall Art", url: "/products?category=home decor&type=wall art", type: "wall art" },
+      { id: 2, item: "Vases", url: "/products?category=home decor&type=vases", type: "vases" }
+    ]
+  },
+  {
+    id: 16,
+    name: "home essentials",
+    items: [
+      { id: 1, item: "Furniture", url: "/products?category=home essentials&type=furniture", type: "furniture" },
+      { id: 2, item: "Bedding", url: "/products?category=home essentials&type=bedding", type: "bedding" },
+      { id: 3, item: "Rugs", url: "/products?category=home essentials&type=rugs", type: "rugs" },
+      { id: 4, item: "Curtains & Window", url: "/products?category=home essentials&type=curtains and window", type: "curtains and window" },
+      { id: 5, item: "Lighting & Ceiling Fans", url: "/products?category=home essentials&type=lighting and ceiling fans", type: "lighting and ceiling fans" }
+    ]
+  },
+  {
+    id: 17,
+    name: "appliances",
+    items: [
+      { id: 1, item: "Blenders", url: "/products?category=appliances&type=blenders", type: "blenders" },
+      { id: 2, item: "Air Fryers", url: "/products?category=appliances&type=air fryers", type: "air fryers" },
+      { id: 3, item: "Electric Jugs", url: "/products?category=appliances&type=electric jugs", type: "electric jugs" }
+    ]
+  },
+  {
+    id: 18,
+    name: "luggage & travel",
+    items: [
+      { id: 1, item: "Suitcases", url: "/products?category=luggage and travel&type=suitcases", type: "suitcases" },
+      { id: 2, item: "Bag Packs", url: "/products?category=luggage and travel&type=bag packs", type: "bag packs" },
+      { id: 3, item: "Travel Accessories", url: "/products?category=luggage and travel&type=travel accessories", type: "travel accessories" }
+    ]
+  },
+  {
+    id: 19,
+    name: "building materials",
+    items: [
+      { id: 1, item: "Plumbing", url: "/products?category=building materials&type=plumbing", type: "plumbing" },
+      { id: 2, item: "Electrical", url: "/products?category=building materials&type=electrical", type: "electrical" },
+      { id: 3, item: "Paint & Supplies", url: "/products?category=building materials&type=paint and supplies", type: "paint and supplies" }
+    ]
+  },
+  {
+    id: 20,
+    name: "car accessories",
+    items: [
+      { id: 1, item: "Tyres", url: "/products?category=car accessories&type=tyres", type: "tyres" },
+      { id: 2, item: "Car Rims", url: "/products?category=car accessories&type=car rims", type: "car rims" },
+      { id: 3, item: "Cleaning Kits", url: "/products?category=car accessories&type=cleaning kits", type: "cleaning kits" },
+      { id: 4, item: "Tools & Equipment", url: "/products?category=car accessories&type=tools and equipment", type: "tools and equipment" }
+    ]
+  },
+  {
+    id: 21,
+    name: "motorcycle",
+    items: [
+      { id: 1, item: "Tyres", url: "/products?category=motorcycle&type=tyres", type: "tyres" },
+      { id: 2, item: "Cleaning Kits", url: "/products?category=motorcycle&type=cleaning kits", type: "cleaning kits" },
+      { id: 3, item: "Accessories", url: "/products?category=motorcycle&type=accessories", type: "accessories" }
+    ]
+  },
+  {
+    id: 22,
+    name: "car care",
+    items: [
+      { id: 1, item: "Brake Fluid", url: "/products?category=car care&type=brake fluid", type: "brake fluid" },
+      { id: 2, item: "Oil", url: "/products?category=car care&type=oil", type: "oil" },
+      { id: 3, item: "Additives", url: "/products?category=car care&type=additives", type: "additives" },
+      { id: 4, item: "Lubricants", url: "/products?category=car care&type=lubricants", type: "lubricants" }
+    ]
+  },
+  {
+    id: 23,
+    name: "interior accessories",
+    items: [
+      { id: 1, item: "Wheels", url: "/products?category=interior accessories&type=wheels", type: "wheels" },
+      { id: 2, item: "Trackers", url: "/products?category=interior accessories&type=trackers", type: "trackers" },
+      { id: 3, item: "Air Fresheners", url: "/products?category=interior accessories&type=air fresheners", type: "air fresheners" },
+      { id: 4, item: "Seat Covers", url: "/products?category=interior accessories&type=seat covers", type: "seat covers" }
+    ]
+  },
+  {
+    id: 24,
+    name: "school supplies",
+    items: [
+      { id: 1, item: "Notebooks", url: "/products?category=school supplies&type=notebooks", type: "notebooks" },
+      { id: 2, item: "Pens & Pencils", url: "/products?category=school supplies&type=pens and pencils", type: "pens and pencils" },
+      { id: 3, item: "Art Supplies", url: "/products?category=school supplies&type=art supplies", type: "art supplies" }
+    ]
+  },
+  {
+    id: 25,
+    name: "office accessories",
+    items: [
+      { id: 1, item: "Printers", url: "/products?category=office accessories&type=printers", type: "printers" },
+      { id: 2, item: "Stationery", url: "/products?category=office accessories&type=stationery", type: "stationery" },
+      { id: 3, item: "Desk Organizers", url: "/products?category=office accessories&type=desk organizers", type: "desk organizers" },
+      { id: 4, item: "Office Chairs", url: "/products?category=office accessories&type=office chairs", type: "office chairs" }
+    ]
+  },
+  {
+    id: 26,
+    name: "professional services",
+    items: [
+      { id: 1, item: "Legal Services", url: "/products?category=professional services&type=legal services", type: "legal services" },
+      { id: 2, item: "Accounting", url: "/products?category=professional services&type=accounting", type: "accounting" },
+      { id: 3, item: "Consulting", url: "/products?category=professional services&type=consulting", type: "consulting" },
+      { id: 4, item: "Cleaning Services", url: "/products?category=professional services&type=cleaning services", type: "cleaning services" },
+      { id: 5, item: "Repair & Maintenance", url: "/products?category=professional services&type=repair and maintenance", type: "repair and maintenance" },
+      { id: 6, item: "Tutoring", url: "/products?category=professional services&type=tutoring", type: "tutoring" }
+    ]
   }
-  // ... continue like this for the remaining categories
 ];
+
 
 
   const selectedCategory = catContainer.find(cat => cat.name === category);
@@ -125,12 +338,15 @@ export default function Home() {
             <div className={styles.productsFilterContainer}>
                 <h2>Price Range (₦)</h2>
                 <form className={styles.priceRangeForm}>
-                    <input type="range" value={minVal} onChange={priceChangedMin} min="0" max="500000" step="1000" />
-                    <input type="range" value={maxVal} onChange={priceChangedMax} min="0" max="500000" step="1000" />
+                    <div className={styles.sliderWrapper}>
+                        <input type="range"min="0" max="500000" step="1000" value={minVal} onChange={handleMinChange} className={`${styles.range} ${styles.one}`} />
+                        <input type="range" min="0" max="500000" step="1000" value={maxVal} onChange={handleMaxChange} className={`${styles.range} ${styles.two}`} />
+                        <div className={styles.sliderTrack} style={{left: `${(minVal / 500000) * 100}%`, right: `${100 - (maxVal / 500000) * 100}%`,}} ></div>
+                    </div> 
                     <div className={styles.rangeContainer}>
-                        <input type="text" onChange={() => setMinVal(e.target.value)} value={Number(minVal).toLocaleString()} />
+                        <input type="text" onChange={(e) => setMinVal(Number(e.target.value))} value={Number(minVal).toLocaleString()} />
                         <div className={styles.line}></div>
-                        <input type="text" onChange={() => setMaxVal(e.target.value)} value={Number(maxVal).toLocaleString()} />
+                        <input type="text" onChange={(e) => setMaxVal(Number(e.target.value))} value={Number(maxVal).toLocaleString()} />
                     </div>
                 </form>
                 <h2>Brand</h2>

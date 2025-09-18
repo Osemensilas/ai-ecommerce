@@ -211,7 +211,7 @@ const Header = () => {
                                 <div className={styles.filterContentNav}>
                                     <h3>Smart Homes</h3>
                                     <div className={styles.filterContentNavigationList}>
-                                        <Link href="/products?category=smart homes&plugs and outlets" onClick={removeCover}>Plugs & Outlets</Link>
+                                        <Link href="/products?category=smart homes&type=plugs and outlets" onClick={removeCover}>Plugs & Outlets</Link>
                                         <Link href="/products?category=smart homes&type=detectors and sensors" onClick={removeCover}>Detectors & Sensors</Link>
                                         <Link href="/products?category=smart homes&type=wifi and networking" onClick={removeCover}>Wifi & Networking</Link>
                                         <Link href="/products?category=smart homes&type=cameras" onClick={removeCover}>Cameras</Link>
