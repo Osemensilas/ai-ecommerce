@@ -65,6 +65,7 @@ const Signup = () => {
                         </div>
                         <h2>Create Account</h2>
                     </div>
+                    <div className={styles.onpage}>
                     <div className={styles.formMiddle}>
                         <div className={`${styles.formError} ${error ? styles.active : ""}`}>
                             {error}
@@ -91,8 +92,8 @@ const Signup = () => {
                             <button type="submit" onClick={formSubmitted} className={styles.formSubmitBtn}>Login</button>
                         </div>
                     </div>
+                    <p>or</p>
                     <div className={styles.formBottom}>
-                        <p>or</p>
                         <div className={styles.formSubmitBtnContainerThirdParty}>
                             <button type="submit" className={styles.formGoogleBtn}>
                                 <img src="/google_13170545.png" alt="" />
@@ -108,6 +109,7 @@ const Signup = () => {
                         <div className={styles.formNewUser}>
                             Already have an account? <Link href={"/login"}>Sign In</Link>
                         </div>
+                    </div>
                     </div>
                 </form>
             </div>

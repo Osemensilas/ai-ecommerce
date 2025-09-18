@@ -56,44 +56,46 @@ const Login = () => {
                         <h2>Welcome to AhiaGlogal</h2>
                         <p>Type your email address or phone number to log in or create an AhiaGlogal account</p>
                     </div>
-                    <div className={styles.formMiddle}>
-                        <div className={`${styles.formError} ${error ? styles.active : ""}`}>
-                            {error}
+                    <div className={styles.onpage}>
+                        <div className={styles.formMiddle}>
+                            <div className={`${styles.formError} ${error ? styles.active : ""}`}>
+                                {error}
+                            </div>
+                            <div className={styles.formDetails}>
+                                <label htmlFor="email">Email</label>
+                                <input type="text" name="email" value={formData.email} onChange={handleChanged} id="email" className={styles.detail} placeholder="Enter your email" />
+                            </div>
+                            <div className={styles.formDetails}>
+                                <label htmlFor="password">Password</label>
+                                <input type={showPassword ? "text" : "password"} name="password" value={formData.password} onChange={handleChanged}  id="password" className={styles.detail} placeholder="Enter your password" />
+                                <button type="button" onClick={togglePassword} className={styles.eyeBtn}>
+                                    <i className={`fa ${showPassword ? "fa-eye-slash" : "fa-eye"}`}></i>
+                                </button>
+                            </div>
+                            <div className={styles.forget}>
+                                <Link href="/forget-password">Forget Password?</Link>
+                            </div>
+                            <div className={styles.formSubmitBtnContainer}>
+                                <button type="submit" onClick={formSubmitted} className={styles.formSubmitBtn}>Login</button>
+                            </div>
+                            <div className={styles.formNewUser}>
+                                Are you new? <Link href={"/signup"}>Create Account</Link>
+                            </div>
                         </div>
-                        <div className={styles.formDetails}>
-                            <label htmlFor="email">Email</label>
-                            <input type="text" name="email" value={formData.email} onChange={handleChanged} id="email" className={styles.detail} placeholder="Enter your email" />
-                        </div>
-                        <div className={styles.formDetails}>
-                            <label htmlFor="password">Password</label>
-                            <input type={showPassword ? "text" : "password"} name="password" value={formData.password} onChange={handleChanged}  id="password" className={styles.detail} placeholder="Enter your password" />
-                            <button type="button" onClick={togglePassword} className={styles.eyeBtn}>
-                                <i className={`fa ${showPassword ? "fa-eye-slash" : "fa-eye"}`}></i>
-                            </button>
-                        </div>
-                        <div className={styles.forget}>
-                            <Link href="/forget-password">Forget Password?</Link>
-                        </div>
-                        <div className={styles.formSubmitBtnContainer}>
-                            <button type="submit" onClick={formSubmitted} className={styles.formSubmitBtn}>Login</button>
-                        </div>
-                    </div>
-                    <div className={styles.formBottom}>
                         <p>or</p>
-                        <div className={styles.formSubmitBtnContainerThirdParty}>
-                            <button type="submit" className={styles.formGoogleBtn}>
-                                <img src="/google_13170545.png" alt="" />
-                                Continue with Google
-                            </button>
-                        </div>
-                        <div className={styles.formSubmitBtnContainerThirdParty}>
-                            <button type="submit" className={styles.formAppleBtn}>
-                                <img src="/mac-os-logo_2235.png" alt="" />
-                                Continue with Apple
-                            </button>
-                        </div>
-                        <div className={styles.formNewUser}>
-                            Are you new? <Link href={"/signup"}>Create Account</Link>
+                        <div className={styles.formBottom}>
+                            <div className={styles.formSubmitBtnContainerThirdParty}>
+                                <button type="submit" className={styles.formGoogleBtn}>
+                                    <img src="/google_13170545.png" alt="" />
+                                    Continue with Google
+                                </button>
+                            </div>
+                            <div className={styles.formSubmitBtnContainerThirdParty}>
+                                <button type="submit" className={styles.formAppleBtn}>
+                                    <img src="/mac-os-logo_2235.png" alt="" />
+                                    Continue with Apple
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </form>
