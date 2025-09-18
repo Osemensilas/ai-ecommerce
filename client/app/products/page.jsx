@@ -304,17 +304,12 @@ export default function Home() {
 ];
 
 
-
   const selectedCategory = catContainer.find(cat => cat.name === category);
     if (selectedCategory) {
         setNavMenu(selectedCategory.items);
-        selectedCategory.items.forEach(element => {
-
-            if (element.item === type){
-                const allItems = document.querySelectorAll(`.${styles.catHeading}`);
-                console.log(element);
-            }
-        });
+        console.log(navMenu);
+    }else{
+        setNavMenu([]);
     }
 }, [category])
 
@@ -438,22 +433,28 @@ export default function Home() {
             </div>
         </div>
         <div className={styles.productsRight}>
-        {
-            navMenu.length > 0 ? (
-                <div className={styles.productsRightTop}>
-                    <div className={styles.productsLinks}>
-                        {
-                            navMenu.map((item, index) => (
-                                <div key={index} className={styles.navMenuMainContentContainer}>
-                                    <Link href={item.url} className={`${styles.catHeading} ${item.type === type ? styles.active : ""}`}>{item.item}</Link>
-                                    <div className={`${styles.navMenuBottomLine} ${item.type === type ? styles.active : ""}`}></div>
-                                </div>
-                            ))
-                        }
+        {navMenu && navMenu.length > 0 ? (
+            <div className={styles.productsRightTop}>
+                <div className={styles.productsLinks}>
+                {navMenu.map((item, index) => (
+                    <div key={index} className={styles.navMenuMainContentContainer}>
+                    <Link
+                        href={item.url}
+                        className={`${styles.catHeading} ${item.type === type ? styles.active : ""}`}
+                    >
+                        {item.item}
+                    </Link>
+                    <div
+                        className={`${styles.navMenuBottomLine} ${item.type === type ? styles.active : ""}`}
+                    ></div>
                     </div>
+                ))}
                 </div>
-            ) : null
-        }
+            </div>
+            ) : (
+                <div className={styles.productsRightTop}></div>
+            )}
+
             <div className={styles.productsRightBottom}>
                 <div className={styles.productCard}>
                     <div className={styles.productCardTop}>
