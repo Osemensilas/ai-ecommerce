@@ -313,7 +313,241 @@ export default function Home() {
     }
 }, [category])
 
+const products = [
+    { id: 1, name: "Oraimo Power Bank 20,000mAh", price: 14500, image: "blender.png", rating: 4.5 },
+    { id: 2, name: "Samsung Galaxy Buds Pro", price: 65000, image: "neckless.png", rating: 4.0 },
+    { id: 3, name: "Men's Sneakers - White", price: 12000, image: "redwig.png", rating: 3.5 },
+    { id: 4, name: "Hisense 32-Inch LED TV", price: 85000, image: "andrew pot.png", rating: 4.2 },
+    { id: 5, name: "Nivea Body Lotion 400ml", price: 3500, image: "duvet.png", rating: 4.8 },
+    { id: 6, name: "Apple iPhone 13 Pro 128GB", price: 720000, image: "iphone13.png", rating: 4.9 },
+    { id: 7, name: "PlayStation 5 Console", price: 480000, image: "ps5.png", rating: 4.7 },
+    { id: 8, name: "Adidas Running Shoes", price: 28000, image: "adidas.png", rating: 4.3 },
+    { id: 9, name: "LG Home Theatre System", price: 195000, image: "home_theatre.png", rating: 4.6 },
+    { id: 10, name: "Dettol Antiseptic 500ml", price: 2500, image: "dettol.png", rating: 4.1 },
+    
+    { id: 11, name: "MacBook Air M1 256GB", price: 630000, image: "macbook.png", rating: 4.9 },
+    { id: 12, name: "HP Pavilion 15 Laptop", price: 420000, image: "hp.png", rating: 4.5 },
+    { id: 13, name: "Beats Studio3 Headphones", price: 120000, image: "beats.png", rating: 4.4 },
+    { id: 14, name: "Nike Air Force 1", price: 35000, image: "nike.png", rating: 4.7 },
+    { id: 15, name: "Samsung 55-Inch 4K TV", price: 350000, image: "samsung_tv.png", rating: 4.8 },
+    { id: 16, name: "Electric Blender 1.5L", price: 15000, image: "blender2.png", rating: 4.0 },
+    { id: 17, name: "Children's Story Books (Set of 5)", price: 7500, image: "books.png", rating: 4.3 },
+    { id: 18, name: "Luxury Wrist Watch - Men", price: 55000, image: "watch.png", rating: 4.6 },
+    { id: 19, name: "Women’s Handbag - Black", price: 18500, image: "bag.png", rating: 4.4 },
+    { id: 20, name: "Sony PlayStation Controller", price: 35000, image: "controller.png", rating: 4.5 },
 
+    { id: 21, name: "Canon DSLR Camera EOS 4000D", price: 250000, image: "camera.png", rating: 4.7 },
+    { id: 22, name: "Gaming Chair - Red/Black", price: 115000, image: "gaming_chair.png", rating: 4.6 },
+    { id: 23, name: "Men's Polo Shirt - Blue", price: 9500, image: "polo.png", rating: 4.2 },
+    { id: 24, name: "Samsung Galaxy Watch 5", price: 140000, image: "galaxy_watch.png", rating: 4.8 },
+    { id: 25, name: "Air Fryer 5.5L Digital", price: 75000, image: "air_fryer.png", rating: 4.6 },
+    { id: 26, name: "Women’s Necklace - Gold Plated", price: 22000, image: "necklace.png", rating: 4.4 },
+    { id: 27, name: "Dell XPS 13 Laptop", price: 680000, image: "dell.png", rating: 4.8 },
+    { id: 28, name: "Men’s Leather Wallet", price: 9500, image: "wallet.png", rating: 4.2 },
+    { id: 29, name: "Kids Toy Car", price: 12000, image: "toy_car.png", rating: 4.3 },
+    { id: 30, name: "Wireless Bluetooth Speaker", price: 18000, image: "speaker.png", rating: 4.5 },
+
+    { id: 31, name: "Canon EOS 4000D DSLR Camera", price: 195000, image: "camera.png", rating: 4.5 },
+    { id: 32, name: "Oraimo 3-in-1 Charging Cable", price: 4500, image: "cable.png", rating: 4.2 },
+    { id: 33, name: "Nike Men's T-Shirt", price: 9000, image: "tshirt.png", rating: 4.0 },
+    { id: 34, name: "Adidas Soccer Ball", price: 12000, image: "soccerball.png", rating: 4.4 },
+    { id: 35, name: "Kenwood Electric Blender", price: 32000, image: "blender2.png", rating: 4.6 },
+    { id: 36, name: "Generic Office Chair", price: 55000, image: "chair.png", rating: 4.1 },
+    { id: 37, name: "Wooden Dining Table - 6 Seater", price: 185000, image: "diningtable.png", rating: 4.3 },
+    { id: 38, name: "Dell 24-Inch Monitor", price: 72000, image: "monitor.png", rating: 4.5 },
+    { id: 39, name: "Samsung 1TB Portable SSD", price: 115000, image: "ssd.png", rating: 4.8 },
+    { id: 40, name: "Logitech Wireless Keyboard", price: 18000, image: "keyboard.png", rating: 4.4 },
+
+    { id: 41, name: "Men's Leather Wallet", price: 7500, image: "wallet.png", rating: 4.1 },
+    { id: 42, name: "Silver Necklace - Women", price: 21500, image: "necklace.png", rating: 4.3 },
+    { id: 43, name: "Children's School Bag", price: 6000, image: "schoolbag.png", rating: 4.2 },
+    { id: 44, name: "Stainless Steel Kettle", price: 8500, image: "kettle.png", rating: 4.5 },
+    { id: 45, name: "Men’s Black Jeans", price: 13500, image: "jeans.png", rating: 4.0 },
+    { id: 46, name: "Women’s Red Gown", price: 22000, image: "redgown.png", rating: 4.6 },
+    { id: 47, name: "Kids' Bicycle - Blue", price: 48000, image: "bicycle.png", rating: 4.4 },
+    { id: 48, name: "PlayStation 5 Console", price: 680000, image: "ps5.png", rating: 4.9 },
+    { id: 49, name: "Xbox Wireless Controller", price: 42000, image: "xboxcontroller.png", rating: 4.7 },
+    { id: 50, name: "LG Sound Bar System", price: 125000, image: "soundbar.png", rating: 4.5 },
+
+    { id: 51, name: "Electric Standing Fan", price: 25000, image: "fan.png", rating: 4.1 },
+    { id: 52, name: "Philips Air Fryer", price: 89000, image: "airfryer.png", rating: 4.6 },
+    { id: 53, name: "Women’s Handbag - Black", price: 18000, image: "handbag.png", rating: 4.2 },
+    { id: 54, name: "Men’s Formal Shoes", price: 25000, image: "shoes.png", rating: 4.3 },
+    { id: 55, name: "Apple AirPods Pro", price: 95000, image: "airpods.png", rating: 4.8 },
+    { id: 56, name: "Infinix Hot 40i Smartphone", price: 105000, image: "infinix.png", rating: 4.4 },
+    { id: 57, name: "iPhone 15 Pro Max", price: 1150000, image: "iphone15.png", rating: 4.9 },
+    { id: 58, name: "Tecno Spark 20", price: 88000, image: "tecno.png", rating: 4.3 },
+    { id: 59, name: "HP Envy x360 Laptop", price: 425000, image: "laptop.png", rating: 4.7 },
+    { id: 60, name: "MacBook Pro 16-inch", price: 1150000, image: "macbook.png", rating: 4.9 },
+
+    { id: 61, name: "Samsung 55-Inch Smart TV", price: 465000, image: "tv.png", rating: 4.8 },
+    { id: 62, name: "Sony WH-1000XM5 Headphones", price: 165000, image: "headphones.png", rating: 4.9 },
+    { id: 63, name: "Men’s Casual Shirt", price: 11000, image: "shirt.png", rating: 4.0 },
+    { id: 64, name: "Women’s Wigs - Curly", price: 28000, image: "wig.png", rating: 4.5 },
+    { id: 65, name: "Office Desk - Wooden", price: 75000, image: "desk.png", rating: 4.3 },
+    { id: 66, name: "Asus ROG Gaming Laptop", price: 850000, image: "asusrog.png", rating: 4.8 },
+    { id: 67, name: "HP LaserJet Printer", price: 98000, image: "printer.png", rating: 4.4 },
+    { id: 68, name: "Canon Pixma Inkjet Printer", price: 72000, image: "pixma.png", rating: 4.2 },
+    { id: 69, name: "Smartwatch - Black", price: 25000, image: "smartwatch.png", rating: 4.1 },
+    { id: 70, name: "Huawei Band 8", price: 22000, image: "band.png", rating: 4.3 },
+
+    { id: 71, name: "Apple Watch Series 9", price: 450000, image: "applewatch.png", rating: 4.8 },
+    { id: 72, name: "Men’s Tracksuit", price: 28000, image: "tracksuit.png", rating: 4.2 },
+    { id: 73, name: "Women’s Heels", price: 18500, image: "heels.png", rating: 4.3 },
+    { id: 74, name: "Electric Iron - Philips", price: 9500, image: "iron.png", rating: 4.1 },
+    { id: 75, name: "Mouka Foam Mattress", price: 68000, image: "mattress.png", rating: 4.5 },
+    { id: 76, name: "Baby Stroller", price: 42000, image: "stroller.png", rating: 4.3 },
+    { id: 77, name: "Kitchen Utensils Set", price: 15000, image: "utensils.png", rating: 4.4 },
+    { id: 78, name: "Gas Cooker - 4 Burners", price: 95000, image: "cooker.png", rating: 4.6 },
+    { id: 79, name: "Refrigerator - Double Door", price: 325000, image: "fridge.png", rating: 4.7 },
+    { id: 80, name: "Washing Machine - LG", price: 295000, image: "washingmachine.png", rating: 4.6 },
+
+    { id: 81, name: "Microwave Oven - Samsung", price: 98000, image: "microwave.png", rating: 4.4 },
+    { id: 82, name: "Toaster - Philips", price: 12500, image: "toaster.png", rating: 4.3 },
+    { id: 83, name: "Electric Blender - Binatone", price: 18500, image: "blender3.png", rating: 4.2 },
+    { id: 84, name: "Ceiling Fan - Panasonic", price: 21000, image: "ceilingfan.png", rating: 4.0 },
+    { id: 85, name: "Home Theatre System - Sony", price: 185000, image: "hometheatre.png", rating: 4.7 },
+    { id: 86, name: "Guitar - Acoustic", price: 28000, image: "guitar.png", rating: 4.5 },
+    { id: 87, name: "Drum Set - Beginner", price: 82000, image: "drumset.png", rating: 4.3 },
+    { id: 88, name: "Violin - 4/4 Size", price: 35000, image: "violin.png", rating: 4.4 },
+    { id: 89, name: "Trumpet - Brass", price: 48000, image: "trumpet.png", rating: 4.2 },
+    { id: 90, name: "Flute - Yamaha", price: 25000, image: "flute.png", rating: 4.3 },
+
+    { id: 91, name: "Bed Frame - Wooden", price: 95000, image: "bed.png", rating: 4.5 },
+    { id: 92, name: "Wardrobe - 3 Doors", price: 125000, image: "wardrobe.png", rating: 4.6 },
+    { id: 93, name: "Sofa Set - Fabric", price: 225000, image: "sofa.png", rating: 4.4 },
+    { id: 94, name: "Carpet - Large", price: 45000, image: "carpet.png", rating: 4.2 },
+    { id: 95, name: "Curtains - 2 Panels", price: 18000, image: "curtains.png", rating: 4.3 },
+    { id: 96, name: "Table Lamp", price: 7500, image: "lamp.png", rating: 4.1 },
+    { id: 97, name: "Wall Clock - Round", price: 5500, image: "clock.png", rating: 4.0 },
+    { id: 98, name: "Mirror - Full Length", price: 32000, image: "mirror.png", rating: 4.2 },
+    { id: 99, name: "Bookshelf - Wooden", price: 42000, image: "bookshelf.png", rating: 4.3 },
+    { id: 100, name: "Study Chair - Ergonomic", price: 65000, image: "studychair.png", rating: 4.4 },
+
+     { id: 101, name: "Bluetooth Car FM Transmitter", price: 8500, image: "carfm.png", rating: 4.2 },
+  { id: 102, name: "Portable Power Bank 10,000mAh", price: 9500, image: "powerbank.png", rating: 4.3 },
+  { id: 103, name: "Samsung Galaxy A54", price: 210000, image: "galaxya54.png", rating: 4.5 },
+  { id: 104, name: "Oppo Reno 10", price: 315000, image: "opporeno.png", rating: 4.6 },
+  { id: 105, name: "Xiaomi Redmi Note 13 Pro", price: 185000, image: "redmi.png", rating: 4.4 },
+  { id: 106, name: "Smart LED Bulb - WiFi Control", price: 5500, image: "smartbulb.png", rating: 4.2 },
+  { id: 107, name: "Portable Mini Projector", price: 62000, image: "projector.png", rating: 4.3 },
+  { id: 108, name: "Anker Wireless Earbuds", price: 48000, image: "anker.png", rating: 4.5 },
+  { id: 109, name: "Lenovo ThinkPad X1 Carbon", price: 950000, image: "thinkpad.png", rating: 4.8 },
+  { id: 110, name: "iPad Pro 12.9-inch", price: 1150000, image: "ipadpro.png", rating: 4.9 },
+
+  { id: 111, name: "Samsung Galaxy Tab S9", price: 850000, image: "tabs9.png", rating: 4.7 },
+  { id: 112, name: "Kindle Paperwhite", price: 78000, image: "kindle.png", rating: 4.6 },
+  { id: 113, name: "Men's Leather Belt", price: 7500, image: "belt.png", rating: 4.1 },
+  { id: 114, name: "Women's Sunglasses", price: 12500, image: "sunglasses.png", rating: 4.3 },
+  { id: 115, name: "Men’s Hoodie - Grey", price: 18500, image: "hoodie.png", rating: 4.2 },
+  { id: 116, name: "Women’s Summer Dress", price: 19500, image: "summerdress.png", rating: 4.4 },
+  { id: 117, name: "Kids’ Sneakers - Pink", price: 12500, image: "kidsneakers.png", rating: 4.3 },
+  { id: 118, name: "Baby Cot - Wooden", price: 78000, image: "babycot.png", rating: 4.5 },
+  { id: 119, name: "Men’s Sports Watch", price: 28500, image: "sportswatch.png", rating: 4.4 },
+  { id: 120, name: "Women’s Perfume - 100ml", price: 32000, image: "perfume.png", rating: 4.6 },
+
+  { id: 121, name: "Men’s Perfume - 100ml", price: 35000, image: "menperfume.png", rating: 4.5 },
+  { id: 122, name: "Makeup Brush Set (12 pcs)", price: 9500, image: "makeupbrush.png", rating: 4.3 },
+  { id: 123, name: "Lipstick Set - 6 Colors", price: 7800, image: "lipstick.png", rating: 4.2 },
+  { id: 124, name: "Hair Dryer - Philips", price: 18500, image: "hairdryer.png", rating: 4.4 },
+  { id: 125, name: "Hair Straightener", price: 15500, image: "straightener.png", rating: 4.3 },
+  { id: 126, name: "Men’s Beanie Cap", price: 4500, image: "beanie.png", rating: 4.1 },
+  { id: 127, name: "Leather Jacket - Men", price: 48000, image: "leatherjacket.png", rating: 4.5 },
+  { id: 128, name: "Women’s Winter Coat", price: 65000, image: "coat.png", rating: 4.6 },
+  { id: 129, name: "Gaming Mouse - RGB", price: 12500, image: "mouse.png", rating: 4.4 },
+  { id: 130, name: "Mechanical Keyboard - RGB", price: 35000, image: "mechkeyboard.png", rating: 4.6 },
+
+  { id: 131, name: "External Hard Drive 2TB", price: 68000, image: "harddrive.png", rating: 4.5 },
+  { id: 132, name: "Sandisk 128GB Flash Drive", price: 9500, image: "flashdrive.png", rating: 4.4 },
+  { id: 133, name: "Canon EOS R6 Camera", price: 1350000, image: "eosr6.png", rating: 4.8 },
+  { id: 134, name: "Tripod Stand", price: 18000, image: "tripod.png", rating: 4.3 },
+  { id: 135, name: "Ring Light 18-inch", price: 28000, image: "ringlight.png", rating: 4.4 },
+  { id: 136, name: "Mic Stand with Pop Filter", price: 15000, image: "micstand.png", rating: 4.2 },
+  { id: 137, name: "USB Microphone - Condenser", price: 35000, image: "microphone.png", rating: 4.5 },
+  { id: 138, name: "DJ Mixer Console", price: 155000, image: "dj.png", rating: 4.6 },
+  { id: 139, name: "Studio Headphones", price: 58000, image: "studioheadphones.png", rating: 4.5 },
+  { id: 140, name: "Wireless Lavalier Mic", price: 32000, image: "lavalier.png", rating: 4.3 },
+
+  { id: 141, name: "Smart Door Lock - Fingerprint", price: 68000, image: "doorlock.png", rating: 4.5 },
+  { id: 142, name: "Home Security Camera", price: 42000, image: "securitycam.png", rating: 4.4 },
+  { id: 143, name: "Solar Power Generator", price: 250000, image: "solargen.png", rating: 4.6 },
+  { id: 144, name: "Rechargeable Torch Light", price: 12500, image: "torch.png", rating: 4.2 },
+  { id: 145, name: "Smart Smoke Detector", price: 18000, image: "smoke.png", rating: 4.3 },
+  { id: 146, name: "Water Purifier - Kent", price: 88000, image: "purifier.png", rating: 4.4 },
+  { id: 147, name: "Electric Pressure Cooker", price: 52000, image: "pressurecooker.png", rating: 4.5 },
+  { id: 148, name: "Rice Cooker - Panasonic", price: 28500, image: "ricecooker.png", rating: 4.3 },
+  { id: 149, name: "Induction Cooker", price: 35000, image: "induction.png", rating: 4.2 },
+  { id: 150, name: "Juicer - Philips", price: 28500, image: "juicer.png", rating: 4.4 },
+
+  { id: 151, name: "Electric Kettle - Kenwood", price: 13500, image: "kettle2.png", rating: 4.3 },
+  { id: 152, name: "Blender & Grinder Combo", price: 28000, image: "blendercombo.png", rating: 4.5 },
+  { id: 153, name: "Hand Mixer", price: 9500, image: "handmixer.png", rating: 4.1 },
+  { id: 154, name: "Ice Cream Maker", price: 45000, image: "icecream.png", rating: 4.4 },
+  { id: 155, name: "Popcorn Machine", price: 38000, image: "popcorn.png", rating: 4.2 },
+  { id: 156, name: "Bread Toaster - 4 Slice", price: 18500, image: "toaster4.png", rating: 4.3 },
+  { id: 157, name: "Water Dispenser - LG", price: 82000, image: "dispenser.png", rating: 4.4 },
+  { id: 158, name: "Smart Refrigerator", price: 580000, image: "smartfridge.png", rating: 4.8 },
+  { id: 159, name: "LG Front Load Washing Machine", price: 395000, image: "washingmachine2.png", rating: 4.6 },
+  { id: 160, name: "Dishwasher - Bosch", price: 425000, image: "dishwasher.png", rating: 4.7 },
+
+  { id: 161, name: "Vacuum Cleaner - Dyson", price: 185000, image: "vacuum.png", rating: 4.8 },
+  { id: 162, name: "Robot Vacuum Cleaner", price: 155000, image: "robotvacuum.png", rating: 4.6 },
+  { id: 163, name: "Steam Mop", price: 32000, image: "steammop.png", rating: 4.3 },
+  { id: 164, name: "Cloth Steamer", price: 25000, image: "steamer.png", rating: 4.2 },
+  { id: 165, name: "Air Conditioner - LG 1.5HP", price: 280000, image: "ac.png", rating: 4.6 },
+  { id: 166, name: "Standing AC - Samsung", price: 395000, image: "standingac.png", rating: 4.7 },
+  { id: 167, name: "Humidifier", price: 18500, image: "humidifier.png", rating: 4.3 },
+  { id: 168, name: "Dehumidifier", price: 65000, image: "dehumidifier.png", rating: 4.4 },
+  { id: 169, name: "Air Purifier - Sharp", price: 85000, image: "airpurifier.png", rating: 4.5 },
+  { id: 170, name: "Smart Thermostat", price: 45000, image: "thermostat.png", rating: 4.4 },
+
+  { id: 171, name: "Bicycle Helmet", price: 9500, image: "helmet.png", rating: 4.3 },
+  { id: 172, name: "Camping Tent - 4 Persons", price: 42000, image: "tent.png", rating: 4.4 },
+  { id: 173, name: "Sleeping Bag - Waterproof", price: 15500, image: "sleepingbag.png", rating: 4.2 },
+  { id: 174, name: "Hiking Backpack 60L", price: 35000, image: "backpack.png", rating: 4.5 },
+  { id: 175, name: "Fishing Rod - Carbon Fiber", price: 28500, image: "fishingrod.png", rating: 4.3 },
+  { id: 176, name: "Treadmill - Electric", price: 295000, image: "treadmill.png", rating: 4.6 },
+  { id: 177, name: "Dumbbell Set - 20kg", price: 18500, image: "dumbbell.png", rating: 4.4 },
+  { id: 178, name: "Yoga Mat - Anti Slip", price: 6500, image: "yogamat.png", rating: 4.3 },
+  { id: 179, name: "Skipping Rope - Adjustable", price: 3500, image: "rope.png", rating: 4.2 },
+  { id: 180, name: "Football Boots - Nike", price: 22500, image: "footballboots.png", rating: 4.5 },
+
+  { id: 181, name: "Basketball - Spalding", price: 15000, image: "basketball.png", rating: 4.4 },
+  { id: 182, name: "Tennis Racket - Wilson", price: 32000, image: "tennisracket.png", rating: 4.5 },
+  { id: 183, name: "Cricket Bat - SS", price: 28500, image: "cricket.png", rating: 4.2 },
+  { id: 184, name: "Golf Club Set", price: 185000, image: "golf.png", rating: 4.6 },
+  { id: 185, name: "Boxing Gloves - Everlast", price: 15500, image: "gloves.png", rating: 4.3 },
+  { id: 186, name: "Badminton Racket - Yonex", price: 8500, image: "badminton.png", rating: 4.2 },
+  { id: 187, name: "Skateboard - Wooden", price: 18500, image: "skateboard.png", rating: 4.4 },
+  { id: 188, name: "Roller Skates", price: 15500, image: "rollerskates.png", rating: 4.3 },
+  { id: 189, name: "Scooter - Kids", price: 19500, image: "scooter.png", rating: 4.4 },
+  { id: 190, name: "Hoverboard - Smart Balance", price: 85000, image: "hoverboard.png", rating: 4.5 },
+
+  { id: 191, name: "Drone with 4K Camera", price: 185000, image: "drone.png", rating: 4.6 },
+  { id: 192, name: "RC Car - Rechargeable", price: 18500, image: "rccar.png", rating: 4.3 },
+  { id: 193, name: "LEGO Classic Bricks Set", price: 32000, image: "lego.png", rating: 4.5 },
+  { id: 194, name: "Puzzle Board 1000 Pieces", price: 9500, image: "puzzle.png", rating: 4.2 },
+  { id: 195, name: "Chess Board - Wooden", price: 12500, image: "chess.png", rating: 4.4 },
+  { id: 196, name: "UNO Card Game", price: 3500, image: "uno.png", rating: 4.3 },
+  { id: 197, name: "Scrabble Game", price: 7800, image: "scrabble.png", rating: 4.2 },
+  { id: 198, name: "Monopoly Board Game", price: 15500, image: "monopoly.png", rating: 4.4 },
+  { id: 199, name: "Table Tennis Set", price: 18500, image: "tabletennis.png", rating: 4.3 },
+  { id: 200, name: "Karaoke Machine", price: 52000, image: "karaoke.png", rating: 4.5 },
+];
+
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const productsPerPage = 20;
+
+    const indexOfLast = currentPage * productsPerPage;
+    const indexOfFirst = indexOfLast - productsPerPage;
+    const currentProducts = products.slice(indexOfFirst, indexOfLast);
+
+    const totalPages = Math.ceil(products.length / productsPerPage);
+
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+    
+    
   return (
     <>
     <div className={styles.page}>
@@ -456,440 +690,109 @@ export default function Home() {
             )}
 
             <div className={styles.productsRightBottom}>
-                <div className={styles.productCard}>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                </div>
-                                <p>7.0</p>
+                {
+                    currentProducts.map((item, index) => (
+                        <div key={index} className={styles.productCard}>
+                            <div className={styles.productCardTop}>
+                                <Image src={`/${item.image}`} className={styles.productImg} fill />
                             </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.productCard}>
-                    <p className="productCarddetail sale">Sale</p>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
+                            <div className={styles.productCardBottom}>
+                                <div className={styles.productCartPriceContainer}>
+                                    <h2>₦{Number(item.price).toLocaleString()}</h2>
+                                    <p>In Stock</p>
                                 </div>
-                                <p>7.0</p>
-                            </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.productCard}>
-                    <p className="productCarddetail hot">Hot</p>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
+                                <div className={styles.productCardName}>
+                                    <h2>{item.name}</h2>
                                 </div>
-                                <p>7.0</p>
-                            </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.productCard}>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
+                                <div className={styles.productCardReview}>
+                                    <div className={styles.productCardReviewItem}>
+                                        <div className={styles.productCardStars}>
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star"></i>
+                                        </div>
+                                        <p>{item.rating}</p>
+                                    </div>
+                                    <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
                                 </div>
-                                <p>7.0</p>
                             </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
                         </div>
-                    </div>
-                </div>
-                <div className={styles.productCard}>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                </div>
-                                <p>7.0</p>
-                            </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.productCard}>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                </div>
-                                <p>7.0</p>
-                            </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.productCard}>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                </div>
-                                <p>7.0</p>
-                            </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.productCard}>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                </div>
-                                <p>7.0</p>
-                            </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.productCard}>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                </div>
-                                <p>7.0</p>
-                            </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.productCard}>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                </div>
-                                <p>7.0</p>
-                            </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.productCard}>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                </div>
-                                <p>7.0</p>
-                            </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                        </div>
-                    </div>
-                </div><div className={styles.productCard}>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                </div>
-                                <p>7.0</p>
-                            </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.productCard}>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                </div>
-                                <p>7.0</p>
-                            </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.productCard}>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                </div>
-                                <p>7.0</p>
-                            </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.productCard}>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                </div>
-                                <p>7.0</p>
-                            </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.productCard}>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                </div>
-                                <p>7.0</p>
-                            </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                        </div>
-                    </div>
-                </div>
+                    ))
+                }
             </div>
+            <div className={styles.paginationContainer}>
+              <ul className={styles.pagination}>
+                {/* Prev Button */}
+                <li className={styles.btnLi}>
+                  <button
+                    className={`${styles.btn} ${currentPage === 1 ? styles.hide : ""}`}
+                    disabled={currentPage === 1}
+                    onClick={() => paginate(currentPage - 1)}
+                  >
+                    Prev
+                  </button>
+                </li>
+                {totalPages > 1 && (
+                  <li className={styles.pageLi}>
+                    <button
+                      onClick={() => paginate(1)}
+                      className={currentPage === 1 ? styles.currentPage : ""}
+                    >
+                      1
+                    </button>
+                  </li>
+                )}
+                {currentPage > 3 && <li className={styles.pageLi}>…</li>}
+                {Array.from(
+                  { length: totalPages },
+                  (_, i) => i + 1
+                )
+                  .filter(
+                    (num) =>
+                      num !== 1 &&
+                      num !== totalPages &&
+                      num >= currentPage - 1 &&
+                      num <= currentPage + 1
+                  )
+                  .map((num) => (
+                    <li key={num} className={styles.pageLi}>
+                      <button
+                        onClick={() => paginate(num)}
+                        className={num === currentPage ? styles.currentPage : ""}
+                      >
+                        {num}
+                      </button>
+                    </li>
+                  ))}
+                {currentPage < totalPages - 2 && <li className={styles.pageLi}>…</li>}
+                {totalPages > 1 && (
+                  <li className={styles.pageLi}>
+                    <button
+                      onClick={() => paginate(totalPages)}
+                      className={currentPage === totalPages ? styles.currentPage : ""}
+                    >
+                      {totalPages}
+                    </button>
+                  </li>
+                )}
+
+                {/* Next Button */}
+                <li className={styles.btnLi}>
+                  <button
+                    className={`${styles.btn} ${
+                      currentPage === totalPages ? styles.hide : ""
+                    }`}
+                    disabled={currentPage === totalPages}
+                    onClick={() => paginate(currentPage + 1)}
+                  >
+                    Next
+                  </button>
+                </li>
+              </ul>
+            </div>
+
         </div>
     </div>
     <div className={styles.otherCategories}>
@@ -1038,7 +941,7 @@ export default function Home() {
     </div>
     <div className={styles.advertContainer}>
         <div className={styles.adverContent}>
-            <Image src={"/"} className={styles.advertImg} fill />
+            <Image src={"/ahiaglobal1.jpg"} className={styles.advertImg} fill />
         </div>
     </div>
     <RecentlyViewed />

@@ -91,13 +91,12 @@
   grid-template-columns: repeat(4, 1fr);
   background-color: var(--lightGrey);
   padding: 80px 20px;
-  margin-bottom: 200px;
   row-gap: 30px;
 }
 
 .productCard{
   position: relative;
-  height: 200px;
+  height: max-content;
   width: 175px;
   background-color: var(--background);
 }
@@ -114,13 +113,14 @@
 
 .productCardTop{
   position: relative;
-  height: 60%;
+  height: 120px;
   width: 100%;
 }
 
 .productCardBottom{
   padding: 5px;
-  height: 40%;
+  height: max-content;
+  min-height: 100px;
   width: 100%;
 }
 
@@ -436,4 +436,60 @@
 
 .navMenuMainContentContainer{
   margin-left: 10px;
+}
+
+.paginationContainer{
+  height: max-content;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--lightGrey);
+  padding: 5px 0;
+}
+
+.pagination{
+  height: max-content;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+}
+
+.btnLi,
+.pageLi{
+  height: max-content;
+  width: max-content;
+}
+
+.btnLi button{
+  padding: 10px;
+  background: var(--primary);
+  color: var(--background);
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.pageLi button{
+  height: 25px;
+  width: 25px;
+  background: transparent;
+  border: 1px solid var(--grey);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pageLi button.currentPage{
+  background: var(--primary);
+  color: var(--background);
+  border: none;
 }
