@@ -38,7 +38,7 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <Box sx={{ maxWidth: "80%", mx: "auto", p: 3 }}>
+    <Box sx={{ maxWidth: { xs: "100%", sm: "80%" }, mx: "auto", p: 3 }}>
       <Typography
         variant="h5"
         fontWeight="500"

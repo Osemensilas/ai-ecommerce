@@ -173,3 +173,16 @@ input{
 #footer.hide{
     display: none;
 }
+
+@media only screen and (max-width: 1000px) and (min-width: 768px){
+    .recentlyViewedContainer, .similarProductsContainer {
+        padding: 0 10px;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .recentlyViewedContainer, 
+    .similarProductsContainer {
+        padding: 0 10px;
+    }
+}

@@ -63,22 +63,6 @@ const Header = () => {
         categoryOptions.classList.remove(styles.active);
     }
 
-    const currentPath = usePathname();
-
-    useEffect(() => {
-        if (currentPath === '/login' || currentPath === '/signup' || currentPath === '/forget-password'
-            || currentPath === '/otp' || currentPath === '/reset-password'
-        ){
-            let header = document.querySelector(`.${styles.header}`);
-            
-            header.classList.add(styles.hide);
-        }else{
-            let header = document.querySelector(`.${styles.header}`);
-            
-            header.classList.remove(styles.hide);
-        }
-    },[])
-
     return (
         <>
             <header id="header" className={styles.header}>

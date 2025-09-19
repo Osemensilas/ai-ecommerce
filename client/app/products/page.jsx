@@ -548,7 +548,18 @@ const products = [
   const totalPages = Math.ceil(products.length / productsPerPage);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
-    
+
+  const filterClicked = () => {
+    const filterCategory = document.querySelector(`.${styles.productsLeft}`);
+
+    filterCategory.classList.add(styles.active);
+  }
+  
+  const removeFilter = () => {
+    const filterCategory = document.querySelector(`.${styles.productsLeft}`);
+
+    filterCategory.classList.remove(styles.active);
+  }
     
   return (
     <>
@@ -567,6 +578,9 @@ const products = [
     </div>
     <div className={styles.products}>
         <div className={styles.productsLeft}>
+            <button onClick={removeFilter} className={styles.productsLeftCancelBtn}>
+              <i className="fa fa-times"></i>
+            </button>
             <div className={styles.productsFilterContainer}>
                 <h2>Price Range (₦)</h2>
                 <form className={styles.priceRangeForm}>
@@ -687,6 +701,10 @@ const products = [
                     </div>
                 ))}
                 </div>
+                <button onClick={filterClicked} className={styles.filterBtnNew}>
+                  <i className="fa fa-sliders-h"></i>
+                  <span>Filter</span>
+              </button>
             </div>
             ) : (
                 <div className={styles.productsRightTop}></div>
@@ -697,7 +715,7 @@ const products = [
                     currentProducts.map((item, index) => (
                         <div key={index} className={styles.productCard}>
                             <div className={styles.productCardTop}>
-                                <Image src={`/${item.image}`} className={styles.productImg} fill />
+                                <Image src={`/${item.image}`} className={styles.productImg} alt={item.name} fill />
                             </div>
                             <div className={styles.productCardBottom}>
                                 <div className={styles.productCartPriceContainer}>
@@ -804,7 +822,8 @@ const products = [
                 <h2>Flash Sales</h2>
             </header>
             <div className={styles.categoryContent}>
-                <div className={styles.productCard}>
+                <div className={styles.ccContainer}>
+                  <div className={styles.productCard}>
                     <div className={styles.productCardTop}>
                         <Image src={"/"} className={styles.productImg} fill />
                     </div>
@@ -830,114 +849,115 @@ const products = [
                             <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
                         </div>
                     </div>
-                </div>
-                <div className={styles.productCard}>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                </div>
-                                <p>7.0</p>
-                            </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.productCard}>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                </div>
-                                <p>7.0</p>
-                            </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.productCard}>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                </div>
-                                <p>7.0</p>
-                            </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.productCard}>
-                    <div className={styles.productCardTop}>
-                        <Image src={"/"} className={styles.productImg} fill />
-                    </div>
-                    <div className={styles.productCardBottom}>
-                        <div className={styles.productCartPriceContainer}>
-                            <h2>₦{Number(145999).toLocaleString()}</h2>
-                            <p>In Stock</p>
-                        </div>
-                        <div className={styles.productCardName}>
-                            <h2>Lavender</h2>
-                        </div>
-                        <div className={styles.productCardReview}>
-                            <div className={styles.productCardReviewItem}>
-                                <div className={styles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                </div>
-                                <p>7.0</p>
-                            </div>
-                            <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                        </div>
-                    </div>
+                  </div>
+                  <div className={styles.productCard}>
+                      <div className={styles.productCardTop}>
+                          <Image src={"/"} className={styles.productImg} fill />
+                      </div>
+                      <div className={styles.productCardBottom}>
+                          <div className={styles.productCartPriceContainer}>
+                              <h2>₦{Number(145999).toLocaleString()}</h2>
+                              <p>In Stock</p>
+                          </div>
+                          <div className={styles.productCardName}>
+                              <h2>Lavender</h2>
+                          </div>
+                          <div className={styles.productCardReview}>
+                              <div className={styles.productCardReviewItem}>
+                                  <div className={styles.productCardStars}>
+                                      <i className="fa fa-star"></i>
+                                      <i className="fa fa-star"></i>
+                                      <i className="fa fa-star"></i>
+                                      <i className="fa fa-star"></i>
+                                      <i className="fa fa-star"></i>
+                                  </div>
+                                  <p>7.0</p>
+                              </div>
+                              <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
+                          </div>
+                      </div>
+                  </div>
+                  <div className={styles.productCard}>
+                      <div className={styles.productCardTop}>
+                          <Image src={"/"} className={styles.productImg} fill />
+                      </div>
+                      <div className={styles.productCardBottom}>
+                          <div className={styles.productCartPriceContainer}>
+                              <h2>₦{Number(145999).toLocaleString()}</h2>
+                              <p>In Stock</p>
+                          </div>
+                          <div className={styles.productCardName}>
+                              <h2>Lavender</h2>
+                          </div>
+                          <div className={styles.productCardReview}>
+                              <div className={styles.productCardReviewItem}>
+                                  <div className={styles.productCardStars}>
+                                      <i className="fa fa-star"></i>
+                                      <i className="fa fa-star"></i>
+                                      <i className="fa fa-star"></i>
+                                      <i className="fa fa-star"></i>
+                                      <i className="fa fa-star"></i>
+                                  </div>
+                                  <p>7.0</p>
+                              </div>
+                              <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
+                          </div>
+                      </div>
+                  </div>
+                  <div className={styles.productCard}>
+                      <div className={styles.productCardTop}>
+                          <Image src={"/"} className={styles.productImg} fill />
+                      </div>
+                      <div className={styles.productCardBottom}>
+                          <div className={styles.productCartPriceContainer}>
+                              <h2>₦{Number(145999).toLocaleString()}</h2>
+                              <p>In Stock</p>
+                          </div>
+                          <div className={styles.productCardName}>
+                              <h2>Lavender</h2>
+                          </div>
+                          <div className={styles.productCardReview}>
+                              <div className={styles.productCardReviewItem}>
+                                  <div className={styles.productCardStars}>
+                                      <i className="fa fa-star"></i>
+                                      <i className="fa fa-star"></i>
+                                      <i className="fa fa-star"></i>
+                                      <i className="fa fa-star"></i>
+                                      <i className="fa fa-star"></i>
+                                  </div>
+                                  <p>7.0</p>
+                              </div>
+                              <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
+                          </div>
+                      </div>
+                  </div>
+                  <div className={styles.productCard}>
+                      <div className={styles.productCardTop}>
+                          <Image src={"/"} className={styles.productImg} fill />
+                      </div>
+                      <div className={styles.productCardBottom}>
+                          <div className={styles.productCartPriceContainer}>
+                              <h2>₦{Number(145999).toLocaleString()}</h2>
+                              <p>In Stock</p>
+                          </div>
+                          <div className={styles.productCardName}>
+                              <h2>Lavender</h2>
+                          </div>
+                          <div className={styles.productCardReview}>
+                              <div className={styles.productCardReviewItem}>
+                                  <div className={styles.productCardStars}>
+                                      <i className="fa fa-star"></i>
+                                      <i className="fa fa-star"></i>
+                                      <i className="fa fa-star"></i>
+                                      <i className="fa fa-star"></i>
+                                      <i className="fa fa-star"></i>
+                                  </div>
+                                  <p>7.0</p>
+                              </div>
+                              <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
+                          </div>
+                      </div>
+                  </div>
                 </div>
             </div>
         </div>
