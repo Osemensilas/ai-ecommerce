@@ -1,5 +1,5 @@
 .header {
-    height: 75px;
+    height: 150px;
     width: 100vw;
 }
 
@@ -8,7 +8,7 @@
 }
 
 .headerTop{
-    height: 100%;
+    height: 50%;
     width: 100%;
     display: flex;
     align-items: center;
@@ -100,4 +100,217 @@
     justify-content: center;
     align-items: center;
     color: var(--background);
+}
+
+.activeUser.hide,
+.visitor.hide{
+    display: none;
+}
+
+.userActive{
+    cursor: pointer;
+}
+
+.headerBottom{
+    height: 50%;
+    width: 100%;
+    background: var(--lightGrey);
+    padding: 0 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:  20px;
+}
+
+.filterForm{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.filterOptions{
+    height: 40px;
+    width: max-content;
+    padding: 0 20px;
+    border-radius: 50px;
+    border: 1px solid var(--grey);
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.filterOptions i{
+    margin-left: 20px;
+}
+
+.filterForm label{
+    color: var(--grey);
+}
+
+.btnNavList{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+
+.btnNavItem button{
+    background: transparent;
+    border: none;
+    font-size: 16px;
+}
+
+.filterContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 900;
+}
+
+.filterContainer.active{
+    display: flex;
+}
+
+.filterContainer::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--text);
+    opacity: 0.5;
+}
+
+.altBack{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--text);
+    opacity: 0.5;
+    z-index: 200;
+    cursor: pointer;
+}
+
+.filterContent{
+    position: relative;
+    height: 60vh;
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    z-index: 999;
+}
+
+.filterContentLeft{
+    height: 100%;
+    width: 20%;
+    background: var(--background);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.filterContentRight{
+    height: 100%;
+    width: 79%;
+    background: var(--background);
+    border-radius: 10px;
+    display: none;
+}
+
+.filterContentRight.active{
+    display: block;
+}
+
+.filterContentLeftBtn{
+    height: max-content;
+    width: 100%;
+    padding: 12px 10px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.filterContentLeftBtn:hover{
+    background: var(--primary);
+    color: var(--background);
+}
+
+.filterContentRightTop{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.filterContentRightTop button{
+    background: transparent;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    outline: none;
+}
+
+.filterContentRightBottom{
+    height: calc(100% - 40px);
+    width: 100%;
+}
+
+.filterContentNavigations{
+    height: max-content;
+    width: 100%;
+    display: none;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
+}
+
+.filterContentNavigations.active{
+    display: grid;
+}
+
+.filterContentNav{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px;
+}
+
+.filterContentNav h3{
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.filterContentNavigationList{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.filterContentNavigationList a{
+    color: var(--grey);
+    font-size: 14px;
 }

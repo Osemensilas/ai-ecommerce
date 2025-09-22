@@ -2,7 +2,6 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Head from "next/head";
-import SpecialOffers from "@/components/SpecialOffers";
 
 export const metadata = {
   title: "E commerce",
@@ -16,10 +15,7 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="fa/fontawesome-free-6.6.0-web/css/all.css" />
       </Head>
       <body>
-        <Header /> 
-        <SpecialOffers />
         {children}
-        <Footer />
       </body>
     </html>
   );

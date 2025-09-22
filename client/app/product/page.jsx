@@ -10,6 +10,7 @@ import SimilarProduct from '@/components/SimilarProduct';
 import { useState } from 'react';
 import Header from '@/components/Header';
 import FAQ from '@/components/Faq';
+import Footer from '@/components/Footer';
 
 const Product = () => {
 
@@ -87,25 +88,19 @@ const Product = () => {
         
         productDescription.classList.remove(styles.active);
     }
+
+    const addToCartClicked = (e) => {
+        const cartBtn = document.querySelector(`.${styles.cartBtnMain}`);
+        const addToCartContainer = document.querySelector(`.${styles.viewCartConatiner}`);
+
+        addToCartContainer.classList.add(styles.show);
+        cartBtn.classList.remove(styles.show);
+    }
     
     return ( 
         <>
         <Header />
         <section id="product">
-            <div className={productstyles.headerBottom}>
-                <form className={productstyles.filterForm}>
-                    <label htmlFor="filter">Filter by Category</label>
-                    <select name="filter" id="filter" className={productstyles.filterOptions}>
-                        <option value="all products">All Products</option>
-                    </select>
-                </form>
-                <ul className={productstyles.btnNavList}>
-                    <li className={productstyles.btnNavItem}><button>Top Rates</button></li>
-                    <li className={productstyles.btnNavItem}><button>New Arrial</button></li>
-                    <li className={productstyles.btnNavItem}><button>Special Deals</button></li>
-                    <li className={productstyles.btnNavItem}><button>Gift Shop</button></li>
-                </ul>
-            </div>
             <div className={productstyles.pageLocation}>
                 <p>Beauty</p>
                 <p><i className="fa fa-angle-right"></i></p>
@@ -164,8 +159,12 @@ const Product = () => {
                             </div>
                         </div>
                         <div className={styles.productContainerRightBottom}>
-                            <form className={styles.submitBtnForm}>
-                                <button><i className="fa fa-shopping-cart"></i>Add to Cart</button>
+                            <form onSubmit={(e) => e.preventDefault()} className={styles.submitBtnForm}>
+                                <button onClick={addToCartClicked} className={`${styles.cartBtnMain} ${styles.show}`}><i className="fa fa-shopping-cart"></i>Add to Cart</button>
+                                <div className={styles.viewCartConatiner}>
+                                    <Link href={"/"}>Continue Shopping</Link>
+                                    <Link href={"/cart"}>Go to Cart</Link>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -345,6 +344,7 @@ const Product = () => {
             </div>
         </section>
         <FAQ />
+        <Footer />
         </>
      );
 }

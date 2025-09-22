@@ -3,65 +3,21 @@
   width: 100vw;
 }
 
-.headerBottom{
-    height: 75;
-    width: 100%;
-    background: var(--lightGrey);
-    padding: 0 80px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap:  20px;
-}
-
-.filterForm{
-    height: max-content;
-    width: max-content;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.filterOptions{
-    height: 40px;
-    width: max-content;
-    padding: 0 20px;
-    border-radius: 50px;
-    border: 1px solid var(--grey);
-    outline: none;
-    font-size: 16px;
-}
-
-.filterForm label{
-    color: var(--grey);
-}
-
-.btnNavList{
-    height: max-content;
-    width: max-content;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    list-style: none;
-}
-
-.btnNavItem button{
-    background: transparent;
-    border: none;
-    font-size: 16px;
-}
-
 .pageLocation{
   height: 75px;
-  width: 100%;
+  width: max-content;
   padding: 0 60px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 5px;
 }
 
-.pageLocation p{
+.pageLocation:last-child{
+  padding: 0;
+}
+
+.pageLocation a,
+.pageLocation i{
   font-size: 16px;
   color: var(--grey);
 }
@@ -69,7 +25,7 @@
 .header{
   height: max-content;
   width: 100%;
-  padding: 20px 0;
+  padding: 5px 0;
   display: flex;
   justify-content: center;
   background: var(--primary);
@@ -135,13 +91,12 @@
   grid-template-columns: repeat(4, 1fr);
   background-color: var(--lightGrey);
   padding: 80px 20px;
-  margin-bottom: 200px;
   row-gap: 30px;
 }
 
 .productCard{
   position: relative;
-  height: 200px;
+  height: max-content;
   width: 175px;
   background-color: var(--background);
 }
@@ -158,13 +113,14 @@
 
 .productCardTop{
   position: relative;
-  height: 60%;
+  height: 120px;
   width: 100%;
 }
 
 .productCardBottom{
   padding: 5px;
-  height: 40%;
+  height: max-content;
+  min-height: 100px;
   width: 100%;
 }
 
@@ -237,23 +193,25 @@
   height: max-content;
   width: 100%;
   background: var(--danger);
-  padding: 20px 20px;
+  padding: 5px 20px;
   margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .recentCategoriesHeader{
   height: max-content;
   width: 100%;
   background: var(--lemon);
-  padding: 20px 20px;
+  padding: 5px 20px;
   margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 .otherCategoriesHeader h2,
 .recentCategoriesHeader h2{
-  font-size: 25px;
+  font-size: 20px;
   color: var(--background);
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .categoryContent{
@@ -301,12 +259,16 @@
 .priceRangeForm{
   height: max-content;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin: 20px 0;
 }
 
 .priceRangeForm input{
   width: 100%;
   background: var(--orange);
+  height: 1px;
 }
 
 .rangeContainer{
@@ -315,6 +277,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 10px;
 }
 
 .rangeContainer input{
@@ -337,7 +300,7 @@
 .priceRangeForm input[type=range] {
   -webkit-appearance: none; /* remove default styling */
   width: 100%;
-  height: 6px;
+  height: 2px;
   border-radius: 5px;
   background: var(--orange); /* change track color */
   outline: none;
@@ -374,6 +337,44 @@
   border-radius: 5px;
   background: var(--orange);
 }
+
+.sliderWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.range {
+  -webkit-appearance: none;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: transparent; /* remove default background */
+  pointer-events: none; /* so only thumbs are clickable */
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  pointer-events: auto;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--orange);
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.range::-moz-range-thumb {
+  pointer-events: auto;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--orange);
+  cursor: pointer;
+  border: 2px solid white;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
 
 
 .categoryFilterContainer{
@@ -416,4 +417,79 @@
 .categoryFilterLabel label{
   font-size: 17px;
   color: var(--grey);
+}
+
+.hide{
+  display: none;
+}
+
+.catHeading.active{
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.navMenuBottomLine.active{
+  height: 2px;
+  width: 100%;
+  background: var(--primary);
+}
+
+.navMenuMainContentContainer{
+  margin-left: 10px;
+}
+
+.paginationContainer{
+  height: max-content;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--lightGrey);
+  padding: 5px 0;
+}
+
+.pagination{
+  height: max-content;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+}
+
+.btnLi,
+.pageLi{
+  height: max-content;
+  width: max-content;
+}
+
+.btnLi button{
+  padding: 10px;
+  background: var(--primary);
+  color: var(--background);
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.pageLi button{
+  height: 25px;
+  width: 25px;
+  background: transparent;
+  border: 1px solid var(--grey);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.pageLi button.currentPage{
+  background: var(--primary);
+  color: var(--background);
+  border: none;
 }
