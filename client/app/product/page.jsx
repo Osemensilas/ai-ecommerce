@@ -15,10 +15,10 @@ import Footer from '@/components/Footer';
 const Product = () => {
 
     const [quantity, setQuantity] = useState(1);
-    const [image, setImage] = useState('/product1.jpg');
-    const [image1, setImage1] = useState('/product1.jpg');
-    const [image2, setImage2] = useState('/product2.jpg');
-    const [image3, setImage3] = useState('/product3.jpg');
+    const [image, setImage] = useState('/jacket.png');
+    const [image1, setImage1] = useState('/jean.png');
+    const [image2, setImage2] = useState('/jacket.png');
+    const [image3, setImage3] = useState('/menblack.png');
 
     const image1Clicked = () => {
         setImage(image1);
@@ -115,7 +115,7 @@ const Product = () => {
                     </div>
                     <div className={styles.productContainerRight}>
                         <div className={styles.productContainerRightTop}>
-                            <div className={styles.productDescriptionHeader}>
+                            <div className={styles.productDescriptionHeader}  > 
                                 <h2>Flor Green</h2>
                                 <p>-40%</p>
                             </div>

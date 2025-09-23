@@ -10,23 +10,23 @@ const banners = [
     image: "/ahiaglobal1.jpg",
     alt: "Special Deals Banner 1",
   },
-//   {
-//     id: 2,
-//     image: "https://via.placeholder.com/1200x400.png?text=Banner+2",
-//     alt: "Special Deals Banner 2",
-//   },
-//   {
-//     id: 3,
-//     image: "https://via.placeholder.com/1200x400.png?text=Banner+3",
-//     alt: "Special Deals Banner 3",
-//   },
+  {
+    id: 2,
+    image: "AhiaGlobal2.png",
+    alt: "Special Deals Banner 2",
+  },
+  {
+    id: 3,
+    image: "AhiaGlobal.png",
+    alt: "Special Deals Banner 3",
+  },
 ];
 
 export default function BannerCarousel() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 100,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
