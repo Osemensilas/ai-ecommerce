@@ -4,12 +4,17 @@
 }
 
 .pageLocation{
-  height: 75px;
+  height: max-content;
   width: max-content;
-  padding: 0 60px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
+}
+
+.pageLocation p{
+  font-size: 11px;
+  color: var(--grey);
 }
 
 .pageLocation:last-child{
@@ -47,8 +52,9 @@
 .productsLeft{
   height: max-content;
   width: 25%;
-  margin-top: 100px;
+  margin-top: 15px;
   padding: 0 20px 0 60px;
+  border-radius: 10px;
 }
 
 .productsRight{
@@ -67,7 +73,7 @@
 }
 
 .productsLinks{
-  height: 75px;
+  height: 70px;
   width: 100%;
   background: var(--lightGrey);
   display: flex;
@@ -75,6 +81,7 @@
   align-items: center;
   gap: 10px;
   padding: 0 20px;
+  border-radius: 10px;
 }
 
 .productsLinks button{
@@ -89,10 +96,12 @@
   height: max-content;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(4, minmax(160px, 1fr));
   background-color: var(--lightGrey);
-  padding: 80px 20px;
+  padding: 20px 20px;
   row-gap: 30px;
+  justify-items: center;
+  border-radius: 10px;
 }
 
 .productCard{
@@ -100,6 +109,7 @@
   height: max-content;
   width: 175px;
   background-color: var(--background);
+  border-radius: 10px;
 }
 
 .productCard h2{
@@ -116,17 +126,21 @@
   position: relative;
   height: 120px;
   width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .productCardBottom{
-  padding: 5px;
-  height: 110px;
+  padding: 10px 5px 5px 5px;
+  height: max-content;
   width: 100%;
 }
 
 .productImg{
   position: absolute;
-  object-fit: cover;
+  object-fit: contain;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .productCartPriceContainer,
@@ -140,7 +154,7 @@
 }
 
 .productCardName{
-  height: max-content;
+  height: 40px;
   width: 100%;
   margin-bottom: 7px;
 }
@@ -253,8 +267,9 @@
 .productsFilterContainer{
   height: max-content;
   width: 100%;
-  padding: 80px 20px;
+  padding: 20px 20px;
   background: var(--lightGrey);
+  border-radius: 10px;
 }
 
 .productsFilterContainer h2{
@@ -515,6 +530,9 @@
   .navMenuMainContentContainer a {
     font-size: 11px;
   }
+  .productsRightBottom {
+    padding: 20px 5px;
+  }
 }
 
 @media screen and (max-width: 1000px) and (min-width: 768px) {
@@ -558,6 +576,10 @@
   }
   .navMenuMainContentContainer a {
     font-size: 11px;
+  }
+  .productsRightBottom {
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+    padding: 80px 5px;
   }
 }
 
@@ -644,5 +666,8 @@
     cursor: pointer;
     display: block;
     font-size: 20px;
+  }
+  .productsRightBottom {
+    grid-template-columns: repeat(2, minmax(160px, 1fr));
   }
 }

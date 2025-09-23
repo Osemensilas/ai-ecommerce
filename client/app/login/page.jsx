@@ -72,14 +72,16 @@ const Login = () => {
                                     <i className={`fa ${showPassword ? "fa-eye-slash" : "fa-eye"}`}></i>
                                 </button>
                             </div>
-                            <div className={styles.forget}>
-                                <Link href="/forget-password">Forget Password?</Link>
-                            </div>
                             <div className={styles.formSubmitBtnContainer}>
                                 <button type="submit" onClick={formSubmitted} className={styles.formSubmitBtn}>Login</button>
                             </div>
-                            <div className={styles.formNewUser}>
-                                Are you new? <Link href={"/signup"}>Create Account</Link>
+                            <div className={styles.linksContainer}>
+                                <div className={styles.formNewUser}>
+                                    Are you new? <Link href={"/signup"}>Create Account</Link>
+                                </div>
+                                <div className={styles.forget}>
+                                    <Link href="/forget-password">Forget Password?</Link>
+                                </div>
                             </div>
                         </div>
                         <p>or</p>

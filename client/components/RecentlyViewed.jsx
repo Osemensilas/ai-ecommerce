@@ -14,7 +14,7 @@ const RecentlyViewed = () => {
                     <div className={styles.ccContainer}>
                         <div className={styles.productCard}>
                             <div className={styles.productCardTop}>
-                                <Image src={"/"} className={styles.productImg} fill />
+                                <Image src={"/"} className={styles.productImg} alt="product Image" fill />
                             </div>
                             <div className={styles.productCardBottom}>
                                 <div className={styles.productCartPriceContainer}>
@@ -41,7 +41,7 @@ const RecentlyViewed = () => {
                         </div>
                         <div className={styles.productCard}>
                             <div className={styles.productCardTop}>
-                                <Image src={"/"} className={styles.productImg} fill />
+                                <Image src={"/"} className={styles.productImg} alt="product Image" fill />
                             </div>
                             <div className={styles.productCardBottom}>
                                 <div className={styles.productCartPriceContainer}>
@@ -68,7 +68,7 @@ const RecentlyViewed = () => {
                         </div>
                         <div className={styles.productCard}>
                             <div className={styles.productCardTop}>
-                                <Image src={"/"} className={styles.productImg} fill />
+                                <Image src={"/"} className={styles.productImg} alt="product Image" fill />
                             </div>
                             <div className={styles.productCardBottom}>
                                 <div className={styles.productCartPriceContainer}>
@@ -95,7 +95,7 @@ const RecentlyViewed = () => {
                         </div>
                         <div className={styles.productCard}>
                             <div className={styles.productCardTop}>
-                                <Image src={"/"} className={styles.productImg} fill />
+                                <Image src={"/"} className={styles.productImg} alt="product Image" fill />
                             </div>
                             <div className={styles.productCardBottom}>
                                 <div className={styles.productCartPriceContainer}>
@@ -122,7 +122,7 @@ const RecentlyViewed = () => {
                         </div>
                         <div className={styles.productCard}>
                             <div className={styles.productCardTop}>
-                                <Image src={"/"} className={styles.productImg} fill />
+                                <Image src={"/"} className={styles.productImg} alt="product Image" fill />
                             </div>
                             <div className={styles.productCardBottom}>
                                 <div className={styles.productCartPriceContainer}>

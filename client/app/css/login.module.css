@@ -7,12 +7,12 @@
 }
 
 .signinBottom{
-    height: 100px;
+    height: max-content;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 80px;
+    padding: 0 20px;
 }
 
 .signinForm,
@@ -23,7 +23,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    row-gap: 20px;
+    row-gap: 10px;
 }
 
 .resetForm{
@@ -40,13 +40,13 @@
 
 .formLogoContainer{
     position: relative;
-    height: 75px;
-    width: 120px;
+    height: 50px;
+    width: 100px;
 }
 
 .signinForm h2,
 .resetForm h2{
-    font-size: 20px;
+    font-size: 16px;
     color: var(--primary);
     font-weight: 700;
     margin: 10px 0;
@@ -109,7 +109,7 @@
 
 .forget{
     height: max-content;
-    width: 100%;
+    width: max-content;
     padding: 10px;
     display: flex;
     justify-content: flex-end;
@@ -123,7 +123,7 @@
 .formSubmitBtnContainer{
     height: max-content;
     width: 100%;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 .formSubmitBtn{
@@ -258,5 +258,14 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 40px;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.linksContainer{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
