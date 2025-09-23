@@ -167,7 +167,7 @@
 .filterContainer{
     position: fixed;
     top: 0;
-    left: 0;
+    left: -15; 
     height: 100vh;
     width: 100vw;
     display: none;
@@ -280,9 +280,11 @@
     height: max-content;
     width: 100%;
     display: none;
-    grid-template-columns: repeat(4, 1fr);
-    row-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
 }
+
+
 
 .filterContentNavigations.active{
     display: grid;
@@ -313,4 +315,11 @@
 .filterContentNavigationList a{
     color: var(--grey);
     font-size: 14px;
+}
+
+
+@media (min-width: 768px) {
+  .filterContentNavigations {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  }
 }
