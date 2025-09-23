@@ -15,6 +15,7 @@ const Signup = () => {
     const [showPassword2, setShowPassword2] = useState(false);
     const [formData, setFormData] = useState({
         'email': '',
+        'username': '',
         'password': '',
         'password2': '',
     })
@@ -69,6 +70,10 @@ const Signup = () => {
                     <div className={styles.formMiddle}>
                         <div className={`${styles.formError} ${error ? styles.active : ""}`}>
                             {error}
+                        </div>
+                        <div className={styles.formDetails}>
+                            <label htmlFor="username">Username</label>
+                            <input type="text" id="username" name="username" value={formData.username} onChange={handleChanged} className={styles.detail} placeholder="Enter your username" />
                         </div>
                         <div className={styles.formDetails}>
                             <label htmlFor="email">Email</label>

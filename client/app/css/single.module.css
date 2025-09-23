@@ -3,7 +3,7 @@
 .productContainer{
     height: max-content;
     width: 100vw;
-    padding: 40px 80px;
+    padding: 20px 80px;
     background: var(--lightGrey);
 }
 
@@ -17,18 +17,18 @@
 .productContainerLeft{
     height: max-content;
     width: 50%;
-    padding-right: 40px;
+    padding-right: 10px;
 }
 
 .productContainerRight{
     height: max-content;
     width: 50%;
-    padding-left: 40px;
+    padding-left: 10px;
 }
 
 .productConatinerImage{
     position: relative;
-    height: 600px;
+    height: 50vh;
     width: 100%;
     background: var(--background);
     border-radius: 10px;
@@ -50,7 +50,7 @@
     width: 100%;
     background: var(--background);
     padding: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .productDescriptionHeader{
@@ -175,7 +175,7 @@
 .productContainerBottom{
     height: max-content;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .productContainerBottomImages{

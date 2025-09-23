@@ -11,6 +11,8 @@ import { usePathname, useRouter } from "next/navigation";
 
 const Header = () => {
 
+    const pathName = usePathname();
+
     const [userPresent, setUserPresent] = useState(false);
 
     const filterClicked = () => {
@@ -65,10 +67,12 @@ const Header = () => {
 
     return (
         <>
-            <header id="header" className={styles.header}>
+            <header id="header" className={`${styles.header}
+            ${pathName === '/product' ? styles.cart : ""}
+            `}>
                 <div className={styles.headerTop}>
                     <Link href={"/"} className="logoLink">
-                        <Image src="/logo.jpg" fill className={styles.logo} alt="" />
+                        <Image src="/logo.jpg" fill className={styles.logo} alt="logo" />
                     </Link>
                     <form className={styles.searchForm}>
                         <input type="text" className={styles.searchInput} placeholder="Search Product (e.g., Belts, Necklaces, Smart Tvs, ...)" />
@@ -112,7 +116,9 @@ const Header = () => {
                         </li>
                     </ul>
                 </div>
-                <div className={styles.headerBottom}>
+                <div className={`${styles.headerBottom}
+                ${pathName === '/product' ? styles.hide : ""}
+                `}>
                     <div className={styles.filterForm}>
                         <label>Filter by Category</label>
                         <button onClick={filterClicked} className={styles.filterOptions}>

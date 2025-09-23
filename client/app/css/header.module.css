@@ -3,12 +3,16 @@
     width: 100vw;
 }
 
+.header.cart{
+    height: 75px;
+}
+
 .header.hide{
     display: none;
 }
 
 .headerTop{
-    height: 50%;
+    height: 75px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -103,7 +107,8 @@
 }
 
 .activeUser.hide,
-.visitor.hide{
+.visitor.hide,
+.headerBottom.hide{
     display: none;
 }
 

@@ -112,6 +112,20 @@ const Product = () => {
                         <div className={styles.productConatinerImage}>
                             <Image src={image} alt="product image" className={styles.productImage} fill />
                         </div>
+                        <div className={styles.productContainerBottom}>
+                            <div className={styles.productContainerBottomImages}>
+                                <div className={styles.productContainerBottomImage}>
+                                    <Image src={image1} onClick={image1Clicked} alt="product image" className={styles.productImage} fill />
+                                </div>
+                                <div className={styles.productContainerBottomImage}>
+                                    <Image src={image2} onClick={image2Clicked} alt="product image" className={styles.productImage} fill />
+                                </div>
+                                <div className={styles.productContainerBottomImage}>
+                                    <Image src={image3} onClick={image3Clicked} alt="product image" className={styles.productImage} fill />
+                                </div>
+                            </div> 
+                            <button onClick={seeProductInfo} style={{border: 'none', cursor: 'pointer', marginTop: '20px'}}><h2>Product Information</h2></button>
+                        </div>
                     </div>
                     <div className={styles.productContainerRight}>
                         <div className={styles.productContainerRightTop}>
@@ -168,20 +182,6 @@ const Product = () => {
                             </form>
                         </div>
                     </div>
-                </div>
-                <div className={styles.productContainerBottom}>
-                    <div className={styles.productContainerBottomImages}>
-                        <div className={styles.productContainerBottomImage}>
-                            <Image src={image1} onClick={image1Clicked} alt="product image" className={styles.productImage} fill />
-                        </div>
-                        <div className={styles.productContainerBottomImage}>
-                            <Image src={image2} onClick={image2Clicked} alt="product image" className={styles.productImage} fill />
-                        </div>
-                        <div className={styles.productContainerBottomImage}>
-                            <Image src={image3} onClick={image3Clicked} alt="product image" className={styles.productImage} fill />
-                        </div>
-                    </div> 
-                    <button onClick={seeProductInfo} style={{border: 'none', cursor: 'pointer', marginTop: '20px'}}><h2>Product Information</h2></button>
                 </div>
                 <div className={styles.customerFeedbackContainer}>
                     <header className={styles.customerFeedbackHeader}>
