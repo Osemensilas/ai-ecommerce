@@ -685,7 +685,7 @@ const products = [
                         <input type="checkbox" name="" id="samedaydelivery" />
                         <label htmlFor="samedaydelivery">Same-Day Delivery</label>
                     </div>
-                </div>
+                </div> 
             </div>
         </div>
         <div className={styles.productsRight}>
