@@ -51,6 +51,7 @@
     background: var(--background);
     padding: 20px;
     margin-bottom: 20px;
+    border-radius: 10px;
 }
 
 .productDescriptionHeader{
@@ -199,7 +200,7 @@
 
 .productImage{
     position: absolute;
-    object-fit: cover;
+    object-fit: fill;
     border-radius: 10px;
 }
 

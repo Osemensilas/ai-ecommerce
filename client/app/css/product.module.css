@@ -6,7 +6,7 @@
 .pageLocation{
   height: max-content;
   width: max-content;
-  padding: 10px 20px;
+  padding: 5px 20px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -37,7 +37,7 @@
 }
 
 .header h2{
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 400;
   color: var(--background);
 }
@@ -259,7 +259,7 @@
 
 .advertImg{
   position: absolute;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 /*Fillter Sections*/
@@ -589,7 +589,7 @@
   }
   .productsRight {
     width: 100%;
-    padding-right: 0;
+    padding: 0 5px;
   }
   .productsRightTop {
     height: max-content;
@@ -599,6 +599,7 @@
   }
   .navMenuMainContentContainer {
       margin-left: 0;
+      width: max-content;
   }
   .productsRightBottom {
     justify-items: center;
@@ -609,13 +610,21 @@
   }
   .productsLinks {
     height: max-content;
-    flex-direction: column;
     align-items: flex-start;
-    padding: 20px;
+    padding: 10px;
+    width: 70%;
+    overflow-x: auto;
+  }
+  .productsLinks a{
+    font-size: 11px;
+    display: flex;
+  }
+  .navMenuLinkMainContainer{
+    height: max-content;
     width: max-content;
   }
   .pageLocation {
-    padding: 0 20px;
+    padding: 0 10px;
   }
   .products {
     margin-bottom: 50px;
@@ -625,6 +634,7 @@
   }
   .ccContainer {
     width: max-content;
+    gap: 10px;
   }
   .advertContainer {
     padding: 0 10px;
@@ -636,11 +646,13 @@
     align-items: flex-start;
     background: var(--lightGrey);
     justify-content: space-between;
+    margin: 5px 0;
+    border-radius: 5px;
   }
   .filterBtnNew{
-    margin: 20px;
+    margin: 10px;
     border: none;
-    font-size: 24px;
+    font-size: 16px;
     background: transparent;
   }
   .productsLeft.active{
@@ -669,5 +681,6 @@
   }
   .productsRightBottom {
     grid-template-columns: repeat(2, minmax(160px, 1fr));
+    padding: 20px 10px;
   }
 }

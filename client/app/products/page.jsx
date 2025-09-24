@@ -694,12 +694,14 @@ const products = [
                 <div className={styles.productsLinks}>
                 {navMenu.map((item, index) => (
                     <div key={index} className={styles.navMenuMainContentContainer}>
-                    <Link
-                        href={item.url}
-                        className={`${styles.catHeading} ${item.type === type ? styles.active : ""}`}
-                    >
-                        {item.item}
-                    </Link>
+                    <div className={styles.navMenuLinkMainContainer}>
+                      <Link
+                          href={item.url}
+                          className={`${styles.catHeading} ${item.type === type ? styles.active : ""}`}
+                      >
+                          {item.item}
+                      </Link>
+                    </div>
                     <div
                         className={`${styles.navMenuBottomLine} ${item.type === type ? styles.active : ""}`}
                     ></div>
