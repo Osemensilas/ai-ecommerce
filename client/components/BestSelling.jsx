@@ -2,7 +2,7 @@
 
 import { ShoppingCart } from "lucide-react";
 import Slider from "react-slick";
-import { Card, CardContent, CardMedia, Typography, Button, Rating } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography, Button, Rating, useMediaQuery } from "@mui/material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Grid } from "@mui/material";
@@ -27,6 +27,8 @@ const products = [
 ];
 
 export default function BestSelling() {
+    const isMobile = useMediaQuery("(max-width:768px)");
+
     // const settings = {
     //     dots: true,
     //     infinite: true,
@@ -42,7 +44,7 @@ export default function BestSelling() {
     // };
 
     return (
-        <div style={{ padding: "3rem", backgroundColor: "", marginTop: "-5rem" }}>
+        <div style={{ padding: "3rem", backgroundColor: "", marginTop: isMobile ? "-1rem" : "-5rem" }}>
 
             <Card sx={{
                 paddingRight: "1rem", borderRadius: 3, boxShadow: 3, width: "100%", display: "flex", alignItems: "center",
