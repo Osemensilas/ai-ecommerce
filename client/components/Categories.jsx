@@ -1,5 +1,5 @@
 "use client";
-import { Card, CardContent, CardMedia, Typography, Grid, Box } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography, Grid, Box, useMediaQuery } from "@mui/material";
 import Link from "next/link";
 
 const categories = [
@@ -18,14 +18,17 @@ const categories = [
 ];
 
 export default function Categories() {
+
+    const isMobile = useMediaQuery("(max-width:768px)");
+
   return (
-    <Box sx={{ backgroundColor: "#f5f5f5", p: 3, borderRadius: 2 }}>
+    <Box sx={{ backgroundColor: "#f5f5f5", p: isMobile ? 2 : 3, borderRadius: 2 }}>
       <Grid
         container
         spacing={0}
         sx={{
           display: "grid",
-          gridTemplateColumns: "repeat(6, 1fr)", // ✅ force 5 per row
+          gridTemplateColumns: isMobile ? "repeat(2, 1fr)" :  "repeat(6, 1fr)", // ✅ force 5 per row
           gap: 3,
           //   width: "100%",
         }}

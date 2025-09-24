@@ -169,7 +169,7 @@ const Header = () => {
                                     onClick={filterClicked}
                                     style={{
                                         height: "2rem",
-                                        width: "30vw",
+                                        width: "20vw",
                                         display: "flex",
                                         justifyContent: "space-around",
                                         alignItems: "center",
@@ -178,9 +178,9 @@ const Header = () => {
                                         transition: "border-color 0.5s ease", // smooth color change
                                     }}
                                 >
-                                    <span>
-                                        All Products
-                                    </span>
+                                    <Typography>
+                                        All 
+                                    </Typography>
                                     <i className="fa fa-angle-down"></i>
                                 </button>
                             </div>
@@ -203,16 +203,28 @@ const Header = () => {
                                 }}
                             >
                                 <li style={{ flex: "0 0 auto" }}>
-                                    <Link href="/products?category=top-rated">Top Rates</Link>
+                                    <Link href="/products?category=top-rated"> <Typography> Men </Typography> </Link>
                                 </li>
                                 <li style={{ flex: "0 0 auto" }}>
-                                    <Link href="/products?category=new-arrival">New Arrival</Link>
+                                    <Link href="/products?category=new-arrival"><Typography> Women </Typography></Link>
                                 </li>
                                 <li style={{ flex: "0 0 auto" }}>
-                                    <Link href="/products?category=special-deal">Special Deals</Link>
+                                    <Link href="/products?category=special-deal"> <Typography> Babies </Typography> </Link>
                                 </li>
                                 <li style={{ flex: "0 0 auto" }}>
-                                    <Link href="/products?category=gift-shop">Gift Shop</Link>
+                                    <Link href="/products?category=gift-shop"> <Typography>Sports</Typography> </Link>
+                                </li>
+                                  <li style={{ flex: "0 0 auto" }}>
+                                    <Link href="/products?category=gift-shop"> <Typography>Automotive</Typography> </Link>
+                                </li>
+                                  <li style={{ flex: "0 0 auto" }}>
+                                    <Link href="/products?category=gift-shop"> <Typography>Craft</Typography> </Link>
+                                </li>
+                                  <li style={{ flex: "0 0 auto" }}>
+                                    <Link href="/products?category=gift-shop"> <Typography>Bags</Typography> </Link>
+                                </li>
+                                  <li style={{ flex: "0 0 auto" }}>
+                                    <Link href="/products?category=gift-shop"> <Typography>Toy</Typography> </Link>
                                 </li>
                             </ul>
 
