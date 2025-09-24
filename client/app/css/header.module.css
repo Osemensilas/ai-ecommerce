@@ -117,10 +117,10 @@
 }
 
 .headerBottom{
-    height: 50%;
+    height: 30%;
     width: 100%;
     background: var(--lightGrey);
-    padding: 0 80px;
+    padding: 0;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -136,13 +136,13 @@
 }
 
 .filterOptions{
-    height: 40px;
+    height: 20px;
     width: max-content;
     padding: 0 20px;
     border-radius: 50px;
     border: 1px solid var(--grey);
     outline: none;
-    font-size: 16px;
+    font-size: 1rem;
     cursor: pointer;
 }
 
@@ -327,4 +327,38 @@
   .filterContentNavigations {
     grid-template-columns: repeat(4, 1fr); /* 4 columns */
   }
+
+  .filterOptions{
+    height: 40px;
+    width: max-content;
+    padding: 0 20px;
+    border-radius: 50px;
+    border: 1px solid var(--grey);
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.headerBottom{
+    height: 50%;
+    width: 100%;
+    background: var(--lightGrey);
+    padding: 0 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap:  20px;
+}
+
+.filterOptions{
+    height: 50px;
+    width: max-content;
+    padding: 0 20px;
+    border-radius: 50px;
+    border: 1px solid var(--grey);
+    outline: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 }

@@ -10,6 +10,40 @@ import { usePathname, useRouter } from "next/navigation";
 
 
 const Header = () => {
+    const [borderColor, setBorderColor] = useState("#4cc933ff");
+
+    useEffect(() => {
+        const colors = [
+            "#4cc933ff", // green
+            "#ff5733",   // orange-red
+            "#33c9ff",   // sky blue
+            "#ff33d1",   // pink-magenta
+            "#f5b700",   // yellow-gold
+            "#9b59b6",   // purple
+            "#2ecc71",   // emerald green
+            "#e74c3c",   // red
+            "#1abc9c",   // teal
+            "#3498db",   // blue
+            "#f39c12",   // amber
+            "#8e44ad",   // deep purple
+            "#16a085",   // dark teal
+            "#d35400",   // burnt orange
+            "#c0392b",   // crimson
+            "#27ae60",   // strong green
+            "#2980b9",   // navy blue
+        ];
+
+
+        const interval = setInterval(() => {
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            setBorderColor(randomColor);
+        }, 1000); // changes every 1 second
+
+        return () => clearInterval(interval);
+    }, []);
+
+
+
     const isMobile = useMediaQuery("(max-width:768px)");
 
     const [userPresent, setUserPresent] = useState(false);
@@ -72,7 +106,7 @@ const Header = () => {
 
                     <header id="header" style={{ background: "", padding: 0, margin: 0 }} >
                         <div className={styles.headerTop} style={{ background: "", padding: 0, paddingRight: "2rem" }} >
-                            <Link href={"/"} className="logoLink" style={{ width: "40%" }} >
+                            <Link href={"/"} className="logoLink" style={{ width: "40%", marginLeft: "1rem " }} >
                                 <Image src="/logo.jpg" fill alt="" />
                             </Link>
                             <form className={styles.searchForm} style={{ width: "80%", background: "", textAlign: "center", marginLeft: "0.5rem" }} >
@@ -131,32 +165,73 @@ const Header = () => {
                         </div> */}
                         <div className={styles.headerBottom}>
                             <div className={styles.filterForm}>
-                                <button onClick={filterClicked} className={styles.filterOptions}>
-                                    All Products <i className="fa fa-angle-down"></i>
+                                <button
+                                    onClick={filterClicked}
+                                    style={{
+                                        height: "2rem",
+                                        width: "30vw",
+                                        display: "flex",
+                                        justifyContent: "space-around",
+                                        alignItems: "center",
+                                        border: `3px solid ${borderColor}`,
+                                        borderRadius: "3rem",
+                                        transition: "border-color 0.5s ease", // smooth color change
+                                    }}
+                                >
+                                    <span>
+                                        All Products
+                                    </span>
+                                    <i className="fa fa-angle-down"></i>
                                 </button>
                             </div>
-                            <ul className={styles.btnNavList}>
-                                <li className={styles.btnNavItem}><Link href="/products?category=top-rated">Top Rates</Link></li>
-                                <li className={styles.btnNavItem}><Link href="/products?category=new-arrival">New Arival</Link></li>
-                                <li className={styles.btnNavItem}><Link href="/products?category=special-deal">Special Deals</Link></li>
-                                <li className={styles.btnNavItem}><Link href="/products?category=gift-shop">Gift Shop</Link></li>
+                            <ul
+                                style={{
+                                    display: "flex",
+                                    flexWrap: "nowrap",
+                                    overflowX: "auto",
+                                    overflowY: "hidden",
+                                    listStyle: "none",
+                                    padding: 0,
+                                    margin: 0,
+                                    gap: "16px",
+                                    // borderLeft: "2px solid navy",
+                                    // borderRight: "2px solid green",
+
+                                    scrollbarWidth: "thin",
+                                    scrollbarColor: "#a5d0d9ff transparent",
+
+                                }}
+                            >
+                                <li style={{ flex: "0 0 auto" }}>
+                                    <Link href="/products?category=top-rated">Top Rates</Link>
+                                </li>
+                                <li style={{ flex: "0 0 auto" }}>
+                                    <Link href="/products?category=new-arrival">New Arrival</Link>
+                                </li>
+                                <li style={{ flex: "0 0 auto" }}>
+                                    <Link href="/products?category=special-deal">Special Deals</Link>
+                                </li>
+                                <li style={{ flex: "0 0 auto" }}>
+                                    <Link href="/products?category=gift-shop">Gift Shop</Link>
+                                </li>
                             </ul>
+
                         </div>
                     </header>
-                    <div className={styles.filterContainer} style={{background:""}} >
+                    <div className={styles.filterContainer} style={{ background: "" }} >
                         <div className={styles.altBack} onClick={closeNavs}></div>
-                        <div className={styles.filterContent} style={{background:""}} >
-                            <div className={styles.filterContentLeft} style={{background:"", width:"100%"}} >
+                        <div className={styles.filterContent} style={{ background: "" }} >
+                            <div className={styles.filterContentLeft} style={{ background: "", width: "100%" }} >
                                 <button onMouseEnter={mouseEntered} value="daily" className={styles.filterContentLeftBtn}>
-                                    Daily Essentials 
+                                    Daily Essentials
                                     {/* <i className="fa fa-angle-right"></i> */}
                                 </button>
                                 <button onMouseEnter={mouseEntered} value="electronics" className={styles.filterContentLeftBtn}>
-                                    Electronics & Tech 
+                                    Electronics & Tech
                                     {/* <i className="fa fa-angle-right"></i> */}
                                 </button>
                                 <button onMouseEnter={mouseEntered} value="fashion" className={styles.filterContentLeftBtn}>
-                                    Fashion & Lifestyle 
+                                    Fashion & Lifestyle
                                     <i className="fa fa-angle-right"></i>
                                 </button>
                                 <button onMouseEnter={mouseEntered} value="home" className={styles.filterContentLeftBtn}>
@@ -172,7 +247,7 @@ const Header = () => {
                                     Services <i className="fa fa-angle-right"></i>
                                 </button>
                             </div>
-                             <div className={styles.filterContentRight} style={{position:"absolute", zIndex:20, background:"white", width:"85vw" ,  height:"100%", overflowY:"auto" }} >
+                            <div className={styles.filterContentRight} style={{ position: "absolute", zIndex: 20, background: "white", width: "85vw", height: "100%", overflowY: "auto" }} >
                                 <div className={styles.filterContentRightTop}>
                                     <button onClick={cancelNav}><i className="fa fa-times"></i></button>
                                 </div>
@@ -491,7 +566,9 @@ const Header = () => {
                         <div className={styles.headerBottom}>
                             <div className={styles.filterForm}>
                                 <label>Filter by Category</label>
-                                <button onClick={filterClicked} className={styles.filterOptions}>
+                                <button onClick={filterClicked} style={{
+                                    border: `3px solid ${borderColor}`,
+                                }} className={styles.filterOptions}>
                                     All Products <i className="fa fa-angle-down"></i>
                                 </button>
                             </div>
