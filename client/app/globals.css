@@ -176,6 +176,13 @@ input{
     display: none;
 }
 
+@media only screen and (max-width: 1280px) and (min-width: 1001px){
+    .recentlyViewedContainer, 
+    .similarProductsContainer {
+        padding: 0;
+    }
+}
+
 @media only screen and (max-width: 1000px) and (min-width: 768px){
     .recentlyViewedContainer, .similarProductsContainer {
         padding: 0 10px;

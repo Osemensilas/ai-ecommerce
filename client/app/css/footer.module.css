@@ -167,6 +167,36 @@
     width: 50px;
 }
 
+@media only screen and (max-width: 1280px) and (min-width: 1001px){
+    .footer {
+        padding: 20px 20px;
+    }
+    .footerTop {
+        flex-wrap: wrap;
+    }
+    .footerTopLeft {
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 768px){
+    .footer {
+        padding: 20px 20px;
+    }
+    .footerTop {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    .footerTopMiddle {
+        width: 100%;
+        justify-content: space-between;
+    }
+    .footerTopLeft {
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 767px){
     .footer {
         padding: 20px 20px;
