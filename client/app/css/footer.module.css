@@ -166,3 +166,28 @@
     height: 50px;
     width: 50px;
 }
+
+@media only screen and (max-width: 767px){
+    .footer {
+        padding: 20px 20px;
+    }
+    .footerTop {
+        flex-direction: column;
+    }
+    .footerForm {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .footerFormInputs button {
+        left: 70%;
+    }
+    .footerTopMiddle {
+        flex-direction: column;
+    }
+    .footerBottom {
+        flex-direction: column;
+    }
+    .footerBottomRight {
+        margin-top: 20px;
+    }
+}
