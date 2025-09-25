@@ -2,10 +2,11 @@
 
 import { ShoppingCart } from "lucide-react";
 import Slider from "react-slick";
-import { Card, CardContent, CardMedia, Typography, Button, Rating } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography, Button, Rating, useMediaQuery } from "@mui/material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Grid } from "@mui/material";
+import TopSellerMobile from "./TopSellingMobile"
 import Adds from "./Adds";
 
 const products = [
@@ -23,6 +24,8 @@ const products = [
 ];
 
 export default function TopSeller() {
+    const isMobile = useMediaQuery("(max-width:768px)");
+
     // const settings = {
     //     dots: true,
     //     infinite: true,
@@ -39,6 +42,11 @@ export default function TopSeller() {
 
     return (
         <>
+        {isMobile ? 
+    <TopSellerMobile />
+    :
+
+    <>
         <Adds />
             <div style={{ padding: "3rem", backgroundColor: "", marginTop: "-2rem" }}>
 
@@ -125,6 +133,8 @@ export default function TopSeller() {
                     ))}
                 </Grid>
             </div>
+            </>
+    }
         </>
     );
 }
