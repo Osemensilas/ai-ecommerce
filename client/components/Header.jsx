@@ -375,19 +375,19 @@ const Header = () => {
                                         <div className={styles.filterContentNav}>
                                             <h3>Women's Fashion</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=women's fashion&type=clothing&sex=female" onClick={removeCover}>Clothing</Link>
-                                                <Link href="/products?category=women's fashion&type=shoes&sex=female" onClick={removeCover}>Shoes</Link>
-                                                <Link href="/products?category=women's fashion&type=jewery&sex=female" onClick={removeCover}>Jewery</Link>
-                                                <Link href="/products?category=women's fashion&type=watches&sex=female" onClick={removeCover}>Watches</Link>
+                                                <Link href="/products?category=womens fashion&type=clothing&sex=female" onClick={removeCover}>Clothing</Link>
+                                                <Link href="/products?category=womens fashion&type=shoes&sex=female" onClick={removeCover}>Shoes</Link>
+                                                <Link href="/products?category=womens fashion&type=jewery&sex=female" onClick={removeCover}>Jewery</Link>
+                                                <Link href="/products?category=womens fashion&type=watches&sex=female" onClick={removeCover}>Watches</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Men's Fahion</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=men's fashion&type=clothing&sex=male" onClick={removeCover}>Clothing</Link>
-                                                <Link href="/products?category=men's fashion&type=shoes&sex=male" onClick={removeCover}>Shoes</Link>
-                                                <Link href="/products?category=men's fashion&type=caps&sex=male" onClick={removeCover}>Caps</Link>
-                                                <Link href="/products?category=men's fashion&type=watches&sex=male" onClick={removeCover}>Watches</Link>
+                                                <Link href="/products?category=mens fashion&type=clothing&sex=male" onClick={removeCover}>Clothing</Link>
+                                                <Link href="/products?category=mens fashion&type=shoes&sex=male" onClick={removeCover}>Shoes</Link>
+                                                <Link href="/products?category=mens fashion&type=caps&sex=male" onClick={removeCover}>Caps</Link>
+                                                <Link href="/products?category=mens fashion&type=watches&sex=male" onClick={removeCover}>Watches</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>

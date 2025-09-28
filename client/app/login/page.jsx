@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useRouter } from "next/navigation";
+import axios from 'axios';
 
 const Login = () => {
 
@@ -25,7 +26,7 @@ const Login = () => {
         setFormData({...formData, [name]: value});
     }
 
-    const formSubmitted = () => {
+    const formSubmitted = async () => {
         let emailVal = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
         if (formData.email === '' || formData.password === ''){
@@ -41,7 +42,19 @@ const Login = () => {
         }else{
             setError('');
         }
-        router.push('/');
+        
+        try{
+            let url = "https://server-api-0yug.onrender.com/api/auth/login";
+
+            const response = await axios.post(url, formData, {
+                headers: {
+                    "Content-Type" : "application/json",
+                },withCredentials: true,
+            })
+            console.log(response.data);
+        }catch(error){
+            console.log("Error in registration: ", error);
+        }
     }
 
     return ( 

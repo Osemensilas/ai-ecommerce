@@ -3,18 +3,19 @@ import { Card, CardContent, CardMedia, Typography, Grid, Box, useMediaQuery } fr
 import Link from "next/link";
 
 const categories = [
-  { title: "Grocery", image: "/grocery.png" },
-  { title: "Beauty", image: "/beauty.png" },
-  { title: "Health", image: "/health.png" },
-  { title: "Baby & Maternity", image: "babies.png" },
-  { title: "Computers", image: "/computers.png" },
-  { title: "Phones & Tablets", image: "/phones.png" },
-  { title: "Women’s Fashion", image: "/women.png" },
-  { title: "Car Accessories", image: "/car.png" },
-  { title: "Kitchen & Dining", image: "/kitchen.png" },
-  { title: "Men’s Fashion", image: "/men.png" },
-  { title: "Office Accessories", image: "/office.png" },
-  { title: "Services", image: "/services.png" },
+  { title: "Grocery", image: "/grocery.png", category: "grocery" },
+  { title: "Beauty", image: "/beauty.png", category: "beauty" },
+  { title: "Health", image: "/health.png", category: "health" },
+  { title: "Baby & Maternity", image: "babies.png", category: "baby and maternity" },
+  { title: "Computers", image: "/computers.png", category: "computers" },
+  { title: "Phones & Tablets", image: "/phones.png", category: "phones and tablets" },
+  { title: "Women’s Fashion", image: "/women.png", category: "womens fashion" },
+  { title: "Car Accessories", image: "/car.png", category: "car accessories" },
+  { title: "Kitchen & Dining", image: "/kitchen.png", category: "kitchen and dining" },
+  { title: "Men’s Fashion", image: "/men.png", category: "mens fashion" },
+  { title: "Office Accessories", image: "/office.png", category: "office accessories" },
+  { title: "Services", image: "/services.png", category: "services" },
+
 ];
 
 export default function Categories() {
@@ -34,7 +35,7 @@ export default function Categories() {
         }}
       >
         {categories.map((product, index) => (
-          <Link href={`/products`} >
+          <Link href={`/products?category=${product.category}`} >
 
             <Card        
               key={index}

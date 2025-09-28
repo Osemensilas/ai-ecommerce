@@ -51,7 +51,7 @@
 
 .productsLeft{
   height: max-content;
-  width: 25%;
+  width: 20%;
   margin-top: 15px;
   padding: 0 20px 0 60px;
   border-radius: 10px;
@@ -59,12 +59,13 @@
 
 .productsRight{
   height: max-content;
-  width: 75%;
+  width: 80%;
   padding-right: 80px;
+  padding-top: 15px;
 }
 
 .productsRightTop{
-  height: 100px;
+  height: max-content;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -82,6 +83,7 @@
   gap: 10px;
   padding: 0 20px;
   border-radius: 10px;
+  margin: 0 0 15px 0;
 }
 
 .productsLinks button{
@@ -96,7 +98,7 @@
   height: max-content;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, minmax(160px, 1fr));
+  grid-template-columns: repeat(5, minmax(160px, 1fr));
   background-color: var(--lightGrey);
   padding: 20px 20px;
   row-gap: 30px;
@@ -267,13 +269,13 @@
 .productsFilterContainer{
   height: max-content;
   width: 100%;
-  padding: 20px 20px;
+  padding: 20px 10px;
   background: var(--lightGrey);
   border-radius: 10px;
 }
 
 .productsFilterContainer h2{
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 20px;
 }
 
@@ -532,6 +534,7 @@
   }
   .productsRightBottom {
     padding: 20px 5px;
+    grid-template-columns: repeat(4, minmax(160px, 1fr));
   }
 }
 

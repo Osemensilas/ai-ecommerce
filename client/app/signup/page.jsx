@@ -3,21 +3,19 @@
 import styles from '../css/login.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { useRouter } from "next/navigation";
+import { useState } from 'react';
+import axios from 'axios';
 
 const Signup = () => {
-
-    const router = useRouter();
 
     const [error, setError] = useState('');
     const [showPassword1, setShowPassword1] = useState(false);
     const [showPassword2, setShowPassword2] = useState(false);
+    const [password2, setPassword2] = useState('');
     const [formData, setFormData] = useState({
         'email': '',
         'username': '',
         'password': '',
-        'password2': '',
     })
 
     const togglePassword1 = () => setShowPassword1(prev => !prev);
@@ -29,10 +27,10 @@ const Signup = () => {
         setFormData({...formData, [name]: value});
     }
 
-    const formSubmitted = () => {
+    const formSubmitted = async () => {
         let emailVal = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-        if (formData.email === '' || formData.password === '' || formData.password2 === ''){
+        if (formData.email === '' || formData.password === '' || password2 === '' || formData.username === ''){
             setError("All field required");
             return;
         }else{
@@ -46,13 +44,26 @@ const Signup = () => {
             setError('');
         }
 
-        if (formData.password !== formData.password2){
+        if (formData.password !== password2){
             setError("Passwords do not match");
             return
         }else{
             setError('');
         }
-        router.push('/');
+        
+        try{
+            let url = "https://server-api-0yug.onrender.com/api/auth/register";
+
+            const response = await axios.post(url, formData, {
+                headers: {
+                    "Content-Type" : "application/json",
+                }
+            })
+            
+            console.log(response.data);
+        }catch(error){
+            console.log("Error in registration: ", error);
+        }
     }
 
     return ( 
@@ -88,7 +99,7 @@ const Signup = () => {
                         </div>
                         <div className={styles.formDetails}>
                             <label htmlFor="password2">Confirm Password</label>
-                            <input type={showPassword2 ? "text" : "password"} id="password2" name="password2" value={formData.password2} onChange={handleChanged} className={styles.detail} placeholder="Enter your password" />
+                            <input type={showPassword2 ? "text" : "password"} id="password2" name="password2" value={password2} onChange={(e) => setPassword2(e.target.value)} className={styles.detail} placeholder="Enter your password" />
                             <button type="button" onClick={togglePassword2} className={styles.eyeBtn}>
                                 <i className={`fa ${showPassword2 ? "fa-eye-slash" : "fa-eye"}`}></i>
                             </button>
