@@ -101,7 +101,7 @@
   grid-template-columns: repeat(5, minmax(160px, 1fr));
   background-color: var(--lightGrey);
   padding: 20px 20px;
-  row-gap: 30px;
+  row-gap: 10px;
   justify-items: center;
   border-radius: 10px;
 }

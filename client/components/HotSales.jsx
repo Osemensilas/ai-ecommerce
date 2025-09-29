@@ -2,9 +2,10 @@
 
 import { ShoppingCart } from "lucide-react";
 import Slider from "react-slick";
-import { Card, CardContent, CardMedia, Typography, Button, Rating } from "@mui/material";
+import { Card, CardContent, CardMedia, Typography, Button, Rating, useMediaQuery } from "@mui/material";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import HotdealMobile from "./HotdealMobile"
 import { Grid } from "@mui/material";
 
 const products = [
@@ -13,10 +14,12 @@ const products = [
     { id: 3, name: "Men's Sneakers - White", price: 12000, oldPrice: 18000, image: "petal.png", rating: 3.5 },
     { id: 4, name: "Hisense 32-Inch LED TV", price: 85000, oldPrice: 110000, image: "/menblack.png", rating: 4.2 },
     { id: 5, name: "Nivea Body Lotion 400ml", price: 3500, oldPrice: 5000, image: "duvet.png", rating: 4.8 },
- 
+
 ];
 
 export default function HotSales() {
+    const isMobile = useMediaQuery("(max-width:768px)");
+
     // const settings = {
     //     dots: true,
     //     infinite: true,
@@ -32,90 +35,97 @@ export default function HotSales() {
     // };
 
     return (
-           <div style={{ padding: "3rem" , backgroundColor:"", marginTop:"-5rem"}}>
 
-            <Card sx={{
-                paddingRight: "1rem", borderRadius: 3, boxShadow: 3, width: "100%", display: "flex", alignItems: "center",
-                flexDirection: "", marginBottom: "16px", backgroundColor: "#924040ff", justifyContent: "space-between", borderRadius:"none"
-            }}>
-                <Typography variant="h6" align="center" marginLeft={3} fontWeight="700" color="whitesmoke" fontFamily="sans-serif" gutterBottom>
-                 Hot Deals
-                </Typography>
-                <Typography variant="" align="center" color="whitesmoke" fontWeight="500" gutterBottom>
-                    View all
-                </Typography>
+        <>
+            {isMobile ?
+                <HotdealMobile />
+                :
+                <div style={{ padding: "3rem", backgroundColor: "", marginTop: isMobile ? "-2rem" : "-5rem" }}>
 
-            </Card>
+                    <Card sx={{
+                        paddingRight: "1rem", borderRadius: 3, boxShadow: 3, width: "100%", display: "flex", alignItems: "center",
+                        flexDirection: "", marginBottom: "16px", backgroundColor: "#924040ff", justifyContent: "space-between", borderRadius: "none"
+                    }}>
+                        <Typography variant="h6" align="center" marginLeft={3} fontWeight="700" color="whitesmoke" fontFamily="sans-serif" gutterBottom>
+                            Hot Deals
+                        </Typography>
+                        <Typography variant="" align="center" color="whitesmoke" fontWeight="500" gutterBottom>
+                            View all
+                        </Typography>
 
-            <Grid container spacing={2} justifyContent="center" backgroundColor="#f5f5f5" padding={5} borderRadius={3}>
+                    </Card>
 
-                {products.map((product) => (
-                    <Grid item key={product.id} xs={12} sm={6} md={4} lg={3} sx={{ display: "flex", justifyContent: "center", }}>
-                        <Card sx={{ borderRadius: 3, boxShadow: 3, width: 200, display: "flex", flexDirection: "column", boxShadow: "none" }}>
-                            <Typography variant="caption" color="white" sx={{ position: "absolute", backgroundColor: "#5bc763", padding: "2px 6px", borderRadius: "0 0 8px 0", fontWeight: "bold", fontSize: "10px", marginTop: "8px", marginLeft: "8px" }}>
-                                -25%
-                            </Typography>
-                            <CardMedia
-                                component="img"
-                                height="140"
-                                image={product.image}
-                                alt={product.name}
-                                sx={{ objectFit: "contain" }}
-                            />
-                            <CardContent sx={{ padding: "8px", flexGrow: 1, display: "flex", flexDirection: "", justifyContent: "" }}>
-                                <div>
-                                    <Typography variant="subtitle2" fontWeight="bold" color="#47474a" gutterBottom>
-                                        {product.name}
+                    <Grid container spacing={2} justifyContent="center" backgroundColor="#f5f5f5" padding={5} borderRadius={3}>
+
+                        {products.map((product) => (
+                            <Grid item key={product.id} xs={12} sm={6} md={4} lg={3} sx={{ display: "flex", justifyContent: "center", }}>
+                                <Card sx={{ borderRadius: 3, boxShadow: 3, width: 200, display: "flex", flexDirection: "column", boxShadow: "none" }}>
+                                    <Typography variant="caption" color="white" sx={{ position: "absolute", backgroundColor: "#5bc763", padding: "2px 6px", borderRadius: "0 0 8px 0", fontWeight: "bold", fontSize: "10px", marginTop: "8px", marginLeft: "8px" }}>
+                                        -25%
                                     </Typography>
-
-                                    <Rating
-                                        value={product.rating}
-                                        precision={0.5}
-                                        readOnly
-                                        size="small"
-                                        sx={{ mb: 1 }}
+                                    <CardMedia
+                                        component="img"
+                                        height="140"
+                                        image={product.image}
+                                        alt={product.name}
+                                        sx={{ objectFit: "contain" }}
                                     />
+                                    <CardContent sx={{ padding: "8px", flexGrow: 1, display: "flex", flexDirection: "", justifyContent: "" }}>
+                                        <div>
+                                            <Typography variant="subtitle2" fontWeight="bold" color="#47474a" gutterBottom>
+                                                {product.name}
+                                            </Typography>
 
-                                    <div style={{ display: "flex", gap: "6px", margin: "6px 0", alignItems: "center" }}>
-                                        <Typography variant="body1" color="green">
-                                            ₦{product.price.toLocaleString()}
-                                        </Typography>
-                                        <Typography variant="body2" sx={{ textDecoration: "line-through", color: "gray" }}>
-                                            ₦{product.oldPrice.toLocaleString()}
-                                        </Typography>
-                                    </div>
-                                </div>
+                                            <Rating
+                                                value={product.rating}
+                                                precision={0.5}
+                                                readOnly
+                                                size="small"
+                                                sx={{ mb: 1 }}
+                                            />
 
-                                <div >
-                                  <Typography variant="body2" color="textSecondary" component="div" sx={{ display: "flex", alignItems: "center", justifyContent: "center", height: "70%" }}>   
-                                    In stock
-                                    </Typography>
-                                    <Button
-                                        fullWidth
-                                        size="small"
-                                        startIcon={<ShoppingCart size={16} />}
-                                        sx={{
-                                            marginTop: "auto",
-                                            textTransform: "none",
-                                            border: "1px solid var(--primary)",
-                                            backgroundColor: "transparent",
-                                            color: "var(--primary)",
-                                            "&:hover": {
-                                                backgroundColor: "var(--primary)",
-                                                color: "#fff",
-                                                border: "1px solid var(--primary)",
-                                            },
-                                        }}
-                                    >
-                                        Add
-                                    </Button>
-                                </div>
+                                            <div style={{ display: "flex", gap: "6px", margin: "6px 0", alignItems: "center" }}>
+                                                <Typography variant="body1" color="green">
+                                                    ₦{product.price.toLocaleString()}
+                                                </Typography>
+                                                <Typography variant="body2" sx={{ textDecoration: "line-through", color: "gray" }}>
+                                                    ₦{product.oldPrice.toLocaleString()}
+                                                </Typography>
+                                            </div>
+                                        </div>
 
-                            </CardContent>
-                        </Card>
+                                        <div >
+                                            <Typography variant="body2" color="textSecondary" component="div" sx={{ display: "flex", alignItems: "center", justifyContent: "center", height: "70%" }}>
+                                                In stock
+                                            </Typography>
+                                            <Button
+                                                fullWidth
+                                                size="small"
+                                                startIcon={<ShoppingCart size={16} />}
+                                                sx={{
+                                                    marginTop: "auto",
+                                                    textTransform: "none",
+                                                    border: "1px solid var(--primary)",
+                                                    backgroundColor: "transparent",
+                                                    color: "var(--primary)",
+                                                    "&:hover": {
+                                                        backgroundColor: "var(--primary)",
+                                                        color: "#fff",
+                                                        border: "1px solid var(--primary)",
+                                                    },
+                                                }}
+                                            >
+                                                Add
+                                            </Button>
+                                        </div>
+
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+                        ))}
                     </Grid>
-                ))}
-            </Grid>
-        </div>
+                </div>
+            }
+        </>
     );
 }
