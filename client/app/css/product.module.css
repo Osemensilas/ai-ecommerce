@@ -235,15 +235,16 @@
   width: 100%;
   background: var(--lightGrey);
   padding: 0 20px;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 .ccContainer{
   height: 250px;
-  width: 100%;
+  width: max-content;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .advertContainer{

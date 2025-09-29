@@ -28,8 +28,10 @@ export default function Home() {
   const [selectedDelivery, setSelectedDelivery] = useState([]);
   const [mainFilter, setMainFilter] = useState([]);
   const [selectedMainCat, setSelectedMainCat] = useState([]);
+  const [productsPerPage, setProductsPerPage] = useState(30);
+  const [flashSale, setFlashSale] = useState([]);
 
-  const minGap = 1000; // prevents overlap
+  const minGap = 1000;
 
   const handleMinChange = (e) => {
     const value = Math.min(Number(e.target.value), maxVal - minGap);
@@ -40,7 +42,7 @@ export default function Home() {
     const value = Math.max(Number(e.target.value), minVal + minGap);
     setMaxVal(value);
   };
-
+ 
   useEffect(() => {
     const catContainer = [
       {
@@ -312,13 +314,13 @@ export default function Home() {
       }
     ];
 
-    const selectedCategory = catContainer.find(cat => cat.name.toLowerCase() === category.toLowerCase()); // Make case-insensitive
+    const selectedCategory = catContainer.find(cat => cat.name === category);
     if (selectedCategory) {
-      setNavMenu(selectedCategory.items);
-    } else {
-      setNavMenu([]);
+        setNavMenu(selectedCategory.items);
+    }else{
+        setNavMenu([]);
     }
-  }, [category]);
+  }, [category])
 
   const filterOptions = {
     shoes: ["Color", "Size", "Brand", "Material"],
@@ -362,19 +364,19 @@ export default function Home() {
   }, [type]);
 
   const products = [
-      { id: 1, name: "Apple iPhone 15", brand: "Apple", price: 560000, image: "phone.png", rating: 4.8, category: "phone and tablets", type: "iphone", sex: null, color: "Silver", stock: "in-stock", delivery: "free-shipping", RAM: "8GB", Storage: "256GB"},
-      { id: 2, name: "Samsung Galaxy S23", brand: "Samsung", price: 450000, image: "phone.png", rating: 4.7, category: "phone and tablets", type: "andriod", sex: null, color: "Phantom Black", stock: "in-stock", delivery: "free-shipping", RAM: "8GB", Storage: "256GB"},
-      { id: 3, name: "Apple iPad Pro", brand: "Apple", price: 750000, image: "ipad_pro.png", rating: 4.9, category: "phone and tablets", type: "tablets", sex: null, color: "Space Gray", stock: "in-stock", delivery: "free-shipping", RAM: "8GB", Storage: "512GB"},
-      { id: 4, name: "Xiaomi Redmi Note 13", brand: "Xiaomi", price: 180000, image: "redmi_note13.png", rating: 4.5, category: "phone and tablets", type: "andriod", sex: null, color: "Blue", stock: "in-stock", delivery: "free-shipping", RAM: "6GB", Storage: "128GB"},
-      { id: 5, name: "Dell XPS 15", brand: "Dell", price: 1200000, image: "xps15.png", rating: 4.7, category: "computers", type: "laptops", sex: null, color: "Silver", stock: "in-stock", delivery: "same-day-delivery", Processor: "Intel i7", RAM: "16GB", Storage: "512GB SSD"},
+      { id: 1, name: "Apple iPhone 15", brand: "Apple", price: 560000, image: "phone.png", rating: 4.8, category: "phone and tablets", type: "iphone", sex: null, color: "Silver", stock: "in-stock", delivery: "free-shipping", RAM: "8GB", Storage: "256GB", flashSale: true},
+      { id: 2, name: "Samsung Galaxy S23", brand: "Samsung", price: 450000, image: "phone.png", rating: 4.7, category: "phone and tablets", type: "andriod", sex: null, color: "Phantom Black", stock: "in-stock", delivery: "free-shipping", RAM: "8GB", Storage: "256GB", flashSale: true},
+      { id: 3, name: "Apple iPad Pro", brand: "Apple", price: 750000, image: "ipad_pro.png", rating: 4.9, category: "phone and tablets", type: "tablets", sex: null, color: "Space Gray", stock: "in-stock", delivery: "free-shipping", RAM: "8GB", Storage: "512GB", flashSale: true},
+      { id: 4, name: "Xiaomi Redmi Note 13", brand: "Xiaomi", price: 180000, image: "redmi_note13.png", rating: 4.5, category: "phone and tablets", type: "andriod", sex: null, color: "Blue", stock: "in-stock", delivery: "free-shipping", RAM: "6GB", Storage: "128GB", flashSale: true},
+      { id: 5, name: "Dell XPS 15", brand: "Dell", price: 1200000, image: "xps15.png", rating: 4.7, category: "computers", type: "laptops", sex: null, color: "Silver", stock: "in-stock", delivery: "same-day-delivery", Processor: "Intel i7", RAM: "16GB", Storage: "512GB SSD", flashSale: true},
       { id: 6, name: "Apple MacBook Air M2", brand: "Apple", price: 1400000, image: "macbook_air_m2.png", rating: 4.8, category: "computers", type: "macbooks", sex: null, color: "Space Gray", stock: "in-stock", delivery: "same-day-delivery", Processor: "M2", RAM: "16GB", Storage: "512GB SSD"},
-      { id: 7, name: "Sony Bravia 55-inch", brand: "Sony", price: 950000, image: "bravia55.png", rating: 4.6, category: "electronics", type: "televisions", sex: null, color: "Black", stock: "in-stock", delivery: "free-shipping", ScreenSize: "55inch", Resolution: "4K"},
-      { id: 8, name: "Canon EOS R5", brand: "Canon", price: 2200000, image: "eos_r5.png", rating: 4.9, category: "electronics", type: "cameras", sex: null, color: "Black", stock: "in-stock", delivery: "same-day-delivery", Lens: "24-105mm", Resolution: "45MP"},
-      { id: 9, name: "Samsung Galaxy Watch 6", brand: "Samsung", price: 200000, image: "galaxy_watch6.png", rating: 4.7, category: "wearables", type: "smartwatches", sex: null, color: "Silver", stock: "in-stock", delivery: "free-shipping", Material: "Stainless Steel"},
-      { id: 10, name: "Oculus Quest 3", brand: "Meta", price: 350000, image: "oculus_quest3.png", rating: 4.6, category: "wearables", type: "vrheadset", sex: null, color: "White", stock: "in-stock", delivery: "free-shipping", Compatibility: "Standalone"},
-      { id: 11, name: "Nike Air Max 270", brand: "Nike", price: 95000, image: "airmax270.png", rating: 4.5, category: "womens fashion", type: "shoes", sex: "female", color: "White", stock: "in-stock", delivery: "same-day-delivery", Size: "7", Material: "Leather"},
-      { id: 12, name: "Adidas T-Shirt", brand: "Adidas", price: 45000, image: "adidas_tshirt.png", rating: 4.4, category: "mens fashion", type: "clothing", sex: "male", color: "Black", stock: "in-stock", delivery: "free-shipping", Size: "M", Material: "Cotton"},
-      { id: 13, name: "Gucci Gold Necklace", brand: "Gucci", price: 550000, image: "gucci_necklace.png", rating: 4.8, category: "womens fashion", type: "jewery", sex: "female", color: "Gold", stock: "in-stock", delivery: "same-day-delivery", Material: "Gold"},
+      { id: 7, name: "Sony Bravia 55-inch", brand: "Sony", price: 950000, image: "bravia55.png", rating: 4.6, category: "electronics", type: "televisions", sex: null, color: "Black", stock: "in-stock", delivery: "free-shipping", ScreenSize: "55inch", Resolution: "4K", flashSale: true},
+      { id: 8, name: "Canon EOS R5", brand: "Canon", price: 2200000, image: "eos_r5.png", rating: 4.9, category: "electronics", type: "cameras", sex: null, color: "Black", stock: "in-stock", delivery: "same-day-delivery", Lens: "24-105mm", Resolution: "45MP", flashSale: true},
+      { id: 9, name: "Samsung Galaxy Watch 6", brand: "Samsung", price: 200000, image: "galaxy_watch6.png", rating: 4.7, category: "wearables", type: "smartwatches", sex: null, color: "Silver", stock: "in-stock", delivery: "free-shipping", Material: "Stainless Steel", flashSale: true},
+      { id: 10, name: "Oculus Quest 3", brand: "Meta", price: 350000, image: "oculus_quest3.png", rating: 4.6, category: "wearables", type: "vrheadset", sex: null, color: "White", stock: "in-stock", delivery: "free-shipping", Compatibility: "Standalone", flashSale: true},
+      { id: 11, name: "Nike Air Max 270", brand: "Nike", price: 95000, image: "airmax270.png", rating: 4.5, category: "women fashion", type: "shoes", sex: "female", color: "White", stock: "in-stock", delivery: "same-day-delivery", Size: "7", Material: "Leather", flashSale: true},
+      { id: 12, name: "Adidas T-Shirt", brand: "Adidas", price: 45000, image: "adidas_tshirt.png", rating: 4.4, category: "mens fashion", type: "clothing", sex: "male", color: "Black", stock: "in-stock", delivery: "free-shipping", Size: "M", Material: "Cotton", flashSale: true},
+      { id: 13, name: "Gucci Gold Necklace", brand: "Gucci", price: 550000, image: "gucci_necklace.png", rating: 4.8, category: "womens fashion", type: "jewery", sex: "female", color: "Gold", stock: "in-stock", delivery: "same-day-delivery", Material: "Gold", flashSale: true},
       { id: 14, name: "Rolex Submariner", brand: "Rolex", price: 2500000, image: "rolex_submariner.png", rating: 4.9, category: "mens fashion", type: "watches", sex: "male", color: "Silver", stock: "in-stock", delivery: "free-shipping", Material: "Stainless Steel"},
       { id: 15, name: "Levi’s Kids Jeans", brand: "Levis", price: 35000, image: "levis_kids.png", rating: 4.6, category: "kids and baby fashion", type: "clothing", sex: "children", color: "Blue", stock: "in-stock", delivery: "free-shipping", Size: "5-6yrs", Material: "Denim"},
       { id: 16, name: "Huggies Diapers", brand: "Huggies", price: 45000, image: "huggies.png", rating: 4.7, category: "baby & maternity", type: "diapers and wipes", sex: null, color: "White", stock: "in-stock", delivery: "free-shipping", Size: "M", AgeRange: "6-12 months"},
@@ -460,7 +462,7 @@ export default function Home() {
       { id: 96, name: "Antihistamine Tablets", brand: "Claritin", price: 2500, image: "claritin.png", rating: 4.6, category: "professional", type: "pharmacy", sex: null, Color: "White", stock: "in-stock", delivery: "free-shipping", Dosage: "10mg", Quantity: "30 tablets"},
       { id: 97, name: "Cough Syrup", brand: "Robitussin", price: 4000, image: "robitussin.png", rating: 4.5, category: "professional", type: "pharmacy", sex: null, Color: "Red", stock: "in-stock", delivery: "free-shipping", Dosage: "200ml", Quantity: "1 bottle"},
       { id: 98, name: "Vitamin C Supplements", brand: "Nature's Bounty", price: 3500, image: "vitamin_c.png", rating: 4.7, category: "professional", type: "pharmacy", sex: null, Color: "Orange", stock: "in-stock", delivery: "free-shipping", Dosage: "1000mg", Quantity: "60 tablets"},
-            { id: 95, name: "Tylenol Extra Strength", brand: "Tylenol", price: 3500, image: "tylenol.png", rating: 4.7, category: "health", type: "medicine", sex: null, Color: "White", stock: "in-stock", delivery: "free-shipping", Dosage: "500mg", Quantity: "50 tablets"},
+      { id: 95, name: "Tylenol Extra Strength", brand: "Tylenol", price: 3500, image: "tylenol.png", rating: 4.7, category: "health", type: "medicine", sex: null, Color: "White", stock: "in-stock", delivery: "free-shipping", Dosage: "500mg", Quantity: "50 tablets"},
       { id: 96, name: "Vitamin C Tablets", brand: "Nature Made", price: 4500, image: "vitamin_c.png", rating: 4.6, category: "health", type: "supplement", sex: null, Color: "Orange", stock: "in-stock", delivery: "free-shipping", Dosage: "1000mg", Quantity: "60 tablets"},
       { id: 97, name: "Panadol Advance", brand: "Panadol", price: 3000, image: "panadol.png", rating: 4.5, category: "health", type: "medicine", sex: null, Color: "White", stock: "in-stock", delivery: "free-shipping", Dosage: "500mg", Quantity: "20 tablets"},
       { id: 98, name: "Centrum Multivitamin", brand: "Centrum", price: 7500, image: "centrum.png", rating: 4.7, category: "health", type: "supplement", sex: null, Color: "Multicolor", stock: "in-stock", delivery: "free-shipping", Dosage: "Daily", Quantity: "100 tablets"},
@@ -486,7 +488,7 @@ export default function Home() {
       { id: 118, name: "MSI Stealth 15M", brand: "MSI", price: 870000, image: "msi_stealth.png", rating: 4.7, category: "computers", type: "gaming laptops", sex: null, Color: "Gray", stock: "in-stock", delivery: "same-day-delivery", Processor: "Intel i9", RAM: "16GB", Storage: "1TB SSD"},
       { id: 119, name: "Acer Aspire 5", brand: "Acer", price: 350000, image: "acer_aspire5.png", rating: 4.5, category: "computers", type: "laptops", sex: null, Color: "Silver", stock: "in-stock", delivery: "free-shipping", Processor: "Intel i5", RAM: "8GB", Storage: "256GB SSD"},
       { id: 120, name: "Apple MacBook Pro 14", brand: "Apple", price: 1700000, image: "macbook_pro14.png", rating: 4.9, category: "computers", type: "macbooks", sex: null, Color: "Space Gray", stock: "in-stock", delivery: "same-day-delivery", Processor: "M2 Pro", RAM: "32GB", Storage: "1TB SSD"},
-            { id: 195, name: "Canon EOS 90D", brand: "Canon", price: 950000, image: "canon_eos90d.png", rating: 4.8, category: "electronics", type: "camera", sex: null, Color: "Black", stock: "in-stock", delivery: "free-shipping", Sensor: "32.5MP APS-C", Lens: "18-135mm"},
+      { id: 195, name: "Canon EOS 90D", brand: "Canon", price: 950000, image: "canon_eos90d.png", rating: 4.8, category: "electronics", type: "camera", sex: null, Color: "Black", stock: "in-stock", delivery: "free-shipping", Sensor: "32.5MP APS-C", Lens: "18-135mm"},
       { id: 196, name: "Nikon Z6 II", brand: "Nikon", price: 1200000, image: "nikon_z6.png", rating: 4.9, category: "electronics", type: "camera", sex: null, Color: "Black", stock: "in-stock", delivery: "same-day-delivery", Sensor: "24.5MP Full-Frame", Lens: "24-70mm"},
       { id: 197, name: "Sony A7 III", brand: "Sony", price: 1350000, image: "sony_a7iii.png", rating: 4.8, category: "electronics", type: "camera", sex: null, Color: "Black", stock: "in-stock", delivery: "free-shipping", Sensor: "24.2MP Full-Frame", Lens: "28-70mm"},
       { id: 198, name: "Fujifilm X-T4", brand: "Fujifilm", price: 1050000, image: "fujifilm_xt4.png", rating: 4.7, category: "electronics", type: "camera", sex: null, Color: "Silver", stock: "in-stock", delivery: "free-shipping", Sensor: "26.1MP APS-C", Lens: "16-80mm"},
@@ -511,10 +513,10 @@ export default function Home() {
       { id: 217, name: "Panasonic Microwave", brand: "Panasonic", price: 95000, image: "panasonic_microwave.png", rating: 4.6, category: "home appliances", type: "microwave", sex: null, Color: "Black", stock: "in-stock", delivery: "same-day-delivery", Power: "1000W"},
       { id: 218, name: "Philips Air Purifier", brand: "Philips", price: 120000, image: "philips_airpurifier.png", rating: 4.7, category: "home appliances", type: "air purifier", sex: null, Color: "White", stock: "in-stock", delivery: "free-shipping", Coverage: "400sqft"},
       { id: 219, name: "Dyson Vacuum Cleaner", brand: "Dyson", price: 280000, image: "dyson_vacuum.png", rating: 4.9, category: "home appliances", type: "vacuum", sex: null, Color: "Purple", stock: "in-stock", delivery: "same-day-delivery", Type: "Cordless"},
-      { id: 220, name: "Adidas Ultraboost 22", brand: "Adidas", price: 65000, image: "adidas_ultraboost.png", rating: 4.8, category: "fashion", type: "shoes", sex: "unisex", Color: "Black", stock: "in-stock", delivery: "same-day-delivery", Size: "42"},
-      { id: 221, name: "Nike Air Force 1", brand: "Nike", price: 55000, image: "nike_af1.png", rating: 4.8, category: "fashion", type: "shoes", sex: "unisex", Color: "White", stock: "in-stock", delivery: "free-shipping", Size: "43"},
-      { id: 222, name: "Puma Running Shoes", brand: "Puma", price: 48000, image: "puma_running.png", rating: 4.6, category: "fashion", type: "shoes", sex: "male", Color: "Blue", stock: "in-stock", delivery: "same-day-delivery", Size: "44"},
-      { id: 223, name: "Levi’s Slim Jeans", brand: "Levi’s", price: 40000, image: "levis_jeans.png", rating: 4.7, category: "fashion", type: "clothing", sex: "male", Color: "Dark Blue", stock: "in-stock", delivery: "free-shipping", Size: "32"},
+      { id: 220, name: "Adidas Ultraboost 22", brand: "Adidas", price: 65000, image: "adidas_ultraboost.png", rating: 4.8, category: "women fashion", type: "shoes", sex: "unisex", Color: "Black", stock: "in-stock", delivery: "same-day-delivery", Size: "42"},
+      { id: 221, name: "Nike Air Force 1", brand: "Nike", price: 55000, image: "nike_af1.png", rating: 4.8, category: "women fashion", type: "shoes", sex: "unisex", Color: "White", stock: "in-stock", delivery: "free-shipping", Size: "43"},
+      { id: 222, name: "Puma Running Shoes", brand: "Puma", price: 48000, image: "puma_running.png", rating: 4.6, category: "men fashion", type: "shoes", sex: "male", Color: "Blue", stock: "in-stock", delivery: "same-day-delivery", Size: "44"},
+      { id: 223, name: "Levi’s Slim Jeans", brand: "Levi’s", price: 40000, image: "levis_jeans.png", rating: 4.7, category: "men fashion", type: "clothing", sex: "male", Color: "Dark Blue", stock: "in-stock", delivery: "free-shipping", Size: "32"},
       { id: 224, name: "Zara Summer Dress", brand: "Zara", price: 35000, image: "zara_dress.png", rating: 4.7, category: "fashion", type: "clothing", sex: "female", Color: "Red", stock: "in-stock", delivery: "same-day-delivery", Size: "M"},
       { id: 225, name: "H&M Winter Jacket", brand: "H&M", price: 75000, image: "hm_jacket.png", rating: 4.8, category: "fashion", type: "clothing", sex: "unisex", Color: "Black", stock: "in-stock", delivery: "free-shipping", Size: "L"},
       { id: 226, name: "Gucci Sunglasses", brand: "Gucci", price: 150000, image: "gucci_sunglasses.png", rating: 4.9, category: "fashion", type: "accessories", sex: "unisex", Color: "Brown", stock: "in-stock", delivery: "same-day-delivery", Material: "Acetate"},
@@ -532,12 +534,111 @@ export default function Home() {
       { id: 238, name: "Apple AirPods Pro 2", brand: "Apple", price: 170000, image: "airpods_pro2.png", rating: 4.8, category: "electronics", type: "audio", sex: null, Color: "White", stock: "in-stock", delivery: "same-day-delivery", BatteryLife: "6hrs"},
       { id: 239, name: "Anker Soundcore", brand: "Anker", price: 50000, image: "anker_soundcore.png", rating: 4.6, category: "electronics", type: "audio", sex: null, Color: "Black", stock: "in-stock", delivery: "free-shipping", BatteryLife: "24hrs"},
       { id: 240, name: "Toyota Corolla 2022", brand: "Toyota", price: 12000000, image: "toyota_corolla2022.png", rating: 4.8, category: "automotive", type: "cars", sex: null, Color: "White", stock: "in-stock", delivery: "free-shipping", Engine: "1.8L", Transmission: "Automatic"},
-      { id: 241, name: "Honda Civic 2022", brand: "Honda", price: 11500000, image: "honda_civic2022.png", rating: 4.8, category: "automotive", type: "cars", sex: null, Color: "Blue", stock: "in-stock", delivery: "free-shipping", Engine: "
-
+            { id: 295, name: "Mazda CX-5 2022", brand: "Mazda", price: 14500000, image: "mazda_cx5.png", rating: 4.8, category: "automotive", type: "cars", sex: null, Color: "Red", stock: "in-stock", delivery: "free-shipping", Engine: "2.5L", Transmission: "Automatic"},
+      { id: 296, name: "BMW 3 Series 2022", brand: "BMW", price: 28000000, image: "bmw_3series.png", rating: 4.9, category: "automotive", type: "cars", sex: null, Color: "Black", stock: "in-stock", delivery: "free-shipping", Engine: "2.0L", Transmission: "Automatic"},
+      { id: 297, name: "Mercedes C-Class 2022", brand: "Mercedes-Benz", price: 32000000, image: "mercedes_cclass.png", rating: 4.9, category: "automotive", type: "cars", sex: null, Color: "Silver", stock: "in-stock", delivery: "free-shipping", Engine: "2.0L", Transmission: "Automatic"},
+      { id: 298, name: "Ford Ranger 2022", brand: "Ford", price: 18000000, image: "ford_ranger.png", rating: 4.7, category: "automotive", type: "pickup trucks", sex: null, Color: "Blue", stock: "in-stock", delivery: "free-shipping", Engine: "3.0L", Transmission: "Automatic"},
+      { id: 299, name: "Chevrolet Silverado 2022", brand: "Chevrolet", price: 25000000, image: "chevy_silverado.png", rating: 4.7, category: "automotive", type: "pickup trucks", sex: null, Color: "White", stock: "in-stock", delivery: "free-shipping", Engine: "5.3L", Transmission: "Automatic"},
+      { id: 300, name: "Mobil 1 Engine Oil", brand: "Mobil", price: 18000, image: "mobil1_oil.png", rating: 4.8, category: "automotive", type: "car care", sex: null, Color: "Amber", stock: "in-stock", delivery: "same-day-delivery", Volume: "5L"},
+      { id: 301, name: "Bosch Car Battery", brand: "Bosch", price: 85000, image: "bosch_battery.png", rating: 4.7, category: "automotive", type: "car care", sex: null, Color: "Black", stock: "in-stock", delivery: "same-day-delivery", Voltage: "12V"},
+      { id: 302, name: "Michelin Pilot Sport 4", brand: "Michelin", price: 120000, image: "michelin_tire.png", rating: 4.9, category: "automotive", type: "car care", sex: null, Color: "Black", stock: "in-stock", delivery: "free-shipping", Size: "245/45R18"},
+      { id: 303, name: "Castrol GTX Oil", brand: "Castrol", price: 15000, image: "castrol_oil.png", rating: 4.7, category: "automotive", type: "car care", sex: null, Color: "Amber", stock: "in-stock", delivery: "same-day-delivery", Volume: "4L"},
+      { id: 304, name: "Karcher Car Vacuum", brand: "Karcher", price: 65000, image: "karcher_vacuum.png", rating: 4.6, category: "automotive", type: "car care", sex: null, Color: "Yellow", stock: "in-stock", delivery: "same-day-delivery", Power: "1200W"},
+      { id: 305, name: "Graco Baby Stroller", brand: "Graco", price: 95000, image: "graco_stroller.png", rating: 4.7, category: "baby and maternity", type: "strollers", sex: null, Color: "Gray", stock: "in-stock", delivery: "free-shipping", WeightLimit: "20kg"},
+      { id: 306, name: "Chicco Car Seat", brand: "Chicco", price: 120000, image: "chicco_carseat.png", rating: 4.8, category: "baby and maternity", type: "car seats", sex: null, Color: "Black", stock: "in-stock", delivery: "same-day-delivery", WeightLimit: "25kg"},
+      { id: 307, name: "Philips Avent Bottles", brand: "Philips Avent", price: 25000, image: "avent_bottles.png", rating: 4.6, category: "baby and maternity", type: "feeding", sex: null, Color: "Transparent", stock: "in-stock", delivery: "same-day-delivery", Quantity: "3"},
+      { id: 308, name: "Pampers Premium Care", brand: "Pampers", price: 22000, image: "pampers_care.png", rating: 4.8, category: "baby and maternity", type: "diapers", sex: null, Color: "White", stock: "in-stock", delivery: "same-day-delivery", Size: "3", Quantity: "60"},
+      { id: 309, name: "Johnson’s Baby Lotion", brand: "Johnson’s", price: 9000, image: "johnsons_lotion.png", rating: 4.7, category: "baby and maternity", type: "care", sex: null, Color: "Pink", stock: "in-stock", delivery: "same-day-delivery", Volume: "500ml"},
+      { id: 310, name: "Huggies Wipes", brand: "Huggies", price: 7000, image: "huggies_wipes.png", rating: 4.6, category: "baby and maternity", type: "care", sex: null, Color: "White", stock: "in-stock", delivery: "same-day-delivery", Quantity: "80 wipes"},
+      { id: 311, name: "Medela Breast Pump", brand: "Medela", price: 80000, image: "medela_pump.png", rating: 4.8, category: "baby and maternity", type: "feeding", sex: null, Color: "White", stock: "in-stock", delivery: "free-shipping", Type: "Electric"},
+      { id: 312, name: "Evenflo High Chair", brand: "Evenflo", price: 55000, image: "evenflo_chair.png", rating: 4.7, category: "baby and maternity", type: "furniture", sex: null, Color: "Green", stock: "in-stock", delivery: "same-day-delivery", WeightLimit: "15kg"},
+      { id: 313, name: "Fisher-Price Play Mat", brand: "Fisher-Price", price: 30000, image: "fisherprice_playmat.png", rating: 4.7, category: "baby and maternity", type: "toys", sex: null, Color: "Multicolor", stock: "in-stock", delivery: "same-day-delivery", Material: "Cotton"},
+      { id: 314, name: "Britax Travel System", brand: "Britax", price: 180000, image: "britax_travel.png", rating: 4.8, category: "baby and maternity", type: "strollers", sex: null, Color: "Black", stock: "in-stock", delivery: "free-shipping", Includes: "Car seat"},
+      { id: 315, name: "Dove Shampoo", brand: "Dove", price: 8500, image: "dove_shampoo.png", rating: 4.6, category: "beauty", type: "hair care", sex: "female", Color: "White", stock: "in-stock", delivery: "same-day-delivery", Volume: "400ml"},
+      { id: 316, name: "Nivea Body Lotion", brand: "Nivea", price: 6500, image: "nivea_lotion.png", rating: 4.7, category: "beauty", type: "skin care", sex: "unisex", Color: "Blue", stock: "in-stock", delivery: "same-day-delivery", Volume: "500ml"},
+      { id: 317, name: "L’Oreal Lipstick", brand: "L’Oreal", price: 12000, image: "loreal_lipstick.png", rating: 4.8, category: "beauty", type: "makeup", sex: "female", Color: "Red", stock: "in-stock", delivery: "same-day-delivery", Finish: "Matte"},
+      { id: 318, name: "Maybelline Mascara", brand: "Maybelline", price: 10000, image: "maybelline_mascara.png", rating: 4.7, category: "beauty", type: "makeup", sex: "female", Color: "Black", stock: "in-stock", delivery: "same-day-delivery", Waterproof: "Yes"},
+      { id: 319, name: "MAC Foundation", brand: "MAC", price: 18000, image: "mac_foundation.png", rating: 4.8, category: "beauty", type: "makeup", sex: "female", Color: "Beige", stock: "in-stock", delivery: "same-day-delivery", Volume: "30ml"},
+      { id: 320, name: "Olay Night Cream", brand: "Olay", price: 15000, image: "olay_cream.png", rating: 4.7, category: "beauty", type: "skin care", sex: "female", Color: "White", stock: "in-stock", delivery: "same-day-delivery", Volume: "50ml"},
+      { id: 321, name: "Clinique Face Wash", brand: "Clinique", price: 20000, image: "clinique_facewash.png", rating: 4.7, category: "beauty", type: "skin care", sex: "female", Color: "White", stock: "in-stock", delivery: "same-day-delivery", Volume: "150ml"},
+      { id: 322, name: "Estée Lauder Perfume", brand: "Estée Lauder", price: 35000, image: "estee_perfume.png", rating: 4.9, category: "beauty", type: "fragrance", sex: "female", Color: "Transparent", stock: "in-stock", delivery: "same-day-delivery", Volume: "100ml"},
+      { id: 323, name: "Hugo Boss Perfume", brand: "Hugo Boss", price: 32000, image: "hugo_perfume.png", rating: 4.8, category: "beauty", type: "fragrance", sex: "male", Color: "Transparent", stock: "in-stock", delivery: "same-day-delivery", Volume: "100ml"},
+      { id: 324, name: "Versace Eau de Toilette", brand: "Versace", price: 40000, image: "versace_perfume.png", rating: 4.8, category: "beauty", type: "fragrance", sex: "unisex", Color: "Transparent", stock: "in-stock", delivery: "free-shipping", Volume: "90ml"},
+      { id: 325, name: "Clinique Men Face Scrub", brand: "Clinique", price: 18000, image: "clinique_scrub.png", rating: 4.6, category: "beauty", type: "skin care", sex: "male", Color: "Blue", stock: "in-stock", delivery: "same-day-delivery", Volume: "150ml"},
+      { id: 326, name: "Aveeno Baby Wash", brand: "Aveeno", price: 9500, image: "aveeno_babywash.png", rating: 4.7, category: "baby and maternity", type: "care", sex: null, Color: "White", stock: "in-stock", delivery: "same-day-delivery", Volume: "250ml"},
+      { id: 327, name: "Similac Baby Formula", brand: "Similac", price: 18000, image: "similac_formula.png", rating: 4.8, category: "baby and maternity", type: "feeding", sex: null, Color: "White", stock: "in-stock", delivery: "same-day-delivery", Weight: "900g"},
+      { id: 328, name: "Gerber Baby Food", brand: "Gerber", price: 6000, image: "gerber_food.png", rating: 4.6, category: "baby and maternity", type: "feeding", sex: null, Color: "Yellow", stock: "in-stock", delivery: "same-day-delivery", Weight: "200g"},
+      { id: 329, name: "Enfamil Baby Formula", brand: "Enfamil", price: 17500, image: "enfamil_formula.png", rating: 4.7, category: "baby and maternity", type: "feeding", sex: null, Color: "White", stock: "in-stock", delivery: "same-day-delivery", Weight: "800g"},
+      { id: 330, name: "Tommee Tippee Bottles", brand: "Tommee Tippee", price: 20000, image: "tommee_bottles.png", rating: 4.6, category: "baby and maternity", type: "feeding", sex: null, Color: "Transparent", stock: "in-stock", delivery: "same-day-delivery", Quantity: "3"},
+            { id: 395, name: "BabyBjorn Carrier One", brand: "BabyBjorn", price: 75000, image: "babybjorn_carrier.png", rating: 4.8, category: "baby and maternity", type: "carriers", sex: null, Color: "Gray", stock: "in-stock", delivery: "free-shipping", WeightLimit: "15kg"},
+      { id: 396, name: "Ergobaby Omni Breeze", brand: "Ergobaby", price: 85000, image: "ergobaby_omni.png", rating: 4.9, category: "baby and maternity", type: "carriers", sex: null, Color: "Black", stock: "in-stock", delivery: "free-shipping", WeightLimit: "20kg"},
+      { id: 397, name: "Munchkin Bottle Warmer", brand: "Munchkin", price: 25000, image: "munchkin_warmer.png", rating: 4.7, category: "baby and maternity", type: "feeding", sex: null, Color: "White", stock: "in-stock", delivery: "same-day-delivery", Power: "Electric"},
+      { id: 398, name: "Dr Brown’s Bottles", brand: "Dr Brown’s", price: 22000, image: "drbrowns_bottles.png", rating: 4.6, category: "baby and maternity", type: "feeding", sex: null, Color: "Transparent", stock: "in-stock", delivery: "same-day-delivery", Quantity: "3"},
+      { id: 399, name: "Skip Hop Diaper Bag", brand: "Skip Hop", price: 55000, image: "skiphop_bag.png", rating: 4.7, category: "baby and maternity", type: "bags", sex: null, Color: "Black", stock: "in-stock", delivery: "same-day-delivery", Material: "Polyester"},
+      { id: 400, name: "Apple MacBook Pro 14", brand: "Apple", price: 1350000, image: "macbook_pro14.png", rating: 4.9, category: "electronics", type: "laptops", sex: null, Color: "Space Gray", stock: "in-stock", delivery: "free-shipping", RAM: "16GB", Storage: "512GB"},
+      { id: 401, name: "Dell XPS 15", brand: "Dell", price: 980000, image: "dell_xps15.png", rating: 4.8, category: "electronics", type: "laptops", sex: null, Color: "Silver", stock: "in-stock", delivery: "free-shipping", RAM: "16GB", Storage: "1TB"},
+      { id: 402, name: "HP Spectre x360", brand: "HP", price: 870000, image: "hp_spectre.png", rating: 4.7, category: "electronics", type: "laptops", sex: null, Color: "Blue", stock: "in-stock", delivery: "free-shipping", RAM: "16GB", Storage: "512GB"},
+      { id: 403, name: "Lenovo ThinkPad X1", brand: "Lenovo", price: 920000, image: "thinkpad_x1.png", rating: 4.8, category: "electronics", type: "laptops", sex: null, Color: "Black", stock: "in-stock", delivery: "free-shipping", RAM: "16GB", Storage: "1TB"},
+      { id: 404, name: "Asus ROG Zephyrus", brand: "Asus", price: 1100000, image: "rog_zephyrus.png", rating: 4.9, category: "electronics", type: "gaming laptops", sex: null, Color: "Black", stock: "in-stock", delivery: "free-shipping", RAM: "32GB", Storage: "1TB"},
+      { id: 405, name: "Acer Predator Helios", brand: "Acer", price: 880000, image: "acer_predator.png", rating: 4.7, category: "electronics", type: "gaming laptops", sex: null, Color: "Black", stock: "in-stock", delivery: "free-shipping", RAM: "16GB", Storage: "1TB"},
+      { id: 406, name: "Samsung Galaxy S24", brand: "Samsung", price: 650000, image: "galaxy_s24.png", rating: 4.8, category: "electronics", type: "phones", sex: null, Color: "Phantom Black", stock: "in-stock", delivery: "same-day-delivery", RAM: "12GB", Storage: "512GB"},
+      { id: 407, name: "iPhone 15 Pro Max", brand: "Apple", price: 900000, image: "iphone15_pro.png", rating: 4.9, category: "electronics", type: "phones", sex: null, Color: "Titanium", stock: "in-stock", delivery: "same-day-delivery", RAM: "8GB", Storage: "256GB"},
+      { id: 408, name: "Google Pixel 8 Pro", brand: "Google", price: 580000, image: "pixel8_pro.png", rating: 4.8, category: "electronics", type: "phones", sex: null, Color: "Obsidian", stock: "in-stock", delivery: "same-day-delivery", RAM: "12GB", Storage: "256GB"},
+      { id: 409, name: "OnePlus 12", brand: "OnePlus", price: 520000, image: "oneplus12.png", rating: 4.7, category: "electronics", type: "phones", sex: null, Color: "Emerald", stock: "in-stock", delivery: "same-day-delivery", RAM: "12GB", Storage: "256GB"},
+      { id: 410, name: "Xiaomi Mi 14", brand: "Xiaomi", price: 480000, image: "xiaomi_mi14.png", rating: 4.6, category: "electronics", type: "phones", sex: null, Color: "Blue", stock: "in-stock", delivery: "same-day-delivery", RAM: "12GB", Storage: "256GB"},
+      { id: 411, name: "LG 65” OLED TV", brand: "LG", price: 750000, image: "lg_oled65.png", rating: 4.9, category: "electronics", type: "televisions", sex: null, Color: "Black", stock: "in-stock", delivery: "free-shipping", Resolution: "4K", Smart: "Yes"},
+      { id: 412, name: "Samsung QLED 55”", brand: "Samsung", price: 620000, image: "samsung_qled55.png", rating: 4.8, category: "electronics", type: "televisions", sex: null, Color: "Black", stock: "in-stock", delivery: "free-shipping", Resolution: "4K", Smart: "Yes"},
+      { id: 413, name: "Sony Bravia 75”", brand: "Sony", price: 1200000, image: "sony_bravia75.png", rating: 4.9, category: "electronics", type: "televisions", sex: null, Color: "Black", stock: "in-stock", delivery: "free-shipping", Resolution: "8K", Smart: "Yes"},
+      { id: 414, name: "Hisense 50” UHD TV", brand: "Hisense", price: 380000, image: "hisense_50.png", rating: 4.6, category: "electronics", type: "televisions", sex: null, Color: "Black", stock: "in-stock", delivery: "free-shipping", Resolution: "4K", Smart: "Yes"},
+      { id: 415, name: "TCL 55” QLED TV", brand: "TCL", price: 420000, image: "tcl_qled55.png", rating: 4.7, category: "electronics", type: "televisions", sex: null, Color: "Black", stock: "in-stock", delivery: "free-shipping", Resolution: "4K", Smart: "Yes"},
+      { id: 416, name: "Bose QuietComfort 45", brand: "Bose", price: 190000, image: "bose_qc45.png", rating: 4.9, category: "electronics", type: "audio", sex: null, Color: "Black", stock: "in-stock", delivery: "same-day-delivery", Wireless: "Yes"},
+      { id: 417, name: "Sony WH-1000XM5", brand: "Sony", price: 210000, image: "sony_xm5.png", rating: 4.9, category: "electronics", type: "audio", sex: null, Color: "Silver", stock: "in-stock", delivery: "same-day-delivery", Wireless: "Yes"},
+      { id: 418, name: "Apple AirPods Pro 2", brand: "Apple", price: 150000, image: "airpods_pro2.png", rating: 4.8, category: "electronics", type: "audio", sex: null, Color: "White", stock: "in-stock", delivery: "same-day-delivery", Wireless: "Yes"},
+      { id: 419, name: "Samsung Galaxy Buds 2 Pro", brand: "Samsung", price: 95000, image: "galaxy_buds2.png", rating: 4.7, category: "electronics", type: "audio", sex: null, Color: "Gray", stock: "in-stock", delivery: "same-day-delivery", Wireless: "Yes"},
+      { id: 420, name: "JBL Flip 6 Speaker", brand: "JBL", price: 85000, image: "jbl_flip6.png", rating: 4.7, category: "electronics", type: "audio", sex: null, Color: "Blue", stock: "in-stock", delivery: "same-day-delivery", Wireless: "Yes"},
+      { id: 421, name: "Yamaha Acoustic Guitar", brand: "Yamaha", price: 120000, image: "yamaha_guitar.png", rating: 4.8, category: "electronics", type: "musical instruments", sex: null, Color: "Brown", stock: "in-stock", delivery: "free-shipping", Size: "Full"},
+      { id: 422, name: "Casio Digital Piano", brand: "Casio", price: 250000, image: "casio_piano.png", rating: 4.7, category: "electronics", type: "musical instruments", sex: null, Color: "Black", stock: "in-stock", delivery: "free-shipping", Keys: "88"},
+      { id: 423, name: "Roland Electronic Drum", brand: "Roland", price: 450000, image: "roland_drum.png", rating: 4.8, category: "electronics", type: "musical instruments", sex: null, Color: "Black", stock: "in-stock", delivery: "free-shipping", Pads: "8"},
+      { id: 424, name: "Fender Electric Guitar", brand: "Fender", price: 380000, image: "fender_guitar.png", rating: 4.9, category: "electronics", type: "musical instruments", sex: null, Color: "Red", stock: "in-stock", delivery: "free-shipping", Type: "Stratocaster"},
+      { id: 425, name: "Korg Synthesizer", brand: "Korg", price: 300000, image: "korg_synth.png", rating: 4.7, category: "electronics", type: "musical instruments", sex: null, Color: "Black", stock: "in-stock", delivery: "free-shipping", Keys: "61"},
+      { id: 426, name: "Nike Air Force 1", brand: "Nike", price: 55000, image: "nike_af1.png", rating: 4.8, category: "fashion", type: "shoes", sex: "unisex", Color: "White", stock: "in-stock", delivery: "same-day-delivery", Size: "42"},
+      { id: 427, name: "Adidas Ultraboost", brand: "Adidas", price: 68000, image: "adidas_ultraboost.png", rating: 4.8, category: "fashion", type: "shoes", sex: "male", Color: "Black", stock: "in-stock", delivery: "same-day-delivery", Size: "43"},
+      { id: 428, name: "Puma Suede Classic", brand: "Puma", price: 45000, image: "puma_suede.png", rating: 4.7, category: "women fashion", type: "shoes", sex: "female", Color: "Red", stock: "in-stock", delivery: "same-day-delivery", Size: "39"},
+      { id: 429, name: "Reebok Nano X3", brand: "Reebok", price: 52000, image: "reebok_nano.png", rating: 4.6, category: "men fashion", type: "shoes", sex: "male", Color: "Gray", stock: "in-stock", delivery: "same-day-delivery", Size: "44"},
+      { id: 430, name: "New Balance 550", brand: "New Balance", price: 60000, image: "nb_550.png", rating: 4.7, category: "men fashion", type: "shoes", sex: "unisex", Color: "Green", stock: "in-stock", delivery: "same-day-delivery", Size: "41"},
+      { id: 431, name: "Zara Slim Fit Shirt", brand: "Zara", price: 25000, image: "zara_shirt.png", rating: 4.6, category: "men fashion", type: "clothing", sex: "male", Color: "Blue", stock: "in-stock", delivery: "same-day-delivery", Size: "L"},
+      { id: 432, name: "H&M Summer Dress", brand: "H&M", price: 30000, image: "hm_dress.png", rating: 4.7, category: "fashion", type: "clothing", sex: "female", Color: "Yellow", stock: "in-stock", delivery: "same-day-delivery", Size: "M"},
+      { id: 433, name: "Levi’s 501 Jeans", brand: "Levi’s", price: 40000, image: "levis_501.png", rating: 4.8, category: "fashion", type: "clothing", sex: "male", Color: "Blue", stock: "in-stock", delivery: "same-day-delivery", Size: "32"},
+      { id: 434, name: "Uniqlo Hoodie", brand: "Uniqlo", price: 22000, image: "uniqlo_hoodie.png", rating: 4.7, category: "fashion", type: "clothing", sex: "unisex", Color: "Gray", stock: "in-stock", delivery: "same-day-delivery", Size: "XL"},
+      { id: 435, name: "Gucci Handbag", brand: "Gucci", price: 450000, image: "gucci_bag.png", rating: 4.9, category: "fashion", type: "accessories", sex: "female", Color: "Black", stock: "in-stock", delivery: "free-shipping", Material: "Leather"},
+      { id: 436, name: "Prada Sunglasses", brand: "Prada", price: 180000, image: "prada_sunglasses.png", rating: 4.8, category: "fashion", type: "accessories", sex: "unisex", Color: "Brown", stock: "in-stock", delivery: "free-shipping", UV: "400"},
+      { id: 437, name: "Ray-Ban Aviator", brand: "Ray-Ban", price: 95000, image: "rayban_aviator.png", rating: 4.8, category: "fashion", type: "accessories", sex: "unisex", Color: "Gold", stock: "in-stock", delivery: "same-day-delivery", UV: "400"},
+      { id: 438, name: "Rolex Submariner", brand: "Rolex", price: 4500000, image: "rolex_submariner.png", rating: 5.0, category: "fashion", type: "accessories", sex: "male", Color: "Silver", stock: "in-stock", delivery: "free-shipping", Material: "Stainless Steel"},
+      { id: 439, name: "Cartier Love Bracelet", brand: "Cartier", price: 2500000, image: "cartier_bracelet.png", rating: 4.9, category: "fashion", type: "accessories", sex: "female", Color: "Gold", stock: "in-stock", delivery: "free-shipping", Material: "18k Gold"},
+      { id: 440, name: "LG Refrigerator 500L", brand: "LG", price: 550000, image: "lg_fridge.png", rating: 4.8, category: "home", type: "appliances", sex: null, Color: "Silver", stock: "in-stock", delivery: "free-shipping", Capacity: "500L"},
+      { id: 441, name: "Samsung Washing Machine", brand: "Samsung", price: 420000, image: "samsung_washer.png", rating: 4.7, category: "home", type: "appliances", sex: null, Color: "White", stock: "in-stock", delivery: "free-shipping", Capacity: "8kg"},
     ];
 
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 25;
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1280) {
+        setProductsPerPage(30);
+      } else if (window.innerWidth < 1280 && window.innerWidth >= 1001) {
+        setProductsPerPage(28);
+      } else if (window.innerWidth < 1000 && window.innerWidth >= 768) {
+        setProductsPerPage(30);
+      } else {
+        setProductsPerPage(30);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleRatingChange = (e) => {
     const rating = e.target.value;
@@ -577,9 +678,15 @@ export default function Home() {
     }
   };
 
+  useEffect(() => {
+  const flashSaleProducts = products.filter(item => item.flashSale);
+
+  setFlashSale(flashSaleProducts.slice(0,18));
+  },[])
+
   const filteredProducts = products.filter((item) => {
     const matchCategory = category === "All Products" || category.toLowerCase() === item.category.toLowerCase();
-    const matchType = !type || item.type === type;
+    const matchType = !type || item.type.toLowerCase() === type.toLowerCase();
     const matchesPrice = item.price >= minVal && item.price <= maxVal;
     const matchesBrand = brandSearch === "" || item.brand.toLowerCase().includes(brandSearch.toLowerCase());
     const matchesRating = selectedRatings.length === 0 || selectedRatings.some(r => item.rating >= Number(r));
@@ -609,13 +716,13 @@ export default function Home() {
 
     const catFilter = products.filter(item => item.type === type);
     const uniqueBrands = [...new Set(catFilter.map(item => item.brand))].filter(Boolean);
-    const uniqueColors = [...new Set(catFilter.map(item => item.Color))].filter(Boolean); // Use Color
+    const uniqueColors = [...new Set(catFilter.map(item => item.color))].filter(Boolean);
     const uniqueGender = [...new Set(catFilter.map(item => item.sex))].filter(Boolean);
 
     setProductBrand(uniqueBrands);
     setProductColor(uniqueColors);
     setProductGender(uniqueGender);
-  }, [type, products]);
+  }, [type]);
 
   const indexOfLast = currentPage * productsPerPage;
   const indexOfFirst = indexOfLast - productsPerPage;
@@ -755,21 +862,16 @@ export default function Home() {
           {navMenu && navMenu.length > 0 ? (
             <div className={styles.productsRightTop}>
               <div className={styles.productsLinks}>
-                {navMenu.map((item, index) => (
-                  <div key={index} className={styles.navMenuMainContentContainer}>
-                    <div className={styles.navMenuLinkMainContainer}>
-                      <Link
-                        href={item.url}
-                        className={`${styles.catHeading} ${item.type === type ? styles.active : ""}`}
-                      >
-                        {item.item}
-                      </Link>
-                    </div>
-                    <div
-                      className={`${styles.navMenuBottomLine} ${item.type === type ? styles.active : ""}`}
-                    ></div>
-                  </div>
-                ))}
+                {navMenu.map((item, index) => ( 
+                  <div key={index} className={styles.navMenuMainContentContainer}> 
+                    <div className={styles.navMenuLinkMainContainer}> 
+                      <Link href={item.url} className={`${styles.catHeading} ${item.type === type ? styles.active : ""}`} > 
+                        {item.item} 
+                      </Link> 
+                    </div> 
+                    <div className={`${styles.navMenuBottomLine} ${item.type === type ? styles.active : ""}`} ></div> 
+                  </div> 
+                ))} 
               </div>
               <button onClick={filterClicked} className={styles.filterBtnNew}>
                 <i className="fa fa-sliders-h"></i>
@@ -782,7 +884,7 @@ export default function Home() {
 
           <div className={styles.productsRightBottom}>
             {currentProducts.length === 0 ? (
-              <p>No products match the filters.</p> // Added fallback
+              <p>No product in the category</p>
             ) : (
               currentProducts.map((item, index) => (
                 <div key={index} className={styles.productCard}>
@@ -886,141 +988,37 @@ export default function Home() {
               </header>
               <div className={styles.categoryContent}>
                   <div className={styles.ccContainer}>
-                    <div className={styles.productCard}>
-                      <div className={styles.productCardTop}>
-                          <Image src={"/"} className={styles.productImg} alt="product image" fill />
-                      </div>
-                      <div className={styles.productCardBottom}>
-                          <div className={styles.productCartPriceContainer}>
-                              <h2>₦{Number(145999).toLocaleString()}</h2>
-                              <p>In Stock</p>
+                    {
+                      flashSale.map((item, index) => (
+                        <div key={index} className={styles.productCard}>
+                          <div className={styles.productCardTop}>
+                              <Image src={"/"} className={styles.productImg} alt="product image" fill />
                           </div>
-                          <div className={styles.productCardName}>
-                              <h2>Lavender</h2>
-                          </div>
-                          <div className={styles.productCardReview}>
-                              <div className={styles.productCardReviewItem}>
-                                  <div className={styles.productCardStars}>
-                                      <i className="fa fa-star"></i>
-                                      <i className="fa fa-star"></i>
-                                      <i className="fa fa-star"></i>
-                                      <i className="fa fa-star"></i>
-                                      <i className="fa fa-star"></i>
-                                  </div>
-                                  <p>7.0</p>
+                          <div className={styles.productCardBottom}>
+                              <div className={styles.productCartPriceContainer}>
+                                  <h2>₦{Number(145999).toLocaleString()}</h2>
+                                  <p>In Stock</p>
                               </div>
-                              <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
+                              <div className={styles.productCardName}>
+                                  <h2>Lavender</h2>
+                              </div>
+                              <div className={styles.productCardReview}>
+                                  <div className={styles.productCardReviewItem}>
+                                      <div className={styles.productCardStars}>
+                                          <i className="fa fa-star"></i>
+                                          <i className="fa fa-star"></i>
+                                          <i className="fa fa-star"></i>
+                                          <i className="fa fa-star"></i>
+                                          <i className="fa fa-star"></i>
+                                      </div>
+                                      <p>7.0</p>
+                                  </div>
+                                  <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
+                              </div>
                           </div>
-                      </div>
-                    </div>
-                    <div className={styles.productCard}>
-                        <div className={styles.productCardTop}>
-                            <Image src={"/"} className={styles.productImg} alt="product image" fill />
                         </div>
-                        <div className={styles.productCardBottom}>
-                            <div className={styles.productCartPriceContainer}>
-                                <h2>₦{Number(145999).toLocaleString()}</h2>
-                                <p>In Stock</p>
-                            </div>
-                            <div className={styles.productCardName}>
-                                <h2>Lavender</h2>
-                            </div>
-                            <div className={styles.productCardReview}>
-                                <div className={styles.productCardReviewItem}>
-                                    <div className={styles.productCardStars}>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                    </div>
-                                    <p>7.0</p>
-                                </div>
-                                <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.productCard}>
-                        <div className={styles.productCardTop}>
-                            <Image src={"/"} className={styles.productImg} alt="product image" fill />
-                        </div>
-                        <div className={styles.productCardBottom}>
-                            <div className={styles.productCartPriceContainer}>
-                                <h2>₦{Number(145999).toLocaleString()}</h2>
-                                <p>In Stock</p>
-                            </div>
-                            <div className={styles.productCardName}>
-                                <h2>Lavender</h2>
-                            </div>
-                            <div className={styles.productCardReview}>
-                                <div className={styles.productCardReviewItem}>
-                                    <div className={styles.productCardStars}>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                    </div>
-                                    <p>7.0</p>
-                                </div>
-                                <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.productCard}>
-                        <div className={styles.productCardTop}>
-                            <Image src={"/"} className={styles.productImg} alt="product image" fill />
-                        </div>
-                        <div className={styles.productCardBottom}>
-                            <div className={styles.productCartPriceContainer}>
-                                <h2>₦{Number(145999).toLocaleString()}</h2>
-                                <p>In Stock</p>
-                            </div>
-                            <div className={styles.productCardName}>
-                                <h2>Lavender</h2>
-                            </div>
-                            <div className={styles.productCardReview}>
-                                <div className={styles.productCardReviewItem}>
-                                    <div className={styles.productCardStars}>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                    </div>
-                                    <p>7.0</p>
-                                </div>
-                                <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.productCard}>
-                        <div className={styles.productCardTop}>
-                            <Image src={"/"} className={styles.productImg} alt="product image" fill />
-                        </div>
-                        <div className={styles.productCardBottom}>
-                            <div className={styles.productCartPriceContainer}>
-                                <h2>₦{Number(145999).toLocaleString()}</h2>
-                                <p>In Stock</p>
-                            </div>
-                            <div className={styles.productCardName}>
-                                <h2>Lavender</h2>
-                            </div>
-                            <div className={styles.productCardReview}>
-                                <div className={styles.productCardReviewItem}>
-                                    <div className={styles.productCardStars}>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                    </div>
-                                    <p>7.0</p>
-                                </div>
-                                <Link href={"/"}><i className="fa fa-arrow-right"></i> Add</Link>
-                            </div>
-                        </div>
-                    </div>
+                      ))
+                    }
                   </div>
               </div>
           </div>
