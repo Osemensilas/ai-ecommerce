@@ -809,3 +809,122 @@
     left: 15px;
     color: var(--grey);
 }
+
+/*Add Customer Form Begins*/
+
+.addCustomerContainer{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.addCustomerForm{
+    width: 600px;
+    height: max-content;
+}
+
+.addCustomerForm header{
+    height: max-content;
+    width: 100%;
+    padding: 0 0 40px 0;
+}
+
+.addCustomerForm header h2{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.addCustomerFormContent{
+    width: 100%;
+    height: max-content;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    background: var(--background);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.addCustomerFormContent h3{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.addCustomerFormContentDetail{
+    margin-bottom: 10px;
+}
+
+.addCustomerFormContentDetail,
+.addCustomerFormContentDetailPhone{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.single{
+    flex-direction: column;
+}
+
+.addCustomerFormContentDetailLeft,
+.addCustomerFormContentDetailRight{
+    height: max-content;
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+}
+
+.addCustomerFormContentDetailRight label,
+.addCustomerFormContentDetail label{
+    color: var(--grey);
+    margin-bottom: 5px;
+}
+
+.addCustomerFormContentDetail input,
+.addCustomerFormContentDetail select{
+    height: 40px;
+    width: 100%;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    padding: 0 10px;
+    outline: none;
+    font-size: 16px;
+    color: var(--grey);
+}
+
+.addCustomerFormContentDetailPhoneRight{
+    width: 20%;
+}
+
+.addCustomerFormContentDetailPhoneLeft{
+    width: 78%;
+}
+
+.addCustomerBtnContainer{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.cancelBtn,
+.addCustomerBtn{
+    height: max-content;
+    width: max-content;
+    padding: 12px 25px;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    font-size: 16px;
+    border-radius: 10px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.addCustomerBtn{
+    background: var(--primary);
+    color: var(--background);
+}
