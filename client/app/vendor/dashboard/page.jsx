@@ -12,6 +12,7 @@ import VendorPromotion from '@/components/VendorPromotion';
 import VendorWallet from '@/components/VendorWallet';
 import VendorShipment from '@/components/VendorShipment';
 import VendorSetting from '@/components/VendorSetting';
+import VendorAddCustomer from '@/components/VendorAddCustomer';
 
 const Page = () => {
 
@@ -38,6 +39,11 @@ const Page = () => {
                 ${pathName === "/vendor/customers" ? styles.active : ""}
                 `}>
                     <VendorCustomer />
+                </div>
+                <div className={`${styles.VendorComponentContainer}
+                ${pathName === "/vendor/customers/add-customer" ? styles.active : ""}
+                `}>
+                    <VendorAddCustomer />
                 </div>
                 <div className={`${styles.VendorComponentContainer}
                 ${pathName === "/vendor/orders" ? styles.active : ""}

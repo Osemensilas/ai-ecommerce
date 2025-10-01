@@ -48,6 +48,7 @@ const VendorProducts = () => {
                     </div>
                     <div className={styles.productsContentMiddleRight}>
                         <input type="text" className={styles.productsContentMiddleInput} placeholder="Search" />
+                        <i className="fa fa-search"></i>
                     </div>
                 </form>
                 <div className={styles.productsContentBottom}>

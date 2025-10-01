@@ -788,3 +788,24 @@
     cursor: pointer;
     color: var(--background);
 }
+
+.headerBtnContainer{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.headerBtnContainer .exportBtn{
+    background: transparent;
+    padding: 0;
+    color: var(--primary);
+}
+
+.productsContentMiddleRight i{
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    color: var(--grey);
+}

@@ -70,8 +70,10 @@ const VendorNav = () => {
                         </button>
                     </li>
                     <li className={styles.vendorNavItem}>
-                        <button type="button" onClick={customersClicked} className={`${
-                            pathName === "/vendor/customers" ? styles.active : ""}`}>
+                        <button type="button" onClick={customersClicked} className={`
+                        ${pathName === "/vendor/customers" ? styles.active : ""}
+                        ${pathName === "/vendor/customers/add-customer" ? styles.active : ""}
+                        `}>
                             <div className={styles.textCarrier}><i className="fas fa-users"></i>Customers</div>
                             <p>23</p>
                         </button>
