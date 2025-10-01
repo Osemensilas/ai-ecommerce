@@ -156,6 +156,46 @@ const VendorProducts = () => {
                             </tr>
                         </tbody>
                     </table>
+                    <div className={styles.productNavContainer}>
+                        <div className={styles.productNavContainerLeft}>
+                            showing 1 - 10 of 25
+                        </div>
+                        <ul className={styles.productPagination}>
+                            <li  className={styles.productPaginationList}>
+                                <button type="button" className={styles.productPaginationBtn}>
+                                    <i className="fa fa-angle-left"></i>
+                                </button>
+                            </li>
+                            <li  className={styles.productPaginationList}>
+                                <button type="button" className={`${styles.productPaginationNum} ${styles.active}`}>
+                                    1
+                                </button>
+                            </li>
+                            <li  className={styles.productPaginationList}>
+                                <button type="button" className={styles.productPaginationNum}>
+                                    2
+                                </button>
+                            </li>
+                            <li  className={styles.productPaginationList}>
+                                <button type="button" className={styles.productPaginationNum}>
+                                    3
+                                </button>
+                            </li>
+                            <li  className={styles.productPaginationList}>
+                                ...
+                            </li>
+                            <li  className={styles.productPaginationList}>
+                                <button type="button" className={styles.productPaginationNum}>
+                                    10
+                                </button>
+                            </li>
+                            <li  className={styles.productPaginationList}>
+                                <button type="button" className={`${styles.productPaginationBtn} ${styles.active}`}>
+                                    <i className="fa fa-angle-right"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
