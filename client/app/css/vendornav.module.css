@@ -1,0 +1,100 @@
+.vendorNavContainer{
+    height: max-content;
+    min-height: 100vh;
+    background: var(--lightGrey);
+    padding: 20px;
+}
+
+.vendorNavContainerTop{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.vendorNavLogo{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.vendorLogo{
+    object-fit: fill;
+}
+
+.vendorNavPanelBtn{
+    height: max-content;
+    width: max-content;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.vendorNavPanelBtn i{
+    font-size: 25px;
+    color: var(--lighterText);
+}
+
+.vendorNavContainerBottom{
+    height: max-content;
+    width: 100%;
+}
+
+.vendorNav{
+    height: max-content;
+    width: 100%;
+    list-style: none;
+}
+
+.vendorNavItem{
+    height: max-content;
+    width: 100%;
+}
+
+.vendorNavItem button{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    color: var(--lighterText);
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.vendorNavItem button.active{
+    background: var(--primary);
+    color: var(--background);
+    font-weight: 500;
+    font-weight: bold;
+}
+
+.textCarrier{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.vendorNavItem button i{
+    font-size: 20px;
+}
+
+.vendorNavItem button p{
+    font-size: 14px;
+    color: var(--lighterText);
+}
+
+.vendorNavItem button.active p{
+    color: var(--background);
+}

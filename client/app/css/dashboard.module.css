@@ -1,0 +1,726 @@
+.dashboard{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: flex-start;
+}
+
+.dashboardLeft{
+    width: 20%;
+    height: 100%;
+}
+
+.dashboardRight{
+    width: 80%;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.mainVendorDashboard{
+    height: max-content;
+    width: 100%;
+}
+
+.VendorComponentContainer{
+    height: max-content;
+    width: 100%;
+    display: none;
+}
+
+.VendorComponentContainer.active{
+    display: block;
+}
+
+.dashbordRightTop{
+    height: max-content;
+    width: 100%;
+    padding: 40px 50px;
+    border-bottom: 1px solid var(--lightGrey);
+    margin-bottom: 20px;
+}
+
+.dashboardSearchForm{
+    position: relative;
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dashboardSearchForm i{
+    position: absolute;
+    top: 30%;
+    left: 12px;
+    color: var(--grey);
+}
+
+.dashboardSearchFormInput{
+    height: 40px;
+    width: 400px;
+    border: 1px solid var(--lightGrey);
+    border-radius: 5px;
+    padding: 0 40px;
+    font-size: 16px;
+    outline: none;
+}
+
+.dashboardSearchFormBtn{
+    height: 40px;
+    width: max-content;
+    padding: 0 20px;
+    background: var(--primary);
+    border-radius: 5px;
+    color: var(--background);
+    outline: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.dashboardHeader{
+    height: max-content;
+    width: 100%;
+    padding: 0 50px 40px 50px;
+}
+
+.dashboardHeader h2{
+    font-size: 35px;
+}
+
+.dashboardContent{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 50px 40px 50px;
+}
+
+.dashboardCards{
+    height: 120px;
+    width: 100%;
+    background: var(--lightGrey);
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.dashboardCard{
+    height: 85px;
+    width: 100%;
+    background: var(--background);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.dashboardCardContent{
+    height: max-content;
+    width: max-content;
+    padding: 0 100px 0 40px;
+    border-right: 1px solid var(--lightGrey);
+}
+
+.dashboardCardContent:last-child{
+    border-right: none;
+}
+
+.dashboardCardContent p{
+    margin-bottom: 10px;
+    color: var(--grey);
+}
+
+.dashboardCardContent h3{
+    font-size: 20px;
+}
+
+.dashboardSalesCard{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.dashboardSalesCardLeft{
+    width: 65%;
+    height: 220px;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+}
+
+.dashboardProductCardLeft{
+    width: 60%;
+    height: 220px;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+}
+
+.dashboardSalesCardRight{
+    width: 35%;
+    height: 220px;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+}
+
+.dashboardProductsCardRight{
+    width: 40%;
+    height: 220px;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+}
+
+.dashboardSalesCardheader{
+    height: 50px;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    background: var(--lightGrey);
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.dashboardSalesCardheader h3{
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.dashboardSalesCardLeftContent{
+    height: 170px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.dashboardSalesCardRContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-right: 1px solid var(--grey);
+}
+
+.dashboardSalesCardRContent:last-child{
+    border-right: none;
+}
+
+.dashboardSalesCardRContent h3{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--lighterText);
+}
+
+.dashboardSalesCardRContent p{
+    color: var(--grey);
+    font-size: 14px;
+}
+
+.dashboardSalesCardRightContent{
+    height: 170px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 20px;
+}
+
+.dashboardSalesCardLContent{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--grey);
+}
+
+.dashboardSalesCardLContent:last-child{
+    border-bottom: none;
+}
+
+.dashboardSalesCardLContent h3{
+    font-size: 16px;
+    color: var(--lighterText);
+    font-weight: 600;
+}
+
+.dashboardProductsCardLeftContent{
+    height: 170px;
+    width: 100%;
+    display: flex;
+}
+
+.dashboardProductsCardLeftRContent{
+    height: 100%;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--grey);
+    padding: 20px;
+    gap: 20px;
+}
+
+.dashboardProductsCardLeftLContent{
+    height: 100%;
+    width: 35%;
+}
+
+.dashboardProductsCardLeftRtext{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dashboardProductsCardLeftRtext h2{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.dashboardProductsCardLeftRtext h3{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.dashboardProductsCardRightContent{
+    height: 170px;
+    width: 100%;
+    display: flex;
+}
+
+.dashboardProductsCardLContent{
+    height: 100%;
+    width: 50%;
+    border-right: 1px solid var(--grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dashboardProductsCardLContent:last-child{
+    border-right: none;
+}
+
+.dashboardProductsimg{
+    position: relative;
+    height: 100px;
+    width: 100px;
+}
+
+.productImage{
+    object-fit: fill;
+}
+
+.donutContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.firstChart{
+    border: none;
+    background: transparent;
+}
+
+.donutLabel {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--grey);
+}
+
+.donutLabel2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--grey);
+}
+
+.dashboardProductDonutContainerTop{
+    height: 10%;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+.dashboardProductDonutContainerBottom{
+    height: 90%;
+    width: 100%;
+}
+
+.dashboardIncome{
+    height: 370px;
+    width: 100%;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+}
+
+.dashboardIncomeTop{
+    width: 100%;
+    height: 10%;
+}
+
+.dashboardIncomeBottom{
+    height: 90%;
+    width: 100%;
+}
+
+.lineChartContainer {
+  width: 100%;
+  height: 300px;
+  margin: 20px auto;
+}
+
+.dashboardOrderCardLeft{
+    width: 35%;
+    height: 220px;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+}
+
+.dashboardOrderCardRight{
+    width: 65%;
+    height: 220px;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+}
+
+.dashboardOrderCardLeftContent{
+    height: 170px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dashboardOrderCardRContent{
+    height: 50%;
+    width: 100%;
+    border-bottom: 1px solid var(--grey);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.dashboardOrderCardRContent h3{
+    color: var(--grey);
+    font-size: 17px;
+}
+
+.dashboardOrderCardRContent h3:last-child{
+    color: var(--orange);
+}
+
+.orderTable{
+    height: max-content;
+    width: 100%;
+}
+
+.orderTable {
+  border-collapse: collapse;
+  width: 100%;
+  height: 100px;
+  border-spacing: 0 20px; 
+}
+
+.orderTableHead th {
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.orderTableBody td{
+    padding: 10px 0;
+    font-size: 15px;
+    color: var(--lighterText);
+    font-weight: 400;
+}
+
+.orderTableHead tr{
+    background-color: var(--lightGrey); 
+    padding: 8px;
+    text-align: center;
+    border-top: 1px solid var(--grey);
+    padding: 15px 0;
+}
+
+.orderTableBody tr{
+    padding: 8px;
+    text-align: center;
+    padding: 15px 0;
+}
+
+.dashboardOrderCardRightContent {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 170px;
+    display: flex;
+}
+
+.dashboardOrderSummaryCardLeft{
+    width: 100%;
+    height: max-content;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+}
+
+.dashboardOrderSummaryCardLeftContent{
+    height: 320px;
+    width: 100%;
+    display: flex;
+}
+
+.dashboardOrderSummaryCardLContent{
+    height: 100%;
+    width: 70%;
+    border-right: 1px solid var(--grey);
+    padding: 20px;
+}
+
+.dashboardOrderSummaryCardRContent{
+    height: 100%;
+    width: 30%;
+    padding: 20px;
+}
+
+.dashboardOrderSummaryCardRContent h3{
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--grey);
+    margin-bottom: 10px;
+}
+
+.dashboardOrderSummaryCardRtext{
+    height: max-content;
+    width: max-content;
+    padding: 20px;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    border-left: 4px solid var(--orange);
+}
+
+.dashboardOrderSummaryCardRtextTop{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+
+.dashboardOrderSummaryCardRtextTop h3{
+    margin-bottom: 10px;
+}
+
+.dashboardOrderSummaryCardRtextTop h3:last-child{
+    margin-bottom: 0;
+}
+
+.dashboardOrderIcon{
+    height: 10px;
+    width: 10px;
+    background: var(--orange);
+    border-radius: 100%;
+}
+
+.dashboardPurchaseCardLeft{
+    height: max-content;
+    width: 60%;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+}
+
+.dashboardPurchaseCardRight{
+    height: max-content;
+    width: 40%;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+}
+
+.dashboardPurchaseCardLeft header,
+.dashboardPurchaseCardRight header{
+    background: transparent;
+}
+
+.dashboardPurchaseCardLeftContent,
+.dashboardPurchaseCardRightContent{
+    width: 100%;
+    height: max-content;
+}
+
+/*Products Page Begins*/
+
+.productsTop{
+    height: max-content;
+    width: 100%;
+}
+
+.productsTopImageContainer{
+    position: relative;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.productsTopFirst{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid var(--grey);
+    gap: 20px;
+    padding: 0 160px;
+}
+
+.productsTopFirstBtn{
+    height: max-content;
+    width: max-content;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.productsTopFirstBtn i{
+    font-size: 20px;
+}
+
+.userImage{
+    object-fit: fill;
+    border-radius: 100%;
+}
+
+.productsTopSecond{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 160px;
+}
+
+.productsTopSecond button{
+    background: transparent;
+    border: none;
+    color: var(--lighterText);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.productsHeader{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+}
+
+.productsHeader h2{
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.productsHeader button{
+    background: var(--primary);
+    padding: 15px 25px;
+    border-radius: 10px;
+    border: none;
+    font-size: 17px;
+    color: var(--background);
+    cursor: pointer;
+}
+
+.productsContent{
+    height: max-content;
+    width: 100%;
+    padding: 20px 80px;
+}
+
+.productsContentTop{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--lightGrey);
+    gap: 10px;
+}
+
+.productsContentForm{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.productsContentTopBtn{
+    border: none;
+    padding: 5px 0;
+    font-size: 16px;
+    background: transparent;
+    color: var(--lighterText);
+}
+
+.productsContentTopBtn.active{
+    border-bottom: 2px solid var(--text);
+    color: var(--text);
+    font-weight: 600;
+}
+
+.productsContentMiddleLeft{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.productsContentMiddleLeft select{
+    border: 1px solid var(--grey);
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    color: var(--text);
+    font-weight: 300;
+}
+
+.productsContentMiddleRight{
+    position: relative;
+    height: max-content;
+    width: max-content;
+}
+
+.productsContentMiddleInput{
+    height: 40px;
+    width: 300px;
+    padding: 0 50px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid var(--grey);
+    font-size: 16px;
+}
+
+.productsTable td{
+    padding: 20px 0;
+    border-bottom: 1px solid var(--grey);
+}
