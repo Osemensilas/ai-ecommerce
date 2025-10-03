@@ -1,8 +1,25 @@
 import styles from '../app/css/dashboard.module.css';
 import Image from 'next/image';
 import DashboardLines from './DashboardLines';
+import DashboardReportNuts from './DashboardReportNut';
+import MonthlySalesChart from './MonthlySalesChart';
+import { useState } from 'react';
 
 const VendorReports = () => {
+
+    const [viewMore, setViewMore] = useState(false);
+    const [viewMoreText, setViewMoreText] = useState('View More');
+
+    const viewMoreClicked = () => {
+        if (viewMore){
+            setViewMore(false);
+            setViewMoreText("View More");
+        }else{
+            setViewMore(true);
+            setViewMoreText("View Less");
+        }
+    }
+
     return ( 
         <>
         <div className={styles.mainVendorDashboard}>
@@ -139,10 +156,166 @@ const VendorReports = () => {
                             <h3>Major Sales by Location</h3>
                         </header>
                         <div className={styles.reportsBottomLeftContent}>
-
+                            <DashboardReportNuts />
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className={`${styles.viewMoreContainer} 
+            ${viewMore ? styles.active : ""}`}>
+                <div className={styles.reportsBottom}>
+                    <div className={styles.reportsBottomRight}>
+                        <header className={styles.reportsBottomRightHeader}>
+                            <h3>Sales Summary</h3>
+                            <div className={styles.headerCombined}>
+                                <div className={styles.reportsTopRightExports}>
+                                    <button>View More</button>
+                                </div>
+                            </div>
+                        </header>
+                        <div className={styles.reportsBottomRightContent}>
+                            <MonthlySalesChart />
+                        </div>
+                    </div>
+                    <div className={`${styles.reportsBottomLeft} ${styles.trackingCard}`}>
+                        <header className={`${styles.reportsBottomRightHeader} ${styles.trackingHeader}`}>
+                            <h3>Revenue Tracking</h3>
+                            <div className={styles.headerCombined}>
+                                <div className={styles.reportsTopRightExports}>
+                                    <button>Print</button>
+                                    <button>View More</button>
+                                </div>
+                            </div>
+                        </header>
+                        <div className={`${styles.reportsBottomLeftContent} ${styles.supportBottom}`}>
+                            <table className={styles.orderTable}>
+                                <thead className={`${styles.orderTableHead} ${styles.supportHead}`}>
+                                    <tr>
+                                        <th>Category</th>
+                                        <th>Revenue</th>
+                                        <th>Percentage</th>
+                                    </tr>
+                                </thead>
+                                <tbody className={`${styles.orderTableBody}`}>
+                                    <tr>
+                                        <td>Shoes</td>
+                                        <td>₦{Number(38759).toLocaleString()}</td>
+                                        <td>93.6%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jewry</td>
+                                        <td>₦{Number(35648).toLocaleString()}</td>
+                                        <td>74.8%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Clothes</td>
+                                        <td>₦{Number(74638).toLocaleString()}</td>
+                                        <td>86.8%</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div className={styles.reportsBottom}>
+                    <div className={`${styles.reportsBottomRight} ${styles.supportNewBottom}`}>
+                        <header className={`${styles.reportsBottomRightHeader} ${styles.trackingHeaderGreen}`}>
+                            <h3>Financial Summaries</h3>
+                            <div className={styles.headerCombined}>
+                                <div className={styles.reportsTopRightExports}>
+                                    <button>Print</button>
+                                    <button>View More</button>
+                                </div>
+                            </div>
+                        </header>
+                        <div className={`${styles.reportsBottomRightContent} ${styles.supportNewerBottom}`}>
+                            <table className={styles.orderTable}>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody className={`${styles.orderTableBody}`}>
+                                    <tr>
+                                        <td className={styles.fisrtTd}>Gross Revenue:</td>
+                                        <td className={styles.lastTd}>₦{Number(38759).toLocaleString()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td className={styles.fisrtTd}>Net Revenue</td>
+                                        <td className={styles.lastTd}>₦{Number(35648).toLocaleString()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td className={styles.fisrtTd}>Commision to Platform</td>
+                                        <td className={styles.lastTd}>₦{Number(74638).toLocaleString()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td className={styles.fisrtTd}>Commission to Agent</td>
+                                        <td className={styles.lastTd}>₦{Number(38759).toLocaleString()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td className={styles.fisrtTd}>Promotion to Cost</td>
+                                        <td className={styles.lastTd}>₦{Number(35648).toLocaleString()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td className={styles.fisrtTd}>Returns and Refunds</td>
+                                        <td className={styles.lastTd}>₦{Number(74638).toLocaleString()}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div className={`${styles.reportsBottomLeft} ${styles.trackingCard}`}>
+                        <header className={`${styles.reportsBottomRightHeader} ${styles.trackingHeaderOrange}`}>
+                            <h3>Revenue Tracking</h3>
+                            <div className={styles.headerCombined}>
+                                <div className={styles.reportsTopRightExports}>
+                                    <button>Print</button>
+                                    <button>View More</button>
+                                </div>
+                            </div>
+                        </header>
+                        <div className={`${styles.reportsBottomLeftContent} ${styles.supportBottom}`}>
+                            <table className={styles.orderTable}>
+                                <thead className={`${styles.orderTableHead} ${styles.supportHeadOrange}`}>
+                                    <tr>
+                                        <th className={styles.fisrtTd}>Expense Type</th>
+                                        <th className={styles.lastTd}>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody className={`${styles.orderTableBody} ${styles.newTableBody}`}>
+                                    <tr>
+                                        <td className={styles.fisrtTd}>Marketing</td>
+                                        <td className={styles.lastTd}>₦{Number(38759).toLocaleString()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td className={styles.fisrtTd}>Marketing</td>
+                                        <td className={styles.lastTd}>₦{Number(35648).toLocaleString()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td className={styles.fisrtTd}>Marketing</td>
+                                        <td className={styles.lastTd}>₦{Number(74638).toLocaleString()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td className={styles.fisrtTd}>Marketing</td>
+                                        <td className={styles.lastTd}>₦{Number(38759).toLocaleString()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td className={styles.fisrtTd}>Marketing</td>
+                                        <td className={styles.lastTd}>₦{Number(35648).toLocaleString()}</td>
+                                    </tr>
+                                    <tr>
+                                        <td className={styles.fisrtTd}>Marketing</td>
+                                        <td className={styles.lastTd}>₦{Number(74638).toLocaleString()}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className={styles.viewMoreBtnContainer}>
+                <button type="button" onClick={viewMoreClicked} className={styles.viewMoreBtn}>{viewMoreText}</button>
             </div>
         </div>
         </>
