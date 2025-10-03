@@ -8,6 +8,7 @@ import DashboardOrderSummary from './DashboardOrderSummary';
 import DashboardProducts from './DashboardProducts';
 import DashboardSales from './DashboardSales';
 import DashboardPurchases from './DashboardPurchases';
+import Image from 'next/image';
 
 const VendorDashboard = () => {
     return ( 
@@ -19,6 +20,12 @@ const VendorDashboard = () => {
                     <button type="submit" className={styles.dashboardSearchFormBtn}>Search</button>
                     <i className="fa-solid fa-magnifying-glass"></i>
                 </form>
+                <div className={`${styles.productsTopFirst} ${styles.productsNewTopFirst}`}>
+                    <button type="button" className={styles.productsTopFirstBtn}><i className="fa fa-bell"></i></button>
+                    <div className={styles.productsTopImageContainer}>
+                        <Image src="/hair5.png" alt="user image" fill className={styles.userImage} />
+                    </div>
+                </div>
             </div>
             <header className={styles.dashboardHeader}>
                 <h2>Dashboard</h2>
