@@ -58,7 +58,7 @@ export default function SpecialOffers() {
 
                         </Card>
 
-                        <Grid container spacing={0} justifyContent="center" backgroundColor="#f5f5f5" padding={2} borderRadius={3}>
+                        <Grid container spacing={3} justifyContent="center" backgroundColor="#f5f5f5" padding={2} borderRadius={3}>
 
                             {products.map((product) => (
                                 <Grid item key={product.id} xs={12} sm={6} md={4} lg={3} sx={{ display: "flex", justifyContent: "center", }}>
