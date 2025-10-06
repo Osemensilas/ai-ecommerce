@@ -39,7 +39,7 @@ const VendorNav = () => {
     }
 
     const settingsClicked = () => {
-        window.history.pushState({}, '', '/vendor/setting');
+        window.history.pushState({}, '', '/vendor/setting?operation=personal-information');
     }
 
     return ( 
