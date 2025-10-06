@@ -9,7 +9,6 @@
     "lint": "eslint"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@fortawesome/fontawesome-free": "^7.0.1",
@@ -38,7 +37,6 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.3",
     "postcss": "^8.5.6",
-=======
     "next": "15.5.2",
     "react": "19.1.0",
     "react-dom": "19.1.0"
@@ -48,7 +46,6 @@
     "@types/node": "20.19.15",
     "@types/react": "^19",
     "@types/react-dom": "^19",
->>>>>>> dec9c2c (solohitech newer commit)
     "tailwindcss": "^4",
     "typescript": "^5"
   }
