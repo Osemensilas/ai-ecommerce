@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Typography, useMediaQuery } from "@mui/material";
 import { useState, useEffect } from 'react';
 import { usePathname, useRouter } from "next/navigation";
+import { ShoppingBasket } from "lucide-react";
 
 
 const Header = () => {
