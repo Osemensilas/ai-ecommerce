@@ -2140,7 +2140,8 @@ button.addBtn{
 }
 
 .addCardContainer,
-.addBankContainer{
+.addBankContainer,
+.addShimentFormContainer{
     position: absolute;
     top: 0;
     left: 0;
@@ -2152,12 +2153,14 @@ button.addBtn{
 }
 
 .addCardContainer.active,
-.addBankContainer.active{
+.addBankContainer.active,
+.addShimentFormContainer.active{
     display: flex;
 }
 
 .addCardContainer::after,
-.addBankContainer::after{
+.addBankContainer::after,
+.addShimentFormContainer::after{
     content: '';
     position: absolute;
     top: 0;
@@ -2256,4 +2259,147 @@ button.addBtn{
     border: none;
     cursor: pointer;
     font-size: 15px;
+}
+
+.shipmentContainer{
+    padding: 40px 80px;
+}
+
+.trackShipmentContainer{
+    height: max-content;
+    width: 100%;
+    padding: 40px 80px;
+}
+
+.trackShipmentForm{
+    height: max-content;
+    width: 65%;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.trackShipmentHeader{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.trackShipmentHeaderLeft h2{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.trackShipmentHeaderLeft p{
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.trackShipmentHeaderLeft h4{
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.trackShipmentHeaderRight{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.trackShipmentHeaderRight button{
+    padding: 10px 25px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.trackShipmentTrackBtn{
+    background: var(--primary);
+    color: var(--background);
+    border: none;
+}
+
+.trackShipmentContactBtn{
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+.trackShipmentContent{
+    height: max-content;
+    width: 100%;
+    padding: 20px 0 0 0;
+}
+
+.trackShipmentContentCard{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--grey);
+    padding: 10px 0;
+}
+
+.trackShipmentContentCardLeft,
+.trackShipmentContentCardRight{
+    height: max-content;
+    width: 50%;
+}
+
+.trackShipmentContentCardLeft h4,
+.trackShipmentContentCardRight h4{
+    font-size: 15px;
+    color: var(--grey);
+    font-weight: 400;
+}
+
+.addCardFormDetail textarea{
+    min-height: 100px;
+    max-height: 100px;
+    min-width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    border: 1px solid var(--grey);
+    outline: none;
+    padding: 10px;
+}
+
+.shippingForm label{
+    font-size: 14px;
+}
+
+.shippingForm input{
+    height: 35px;
+}
+
+.shippingForm header{
+    margin-bottom: 10px;
+}
+
+.shippingForm .addCardFormDetail{
+    margin-bottom: 5px;
+}
+
+.shippingForm button{
+    padding: 10px 20px;
+    width: max-content;
+    background: var(--lightGrey);
+    color: var(--primary);
+}
+
+.shippingForm button:last-child{
+    padding: 10px 20px;
+    width: max-content;
+    background: var(--primary);
+    color: var(--background);
+}
+
+.shipmentBtnsContainer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
 }

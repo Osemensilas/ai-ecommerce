@@ -20,6 +20,7 @@ import AdsOverview from '@/components/AdsOverview';
 import TransactionHistory from '@/components/TransactionHistory';
 import Deposit from '@/components/Deposit';
 import Withdraw from '@/components/Withdraw';
+import TrackShipment from '@/components/TrackShipment';
 
 const Page = () => {
 
@@ -111,6 +112,11 @@ const Page = () => {
                 ${pathName === "/vendor/shipment" ? styles.active : ""}
                 `}>
                     <VendorShipment />
+                </div>
+                <div className={`${styles.VendorComponentContainer}
+                ${pathName === "/vendor/track-shipment" ? styles.active : ""}
+                `}>
+                    <TrackShipment />
                 </div>
                 <div className={`${styles.VendorComponentContainer}
                 ${pathName === "/vendor/setting" ? styles.active : ""}

@@ -8,7 +8,7 @@ import { useMediaQuery } from "@mui/material";
 const banners = [
   {
     id: 1,
-    image: "/ahiaglobal1.jpg",
+    image: "/Ahiaglobal1.jpg",
     alt: "Special Deals Banner 1",
   },
   {

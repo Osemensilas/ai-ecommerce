@@ -116,8 +116,10 @@ const VendorNav = () => {
                         </button>
                     </li>
                     <li className={styles.vendorNavItem}>
-                        <button type="button" onClick={shipmentClicked} className={`${
-                            pathName === "/vendor/shipment" ? styles.active : ""}`}>
+                        <button type="button" onClick={shipmentClicked} className={`
+                            ${pathName === "/vendor/shipment" ? styles.active : ""}
+                            ${pathName === "/vendor/track-shipment" ? styles.active : ""}
+                            `}>
                             <div className={styles.textCarrier}><i className="fas fa-truck-fast"></i>Shipments</div>
                             <p></p>
                         </button>
