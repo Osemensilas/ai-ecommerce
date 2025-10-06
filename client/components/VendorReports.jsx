@@ -1,3 +1,5 @@
+'use client';
+
 import styles from '../app/css/dashboard.module.css';
 import Image from 'next/image';
 import DashboardLines from './DashboardLines';
@@ -43,7 +45,7 @@ const VendorReports = () => {
                             <h2>Sales Summary</h2>
                             <div className={styles.reportsTopRightExports}>
                                 <button><i className="fas fa-file-export"></i> Export</button>
-                                <button><i class="fa-solid fa-arrows-rotate"></i> Refresh</button>
+                                <button><i className="fa-solid fa-arrows-rotate"></i> Refresh</button>
                             </div>
                         </header>
                         <div className={styles.reportsTopRightContent}>
@@ -161,7 +163,7 @@ const VendorReports = () => {
                     </div>
                 </div>
             </div>
-            <div className={`${styles.viewMoreContainer} 
+            <div className={`${styles.viewMoreContainer}
             ${viewMore ? styles.active : ""}`}>
                 <div className={styles.reportsBottom}>
                     <div className={styles.reportsBottomRight}>

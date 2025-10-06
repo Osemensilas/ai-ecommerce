@@ -13,6 +13,10 @@ import VendorWallet from '@/components/VendorWallet';
 import VendorShipment from '@/components/VendorShipment';
 import VendorSetting from '@/components/VendorSetting';
 import VendorAddCustomer from '@/components/VendorAddCustomer';
+import CreatePromotion from '@/components/CreatePromotion';
+import PromotionOverview from '@/components/PromotionOverview';
+import CreateAds from '@/components/CreateAds';
+import AdsOverview from '@/components/AdsOverview';
 
 const Page = () => {
 
@@ -59,6 +63,26 @@ const Page = () => {
                 ${pathName === "/vendor/promotion" ? styles.active : ""}
                 `}>
                     <VendorPromotion />
+                </div>
+                <div className={`${styles.VendorComponentContainer}
+                ${pathName === "/vendor/promotion/add-promotion" ? styles.active : ""}
+                `}>
+                    <CreatePromotion />
+                </div>
+                <div className={`${styles.VendorComponentContainer}
+                ${pathName === "/vendor/promotion/add-promotion/promotion-overview" ? styles.active : ""}
+                `}>
+                    <PromotionOverview />
+                </div>
+                <div className={`${styles.VendorComponentContainer}
+                ${pathName === "/vendor/promotion/add-ads" ? styles.active : ""}
+                `}>
+                    <CreateAds />
+                </div>
+                <div className={`${styles.VendorComponentContainer}
+                ${pathName === "/vendor/promotion/add-ads/ads-overview" ? styles.active : ""}
+                `}>
+                    <AdsOverview />
                 </div>
                 <div className={`${styles.VendorComponentContainer}
                 ${pathName === "/vendor/wallet" ? styles.active : ""}

@@ -1535,3 +1535,139 @@ span.innerSpan{
 .lastTd{
     text-align: end;
 }
+
+/*Promotion Begins*/
+
+button.addBtn{
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+}
+
+.promotionContentTop{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.promotionContentTopLeft{
+    width: 60%;
+    height: 300px;
+}
+
+.promotionContentTopRight{
+    width: 40%;
+    height: 300px;
+}
+
+.promotionContentTopRight h3{
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.promotionContentBottom{
+    width: 100%;
+    height: max-content;
+}
+
+.promotionProductsContent{
+    height: max-content;
+    width: 100%;
+}
+
+.addPromotionContainer{
+    height: max-content;
+    width: 100%;
+    padding: 40px 80px;
+}
+
+.addPromotionForm{
+    height: max-content;
+    width: 100%;
+}
+
+.addPromotionForm header{
+    height: max-content;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.addPromotionForm header h2{
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.addPromotionContent{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.addPromotionContainerLeft,
+.addPromotionContainerRight{
+    height: max-content;
+    width: 50%;
+}
+
+.addPromotionContainerDetail{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.addPromotionContainerDetail label{
+    color: var(--grey);
+}
+
+.addPromotionContainerDetail input,
+.addPromotionContainerDetail select{
+    height: 40px;
+    width: 100%;
+    padding: 0 10px;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    outline: none;
+    font-size: 15px;
+}
+
+.addPromotionContainerDetail textarea{
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 185px;
+    min-height: 185px;
+    outline: none;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+}
+
+.addPromotionContainerDetailDouble{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.promoDesInp{
+    height: 40px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.promoDesText{
+    height: 185px;
+    width: 100%;
+    overflow-y: auto;
+}

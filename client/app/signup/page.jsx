@@ -5,8 +5,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 const Signup = () => {
+
+    const router = useRouter();
 
     const [error, setError] = useState('');
     const [showPassword1, setShowPassword1] = useState(false);
@@ -54,13 +57,19 @@ const Signup = () => {
         try{
             let url = "https://server-api-0yug.onrender.com/api/auth/register";
 
-            const response = await axios.post(url, formData, {
+            const response = await axios.post(url, {
+                'email': formData['email'],
+                'username': formData['username'],
+                'password': formData['password']
+            }, {
                 headers: {
                     "Content-Type" : "application/json",
                 }
             })
             
-            console.log(response.data);
+            if (response.status === 201){
+                router.push('/login');
+            }
         }catch(error){
             console.log("Error in registration: ", error);
         }

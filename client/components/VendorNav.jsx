@@ -93,8 +93,13 @@ const VendorNav = () => {
                         </button>
                     </li>
                     <li className={styles.vendorNavItem}>
-                        <button type="button" onClick={promotionClicked} className={`${
-                            pathName === "/vendor/promotion" ? styles.active : ""}`}>
+                        <button type="button" onClick={promotionClicked} className={`
+                            ${pathName === "/vendor/promotion" ? styles.active : ""}
+                            ${pathName === "/vendor/promotion/add-promotion" ? styles.active : ""}
+                            ${pathName === "/vendor/promotion/add-ads" ? styles.active : ""}
+                            ${pathName === "/vendor/promotion/add-promotion/promotion-overview" ? styles.active : ""}
+                            ${pathName === "/vendor/promotion/add-ads/ads-overview" ? styles.active : ""}
+                            `}>
                             <div className={styles.textCarrier}><i className="fas fa-bullhorn"></i>Promotions & Ads</div>
                             <p></p>
                         </button>

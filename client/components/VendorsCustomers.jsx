@@ -19,11 +19,6 @@ const VendorCustomer = () => {
                         <Image src="/hair5.png" alt="user image" fill className={styles.userImage} />
                     </div>
                 </div>
-                <div className={styles.productsTopSecond}>
-                    <button type="button">Dashboard</button>
-                    <i className="fa fa-angle-right"></i>
-                    <button type="button">Product</button>
-                </div>
             </div>
             <header className={styles.productsHeader}>
                 <h2>Customers</h2>
