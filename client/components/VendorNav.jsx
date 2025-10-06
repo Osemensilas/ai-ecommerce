@@ -105,8 +105,12 @@ const VendorNav = () => {
                         </button>
                     </li>
                     <li className={styles.vendorNavItem}>
-                        <button type="button" onClick={walletClicked} className={`${
-                            pathName === "/vendor/wallet" ? styles.active : ""}`}>
+                        <button type="button" onClick={walletClicked} className={`
+                            ${pathName === "/vendor/wallet" ? styles.active : ""}
+                            ${pathName === "/vendor/transaction-history" ? styles.active : ""}
+                            ${pathName === "/vendor/deposit" ? styles.active : ""}
+                            ${pathName === "/vendor/withdraw" ? styles.active : ""}
+                            `}>
                             <div className={styles.textCarrier}><i className="fa fa-credit-card"></i>Wallets</div>
                             <p></p>
                         </button>

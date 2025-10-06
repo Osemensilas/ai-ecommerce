@@ -64,6 +64,10 @@ input{
     font-weight: 300;
 }
 
+button{
+    cursor: pointer;
+}
+
 .productCarddetail{
     position: absolute;
     top: 10px;

@@ -17,6 +17,9 @@ import CreatePromotion from '@/components/CreatePromotion';
 import PromotionOverview from '@/components/PromotionOverview';
 import CreateAds from '@/components/CreateAds';
 import AdsOverview from '@/components/AdsOverview';
+import TransactionHistory from '@/components/TransactionHistory';
+import Deposit from '@/components/Deposit';
+import Withdraw from '@/components/Withdraw';
 
 const Page = () => {
 
@@ -88,6 +91,21 @@ const Page = () => {
                 ${pathName === "/vendor/wallet" ? styles.active : ""}
                 `}>
                     <VendorWallet />
+                </div>
+                <div className={`${styles.VendorComponentContainer}
+                ${pathName === "/vendor/transaction-history" ? styles.active : ""}
+                `}>
+                    <TransactionHistory />
+                </div>
+                <div className={`${styles.VendorComponentContainer}
+                ${pathName === "/vendor/deposit" ? styles.active : ""}
+                `}>
+                    <Deposit />
+                </div>
+                <div className={`${styles.VendorComponentContainer}
+                ${pathName === "/vendor/withdraw" ? styles.active : ""}
+                `}>
+                    <Withdraw />
                 </div>
                 <div className={`${styles.VendorComponentContainer}
                 ${pathName === "/vendor/shipment" ? styles.active : ""}

@@ -1671,3 +1671,589 @@ button.addBtn{
     width: 100%;
     overflow-y: auto;
 }
+
+/*Wallet Begins*/
+
+.wallet{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 40px 80px;
+}
+
+.walletLeft{
+    height: max-content;
+    width: 55%;
+}
+
+.walletRight{
+    height: max-content;
+    width: 45%;
+}
+
+.walletLeftHeader{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.walletLeftHeaderContent{
+    height: max-content;
+    width: 100%;
+    background: var(--background);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.walletLeftHeaderContentTop{
+    height: max-content;
+    width: 100%;
+    border-left: 4px solid var(--danger);
+    padding: 0 5px;
+    margin-bottom: 10px;
+}
+
+.walletUp{
+    border-left: 4px solid var(--green);
+}
+
+.walletLeftHeaderContentTop h3{
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: var(--grey);
+}
+
+.walletLeftHeaderContentTop h2{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.walletLeftHeaderDir{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.walletLeftHeaderDir i{
+    color: var(--orange);
+    background: #f5deb4;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.walletBlue i{
+    background: #c2c2f3;
+    color: #0000ff;
+}
+
+.walletCardDetails{
+    height: max-content;
+    width: 100%;
+}
+
+.walletCardDetailsTop,
+.walletCardDetailsBottom{
+    height: max-content;
+    width: 100%;
+    padding: 10px;
+    background: var(--background);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    margin: 40px 0;
+    border-radius: 10px;
+}
+
+.walletCardDetailsTopHeader{
+    height: max-content;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.walletCardDetailsTopHeader h2{
+    font-size: 18px;
+    color: var(--primary);
+}
+
+.walletCardDetailsContent{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.walletCardDetailsContentLeft,
+.walletCardDetailsContentRight{
+    height: max-content;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.walletCardDetailsContentLeft h2,
+.walletCardDetailsContentRight h2{
+    font-size: 16px;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.walletCardDetailsContentLeft h3,
+.walletCardDetailsContentRight h3{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.addWalletBtnContainer{
+    height: max-content;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.addWalletBtn{
+    width: 100%;
+    height: max-content;
+    text-align: center;
+    color: var(--background);
+    background: var(--primary);
+    border-radius: 10px;
+    padding: 15px 0;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.walletCardDetailsBottomHeader{
+    height: max-content;
+    width: 100%;
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.walletCardDetailsBottomHeader h2{
+    font-size: 18px;
+}
+
+.walletCardDetailsBottomContent{
+    height: max-content;
+    width: 100%;
+}
+
+.walletRightTop{
+    height: max-content;
+    width: 100%;
+    background: var(--background);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.walletRightTop h4{
+    font-weight: 300;
+    color: var(--grey);
+}
+
+.walletRightTop h2{
+    font-size: 30px;
+}
+
+.walletTopLine{
+    width: max-content;
+}
+
+.walletRightTopBtnContainer{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.walletRightTopBtn{
+    height: max-content;
+    width: max-content;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    padding: 10px 25px;
+    border-radius: 10px;
+    background: transparent;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.walletRightBottom{
+    height: max-content;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.walletRightBottomHeader{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.walletRightBottomHeader h2{
+    font-size: 20px;
+}
+
+.walletRightBottomHeader button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--primary);
+}
+
+.walletRightBottomContent{
+    height: max-content;
+    width: 100%;
+}
+
+.walletRightBottomContentCard{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--background);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.walletRightBottomContentCard p{
+    color: var(--grey);
+    font-size: 16px;
+}
+
+.walletRightBottomContentCardLeft{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.walletRightBottomContentCardLeft i{
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: var(--background);
+    background: var(--primary);
+}
+
+.walletRightBottomContentCardLeft h3{
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.walletRightBottomContentCardLeft p{
+    font-size: 15px;
+    color: var(--text);
+}
+
+.historyContainer{
+    height: max-content;
+    width: 100%;
+    padding: 40px 80px;
+}
+
+.walletBack{
+    height: max-content;
+    width: max-content;
+    margin: 20px 80px 10 80px;
+}
+
+.walletBack button{
+    background: transparent;
+    color: var(--grey);
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.depositMainHeader{
+    height: max-content;
+    width: 100%;
+    padding: 0 0 40px 0;
+}
+
+.depositMainHeader h2{
+    font-size: 20px;
+}
+
+.depositForm{
+    height: max-content;
+    width: 55%;
+}
+
+.depositFormTop{
+    height: max-content;
+    width: 100%;
+    background: var(--background);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.depositFormTop label{
+    font-size: 16px;
+    color: var(--grey);
+}
+
+.depositFormTop input{
+    height: 40px;
+    width: 100%;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 15px;
+}
+
+.depositForm h3{
+    margin-bottom: 20px;
+}
+
+.depositFormBottom{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.depositMethod{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.depositMethodRightImg{
+    position: relative;
+    height: 30px;
+    width: 30px;
+}
+
+.depositMethodLeft{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.depositMethodLeftIcon{
+    position: relative;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    border: 1px solid var(--grey);
+}
+
+.depositMethodLeftIcon.active::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    background: var(--primary);
+}
+
+.depositMethodLeftContent{
+    height: max-content;
+    width: max-content;
+}
+
+.depositMethodLeftContent h2{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.depositMethodLeftContent p{
+    font-size: 16px;
+    color: var(--grey);
+}
+
+.depositMethodLeftContent p:last-child{
+    margin-top: 5px;
+}
+
+.depositFormBtnContainer{
+    margin-top: 20px;
+    height: max-content;
+    width: 100%;
+}
+
+.depositFormBtn{
+    height: max-content;
+    width: 100%;
+    background: var(--primary);
+    color: var(--background);
+    padding: 15px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.addCardContainer,
+.addBankContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.addCardContainer.active,
+.addBankContainer.active{
+    display: flex;
+}
+
+.addCardContainer::after,
+.addBankContainer::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #000000;
+    opacity: 0.4;
+}
+
+.addCardForm{
+    height: max-content;
+    width: 500px;
+    position: relative;
+    background: var(--background);
+    z-index: 10;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.addCardHeader{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.addCardHeader h2{
+    font-size: 20px;
+}
+
+.addCardHeader i{
+    cursor: pointer;
+    font-size: 16px;
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    background: var(--lightGrey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addCardFormContent{
+    height: max-content;
+    width: 100%;
+}
+
+.addCardFormDetail{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.addCardFormDetail label{
+    color: var(--grey);
+    font-size: 16px;
+}
+
+.addCardFormDetail input,
+.addCardFormDetail select{
+    height: 40px;
+    width: 100%;
+    padding: 0 10px;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+.addCardFormDetailDouble{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    gap: 20px;
+}
+
+.addCardFormBtnContainer{
+    height: max-content;
+    width: 100%;
+}
+
+.addCardFormBtn{
+    height: max-content;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    color: var(--background);
+    background: var(--primary);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
