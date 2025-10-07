@@ -10,11 +10,11 @@ import Categories from "./Categories";
 import BestSelling from "./BestSelling";
 
 const products = [
-    { id: 1, name: "Oraimo Power Bank 20,000mAh", price: 14500, oldPrice: 20000, image: "blender.png", rating: 4.5 },
-    { id: 2, name: "Samsung Galaxy Buds Pro", price: 65000, oldPrice: 80000, image: "neckless.png", rating: 4.0 },
-    { id: 3, name: "Men's Sneakers - White", price: 12000, oldPrice: 18000, image: "redwig.png", rating: 3.5 },
-    { id: 4, name: "Hisense 32-Inch LED TV", price: 85000, oldPrice: 110000, image: "andrew pot.png", rating: 4.2 },
-    // { id: 5, name: "Nivea Body Lotion 400ml", price: 3500, oldPrice: 5000, image: "duvet.png", rating: 4.8 },
+    { id: 1, name: "Oraimo Power Bank 20,000mAh", price: 14500, oldPrice: 20000, image: "/blender.png", rating: 4.5 },
+    { id: 2, name: "Samsung Galaxy Buds Pro", price: 65000, oldPrice: 80000, image: "/neckless.png", rating: 4.0 },
+    { id: 3, name: "Men's Sneakers - White", price: 12000, oldPrice: 18000, image: "/redwig.png", rating: 3.5 },
+    { id: 4, name: "Hisense 32-Inch LED TV", price: 85000, oldPrice: 110000, image: "/andrew pot.png", rating: 4.2 },
+    // { id: 5, name: "Nivea Body Lotion 400ml", price: 3500, oldPrice: 5000, image: "/duvet.png", rating: 4.8 },
 ];
 
 export default function SpecialOfferMobile() {

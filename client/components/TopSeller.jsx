@@ -10,16 +10,16 @@ import TopSellerMobile from "./TopSellingMobile"
 import Adds from "./Adds";
 
 const products = [
-    { id: 1, name: "Oraimo Power Bank 20,000mAh", price: 14500, oldPrice: 20000, image: "jacket.png", rating: 4.5 },
-    { id: 2, name: "Samsung Galaxy Buds Pro", price: 65000, oldPrice: 80000, image: "neckless1.png", rating: 4.0 },
-    { id: 3, name: "Men's Sneakers - White", price: 12000, oldPrice: 18000, image: "jean.png", rating: 3.5 },
+    { id: 1, name: "Oraimo Power Bank 20,000mAh", price: 14500, oldPrice: 20000, image: "/jacket.png", rating: 4.5 },
+    { id: 2, name: "Samsung Galaxy Buds Pro", price: 65000, oldPrice: 80000, image: "/neckless1.png", rating: 4.0 },
+    { id: 3, name: "Men's Sneakers - White", price: 12000, oldPrice: 18000, image: "/jean.png", rating: 3.5 },
     { id: 4, name: "Hisense 32-Inch LED TV", price: 85000, oldPrice: 110000, image: "/wig1.png", rating: 4.2 },
-    { id: 5, name: "Nivea Body Lotion 400ml", price: 3500, oldPrice: 5000, image: "blend.png", rating: 4.8 },
-    { id: 1, name: "Oraimo Power Bank 20,000mAh", price: 14500, oldPrice: 20000, image: "oculus.png", rating: 4.5 },
+    { id: 5, name: "Nivea Body Lotion 400ml", price: 3500, oldPrice: 5000, image: "/blend.png", rating: 4.8 },
+    { id: 1, name: "Oraimo Power Bank 20,000mAh", price: 14500, oldPrice: 20000, image: "/oculus.png", rating: 4.5 },
     { id: 2, name: "Samsung Galaxy Buds Pro", price: 65000, oldPrice: 80000, image: "/bottle.png", rating: 4.0 },
-    { id: 3, name: "Men's Sneakers - White", price: 12000, oldPrice: 18000, image: "blackwig.png", rating: 3.5 },
+    { id: 3, name: "Men's Sneakers - White", price: 12000, oldPrice: 18000, image: "/blackwig.png", rating: 3.5 },
     { id: 4, name: "Hisense 32-Inch LED TV", price: 85000, oldPrice: 110000, image: "/glases.png", rating: 4.2 },
-    { id: 5, name: "Nivea Body Lotion 400ml", price: 3500, oldPrice: 5000, image: "betshit.png", rating: 4.8 },
+    { id: 5, name: "Nivea Body Lotion 400ml", price: 3500, oldPrice: 5000, image: "/betshit.png", rating: 4.8 },
 
 ];
 
