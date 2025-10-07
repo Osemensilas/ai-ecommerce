@@ -2469,3 +2469,71 @@ button.addBtn{
 .settingsContainerRightDetail.active{
     display: block;
 }
+
+.settingLeftMainContainer{
+    width: 100%;
+    height: max-content;
+    background: var(--background);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.settingPersonalForm{
+    width: 100%;
+    height: max-content;
+}
+
+.settingPersonalFormTop{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.settingPersonalFormTopLeft{
+    height: max-content;
+    width: max-content;
+}
+
+.settingPersonalFormImgContainer{
+    position: relative;
+    height: 100px;
+    width: 100px;
+}
+
+.settingsPersonalImg{
+    object-fit: fill;
+    border-radius: 100%;
+}
+
+.settingPersonalFormTopRight{
+    height: max-content;
+    width: max-content;
+}
+
+.settingPersonalFormTopRight h2{
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.settingPersonalRow,
+.settingPersonalRowCont{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.settingPersonalRow i{
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.settingPersonalRowCont h3,
+.settingPersonalRowCont p{
+    font-size: 16px;
+}
