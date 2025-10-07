@@ -21,7 +21,7 @@ import TransactionHistory from '@/components/TransactionHistory';
 import Deposit from '@/components/Deposit';
 import Withdraw from '@/components/Withdraw';
 import TrackShipment from '@/components/TrackShipment';
-
+import { Suspense } from 'react';
 
 const Page = () => {
     
@@ -30,103 +30,105 @@ const Page = () => {
 
     return ( 
         <>
-        <section className={styles.dashboard}>
-            <div className={styles.dashboardLeft}>
-                <VendorNav />
-            </div>
-            <div className={styles.dashboardRight}>
-                <div className={`${styles.VendorComponentContainer}
-                ${pathName === "/vendor/dashboard" ? styles.active : ""}
-                `}>
-                    <VendorDashboard />
+        <Suspense>
+            <section className={styles.dashboard}>
+                <div className={styles.dashboardLeft}>
+                    <VendorNav />
                 </div>
-                <div className={`${styles.VendorComponentContainer}
-                ${pathName === "/vendor/products" ? styles.active : ""}
-                `}>
-                    <VendorProducts />
+                <div className={styles.dashboardRight}>
+                    <div className={`${styles.VendorComponentContainer}
+                    ${pathName === "/vendor/dashboard" ? styles.active : ""}
+                    `}>
+                        <VendorDashboard />
+                    </div>
+                    <div className={`${styles.VendorComponentContainer}
+                    ${pathName === "/vendor/products" ? styles.active : ""}
+                    `}>
+                        <VendorProducts />
+                    </div>
+                    <div className={`${styles.VendorComponentContainer}
+                    ${pathName === "/vendor/customers" ? styles.active : ""}
+                    `}>
+                        <VendorCustomer />
+                    </div>
+                    <div className={`${styles.VendorComponentContainer}
+                    ${pathName === "/vendor/customers/add-customer" ? styles.active : ""}
+                    `}>
+                        <VendorAddCustomer />
+                    </div>
+                    <div className={`${styles.VendorComponentContainer}
+                    ${pathName === "/vendor/orders" ? styles.active : ""}
+                    `}>
+                        <VendorOrders />
+                    </div>
+                    <div className={`${styles.VendorComponentContainer}
+                    ${pathName === "/vendor/reports" ? styles.active : ""}
+                    `}>
+                        <VendorReports />
+                    </div>
+                    <div className={`${styles.VendorComponentContainer}
+                    ${pathName === "/vendor/promotion" ? styles.active : ""}
+                    `}>
+                        <VendorPromotion />
+                    </div>
+                    <div className={`${styles.VendorComponentContainer}
+                    ${pathName === "/vendor/promotion/add-promotion" ? styles.active : ""}
+                    `}>
+                        <CreatePromotion />
+                    </div>
+                    <div className={`${styles.VendorComponentContainer}
+                    ${pathName === "/vendor/promotion/add-promotion/promotion-overview" ? styles.active : ""}
+                    `}>
+                        <PromotionOverview />
+                    </div>
+                    <div className={`${styles.VendorComponentContainer}
+                    ${pathName === "/vendor/promotion/add-ads" ? styles.active : ""}
+                    `}>
+                        <CreateAds />
+                    </div>
+                    <div className={`${styles.VendorComponentContainer}
+                    ${pathName === "/vendor/promotion/add-ads/ads-overview" ? styles.active : ""}
+                    `}>
+                        <AdsOverview />
+                    </div>
+                    <div className={`${styles.VendorComponentContainer}
+                    ${pathName === "/vendor/wallet" ? styles.active : ""}
+                    `}>
+                        <VendorWallet />
+                    </div>
+                    <div className={`${styles.VendorComponentContainer}
+                    ${pathName === "/vendor/transaction-history" ? styles.active : ""}
+                    `}>
+                        <TransactionHistory />
+                    </div>
+                    <div className={`${styles.VendorComponentContainer}
+                    ${pathName === "/vendor/deposit" ? styles.active : ""}
+                    `}>
+                        <Deposit />
+                    </div>
+                    <div className={`${styles.VendorComponentContainer}
+                    ${pathName === "/vendor/withdraw" ? styles.active : ""}
+                    `}>
+                        <Withdraw />
+                    </div>
+                    <div className={`${styles.VendorComponentContainer}
+                    ${pathName === "/vendor/shipment" ? styles.active : ""}
+                    `}>
+                        <VendorShipment />
+                    </div>
+                    <div className={`${styles.VendorComponentContainer}
+                    ${pathName === "/vendor/track-shipment" ? styles.active : ""}
+                    `}>
+                        <TrackShipment />
+                    </div>
+                    <div className={`${styles.VendorComponentContainer}
+                    ${pathName === "/vendor/setting" ? styles.active : ""}
+                    `}>
+                        <VendorSetting />
+                    </div>
                 </div>
-                <div className={`${styles.VendorComponentContainer}
-                ${pathName === "/vendor/customers" ? styles.active : ""}
-                `}>
-                    <VendorCustomer />
-                </div>
-                <div className={`${styles.VendorComponentContainer}
-                ${pathName === "/vendor/customers/add-customer" ? styles.active : ""}
-                `}>
-                    <VendorAddCustomer />
-                </div>
-                <div className={`${styles.VendorComponentContainer}
-                ${pathName === "/vendor/orders" ? styles.active : ""}
-                `}>
-                    <VendorOrders />
-                </div>
-                <div className={`${styles.VendorComponentContainer}
-                ${pathName === "/vendor/reports" ? styles.active : ""}
-                `}>
-                    <VendorReports />
-                </div>
-                <div className={`${styles.VendorComponentContainer}
-                ${pathName === "/vendor/promotion" ? styles.active : ""}
-                `}>
-                    <VendorPromotion />
-                </div>
-                <div className={`${styles.VendorComponentContainer}
-                ${pathName === "/vendor/promotion/add-promotion" ? styles.active : ""}
-                `}>
-                    <CreatePromotion />
-                </div>
-                <div className={`${styles.VendorComponentContainer}
-                ${pathName === "/vendor/promotion/add-promotion/promotion-overview" ? styles.active : ""}
-                `}>
-                    <PromotionOverview />
-                </div>
-                <div className={`${styles.VendorComponentContainer}
-                ${pathName === "/vendor/promotion/add-ads" ? styles.active : ""}
-                `}>
-                    <CreateAds />
-                </div>
-                <div className={`${styles.VendorComponentContainer}
-                ${pathName === "/vendor/promotion/add-ads/ads-overview" ? styles.active : ""}
-                `}>
-                    <AdsOverview />
-                </div>
-                <div className={`${styles.VendorComponentContainer}
-                ${pathName === "/vendor/wallet" ? styles.active : ""}
-                `}>
-                    <VendorWallet />
-                </div>
-                <div className={`${styles.VendorComponentContainer}
-                ${pathName === "/vendor/transaction-history" ? styles.active : ""}
-                `}>
-                    <TransactionHistory />
-                </div>
-                <div className={`${styles.VendorComponentContainer}
-                ${pathName === "/vendor/deposit" ? styles.active : ""}
-                `}>
-                    <Deposit />
-                </div>
-                <div className={`${styles.VendorComponentContainer}
-                ${pathName === "/vendor/withdraw" ? styles.active : ""}
-                `}>
-                    <Withdraw />
-                </div>
-                <div className={`${styles.VendorComponentContainer}
-                ${pathName === "/vendor/shipment" ? styles.active : ""}
-                `}>
-                    <VendorShipment />
-                </div>
-                <div className={`${styles.VendorComponentContainer}
-                ${pathName === "/vendor/track-shipment" ? styles.active : ""}
-                `}>
-                    <TrackShipment />
-                </div>
-                <div className={`${styles.VendorComponentContainer}
-                ${pathName === "/vendor/setting" ? styles.active : ""}
-                `}>
-                    <VendorSetting />
-                </div>
-            </div>
-        </section>
+            </section>
+        </Suspense>
         </>
      );
 }
