@@ -40,6 +40,14 @@ const ProductForm = ({ onSubmit }) => {
       battery: "",
       os: "",
     },
+    specificationDetails: {
+      sku: "FEKMC24895585NDSBFDVY84B9",
+      productLine: "FEKMC24895585NDSBFDVY84B9",
+      productionCountry: "Nigeria",
+      weight: "1",
+      color: "Green",
+      careLabel: "Hand and Machine Wash",
+    },
     variants: [{ color: "", storage: "" }],
     stock: { available: true, quantity: 0 },
     seller: { id: "", name: "", rating: 0 },
@@ -48,7 +56,6 @@ const ProductForm = ({ onSubmit }) => {
     tags: [],
   });
 
-  
   const categories = ["Electronics", "Fashion", "Home & Kitchen", "Sports"];
   const subcategories = {
     Electronics: ["Phones", "Laptops", "Accessories"],
@@ -64,13 +71,12 @@ const ProductForm = ({ onSubmit }) => {
     Women: ["Bags", "Jewelry", "Clothes"],
   };
 
-  
+  // --- handlers ---
   const handleChange = (e) => {
     const { name, value } = e.target;
     setProduct((prev) => ({ ...prev, [name]: value }));
   };
 
-  
   const handleNestedChange = (section, field, value) => {
     setProduct((prev) => ({
       ...prev,
@@ -78,7 +84,6 @@ const ProductForm = ({ onSubmit }) => {
     }));
   };
 
-  
   const handleImageUpload = (e) => {
     const files = Array.from(e.target.files);
     const newImages = files.map((file) => URL.createObjectURL(file));
@@ -88,7 +93,6 @@ const ProductForm = ({ onSubmit }) => {
     }));
   };
 
-  
   const handleRemoveImage = (index) => {
     setProduct((prev) => ({
       ...prev,
@@ -96,7 +100,6 @@ const ProductForm = ({ onSubmit }) => {
     }));
   };
 
-  
   const handleSubmit = (e) => {
     e.preventDefault();
     if (onSubmit) onSubmit(product);
@@ -113,16 +116,6 @@ const ProductForm = ({ onSubmit }) => {
       <Box component="form" onSubmit={handleSubmit}>
         <Grid container spacing={2}>
           {/* Basic Info */}
-          {/* <Grid item xs={12} md={6}>
-            <TextField
-              label="Product ID"
-              name="id"
-              value={product.id}
-              onChange={handleChange}
-              fullWidth
-              required
-            />
-          </Grid> */}
           <Grid item xs={12} md={6}>
             <TextField
               label="Name"
@@ -145,7 +138,7 @@ const ProductForm = ({ onSubmit }) => {
             />
           </Grid>
 
-        
+          {/* Categories */}
           <Grid item xs={12} md={6}>
             <TextField
               select
@@ -199,7 +192,6 @@ const ProductForm = ({ onSubmit }) => {
             </TextField>
           </Grid>
 
-          
           <Grid item xs={12} md={6}>
             <TextField
               label="Brand"
@@ -210,7 +202,6 @@ const ProductForm = ({ onSubmit }) => {
             />
           </Grid>
 
-          
           <Grid item xs={12}>
             <TextField
               label="Description"
@@ -223,7 +214,7 @@ const ProductForm = ({ onSubmit }) => {
             />
           </Grid>
 
-          
+          {/* --- Product Images --- */}
           <Grid item xs={12}>
             <Typography variant="subtitle1" gutterBottom>
               Product Images
@@ -239,7 +230,6 @@ const ProductForm = ({ onSubmit }) => {
               />
             </Button>
 
-            
             <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap", mt: 2 }}>
               {product.images.map((img, index) => (
                 <Box
@@ -278,6 +268,7 @@ const ProductForm = ({ onSubmit }) => {
             </Box>
           </Grid>
 
+          {/* --- Price --- */}
           <Grid item xs={12}>
             <Typography variant="subtitle1">Price</Typography>
           </Grid>
@@ -323,6 +314,94 @@ const ProductForm = ({ onSubmit }) => {
             />
           </Grid>
 
+          {/* --- Specification Details --- */}
+          <Grid item xs={12}>
+            <Typography variant="subtitle1" sx={{ mt: 2 }}>
+              Specification Details
+            </Typography>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <TextField
+              label="SKU"
+              value={product.specificationDetails.sku}
+              onChange={(e) =>
+                handleNestedChange("specificationDetails", "sku", e.target.value)
+              }
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <TextField
+              label="Product Line"
+              value={product.specificationDetails.productLine}
+              onChange={(e) =>
+                handleNestedChange(
+                  "specificationDetails",
+                  "productLine",
+                  e.target.value
+                )
+              }
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <TextField
+              label="Production Country"
+              value={product.specificationDetails.productionCountry}
+              onChange={(e) =>
+                handleNestedChange(
+                  "specificationDetails",
+                  "productionCountry",
+                  e.target.value
+                )
+              }
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <TextField
+              label="Weight (Kg)"
+              value={product.specificationDetails.weight}
+              onChange={(e) =>
+                handleNestedChange(
+                  "specificationDetails",
+                  "weight",
+                  e.target.value
+                )
+              }
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <TextField
+              label="Color"
+              value={product.specificationDetails.color}
+              onChange={(e) =>
+                handleNestedChange(
+                  "specificationDetails",
+                  "color",
+                  e.target.value
+                )
+              }
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <TextField
+              label="Care Label"
+              value={product.specificationDetails.careLabel}
+              onChange={(e) =>
+                handleNestedChange(
+                  "specificationDetails",
+                  "careLabel",
+                  e.target.value
+                )
+              }
+              fullWidth
+            />
+          </Grid>
+
+          {/* --- Shipping --- */}
           <Grid item xs={12}>
             <Typography variant="subtitle1">Shipping</Typography>
           </Grid>
