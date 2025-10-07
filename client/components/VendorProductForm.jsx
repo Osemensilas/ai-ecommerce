@@ -146,7 +146,7 @@ const ProductForm = ({ onSubmit }) => {
           </Grid>
 
         
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={6}>
             <TextField
               select
               label="Category"
@@ -163,7 +163,7 @@ const ProductForm = ({ onSubmit }) => {
             </TextField>
           </Grid>
 
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={6}>
             <TextField
               select
               label="Subcategory"
@@ -181,7 +181,7 @@ const ProductForm = ({ onSubmit }) => {
             </TextField>
           </Grid>
 
-          <Grid item xs={12} md={4}>
+          <Grid item xs={12} md={6}>
             <TextField
               select
               label="Type Category"
