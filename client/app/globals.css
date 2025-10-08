@@ -179,6 +179,11 @@ button{
     display: none;
 }
 
+.eye.hide,
+.fa-eye-slash.hide{
+    display: none;
+}
+
 @media only screen and (max-width: 1280px) and (min-width: 1001px){
     .recentlyViewedContainer, 
     .similarProductsContainer {

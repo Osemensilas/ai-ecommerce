@@ -1,3 +1,5 @@
+'use client';
+
 import styles from '../../app/css/dashboard.module.css';
 import Image from 'next/image';
 
@@ -5,10 +7,11 @@ const PersonalIfo = () => {
     return ( 
         <>
         <div className={styles.settingLeftMainContainer}>
-            <div className={styles.settingPersonalForm}>
+            <form onSubmit={(e) => e.preventDefault()} className={styles.settingPersonalForm}>
                 <div className={styles.settingPersonalFormTop}>
                     <div className={styles.settingPersonalFormTopLeft}>
                         <div className={styles.settingPersonalFormImgContainer}>
+                            <i className="fa-solid fa-camera"></i>
                             <Image src="/hair5.png" fill alt="user image" className={styles.settingsPersonalImg} />
                         </div>
                     </div>
@@ -35,9 +38,27 @@ const PersonalIfo = () => {
                     </div>
                 </div>
                 <div className={styles.settingPersonalFormBottom}>
-
+                    <div className={styles.settingPersonalFormBottomContentDetail}>
+                        <label htmlFor="firstname">First Name:</label>
+                        <input type="text" id="firstname" placeholder="Solo" />
+                    </div>
+                    <div className={styles.settingPersonalFormBottomContentDetail}>
+                        <label htmlFor="lastname">Last Name:</label>
+                        <input type="text" id="lastname" placeholder="Hi-Tech" />
+                    </div>
+                    <div className={styles.settingPersonalFormBottomContentDetail}>
+                        <label htmlFor="email">Email:</label>
+                        <input type="text" id="email" placeholder="Solo" />
+                    </div>
+                    <div className={styles.settingPersonalFormBottomContentDetail}>
+                        <label htmlFor="phone">Phone:</label>
+                        <input type="text" id="phone" placeholder="Solo" />
+                    </div>
                 </div>
-            </div>
+                <div className={styles.settingPersonalFormBtnContainer}>
+                    <button type="submit" className={styles.settingPersonalFormBtn}>Update Profile</button>
+                </div>
+            </form>
         </div>
         </>
      );
