@@ -2606,3 +2606,111 @@ button.addBtn{
     font-size: 16px;
     cursor: pointer;
 }
+
+.settingLeftDocumentContainer{
+    height: max-content;
+    width: 100%;
+}
+
+.settingDocumentAfter{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.settingDocumentAfter.active{
+    display: flex;
+}
+
+.settingDocumentAfter::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    opacity: 0.4;
+}
+
+.settingDocumentAfterForm{
+    position: relative;
+    height: max-content;
+    width: 500px;
+    background: var(--background);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.settingDocumentAfterForm header{
+    height: max-content;
+    width: 100%;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.settingDocumentAfterForm header h2{
+    font-size: 17px;
+}
+
+.settingDocumentAfterForm header i{
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.settingDocumentDragContainer{
+    height: max-content;
+    width: 100%;
+    padding: 20px;
+}
+
+.settingDocumentDrag{
+    height: 200px;
+    width: 100%;
+    border: 1px dashed var(--grey);
+    border-radius: 10px;
+    background: var(--lightGrey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.settingDocumentDrag h3,
+.settingDocumentDrag p{
+    font-size: 15px;
+}
+
+.settingDocumentDragBtnContainer{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding-top: 20px;
+}
+
+.settingDocumentDragBtnContainer button{
+    padding: 15px 30px;
+    border: 1px solid var(--grey);
+    color: var(--grey);
+    border-radius: 5px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.settingDocumentDragBtnContainer button:last-child{
+    background: var(--primary);
+    color: var(--background);
+    border: none;
+}
