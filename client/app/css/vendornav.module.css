@@ -3,6 +3,9 @@
     min-height: 100vh;
     background: var(--lightGrey);
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .vendorNavContainerTop{
@@ -97,4 +100,12 @@
 
 .vendorNavItem button.active p{
     color: var(--background);
+}
+
+.vendorNavMainBottom button{
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    color: var(--danger);
+    font-weight: 600;
 }
