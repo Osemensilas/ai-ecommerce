@@ -1,28 +1,34 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
-export type ProductDocument = Product & Document;
-
 @Schema({ timestamps: true })
-export class Product {
-  @Prop({ required: true, unique: true })
-  id: string;
+export class Product extends Document {
+  // 🏷️ Basic Info
+  _id: string;
 
-  @Prop({ required: true, trim: true })
+  @Prop({ required: true })
   name: string;
 
-  @Prop({ required: true, unique: true, trim: true })
+  @Prop({ required: true, unique: false })
   slug: string;
 
+  // 🧩 Category Hierarchy (Jumia-style)
   @Prop({ required: true })
-  category: string;
+  category: string; // e.g. "Fashion"
 
   @Prop({ required: true })
-  brand: string;
+  subcategory: string; // e.g. "Men's Clothing"
+
+  @Prop({ required: true })
+  typeCategory: string; // e.g. "T-Shirts"
 
   @Prop()
-  description: string;
+  brand?: string;
 
+  @Prop()
+  description?: string;
+
+  // 💰 Price Info
   @Prop({
     type: {
       current: { type: Number, required: true },
@@ -31,71 +37,133 @@ export class Product {
       discount_percentage: { type: Number, default: 0 },
     },
   })
-  price: Record<string, any>;
+  price: {
+    current: number;
+    old?: number;
+    currency: string;
+    discount_percentage: number;
+  };
 
+  // 🖼️ Images
   @Prop({ type: [String], default: [] })
   images: string[];
 
-  @Prop({
-    type: {
-      display: String,
-      processor: String,
-      ram: String,
-      storage: String,
-      camera: String,
-      battery: String,
-      os: String,
-    },
-  })
-  specifications: Record<string, any>;
-
+  // ⚙️ General Specifications
   @Prop({
     type: [
       {
-        color: String,
-        storage: String,
+        key: { type: String, required: true },
+        value: { type: String, required: true },
       },
     ],
     default: [],
   })
-  variants: Record<string, any>[];
+  specifications: { key: string; value: string }[];
 
+  // 🧾 Technical / Physical Details
+  @Prop({
+    type: {
+      sku: {
+        type: String,
+        default: () =>
+          'SKU-' + Math.random().toString(36).substring(2, 10).toUpperCase(),
+      },
+      productLine: {
+        type: String,
+        default: () =>
+          'PL-' + Math.random().toString(36).substring(2, 10).toUpperCase(),
+      },
+      productionCountry: String,
+      weight: String,
+      color: String,
+      material: String,
+      careLabel: String,
+      dimension: String,
+    },
+  })
+  specificationDetails: {
+    sku: string;
+    productLine: string;
+    productionCountry?: string;
+    weight?: string;
+    color?: string;
+    material?: string;
+    careLabel?: string;
+    dimension?: string;
+  };
+
+  // 🧍 Variants (for size, color, or storage variations)
+  @Prop({
+    type: [
+      {
+        color: String,
+        size: String,
+        storage: String,
+        priceAdjustment: Number,
+      },
+    ],
+    default: [],
+  })
+  variants: {
+    color?: string;
+    size?: string;
+    storage?: string;
+    priceAdjustment?: number;
+  }[];
+
+  // 📦 Stock & Availability
   @Prop({
     type: {
       available: { type: Boolean, default: true },
       quantity: { type: Number, default: 0 },
     },
   })
-  stock: Record<string, any>;
+  stock: { available: boolean; quantity: number };
 
+  // 🏪 Seller Info
   @Prop({
     type: {
       id: String,
       name: String,
-      rating: Number,
+      rating: { type: Number, default: 0 },
     },
   })
-  seller: Record<string, any>;
+  seller: { id?: string; name?: string; rating?: number };
 
+  // ⭐ Ratings
   @Prop({
     type: {
       average: { type: Number, default: 0 },
       count: { type: Number, default: 0 },
     },
   })
-  ratings: Record<string, any>;
+  ratings: { average: number; count: number };
 
+  // 🚚 Shipping Info
   @Prop({
     type: {
       delivery_time: String,
-      shipping_fee: Number,
+      shipping_fee: String,
       return_policy: String,
     },
   })
-  shipping: Record<string, any>;
+  shipping: {
+    delivery_time?: string;
+    shipping_fee?: string;
+    return_policy?: string;
+  };
 
+  // 🏷️ Tags for SEO or filters
   @Prop({ type: [String], default: [] })
   tags: string[];
+
+  // 🧩 Custom Attributes
+  @Prop({
+    type: Map,
+    of: String,
+    default: {},
+  })
+  customAttributes: Map<string, string>;
 }
 
 export const ProductSchema = SchemaFactory.createForClass(Product);
