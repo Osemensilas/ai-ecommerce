@@ -19,7 +19,6 @@ import { extname } from 'path';
 export class ProductController {
   constructor(private readonly productService: ProductService) {}
 
-  // ➕ Create a new product (with multiple file uploads)
   @Post()
   @UseInterceptors(
     FilesInterceptor('images', 10, {
@@ -36,7 +35,6 @@ export class ProductController {
   async create(@UploadedFiles() files: Express.Multer.File[], @Body() body: any) {
     const imagePaths = files?.map((f) => f.filename) || [];
 
-    // Convert nested JSON strings back into objects
     for (const key in body) {
       if (typeof body[key] === 'string' && body[key].startsWith('{')) {
         try {
@@ -58,7 +56,6 @@ export class ProductController {
     return this.productService.create(productData);
   }
 
-  // 📄 Get all products
   @Get()
   async findAll() {
     return this.productService.findAll();
