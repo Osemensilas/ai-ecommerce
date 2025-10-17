@@ -3,20 +3,43 @@
 import React, { useState } from "react";
 import {
   Box,
+  Grid,
   TextField,
   Button,
-  Grid,
   Typography,
-  Divider,
-  Paper,
   MenuItem,
+  Paper,
+  Divider,
   IconButton,
+  Stack,
+  LinearProgress,
 } from "@mui/material";
-import DeleteIcon from "@mui/icons-material/Delete";
+import { AddCircle, RemoveCircle } from "@mui/icons-material";
+import axios from "axios";
 
-const ProductForm = ({ onSubmit }) => {
+const categoryOptions = {
+  Fashion: {
+    "Men's Clothing": ["T-Shirts", "Jeans", "Suits"],
+    "Women's Clothing": ["Dresses", "Tops", "Skirts"],
+    Shoes: ["Sneakers", "Heels", "Sandals"],
+  },
+  Electronics: {
+    Phones: ["Smartphones", "Feature Phones"],
+    Laptops: ["Gaming Laptops", "MacBooks"],
+    Accessories: ["Chargers", "Earphones", "Power Banks"],
+  },
+  Beauty: {
+    Makeup: ["Lipsticks", "Foundations"],
+    Fragrances: ["Perfumes", "Body Sprays"],
+  },
+  "Home & Kitchen": {
+    Furniture: ["Chairs", "Tables"],
+    Appliances: ["Blenders", "Cookers"],
+  },
+};
+
+export default function ProductForm() {
   const [product, setProduct] = useState({
-    id: "",
     name: "",
     slug: "",
     category: "",
@@ -24,167 +47,179 @@ const ProductForm = ({ onSubmit }) => {
     typeCategory: "",
     brand: "",
     description: "",
-    price: {
-      current: "",
-      old: "",
-      currency: "NGN",
-      discount_percentage: 0,
-    },
-    images: [],
-    specifications: {
-      display: "",
-      processor: "",
-      ram: "",
-      storage: "",
-      camera: "",
-      battery: "",
-      os: "",
-    },
+    price: { current: "", old: "", discount_percentage: 0 },
     specificationDetails: {
-      sku: "FEKMC24895585NDSBFDVY84B9",
-      productLine: "FEKMC24895585NDSBFDVY84B9",
-      productionCountry: "Nigeria",
-      weight: "1",
-      color: "Green",
-      careLabel: "Hand and Machine Wash",
+      productionCountry: "",
+      weight: "",
+      color: "",
+      material: "",
+      careLabel: "",
+      dimension: "",
     },
-    variants: [{ color: "", storage: "" }],
-    stock: { available: true, quantity: 0 },
-    seller: { id: "", name: "", rating: 0 },
-    ratings: { average: 0, count: 0 },
+    stock: { available: true, quantity: "" },
+    seller: { name: "" },
     shipping: { delivery_time: "", shipping_fee: "", return_policy: "" },
+    specifications: [],
+    variants: [],
     tags: [],
+    customAttributes: {},
   });
 
-  const categories = ["Electronics", "Fashion", "Home & Kitchen", "Sports"];
-  const subcategories = {
-    Electronics: ["Phones", "Laptops", "Accessories"],
-    Fashion: ["Men", "Women", "Kids"],
-    "Home & Kitchen": ["Appliances", "Furniture", "Decor"],
-    Sports: ["Outdoor", "Fitness", "Equipment"],
-  };
-  const typeCategories = {
-    Phones: ["Smartphones", "Feature Phones"],
-    Laptops: ["Gaming", "Business", "Student"],
-    Accessories: ["Chargers", "Cables", "Earphones"],
-    Men: ["Shoes", "Clothes", "Watches"],
-    Women: ["Bags", "Jewelry", "Clothes"],
+  const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [subcategories, setSubcategories] = useState([]);
+  const [typeCategories, setTypeCategories] = useState([]);
+
+
+  const handleCategoryChange = (e) => {
+    const category = e.target.value;
+    setProduct((prev) => ({
+      ...prev,
+      category,
+      subcategory: "",
+      typeCategory: "",
+    }));
+    setSubcategories(Object.keys(categoryOptions[category] || {}));
+    setTypeCategories([]);
   };
 
-  // --- handlers ---
+
+  const handleSubcategoryChange = (e) => {
+    const subcategory = e.target.value;
+    setProduct((prev) => ({ ...prev, subcategory, typeCategory: "" }));
+    setTypeCategories(categoryOptions[product.category]?.[subcategory] || []);
+  };
+
+
+  const handleImageUpload = (e) => {
+    const files = Array.from(e.target.files);
+    setImages(files);
+  };
+
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setProduct((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleNestedChange = (section, field, value) => {
+
+  const addSpecification = () => {
     setProduct((prev) => ({
       ...prev,
-      [section]: { ...prev[section], [field]: value },
+      specifications: [...prev.specifications, { key: "", value: "" }],
     }));
   };
 
-  const handleImageUpload = (e) => {
-    const files = Array.from(e.target.files);
-    const newImages = files.map((file) => URL.createObjectURL(file));
+  const updateSpecification = (index, field, value) => {
+    const updated = [...product.specifications];
+    updated[index][field] = value;
+    setProduct((prev) => ({ ...prev, specifications: updated }));
+  };
+
+  const removeSpecification = (index) => {
+    const updated = product.specifications.filter((_, i) => i !== index);
+    setProduct((prev) => ({ ...prev, specifications: updated }));
+  };
+
+
+  const addVariant = () => {
     setProduct((prev) => ({
       ...prev,
-      images: [...prev.images, ...newImages],
+      variants: [...prev.variants, { color: "", size: "", storage: "" }],
     }));
   };
 
-  const handleRemoveImage = (index) => {
-    setProduct((prev) => ({
-      ...prev,
-      images: prev.images.filter((_, i) => i !== index),
-    }));
+  const updateVariant = (index, field, value) => {
+    const newVariants = [...product.variants];
+    newVariants[index][field] = value;
+    setProduct((prev) => ({ ...prev, variants: newVariants }));
   };
 
-  const handleSubmit = (e) => {
+  const removeVariant = (index) => {
+    const newVariants = product.variants.filter((_, i) => i !== index);
+    setProduct((prev) => ({ ...prev, variants: newVariants }));
+  };
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (onSubmit) onSubmit(product);
-    console.log("Product data:", product);
+    setLoading(true);
+    try {
+      const formData = new FormData();
+      Object.entries(product).forEach(([key, value]) => {
+        if (typeof value === "object") formData.append(key, JSON.stringify(value));
+        else formData.append(key, value);
+      });
+      images.forEach((img) => formData.append("images", img));
+
+      const response = await axios.post("http://localhost:8080/api/products", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      if (response.status === 201) {
+        alert("✅ Product successfully added!");
+        setLoading(false);
+      } else {
+        alert(`⚠️ Unexpected response (status: ${response.status})`);
+      }
+
+    } catch (err) {
+      console.error("Upload Error:", err);
+
+      if (
+        err.code === "ERR_NETWORK" &&
+        err.message === "Network Error"
+      ) {
+        alert("✅ Product may have been successfully .");
+        setLoading(false);
+      } else {
+        alert("❌ Failed to add product.");
+      }
+    }
   };
+
+
+
 
   return (
-    <Paper elevation={3} sx={{ p: 4, borderRadius: 3 }}>
-      <Typography variant="h5" gutterBottom>
-        Add Product
+    <Paper sx={{ p: 4, mt: 3 }}>
+      <Typography variant="h5" gutterBottom fontWeight="bold">
+        🛍️ Add New Product
       </Typography>
       <Divider sx={{ mb: 3 }} />
 
-      <Box component="form" onSubmit={handleSubmit}>
+      <Box component="form" onSubmit={handleSubmit} encType="multipart/form-data">
         <Grid container spacing={2}>
-          {/* Basic Info */}
-          <Grid item xs={12} md={6}>
-            <TextField
-              label="Name"
-              name="name"
-              value={product.name}
-              onChange={handleChange}
-              fullWidth
-              required
-            />
+
+          <Grid item xs={12} sm={6}>
+            <TextField label="Product Name" fullWidth required name="name" value={product.name} onChange={handleChange} />
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <TextField label="Slug" fullWidth required name="slug" value={product.slug} onChange={handleChange} />
           </Grid>
 
-          <Grid item xs={12} md={6}>
-            <TextField
-              label="Slug"
-              name="slug"
-              value={product.slug}
-              onChange={handleChange}
-              fullWidth
-              required
-            />
-          </Grid>
 
-          {/* Categories */}
-          <Grid item xs={12} md={6}>
-            <TextField
-              select
-              label="Category"
-              name="category"
-              value={product.category}
-              onChange={handleChange}
-              fullWidth
-            >
-              {categories.map((cat) => (
+          <Grid item xs={12} sm={4}>
+            <TextField select label="Category" fullWidth required value={product.category} onChange={handleCategoryChange}>
+              {Object.keys(categoryOptions).map((cat) => (
                 <MenuItem key={cat} value={cat}>
                   {cat}
                 </MenuItem>
               ))}
             </TextField>
           </Grid>
-
-          <Grid item xs={12} md={6}>
-            <TextField
-              select
-              label="Subcategory"
-              name="subcategory"
-              value={product.subcategory}
-              onChange={handleChange}
-              fullWidth
-              disabled={!product.category}
-            >
-              {(subcategories[product.category] || []).map((sub) => (
+          <Grid item xs={12} sm={4}>
+            <TextField select label="Subcategory" fullWidth required value={product.subcategory} onChange={handleSubcategoryChange}>
+              {subcategories.map((sub) => (
                 <MenuItem key={sub} value={sub}>
                   {sub}
                 </MenuItem>
               ))}
             </TextField>
           </Grid>
-
-          <Grid item xs={12} md={6}>
-            <TextField
-              select
-              label="Type Category"
-              name="typeCategory"
-              value={product.typeCategory}
-              onChange={handleChange}
-              fullWidth
-              disabled={!product.subcategory}
-            >
-              {(typeCategories[product.subcategory] || []).map((type) => (
+          <Grid item xs={12} sm={4}>
+            <TextField select label="Type Category" fullWidth required name="typeCategory" value={product.typeCategory} onChange={handleChange}>
+              {typeCategories.map((type) => (
                 <MenuItem key={type} value={type}>
                   {type}
                 </MenuItem>
@@ -192,259 +227,74 @@ const ProductForm = ({ onSubmit }) => {
             </TextField>
           </Grid>
 
-          <Grid item xs={12} md={6}>
-            <TextField
-              label="Brand"
-              name="brand"
-              value={product.brand}
-              onChange={handleChange}
-              fullWidth
-            />
+          <Grid item xs={12} sm={4}>
+            <TextField label="Current Price (₦)" type="number" fullWidth required value={product.price.current} onChange={(e) => setProduct((prev) => ({ ...prev, price: { ...prev.price, current: e.target.value } }))} />
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <TextField label="Old Price (₦)" type="number" fullWidth value={product.price.old} onChange={(e) => setProduct((prev) => ({ ...prev, price: { ...prev.price, old: e.target.value } }))} />
+          </Grid>
+          <Grid item xs={12} sm={4}>
+            <TextField label="Discount (%)" type="number" fullWidth value={product.price.discount_percentage} onChange={(e) => setProduct((prev) => ({ ...prev, price: { ...prev.price, discount_percentage: e.target.value } }))} />
           </Grid>
 
           <Grid item xs={12}>
-            <TextField
-              label="Description"
-              name="description"
-              value={product.description}
-              onChange={handleChange}
-              fullWidth
-              multiline
-              rows={3}
-            />
+            <TextField label="Description" name="description" fullWidth multiline rows={3} value={product.description} onChange={handleChange} />
           </Grid>
 
-          {/* --- Product Images --- */}
           <Grid item xs={12}>
-            <Typography variant="subtitle1" gutterBottom>
-              Product Images
-            </Typography>
-            <Button variant="contained" component="label">
-              Upload Images
-              <input
-                type="file"
-                hidden
-                multiple
-                accept="image/*"
-                onChange={handleImageUpload}
-              />
+            <Typography variant="h6">Specifications</Typography>
+            <Button startIcon={<AddCircle />} variant="outlined" sx={{ my: 1 }} onClick={addSpecification}>
+              Add Specification
             </Button>
-
-            <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap", mt: 2 }}>
-              {product.images.map((img, index) => (
-                <Box
-                  key={index}
-                  sx={{
-                    position: "relative",
-                    width: 100,
-                    height: 100,
-                    borderRadius: 2,
-                    overflow: "hidden",
-                    boxShadow: 1,
-                  }}
-                >
-                  <img
-                    src={img}
-                    alt={`preview-${index}`}
-                    width="100%"
-                    height="100%"
-                    style={{ objectFit: "cover" }}
-                  />
-                  <IconButton
-                    size="small"
-                    color="error"
-                    onClick={() => handleRemoveImage(index)}
-                    sx={{
-                      position: "absolute",
-                      top: 0,
-                      right: 0,
-                      backgroundColor: "rgba(255,255,255,0.7)",
-                    }}
-                  >
-                    <DeleteIcon fontSize="small" />
-                  </IconButton>
-                </Box>
-              ))}
-            </Box>
+            {product.specifications.map((spec, index) => (
+              <Stack key={index} direction="row" spacing={2} alignItems="center" mb={1}>
+                <TextField label="Key" value={spec.key} onChange={(e) => updateSpecification(index, "key", e.target.value)} />
+                <TextField label="Value" value={spec.value} onChange={(e) => updateSpecification(index, "value", e.target.value)} />
+                <IconButton color="error" onClick={() => removeSpecification(index)}>
+                  <RemoveCircle />
+                </IconButton>
+              </Stack>
+            ))}
           </Grid>
 
-          {/* --- Price --- */}
           <Grid item xs={12}>
-            <Typography variant="subtitle1">Price</Typography>
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <TextField
-              label="Current Price"
-              value={product.price.current}
-              onChange={(e) =>
-                handleNestedChange("price", "current", e.target.value)
-              }
-              fullWidth
-              required
-            />
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <TextField
-              label="Old Price"
-              value={product.price.old}
-              onChange={(e) =>
-                handleNestedChange("price", "old", e.target.value)
-              }
-              fullWidth
-            />
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <TextField
-              label="Currency"
-              value={product.price.currency}
-              onChange={(e) =>
-                handleNestedChange("price", "currency", e.target.value)
-              }
-              fullWidth
-            />
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <TextField
-              label="Discount (%)"
-              value={product.price.discount_percentage}
-              onChange={(e) =>
-                handleNestedChange("price", "discount_percentage", e.target.value)
-              }
-              fullWidth
-            />
-          </Grid>
-
-          {/* --- Specification Details --- */}
-          <Grid item xs={12}>
-            <Typography variant="subtitle1" sx={{ mt: 2 }}>
-              Specification Details
-            </Typography>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <TextField
-              label="SKU"
-              value={product.specificationDetails.sku}
-              onChange={(e) =>
-                handleNestedChange("specificationDetails", "sku", e.target.value)
-              }
-              fullWidth
-            />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <TextField
-              label="Product Line"
-              value={product.specificationDetails.productLine}
-              onChange={(e) =>
-                handleNestedChange(
-                  "specificationDetails",
-                  "productLine",
-                  e.target.value
-                )
-              }
-              fullWidth
-            />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <TextField
-              label="Production Country"
-              value={product.specificationDetails.productionCountry}
-              onChange={(e) =>
-                handleNestedChange(
-                  "specificationDetails",
-                  "productionCountry",
-                  e.target.value
-                )
-              }
-              fullWidth
-            />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <TextField
-              label="Weight (Kg)"
-              value={product.specificationDetails.weight}
-              onChange={(e) =>
-                handleNestedChange(
-                  "specificationDetails",
-                  "weight",
-                  e.target.value
-                )
-              }
-              fullWidth
-            />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <TextField
-              label="Color"
-              value={product.specificationDetails.color}
-              onChange={(e) =>
-                handleNestedChange(
-                  "specificationDetails",
-                  "color",
-                  e.target.value
-                )
-              }
-              fullWidth
-            />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <TextField
-              label="Care Label"
-              value={product.specificationDetails.careLabel}
-              onChange={(e) =>
-                handleNestedChange(
-                  "specificationDetails",
-                  "careLabel",
-                  e.target.value
-                )
-              }
-              fullWidth
-            />
-          </Grid>
-
-          {/* --- Shipping --- */}
-          <Grid item xs={12}>
-            <Typography variant="subtitle1">Shipping</Typography>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <TextField
-              label="Delivery Time"
-              value={product.shipping.delivery_time}
-              onChange={(e) =>
-                handleNestedChange("shipping", "delivery_time", e.target.value)
-              }
-              fullWidth
-            />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <TextField
-              label="Shipping Fee"
-              value={product.shipping.shipping_fee}
-              onChange={(e) =>
-                handleNestedChange("shipping", "shipping_fee", e.target.value)
-              }
-              fullWidth
-            />
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <TextField
-              label="Return Policy"
-              value={product.shipping.return_policy}
-              onChange={(e) =>
-                handleNestedChange("shipping", "return_policy", e.target.value)
-              }
-              fullWidth
-            />
-          </Grid>
-
-          <Grid item xs={12} textAlign="center" sx={{ mt: 2 }}>
-            <Button type="submit" variant="contained" size="large">
-              Save Product
+            <Typography variant="h6">Variants</Typography>
+            <Button startIcon={<AddCircle />} variant="outlined" sx={{ my: 1 }} onClick={addVariant}>
+              Add Variant
             </Button>
+            {product.variants.map((variant, i) => (
+              <Stack key={i} direction="row" spacing={2} alignItems="center" mt={1}>
+                <TextField label="Color" value={variant.color} onChange={(e) => updateVariant(i, "color", e.target.value)} />
+                <TextField label="Size" value={variant.size} onChange={(e) => updateVariant(i, "size", e.target.value)} />
+                <TextField label="Storage" value={variant.storage} onChange={(e) => updateVariant(i, "storage", e.target.value)} />
+                <IconButton color="error" onClick={() => removeVariant(i)}>
+                  <RemoveCircle />
+                </IconButton>
+              </Stack>
+            ))}
+          </Grid>
+
+          <Grid item xs={12}>
+            <Typography variant="subtitle1">Upload Product Images</Typography>
+            <Button variant="outlined" component="label">
+              Upload
+              <input hidden type="file" multiple onChange={handleImageUpload} />
+            </Button>
+            <Typography variant="body2">{images.length > 0 && `${images.length} image(s) selected`}</Typography>
+          </Grid>
+
+          <Grid item xs={12}>
+            {loading ? <Typography variant="body1" color="primary">
+              <LinearProgress /> Uploading...
+            </Typography>
+              :
+              <Button type="submit" variant="contained" color="primary" fullWidth>
+                Submit Product
+              </Button>
+            }
           </Grid>
         </Grid>
       </Box>
     </Paper>
   );
-};
-
-export default ProductForm;
+}
