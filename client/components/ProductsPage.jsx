@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+import axios from "axios";
 
 export default function ProductsPage() {
   const searchParams = useSearchParams();
@@ -358,6 +359,20 @@ export default function ProductsPage() {
     const withoutBrand = options.filter(opt => opt !== "Brand");
     setMainFilter(["Brand", ...new Set(withoutBrand)]);
   }, [type]);
+
+  async function getProducts(){
+
+    const url = "https://server-api-0yug.onrender.com/api/products";
+
+    const response = await axios.get(url, {
+      headers: {
+        "Content-Type" : "application/json",
+      }
+    })
+    console.log(response.data);
+  }
+
+  getProducts();
 
   const products = [
       { id: 1, name: "Apple iPhone 15", brand: "Apple", price: 560000, image: "phone.png", rating: 4.8, category: "phone and tablets", type: "iphone", sex: null, color: "Silver", stock: "in-stock", delivery: "free-shipping", RAM: "8GB", Storage: "256GB", flashSale: true},
