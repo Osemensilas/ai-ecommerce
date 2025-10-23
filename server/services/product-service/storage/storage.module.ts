@@ -5,4 +5,6 @@ import { ObjectStorageService } from './Storage.service';
   providers: [ObjectStorageService],
   exports: [ObjectStorageService], 
 })
-export class StorageModule {}
+export class StorageModule {} 
+
+// solohitechnology01
