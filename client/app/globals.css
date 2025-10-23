@@ -184,6 +184,20 @@ button{
     display: none;
 }
 
+.admin-customer-nav{
+    height: max-content;
+    width: 100%;
+    display: none;
+}
+
+.admin-customer-nav.active{
+    display: block;
+}
+
+button i.active{
+    transform: rotate(180deg);
+}
+
 @media only screen and (max-width: 1280px) and (min-width: 1001px){
     .recentlyViewedContainer, 
     .similarProductsContainer {
