@@ -12,6 +12,8 @@ export class ProductService {
     return createdProduct.save();
   }
 
+  // bjkhbjk
+
   async findAll(): Promise<Product[]> {
     return this.productModel.find().sort({ createdAt: -1 }).exec();
   }
