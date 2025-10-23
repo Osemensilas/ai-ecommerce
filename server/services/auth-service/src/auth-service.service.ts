@@ -43,7 +43,7 @@ export class AuthServiceService {
 
   generateToken(user: User) {
     const payload = { sub: user._id, username: user.username, email: user.email };
-    const token = jwt.sign(payload, process.env.JWT_SECRET || 'thisisisisisisaverysecuresecret', {
+    const token = jwt.sign(payload, 'thisisisisisisaverysecuresecret', {
       expiresIn: '1h',
     });
     return { access_token: token };

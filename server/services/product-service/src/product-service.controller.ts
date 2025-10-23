@@ -6,53 +6,38 @@ import {
   Param,
   Put,
   Delete,
-  Query,
   UploadedFiles,
   UseInterceptors,
 } from '@nestjs/common';
 import { ProductService } from './product-service.service';
 import { FilesInterceptor } from '@nestjs/platform-express';
-import { diskStorage } from 'multer';
-import { extname } from 'path';
+import { memoryStorage } from 'multer';
+import { ObjectStorageService } from '../storage/storage.service';
 
 @Controller('products')
 export class ProductController {
-  constructor(private readonly productService: ProductService) {}
+  constructor(
+    private readonly productService: ProductService,
+    private readonly objectStorageService: ObjectStorageService,
+  ) {}
 
   @Post()
-  @UseInterceptors(
-    FilesInterceptor('images', 10, {
-      storage: diskStorage({
-        destination: './uploads/products',
-        filename: (req, file, callback) => {
-          const uniqueName =
-            Date.now() + '-' + Math.round(Math.random() * 1e9);
-          callback(null, uniqueName + extname(file.originalname));
-        },
-      }),
-    }),
-  )
+  @UseInterceptors(FilesInterceptor('images', 10, { storage: memoryStorage() }))
   async create(@UploadedFiles() files: Express.Multer.File[], @Body() body: any) {
-    const imagePaths = files?.map((f) => f.filename) || [];
+    const uploadPromises = files.map((file) =>
+      this.objectStorageService.uploadFile(file, 'products/'),
+    );
+    const imageUrls = await Promise.all(uploadPromises);
 
     for (const key in body) {
-      if (typeof body[key] === 'string' && body[key].startsWith('{')) {
-        try {
-          body[key] = JSON.parse(body[key]);
-        } catch {}
-      }
-      if (typeof body[key] === 'string' && body[key].startsWith('[')) {
+      if (typeof body[key] === 'string' && (body[key].startsWith('{') || body[key].startsWith('['))) {
         try {
           body[key] = JSON.parse(body[key]);
         } catch {}
       }
     }
 
-    const productData = {
-      ...body,
-      images: imagePaths,
-    };
-
+    const productData = { ...body, images: imageUrls };
     return this.productService.create(productData);
   }
 
@@ -76,9 +61,8 @@ export class ProductController {
     return this.productService.delete(id);
   }
 
-    @Get('hello')
+  @Get('hello')
   getHello(): string {
     return 'Hello World!';
   }
-
 }
