@@ -8,6 +8,7 @@ import Dashboard from '@/components/admin/Dashboard';
 import Products from '@/components/admin/Product';
 import ViewProduct from '@/components/admin/components/ViewProduct';
 import Buyers from '@/components/admin/Buyers';
+import Orders from '@/components/admin/Order';
 
 const Page = () => {
     
@@ -54,7 +55,7 @@ const Page = () => {
                 <div className={`${styles.VendorComponentContainer}
                 ${pathName === "/admin/orders" ? styles.active : ""}
                 `}>
-                    Orders
+                    <Orders />
                 </div>
                 <div className={`${styles.VendorComponentContainer}
                 ${pathName === "/admin/reports" ? styles.active : ""}
