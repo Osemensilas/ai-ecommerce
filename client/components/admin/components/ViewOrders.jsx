@@ -6,6 +6,19 @@ const ViewOrders = () => {
     const orderPage = () => {
         window.history.pushState({}, '', '/admin/orders');
     }
+
+    const shipmentClicked = () => {
+        const shipmentDetails = document.querySelector(`.${styles.adminShipmentView}`);
+
+        shipmentDetails.classList.add(styles.active);
+    }
+
+    const goBack = () => {
+        const shipmentDetails = document.querySelector(`.${styles.adminShipmentView}`);
+
+        shipmentDetails.classList.remove(styles.active);
+    }
+
     return ( 
         <>
         <div className={styles.mainVendorDashboard}>
@@ -124,7 +137,86 @@ const ViewOrders = () => {
                                 <p>Solo-hit-Tech</p>
                             </div>
                             <div className={styles.adminViewProuctRightBottomContShip}>
-                                <button type="button">Shipment Information</button>
+                                <button onClick={shipmentClicked} type="button">Shipment Information</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className={styles.adminShipmentView}>
+                <div className={styles.adminShipmentViewMain}>
+                    <header>
+                        <button type="button" onClick={goBack}>
+                            <i className="fa fa-arrow-left"></i>
+                            <h3>Back to Order</h3>
+                        </button>
+                    </header>
+                    <div className={styles.adminShipmentViewContent}>
+                        <div className={styles.adminShipmentViewHeader}>
+                            <div className={styles.adminShipmentViewHeaderLeft}>
+                                <h3>Shipment &u4dgb778hbfh9</h3>
+                                <div className={styles.adminShipmentViewHeaderLeftSec}>
+                                    <p>June 2nd, 2025.</p>
+                                    <h4>In transit</h4>
+                                </div>
+                            </div>
+                            <div className={styles.adminShipmentViewHeaderRight}>
+                                <button type="button">Track</button>
+                                <button type="button">Contact Carrier</button>
+                            </div>
+                        </div>
+                        <div className={styles.adminShipmentViewContentB}>
+                            <h3>Shipment Information</h3>
+                            <div className={styles.adminShipmentViewDetailContainer}>
+                                <div className={styles.adminShipmentViewDetail}>
+                                    <h5>Client Account Number:</h5>
+                                    <p>0294586629</p>
+                                </div>
+                                <div className={styles.adminShipmentViewDetail}>
+                                    <h5>Client Name:</h5>
+                                    <p>James Fortune</p>
+                                </div>
+                                <div className={styles.adminShipmentViewDetail}>
+                                    <h5>Item:</h5>
+                                    <p>HP Laptop</p>
+                                </div>
+                                <div className={styles.adminShipmentViewDetail}>
+                                    <h5>Tracking:</h5>
+                                    <p>James Fortune</p>
+                                </div>
+                                <div className={styles.adminShipmentViewDetail}>
+                                    <h5>Status:</h5>
+                                    <p>James Fortune</p>
+                                </div>
+                                <div className={styles.adminShipmentViewDetail}>
+                                    <h5>E.D.D:</h5>
+                                    <p>James Fortune</p>
+                                </div>
+                                <div className={styles.adminShipmentViewDetail}>
+                                    <h5>Delivery Address:</h5>
+                                    <p>James Fortune</p>
+                                </div>
+                                <div className={styles.adminShipmentViewDetail}>
+                                    <h5>Phone:</h5>
+                                    <p>James Fortune</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.adminShipmentViewBottom}>
+                            <div className={styles.adminShipmentViewBottomLeft}>
+                                <img src="/" alt="" />
+                                <div className={styles.adminShipmentViewBottomLeftName}>
+                                    <h3>James Fortune</h3>
+                                    <p>Carrier</p>
+                                </div>
+                            </div>
+                            <div className={styles.adminShipmentViewBottomRight}>
+                                <button>
+                                    <i className="fa fa-message"></i>
+                                </button>
+                                <button>
+                                    <i className="fa fa-phone"></i>
+                                </button>
                             </div>
                         </div>
                     </div>

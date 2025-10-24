@@ -3489,3 +3489,202 @@ button.addBtn{
     border-top: 1px solid var(--lightGrey);
     margin-top: 20px;
 }
+
+.adminShipmentView{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: var(--background);
+}
+
+.adminShipmentView.active{
+    display: flex;
+}
+
+.adminShipmentViewMain{
+    width: 80%;
+    height: max-content;
+    padding: 0 20px;
+}
+
+.adminShipmentViewMain header{
+    height: max-content;
+    width: 100%;
+    padding: 40px 0;
+    margin-bottom: 10px;
+}
+
+.adminShipmentViewMain header button{
+    background-color: transparent;
+    border: none;
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.adminShipmentViewContent{
+    width: 100%;
+    height: max-content;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+    padding: 0 40px;
+}
+
+.adminShipmentViewHeader{
+    height: max-content;
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.adminShipmentViewHeader h3{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.adminShipmentViewHeaderLeftSec{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.adminShipmentViewHeaderLeftSec p{
+    font-size: 15px;
+}
+
+.adminShipmentViewHeaderLeftSec h4,
+.adminShipmentViewBottomLeftName p{
+    font-size: 12px;
+    font-weight: 300;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background: #f5deb4;
+}
+
+.adminShipmentViewHeaderRight{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.adminShipmentViewHeaderRight button{
+    padding: 10px 25px;
+    border: none;
+    font-size: 16px;
+    background: var(--text);
+    color: var(--background);
+    border-radius: 10px;
+}
+
+.adminShipmentViewHeaderRight button:last-child{
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.adminShipmentViewContentB{
+    height: max-content;
+    width: 100%;
+}
+
+.adminShipmentViewContentB h3{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.adminShipmentViewDetailContainer{
+    height: max-content;
+    width: 100%;
+}
+
+.adminShipmentViewDetail{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--lightGrey);
+}
+
+.adminShipmentViewDetail h5,
+.adminShipmentViewDetail p{
+    font-size: 15px;
+}
+
+.adminShipmentViewBottom{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+    padding-bottom: 40px;
+}
+
+.adminShipmentViewBottomLeft{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.adminShipmentViewBottomLeft img{
+    height: 40px;
+    width: 40px;
+    border-radius: 100%;
+}
+
+.adminShipmentViewBottomLeftName{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.adminShipmentViewBottomLeftName h3{
+    font-size: 16px;
+}
+
+.adminShipmentViewBottomRight{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.adminShipmentViewBottomRight button{
+    background: transparent;
+    border: none;
+    font-size: 25px;
+}
+
+.adminShipmentViewBottomRight button i{
+    background: var(--primary);
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    color: var(--background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

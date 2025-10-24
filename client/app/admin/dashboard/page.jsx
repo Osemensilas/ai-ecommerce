@@ -10,6 +10,7 @@ import ViewProduct from '@/components/admin/components/ViewProduct';
 import Buyers from '@/components/admin/Buyers';
 import Orders from '@/components/admin/Order';
 import ViewOrders from '@/components/admin/components/ViewOrders';
+import Reports from '@/components/admin/Report';
 
 const Page = () => {
     
@@ -66,7 +67,7 @@ const Page = () => {
                 <div className={`${styles.VendorComponentContainer}
                 ${pathName === "/admin/reports" ? styles.active : ""}
                 `}>
-                    Reports
+                    <Reports />
                 </div>
                 <div className={`${styles.VendorComponentContainer}
                 ${pathName === "/admin/promotion" ? styles.active : ""}
