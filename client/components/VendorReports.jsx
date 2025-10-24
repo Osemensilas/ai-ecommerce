@@ -2,8 +2,8 @@
 
 import styles from '../app/css/dashboard.module.css';
 import Image from 'next/image';
-import DashboardLines from './DashboardLines';
-import DashboardReportNuts from './DashboardReportNut';
+import DashboardLines from './Vendor/DashboardLines';
+import DashboardReportNuts from './Vendor/DashboardReportNut';
 import MonthlySalesChart from './MonthlySalesChart';
 import { useState } from 'react';
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import styles from '../app/css/dashboard.module.css';
+import styles from '../../app/css/dashboard.module.css';
 
 const data = [
   { date: "22 Sep", price: 12000 },

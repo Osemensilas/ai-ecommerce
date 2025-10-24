@@ -10,7 +10,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import styles from '../app/css/dashboard.module.css';
+import styles from '../../app/css/dashboard.module.css';
 
 const data = [
   { month: "Jan", income: 4000, expenditure: 2400 },

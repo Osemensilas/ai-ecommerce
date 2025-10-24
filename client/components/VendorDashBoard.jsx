@@ -1,13 +1,13 @@
 'use client'
 
 import styles from '../app/css/dashboard.module.css';
-import DashboardCustomers from './DashboardCustomers';
-import DashboardIncome from './DashboardIncome';
-import DashboardOrders from './DashboardOrders';
-import DashboardOrderSummary from './DashboardOrderSummary';
-import DashboardProducts from './DashboardProducts';
-import DashboardSales from './DashboardSales';
-import DashboardPurchases from './DashboardPurchases';
+import DashboardCustomers from './Vendor/DashboardCustomers';
+import DashboardIncome from './Vendor/DashboardIncome';
+import DashboardOrders from './Vendor/DashboardOrders';
+import DashboardOrderSummary from './Vendor/DashboardOrderSummary';
+import DashboardProducts from './Vendor/DashboardProducts';
+import DashboardSales from './Vendor/DashboardSales';
+import DashboardPurchases from './Vendor/DashboardPurchases';
 import Image from 'next/image';
 
 const VendorDashboard = () => {

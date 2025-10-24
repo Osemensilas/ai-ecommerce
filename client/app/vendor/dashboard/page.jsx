@@ -14,7 +14,7 @@ import VendorShipment from '@/components/VendorShipment';
 import VendorSetting from '@/components/VendorSetting';
 import VendorAddCustomer from '@/components/VendorAddCustomer';
 import CreatePromotion from '@/components/CreatePromotion';
-import PromotionOverview from '@/components/PromotionOverview';
+import PromotionOverview from '@/components/Vendor/PromotionOverview';
 import CreateAds from '@/components/CreateAds';
 import AdsOverview from '@/components/AdsOverview';
 import TransactionHistory from '@/components/TransactionHistory';

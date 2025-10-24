@@ -1,5 +1,5 @@
-import DashboardLines from "./DashboardLines";
-import styles from '../app/css/dashboard.module.css';
+import DashboardLines from './DashboardLines';
+import styles from '../../app/css/dashboard.module.css';
 
 const DashboardIncome = () => {
     return (

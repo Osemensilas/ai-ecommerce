@@ -1,7 +1,7 @@
 "use client";
 
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
-import styles from '../app/css/dashboard.module.css';
+import styles from '../../app/css/dashboard.module.css';
 
 const data = [
   { name: "Active", value: 78 },

@@ -1,4 +1,4 @@
-import styles from '../app/css/dashboard.module.css';
+import styles from '../../app/css/dashboard.module.css';
 
 const DashboardOrders = () => {
     return ( 
