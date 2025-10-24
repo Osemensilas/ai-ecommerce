@@ -3424,3 +3424,68 @@ button.addBtn{
     color: var(--primary);
     text-decoration: underline;
 }
+
+.adminViewProuctRightBottomContDetails{
+    height: max-content;
+    width: 100%;
+    margin: 0 0 40px 0;
+}
+
+.adminViewProuctRightBottomContDetails h3{
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.adminViewProuctRightBottomContDetails p{
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.adminViewProuctRightBottomContShip {
+    height: max-content;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.adminViewProuctRightBottomContShip button{
+    padding: 10px 25px;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    cursor: pointer;
+    background: transparent;
+    font-size: 16px;
+}
+
+.adminViewProuctLeftBottomTop header{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--lightGrey);
+    padding-bottom: 20px;
+}
+
+.adminViewProuctLeftBottomTop header h2{
+    font-size: 24px;
+}
+
+.adminViewProuctLeftBottomTop header p{
+    font-size: 14px;
+    color: var(--primary);
+    padding: 5px 10px;
+    border-radius: 40px;
+    background: #c1f3c1;
+}
+
+.adminViewProuctLeftBottomCatTot{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-top: 1px solid var(--lightGrey);
+    margin-top: 20px;
+}

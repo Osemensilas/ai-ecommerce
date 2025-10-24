@@ -9,6 +9,7 @@ import Products from '@/components/admin/Product';
 import ViewProduct from '@/components/admin/components/ViewProduct';
 import Buyers from '@/components/admin/Buyers';
 import Orders from '@/components/admin/Order';
+import ViewOrders from '@/components/admin/components/ViewOrders';
 
 const Page = () => {
     
@@ -56,6 +57,11 @@ const Page = () => {
                 ${pathName === "/admin/orders" ? styles.active : ""}
                 `}>
                     <Orders />
+                </div>
+                <div className={`${styles.VendorComponentContainer}
+                ${pathName === "/admin/orders/view-orders" ? styles.active : ""}
+                `}>
+                    <ViewOrders />
                 </div>
                 <div className={`${styles.VendorComponentContainer}
                 ${pathName === "/admin/reports" ? styles.active : ""}

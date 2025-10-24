@@ -2,6 +2,15 @@ import styles from '../../app/css/dashboard.module.css';
 import Image from 'next/image';
 
 const Orders = () => {
+
+    const viewOrder = (e) => {
+        const itemId = e.currentTarget.value;
+
+        let url = '/admin/orders/view-orders?id=' + itemId;
+
+        window.history.pushState({}, '', url);
+    }
+
     return ( 
         <>
         <div className={styles.mainVendorDashboard}>
@@ -93,7 +102,7 @@ const Orders = () => {
                                 <td>Grey Wool Bl...</td>
                                 <td>03 Mar. 24 <span className={styles.innerSpan}></span> 10:00 am</td>
                                 <td><span className={`${styles.status} ${styles.processing}`}>Processing</span></td>
-                                <td><button>View</button> Report Issue</td>
+                                <td><button type="button" value={"#854763"} onClick={viewOrder}>View</button> Report Issue</td>
                             </tr>
                             <tr>
                                 <td>#1285</td>
