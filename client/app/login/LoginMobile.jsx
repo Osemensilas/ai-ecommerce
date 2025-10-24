@@ -49,7 +49,7 @@ const LoginMobile = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post('https://server-api-0yug.onrender.com/api/auth/login', formData);
+      const res = await axios.post('https://ahiaglobal.onrender.com/api/auth/login', formData);
     //   localStorage.setItem('user', JSON.stringify(res.data));
       router.push('/');
     } catch (err) {

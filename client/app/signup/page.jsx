@@ -44,14 +44,14 @@ const Signup = () => {
     }
     if (formData.password !== formData.password2) {
       setError("Passwords do not match");
-      return;
+      return; 
     }
 
     try {
       setError('');
       setLoading(true);
 
-      const response = await axios.post("https://server-api-0yug.onrender.com/api/auth/register", {
+      const response = await axios.post("https://ahiaglobal.onrender.com/api/auth/register", {
         username: formData.username,
         email: formData.email,
         password: formData.password,

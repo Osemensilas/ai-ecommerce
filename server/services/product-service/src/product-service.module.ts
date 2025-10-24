@@ -1,13 +1,16 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Product, ProductSchema } from './schemas/product.schema';
-import { ProductService } from './product-service.service';
 import { ProductController } from './product-service.controller';
+import { ProductService } from './product-service.service';
+import { Product, ProductSchema } from './schemas/product.schema';
+import { StorageModule } from '../storage/storage.module';
 
 @Module({
-  imports: [MongooseModule.forFeature([{ name: Product.name, schema: ProductSchema }])],
-  providers: [ProductService],
+  imports: [
+    MongooseModule.forFeature([{ name: Product.name, schema: ProductSchema }]),
+    StorageModule, 
+  ],
   controllers: [ProductController],
-  exports: [ProductService], // 👈 optional but useful if other modules will use it
+  providers: [ProductService],
 })
-export class ProductServiceModule {} // ✅ renamed to match your import in app.module.ts
+export class ProductServiceModule {}

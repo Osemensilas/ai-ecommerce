@@ -39,14 +39,14 @@ const Login = () => {
         if (!emailVal.test(formData.email)) {
             setError("Invalid email address");
             return;
-        }
+        }   
 
         setError('');
         setLoading(true);
 
         try {
             // ✅ Call your backend login API
-            const res = await axios.post("https://server-api-0yug.onrender.com/api/auth/login", formData);
+            const res = await axios.post("https://ahiaglobal.onrender.com/api/auth/login", formData);
 
             // ✅ Save user/token to localStorage (or cookies)
             localStorage.setItem("user", JSON.stringify(res.data));

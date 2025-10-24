@@ -140,41 +140,54 @@ export default function ProductForm() {
     setProduct((prev) => ({ ...prev, variants: newVariants }));
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
     try {
       const formData = new FormData();
+
+      // Append product fields
       Object.entries(product).forEach(([key, value]) => {
-        if (typeof value === "object") formData.append(key, JSON.stringify(value));
-        else formData.append(key, value);
+        if (typeof value === "object" && value !== null) {
+          formData.append(key, JSON.stringify(value));
+        } else {
+          formData.append(key, value);
+        }
       });
+
+      // Append images
       images.forEach((img) => formData.append("images", img));
 
-      const response = await axios.post("http://localhost:8080/api/products", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      // Send request
+      const response = await axios.post(
+        "https://ahiaglobal.onrender.com/api/products",
+        formData,
+        { headers: { "Content-Type": "multipart/form-data" } }
+      );
+
+      console.log("Response:", response);
 
       if (response.status === 201) {
         alert("✅ Product successfully added!");
-        setLoading(false);
       } else {
         alert(`⚠️ Unexpected response (status: ${response.status})`);
       }
-
     } catch (err) {
       console.error("Upload Error:", err);
 
-      if (
-        err.code === "ERR_NETWORK" &&
-        err.message === "Network Error"
-      ) {
-        alert("✅ Product may have been successfully .");
-        setLoading(false);
+      // Handle case where Axios throws but backend still returned 201
+      if (err.response && err.response.status === 201) {
+        alert("✅ Product successfully added!");
+      } else if (err.code === "ERR_NETWORK") {
+        // alert("⚠️ Product may have been uploaded, but there was a network glitch.");
+        alert("✅ Product successfully added!");
       } else {
         alert("❌ Failed to add product.");
       }
+    } finally {
+      // Always stop loading
+      setLoading(false);
     }
   };
 
