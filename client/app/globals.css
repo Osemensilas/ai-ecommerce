@@ -198,6 +198,15 @@ button i.active{
     transform: rotate(180deg);
 }
 
+.adminPageNewNav{
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 50px;
+    padding: 0 160px;
+    display: flex
+}
+
 @media only screen and (max-width: 1280px) and (min-width: 1001px){
     .recentlyViewedContainer, 
     .similarProductsContainer {
