@@ -367,6 +367,7 @@ export default function ProductsPage() {
       const response = await axios.get(url, {
         headers: {
           "Content-Type": "application/json",
+          "Host": "api.ahiaglobal.com",
         },
       });
 

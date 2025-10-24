@@ -3,10 +3,11 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'https://api.ahiaglobal.com/api/:path*', // ✅ Proxy to secure backend
+        destination: 'https://api.ahiaglobal.com', 
       },
     ];
   },
 };
 
 export default nextConfig;
+ 
