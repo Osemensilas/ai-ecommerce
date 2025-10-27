@@ -11,6 +11,12 @@ import Buyers from '@/components/admin/Buyers';
 import Orders from '@/components/admin/Order';
 import ViewOrders from '@/components/admin/components/ViewOrders';
 import Reports from '@/components/admin/Report';
+import Promotion from '@/components/admin/Promotion';
+import AddPromotion from '@/components/admin/components/AddPromotion';
+import PromotionOverview from '@/components/admin/components/PromotionOverview';
+import Shipment from '@/components/admin/Shipment';
+import TrackShipment from '@/components/admin/components/TrackShipment';
+import CustomerCare from '@/components/admin/CustomerCare';
 
 const Page = () => {
     
@@ -72,17 +78,17 @@ const Page = () => {
                 <div className={`${styles.VendorComponentContainer}
                 ${pathName === "/admin/promotion" ? styles.active : ""}
                 `}>
-                    Promotion
+                    <Promotion />
                 </div>
                 <div className={`${styles.VendorComponentContainer}
                 ${pathName === "/admin/promotion/add-promotion" ? styles.active : ""}
                 `}>
-                    Create Promotion
+                    <AddPromotion />
                 </div>
                 <div className={`${styles.VendorComponentContainer}
                 ${pathName === "/admin/promotion/add-promotion/promotion-overview" ? styles.active : ""}
                 `}>
-                    Promotion OverView
+                    <PromotionOverview />
                 </div>
                 <div className={`${styles.VendorComponentContainer}
                 ${pathName === "/admin/promotion/add-ads" ? styles.active : ""}
@@ -117,12 +123,17 @@ const Page = () => {
                 <div className={`${styles.VendorComponentContainer}
                 ${pathName === "/admin/shipment" ? styles.active : ""}
                 `}>
-                    Shipment
+                    <Shipment />
                 </div>
                 <div className={`${styles.VendorComponentContainer}
                 ${pathName === "/admin/track-shipment" ? styles.active : ""}
                 `}>
-                    Track Shipment
+                    <TrackShipment />
+                </div>
+                <div className={`${styles.VendorComponentContainer}
+                ${pathName === "/admin/customer-care" ? styles.active : ""}
+                `}>
+                    <CustomerCare />
                 </div>
                 <div className={`${styles.VendorComponentContainer}
                 ${pathName === "/admin/setting" ? styles.active : ""}

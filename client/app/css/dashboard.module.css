@@ -3688,3 +3688,53 @@ button.addBtn{
     justify-content: center;
     align-items: center;
 }
+
+.adminPromitionReports{
+    margin-top: 100px;
+}
+
+.adminPeportsTopRightContent{
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.adminExportFormContainer2{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.adminExportFormContainer2.active{
+    display: flex;
+}
+
+.adminExportFormContainer2::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--text);
+    opacity: 0.4;
+}
+
+.mainCusdashboardOverall{
+    height: max-content;
+    width: 100%;
+    padding: 20px 40px;
+}
+
+.mainCusdashboardOverall h2{
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.mainCusdashboardOverall h3{
+    font-size: 25px;
+}

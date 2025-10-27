@@ -52,6 +52,10 @@ const AdminNav = () => {
         window.history.pushState({}, '', '/admin/shipment');
     }
 
+    const customerCareClicked = () => {
+        window.history.pushState({}, '', '/admin/customer-care');
+    }
+
     return ( 
         <>
         <div className={styles.vendorNavContainer}>
@@ -134,6 +138,14 @@ const AdminNav = () => {
                                 ${pathName === "/admin/track-shipment" ? styles.active : ""}
                                 `}>
                                 <div className={styles.textCarrier}><i className="fas fa-truck-fast"></i>Shipments</div>
+                                <p></p>
+                            </button>
+                        </li>
+                        <li className={styles.vendorNavItem}>
+                            <button type="button" onClick={customerCareClicked} className={`
+                                ${pathName === "/admin/customer-care" ? styles.active : ""}
+                                `}>
+                                <div className={styles.textCarrier}><i className="fas fa-headset"></i>Customer Care</div>
                                 <p></p>
                             </button>
                         </li>
