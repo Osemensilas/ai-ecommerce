@@ -1,11 +1,11 @@
-import styles from '../app/css/dashboard.module.css';
-import PaymentMethod from './settingsComponents/PaymentMethod';
-import PersonalIfo from './settingsComponents/PersonalInfo';
-import SettingsNav from './settingsComponents/SettingsNav';
+import styles from '../../app/css/dashboard.module.css';
+import PaymentMethod from '../settingsComponents/PaymentMethod';
+import PersonalIfo from '../settingsComponents/PersonalInfo';
+import SettingsNav from '../settingsComponents/SettingsNav';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
-import Security from './settingsComponents/Security';
-import Document from './settingsComponents/Document';
+import Security from '../settingsComponents/Security';
+import VendorDocument from '../settingsComponents/Document';
 
 const VendorSetting = () => {
 
@@ -47,7 +47,7 @@ const VendorSetting = () => {
                     <div className={`${styles.settingsContainerRightDetail}
                     ${operation === "document" ? styles.active : ""}
                     `}>
-                        <Document />
+                        <VendorDocument />
                     </div>
                 </div>
             </div>

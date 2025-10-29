@@ -1,26 +1,26 @@
 'use client';
 
 import styles from '../../css/dashboard.module.css';
-import VendorNav from '@/components/VendorNav';
-import VendorDashboard from '@/components/VendorDashBoard';
-import VendorProducts from '@/components/VendorProducts';
+import VendorNav from '@/components/Vendor/VendorNav';
+import VendorDashboard from '@/components/Vendor/VendorDashBoard';
+import VendorProducts from '@/components/Vendor/VendorProducts';
 import { usePathname, useSearchParams } from 'next/navigation';
-import VendorOrders from '@/components/VendorOrders';
-import VendorCustomer from '@/components/VendorsCustomers';
-import VendorReports from '@/components/VendorReports';
-import VendorPromotion from '@/components/VendorPromotion';
-import VendorWallet from '@/components/VendorWallet';
-import VendorShipment from '@/components/VendorShipment';
-import VendorSetting from '@/components/VendorSetting';
-import VendorAddCustomer from '@/components/VendorAddCustomer';
+import VendorOrders from '@/components/Vendor/VendorOrders';
+import VendorCustomer from '@/components/Vendor/VendorsCustomers';
+import VendorReports from '@/components/Vendor/VendorReports';
+import VendorPromotion from '@/components/Vendor/VendorPromotion';
+import VendorWallet from '@/components/Vendor/VendorWallet';
+import VendorShipment from '@/components/Vendor/VendorShipment';
+import VendorSetting from '@/components/vendor/VendorSetting';
+import VendorAddCustomer from '@/components/Vendor/VendorAddCustomer';
 import CreatePromotion from '@/components/CreatePromotion';
 import PromotionOverview from '@/components/Vendor/PromotionOverview';
 import CreateAds from '@/components/CreateAds';
 import AdsOverview from '@/components/AdsOverview';
-import TransactionHistory from '@/components/TransactionHistory';
+import TransactionHistory from '@/components/Vendor/TransactionHistory';
 import Deposit from '@/components/Deposit';
-import Withdraw from '@/components/Withdraw';
-import TrackShipment from '@/components/TrackShipment';
+import Withdraw from '@/components/Vendor/Withdraw';
+import TrackShipment from '@/components/Vendor/TrackShipment';
 import { Suspense } from 'react';
 
 const Page = () => {

@@ -1,6 +1,6 @@
 import styles from '../../app/css/dashboard.module.css';
 
-const Document = () => {
+const VendorDocument = () => {
 
     const uploadClicked = () => {
         const afterFile = document.querySelector(`.${styles.settingDocumentAfter}`);
@@ -117,4 +117,4 @@ const Document = () => {
      );
 }
  
-export default Document;
+export default VendorDocument;

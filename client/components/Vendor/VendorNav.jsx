@@ -1,4 +1,4 @@
-import styles from '../app/css/vendornav.module.css';
+import styles from '../../app/css/vendornav.module.css';
 import Image from 'next/image';
 import { usePathname, useSearchParams } from 'next/navigation';
 

@@ -1,0 +1,83 @@
+.userDashboard{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.userDashboardLeft{
+    width: 25%;
+    height: 100%;
+}
+
+.userDashboardRight{
+    height: 100%;
+    width: 75%;
+}
+
+.navMainContainer{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    border-right: 1px solid var(--grey);
+}
+
+.navContainer{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.navBtn{
+    width: 100%;
+    height: max-content;
+    padding: 15px 20px;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.navBtn:hover{
+    background: var(--primary);
+    color: var(--background);
+}
+
+.navBtn.active{
+    background: var(--primary);
+    color: var(--background);
+}
+
+.logoutBtn{
+    width: 100%;
+    height: max-content;
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: var(--danger);
+}
+
+.userDashboardContent{
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.userDashboardContent.active{
+    display: block;
+}
