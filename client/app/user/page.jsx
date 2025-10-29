@@ -4,6 +4,8 @@ import UserNav from '@/components/user/UserNav';
 import styles from '../css/user.module.css';
 import Header from '@/components/Header';
 import { usePathname, useSearchParams } from 'next/navigation';
+import UserProfile from '@/components/user/UserProfile';
+import Orders from '@/components/user/Orders';
 
 const Page = () => {
 
@@ -19,13 +21,15 @@ const Page = () => {
             <section className={styles.userDashboardRight}>
                 <div className={`${styles.userDashboardContent}
                 ${pathName === '/user' ? styles.active : ""}
+                ${pathName === "/user/payment-method" ? styles.active : ""}
+                ${pathName === "/user/security" ? styles.active : ""}
                 `}>
-                    user Profile
+                    <UserProfile />
                 </div>
                 <div className={`${styles.userDashboardContent}
                 ${pathName === '/orders' ? styles.active : ""}
                 `}>
-                    user Orders
+                    <Orders />
                 </div>
                 <div className={`${styles.userDashboardContent}
                 ${pathName === '/address' ? styles.active : ""}

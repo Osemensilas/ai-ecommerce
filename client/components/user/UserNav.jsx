@@ -41,6 +41,8 @@ const UserNav = () => {
             <div className={styles.navContainer}>
                 <button onClick={dashboardClicked} type="button" className={` ${styles.navBtn}
                     ${pathName === "/user" ? styles.active : ""}
+                    ${pathName === "/user/payment-method" ? styles.active : ""}
+                    ${pathName === "/user/security" ? styles.active : ""}
                     `}>
                     <i className="fa fa-user"></i>
                     My Profile

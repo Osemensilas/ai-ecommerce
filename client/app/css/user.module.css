@@ -81,3 +81,50 @@
 .userDashboardContent.active{
     display: block;
 }
+
+.userProfile{
+    height: max-content;
+    width: 100%;
+    display: flex;
+}
+
+.userProfileLeft{
+    width: 25%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 50px 10px;
+}
+
+.userProfileRight{
+    width: 75%;
+    height: max-content;
+    padding: 50px 20px 50px 10px;
+}
+
+.userProfileNavBtn{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: max-content;
+    width: 100%;
+    gap: 20px;
+    background: transparent;
+    border: none;
+    font-size: 17px;
+}
+
+.userProfileNavBtn.active{
+    color: var(--primary);
+}
+
+.userProfileRightContent{
+    width: 100%;
+    height: max-content;
+    display: none;
+}
+
+.userProfileRightContent.active{
+    display: block;
+}
