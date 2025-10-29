@@ -128,3 +128,7 @@
 .userProfileRightContent.active{
     display: block;
 }
+
+.userOrderCardImgContainer{
+    position: relative;
+}
