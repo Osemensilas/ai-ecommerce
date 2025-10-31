@@ -3,7 +3,7 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'https://api.ahiaglobal.com', 
+        destination: 'https://ahiaglobal.onrender.com', 
       },
     ];
   },

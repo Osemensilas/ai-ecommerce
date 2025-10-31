@@ -132,3 +132,414 @@
 .userOrderCardImgContainer{
     position: relative;
 }
+
+.userDashboardMain{
+    height: max-content;
+    width: 100%;
+    padding: 40px;
+}
+
+.userDashboardHeader{
+    height: max-content;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.userDashboardHeader h2{
+    font-size: 25px;
+}
+
+.userDashboardMainContent{
+    height: max-content;
+    width: 100%;
+}
+
+.userOrderNav{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--lightGrey);
+}
+
+.userOrderNavBtn{
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+.userOrderNavBtn.active{
+    border-bottom: 2px solid var(--text);
+}
+
+.userOrderCardContainer{
+    height: max-content;
+    width: 100%;
+    display: none;
+}
+
+.userOrderCardContainer.active{
+    display: block;
+}
+
+.userOrderCard{
+    height: max-content;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--lightGrey);
+}
+
+.userOrderCardTop{
+    height: max-content;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.userOrderCardTop p{
+    font-size: 14px;
+    color: var(--grey);
+}
+
+.userOrderCardBottom{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.userOrderCardBottomLeft{
+    height: max-content;
+    width: max-content;
+    max-width: 70%;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.userOrderCardImgContainer{
+    height: 75px;
+    width: 100px;
+    position: relative;
+}
+
+.userOrderCardDesContainer{
+    height: max-content;
+    width: max-content;
+}
+
+.userOrderCardDesContainer h3{
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.userOrderCardDesContainer h2{
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.userOrderCardDesContainer p{
+    font-size: 15px;
+    color: var(--grey);
+}
+
+.userOrderCardBottomRight{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.userOrderCardBottomRight button{
+    padding: 10px 20px;
+    border: 1px solid var(--lightGrey);
+    border-radius: 5px;
+    font-size: 16px;
+    color: var(--primary);
+}
+
+.userOrderCardBottomRight button:last-child{
+    font-weight: 700;
+}
+
+.userOrderCardBtnAction.reorder{
+    background: var(--primary);
+    color: var(--background);
+    border: none;
+}
+
+.userOrderCardBtnAction.reciept{
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    background: transparent;
+}
+
+.userOrderCardBtnAction.hide{
+    display: none;
+}
+
+.userAddressContainer{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.userAddressCard{
+    height: max-content;
+    width: 70%;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+}
+
+.userAddressCardHeader{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: var(--lightGrey);
+    border-bottom: 1px solid var(--grey);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.userAddressCardHeader h2{
+    font-size: 20px;
+    color: var(--primary);
+}
+
+.userAddressCardHeader button,
+.userAddressCardBtnContainer button{
+    border: none;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    color: var(--primary);
+    font-size: 16px;
+}
+
+.userAddressCardContainer{
+    height: max-content;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.userAddressCardDetail{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.userAddressCardDetail i,
+.userAddressCardDetail p{
+    font-size: 16px;
+}
+
+.userAddressCardOtherOp{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.userAddressCardBtnContainer{
+    height: max-content;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.userOtherAddressCardContainer{
+    height: max-content;
+    width: 100%;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--grey);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.userOtherAddressCardContainer:last-child{
+    border-bottom: none;
+}
+
+.userAddAddressCardHeader{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: var(--lightGrey);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.userWallet{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.userWalletTop{
+    height: max-content;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.userWalletTop p{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.userWalletAmountContainer{
+    height: max-content;
+    width: 100%;
+    padding-top: 50px;
+    border-top: 1px solid var(--grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userWalletAmountContainer h2{
+    font-size: 35px;
+}
+
+.userWalletBottom{
+    height: max-content;
+    width: 100%;
+    margin-top: 100px;
+    padding: 20px 0 0 0;
+    border-top: 1px solid var(--lightGrey);
+}
+
+.userWalletBottom button{
+    border: none;
+    background-color: transparent;
+    color: var(--primary);
+    outline: none;
+    font-size: 16px;
+}
+
+.userRecentlyViewed{
+    height: max-content;
+    width: 100%;
+    background: var(--lightGrey);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    row-gap: 20px;
+}
+
+.userWishlistCardImgContainer{
+    position: relative;
+    height: 75px;
+    width: 100px;
+}
+
+.userWishlistContainer{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.userWishlistCard{
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+    padding: 10px;
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.userWishlistCardDetails{
+    height: max-content;
+    width: calc(100% - 100px);
+}
+
+.userWishlistCardDetailsTop{
+    height: max-content;
+    width: 100%;
+}
+
+.userWishlistCardDetailsTop h2,
+.userWishlistCardDetailsTop h3{
+    font-size: 17px;
+    margin-bottom: 5px;
+    font-weight: 400;
+}
+
+.userWishlistCardDetailsTop h3{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.userWishlistCardDetailsTop h4{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.userWishlistCardDetailsBottom{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.userWishlistRemoveBtn{
+    border: none;
+    background: none;
+    font-size: 16px;
+    color: var(--orange);
+    outline: none;
+}
+
+.userWishlistAddBtn{
+    padding: 5px 20px;
+    border: none;
+    background: var(--primary);
+    border-radius: 50px;
+    font-size: 16px;
+    color: var(--background);
+}
+
+.userAddFundsBtn{
+    padding: 10px 25px;
+    background: var(--primary);
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    color: var(--background);
+    font-size: 16px;
+    margin-top: 70px;
+}

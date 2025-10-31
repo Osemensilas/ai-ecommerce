@@ -209,6 +209,22 @@ button i.active{
     display: flex
 }
 
+.orderStatus.confirmed{
+    color: var(--orange);
+}
+
+.orderStatus.transit{
+    color: var(--stars);
+}
+
+.orderStatus.delivered{
+    color: var(--green);
+}
+
+.orderStatus.cancelled{
+    color: var(--danger);
+}
+
 @media only screen and (max-width: 1280px) and (min-width: 1001px){
     .recentlyViewedContainer, 
     .similarProductsContainer {

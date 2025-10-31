@@ -6,6 +6,11 @@ import Header from '@/components/Header';
 import { usePathname, useSearchParams } from 'next/navigation';
 import UserProfile from '@/components/user/UserProfile';
 import Orders from '@/components/user/Orders';
+import Address from '../../components/user/Address';
+import Wallet from '@/components/user/Wallet';
+import PendingReview from '@/components/user/PendingReview';
+import RecentlyViewed from '@/components/user/RecentlyViewed';
+import WishList from '@/components/user/Wishlist';
 
 const Page = () => {
 
@@ -34,27 +39,27 @@ const Page = () => {
                 <div className={`${styles.userDashboardContent}
                 ${pathName === '/address' ? styles.active : ""}
                 `}>
-                    user Address
+                    <Address />
                 </div>
                 <div className={`${styles.userDashboardContent}
                 ${pathName === '/wallet' ? styles.active : ""}
                 `}>
-                    user Wallet
+                    <Wallet />
                 </div>
                 <div className={`${styles.userDashboardContent}
                 ${pathName === '/pending-reviews' ? styles.active: ""}
                 `}>
-                    user Pending Review
+                    <PendingReview />
                 </div>
                 <div className={`${styles.userDashboardContent}
                 ${pathName === '/recently-viewed' ? styles.active : ""}
                 `}>
-                    user Recently Viewed
+                    <RecentlyViewed />
                 </div>
                 <div className={`${styles.userDashboardContent}
                 ${pathName === '/wishlist' ? styles.active : ""}
                 `}>
-                    user Wishlist
+                    <WishList />
                 </div>
             </section>
         </section>
