@@ -11,7 +11,7 @@ import VendorReports from '@/components/Vendor/VendorReports';
 import VendorPromotion from '@/components/Vendor/VendorPromotion';
 import VendorWallet from '@/components/Vendor/VendorWallet';
 import VendorShipment from '@/components/Vendor/VendorShipment';
-import VendorSetting from '@/components/vendor/VendorSetting';
+import VendorSetting from '@/components/Vendor/VendorSetting';
 import VendorAddCustomer from '@/components/Vendor/VendorAddCustomer';
 import CreatePromotion from '@/components/CreatePromotion';
 import PromotionOverview from '@/components/Vendor/PromotionOverview';
