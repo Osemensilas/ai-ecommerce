@@ -23,7 +23,7 @@ const Address = () => {
                             </div>
                             <div className={styles.userAddressCardDetail}>
                                 <i className="fa fa-phone"></i>
-                                <p>+23490 5403 954</p>
+                                <p>+23471 9999 342</p>
                             </div>
                         </div>
                     </div>
