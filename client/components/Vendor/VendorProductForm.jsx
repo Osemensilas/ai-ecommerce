@@ -161,11 +161,11 @@ export default function ProductForm() {
 
       // Send request
       const response = await axios.post(
-        "https://ahiaglobal.onrender.com/api/products",
+        "https://ahiaserver-api.onrender.com/api/products",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
-
+ 
       console.log("Response:", response);
 
       if (response.status === 201) {
@@ -180,8 +180,8 @@ export default function ProductForm() {
       if (err.response && err.response.status === 201) {
         alert("✅ Product successfully added!");
       } else if (err.code === "ERR_NETWORK") {
-        // alert("⚠️ Product may have been uploaded, but there was a network glitch.");
-        alert("✅ Product successfully added!");
+        alert("⚠️ Product may have been uploaded, but there was a network glitch.");
+        // alert("✅ Product successfully added!");
       } else {
         alert("❌ Failed to add product.");
       }

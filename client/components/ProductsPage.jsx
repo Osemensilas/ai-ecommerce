@@ -361,7 +361,7 @@ export default function ProductsPage() {
   }, [type]);
 
   async function getProducts() {
-    const url = "/api/products";
+    const url = "https://ahiaserver-api.onrender.com/api/products";
 
     try {
       const response = await axios.get(url, {
