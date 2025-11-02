@@ -68,7 +68,7 @@ const Address = () => {
                         <div className={styles.userAddAddressCardHeader}>
                             <h2></h2>
                             <div className={styles.userAddressCardBtnContainer}>
-                                <button type="button"><i className="fa fa-edit"></i> Add New</button>
+                                <button type="button"><i className="fa fa-plus"></i> Add New</button>
                             </div>
                         </div>
                     </div>
