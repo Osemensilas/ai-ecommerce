@@ -46,7 +46,7 @@ const Login = () => {
 
         try {
             // ✅ Call your backend login API
-            const res = await axios.post("https://ahiaglobal.onrender.com/api/auth/login", formData);
+            const res = await axios.post("https://ahiaserver-api.onrender.com/api/auth/login", formData);
 
             // ✅ Save user/token to localStorage (or cookies)
             localStorage.setItem("user", JSON.stringify(res.data));

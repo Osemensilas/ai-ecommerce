@@ -51,7 +51,7 @@ const Signup = () => {
       setError('');
       setLoading(true);
 
-      const response = await axios.post("https://ahiaglobal.onrender.com/api/auth/register", {
+      const response = await axios.post("https://ahiaserver-api.onrender.com/api/auth/register", {
         username: formData.username,
         email: formData.email,
         password: formData.password,
