@@ -674,23 +674,23 @@ const Header = () => {
                                         <div className={styles.filterContentNav}>
                                             <h3>Computers</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=Electronics and Tech&sub-category=computers&type=monitor" onClick={removeCover}>Monitor</Link>
-                                                <Link href="/products?category=Electronics and Tech&sub-category=computers&type=digital whiteboard" onClick={removeCover}>Digital Whiteboard</Link>
-                                                <Link href="/products?category=Electronics and Tech&sub-category=computers&type=desktops" onClick={removeCover}>Desktops</Link>
-                                                <Link href="/products?category=Electronics and Tech&sub-category=computers&type=laptops" onClick={removeCover}>Laptops</Link>
-                                                <Link href="/products?category=Electronics and Tech&sub-category=computers&type=macbooks" onClick={removeCover}>Macbooks</Link>
-                                                <Link href="/products?category=Electronics and Tech&sub-category=computers&type=computer assessories" onClick={removeCover}>Computer Assessories</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Computers&type=Monitor" onClick={removeCover}>Monitor</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Computers&type=Digital Whiteboard" onClick={removeCover}>Digital Whiteboard</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Computers&type=Desktops" onClick={removeCover}>Desktops</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Computers&type=Laptops" onClick={removeCover}>Laptops</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Computers&type=Macbooks" onClick={removeCover}>Macbooks</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Computers&type=Computer Assessories" onClick={removeCover}>Computer Assessories</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Smart Homes</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=Electronics and Tech&sub-category=smart homes&type=plugs and outlets" onClick={removeCover}>Plugs & Outlets</Link>
-                                                <Link href="/products?category=Electronics and Tech&sub-category=smart homes&type=detectors and sensors" onClick={removeCover}>Detectors & Sensors</Link>
-                                                <Link href="/products?category=Electronics and Tech&sub-category=smart homes&type=wifi and networking" onClick={removeCover}>Wifi & Networking</Link>
-                                                <Link href="/products?category=Electronics and Tech&sub-category=smart homes&type=cameras" onClick={removeCover}>Cameras</Link>
-                                                <Link href="/products?category=Electronics and Tech&sub-category=smart homes&type=locks and entry" onClick={removeCover}>Locks & Entry</Link>
-                                                <Link href="/products?category=Electronics and Tech&sub-category=smart homes&type=home lightening" onClick={removeCover}>Home Lightening</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Smart Homes&type=Plugs and Outlets" onClick={removeCover}>Plugs & Outlets</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Smart Homes&type=Detectors and Sensors" onClick={removeCover}>Detectors & Sensors</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Smart Homes&type=Wifi and Networking" onClick={removeCover}>Wifi & Networking</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Smart Homes&type=Cameras" onClick={removeCover}>Cameras</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Smart Homes&type=Locks and Entry" onClick={removeCover}>Locks & Entry</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Smart Homes&type=Home Lightening" onClick={removeCover}>Home Lightening</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
@@ -725,9 +725,9 @@ const Header = () => {
                                         <div className={styles.filterContentNav}>
                                             <h3>Wearables</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=electronics and tech&sub-category=wearables&type=smartwatches" onClick={removeCover}>Smartwatches</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=wearables&type=fitness bands" onClick={removeCover}>Fitness Bands</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=wearables&type=vr headset" onClick={removeCover}>VR Headsets</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=Wearables&type=Smartwatches" onClick={removeCover}>Smartwatches</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=Wearables&type=Fitness bands" onClick={removeCover}>Fitness Bands</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=Wearables&type=VR Headset" onClick={removeCover}>VR Headsets</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -735,27 +735,27 @@ const Header = () => {
                                         <div className={styles.filterContentNav}>
                                             <h3>Women's Fashion</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=fashion&sub-category=women's fashion&type=clothing&sex=female" onClick={removeCover}>Clothing</Link>
-                                                <Link href="/products?category=fashion&sub-category=women's fashion&type=shoes&sex=female" onClick={removeCover}>Shoes</Link>
-                                                <Link href="/products?category=fashion&sub-category=women's fashion&type=jewery&sex=female" onClick={removeCover}>Jewery</Link>
-                                                <Link href="/products?category=fashion&sub-category=women's fashion&type=watches&sex=female" onClick={removeCover}>Watches</Link>
+                                                <Link href="/products?category=Fashion&sub-category=Women's Fashion&type=Clothing&sex=female" onClick={removeCover}>Clothing</Link>
+                                                <Link href="/products?category=Fashion&sub-category=Women's Fashion&type=Shoes&sex=female" onClick={removeCover}>Shoes</Link>
+                                                <Link href="/products?category=Fashion&sub-category=Women's Fashion&type=Jewery&sex=female" onClick={removeCover}>Jewery</Link>
+                                                <Link href="/products?category=Fashion&sub-category=Women's Fashion&type=Watches&sex=female" onClick={removeCover}>Watches</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Men's Fahion</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=fashion&sub-category=men's fashion&type=clothing&sex=male" onClick={removeCover}>Clothing</Link>
-                                                <Link href="/products?category=fashion&sub-category=men's fashion&type=shoes&sex=male" onClick={removeCover}>Shoes</Link>
-                                                <Link href="/products?category=fashion&sub-category=men's fashion&type=caps&sex=male" onClick={removeCover}>Caps</Link>
-                                                <Link href="/products?category=fashion&sub-category=men's fashion&type=watches&sex=male" onClick={removeCover}>Watches</Link>
+                                                <Link href="/products?category=Fashion&sub-category=Men's Fashion&type=Clothing&sex=male" onClick={removeCover}>Clothing</Link>
+                                                <Link href="/products?category=Fashion&sub-category=Men's Fashion&type=Shoes&sex=male" onClick={removeCover}>Shoes</Link>
+                                                <Link href="/products?category=Fashion&sub-category=Men's Fashion&type=Caps&sex=male" onClick={removeCover}>Caps</Link>
+                                                <Link href="/products?category=Fashion&sub-category=Men's Fashion&type=Watches&sex=male" onClick={removeCover}>Watches</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Kids & Baby Fashion</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=fashion&sub-category=kids and baby fashion&type=clothing&sex=children" onClick={removeCover}>Clothing</Link>
-                                                <Link href="/products?category=fashion&sub-category=kids and baby fashion&type=shoes&sex=children" onClick={removeCover}>Shoes</Link>
-                                                <Link href="/products?category=fashion&sub-category=kids and baby fashion&type=jewery&sex=children" onClick={removeCover}>Assessories</Link>
+                                                <Link href="/products?category=Fashion&sub-category=Kids and Baby Fashion&type=Clothing&sex=children" onClick={removeCover}>Clothing</Link>
+                                                <Link href="/products?category=Fashion&sub-category=Kids and Baby Fashion&type=Shoes&sex=children" onClick={removeCover}>Shoes</Link>
+                                                <Link href="/products?category=Fashion&sub-category=Kids and Baby Fashion&type=Jewery&sex=children" onClick={removeCover}>Assessories</Link>
                                             </div>
                                         </div>
                                     </div>

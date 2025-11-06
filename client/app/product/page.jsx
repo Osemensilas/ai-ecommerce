@@ -11,14 +11,18 @@ import { useState } from 'react';
 import Header from '@/components/Header';
 import FAQ from '@/components/Faq';
 import Footer from '@/components/Footer';
+import { useSearchParams } from "next/navigation";
 
 const Product = () => {
+
+    const productIdentity = searchParams.get("product_id");
 
     const [quantity, setQuantity] = useState(1);
     const [image, setImage] = useState('/jacket.png');
     const [image1, setImage1] = useState('/jean.png');
     const [image2, setImage2] = useState('/jacket.png');
     const [image3, setImage3] = useState('/menblack.png');
+    const [filteredProduct, setFilteredProduct] = useState(null);
 
     const image1Clicked = () => {
         setImage(image1);

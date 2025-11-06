@@ -363,8 +363,8 @@ export default function ProductsPage() {
 
   async function getProducts() {
       const url = `https://ahiaserver-api.onrender.com/api/products/filter?category=${category}&subcategory=${subCategory}`;
-      console.log(url);
-      const newUrl = "https://ahiaserver-api.onrender.com/api/products/filter?category=electronics and tech&subcategory=phones and tablets&typeCategory=andriod";
+      
+      //const newUrl = "https://ahiaserver-api.onrender.com/api/products/filter?category=Electronics and Tech&subcategory=Phones and Tablets&typeCategory=Andriod";
       try {
         const response = await axios.get(url, {
           headers: {
