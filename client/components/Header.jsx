@@ -269,45 +269,45 @@ const Header = () => {
                                         <div className={styles.filterContentNav}>
                                             <h3>Grocery</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=grocery&type=fresh product" onClick={removeCover}>Fresh Products</Link>
-                                                <Link href="/products?category=grocery&type=meat and seafood" onClick={removeCover}>Meat & Seafood</Link>
-                                                <Link href="/products?category=grocery&type=dairy and eggs" onClick={removeCover}>Dairy & Eggs</Link>
-                                                <Link href="/products?category=grocery&type=bakery" onClick={removeCover}>Bakery</Link>
-                                                <Link href="/products?category=grocery&type=pantry staples" onClick={removeCover}>Pantry Staples</Link>
-                                                <Link href="/products?category=grocery&type=beverages" onClick={removeCover}>Beverages</Link>
-                                                <Link href="/products?category=grocery&type=snacks and candy" onClick={removeCover}>Snacks & Candy</Link>
+                                                <Link href="/products?category=datily essentials&sub-category=grocery&type=fresh product" onClick={removeCover}>Fresh Products</Link>
+                                                <Link href="/products?category=datily essentials&sub-category=grocery&type=meat and seafood" onClick={removeCover}>Meat & Seafood</Link>
+                                                <Link href="/products?category=datily essentials&sub-category=grocery&type=dairy and eggs" onClick={removeCover}>Dairy & Eggs</Link>
+                                                <Link href="/products?category=datily essentials&sub-category=grocery&type=bakery" onClick={removeCover}>Bakery</Link>
+                                                <Link href="/products?category=datily essentials&sub-category=grocery&type=pantry staples" onClick={removeCover}>Pantry Staples</Link>
+                                                <Link href="/products?category=datily essentials&sub-category=grocery&type=beverages" onClick={removeCover}>Beverages</Link>
+                                                <Link href="/products?category=datily essentials&sub-category=grocery&type=snacks and candy" onClick={removeCover}>Snacks & Candy</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Beauty</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=beauty&type=makeup" onClick={removeCover}>Makeup</Link>
-                                                <Link href="/products?category=beauty&type=skincare" onClick={removeCover}>Skincare</Link>
-                                                <Link href="/products?category=beauty&type=haircare" onClick={removeCover}>Haircare</Link>
-                                                <Link href="/products?category=beauty&type=personal care" onClick={removeCover}>Personal Care</Link>
-                                                <Link href="/products?category=beauty&type=fragrance" onClick={removeCover}>Fragrance</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=beauty&type=makeup" onClick={removeCover}>Makeup</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=beauty&type=skincare" onClick={removeCover}>Skincare</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=beauty&type=haircare" onClick={removeCover}>Haircare</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=beauty&type=personal care" onClick={removeCover}>Personal Care</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=beauty&type=fragrance" onClick={removeCover}>Fragrance</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Health</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=health&type=vitamins" onClick={removeCover}>Vitamins</Link>
-                                                <Link href="/products?category=health&type=health monitor" onClick={removeCover}>Health Monitor</Link>
-                                                <Link href="/products?category=health&type=supplement" onClick={removeCover}>Supplement</Link>
-                                                <Link href="/products?category=health&type=first aid" onClick={removeCover}>First Aid</Link>
-                                                <Link href="/products?category=health&type=vision care" onClick={removeCover}>Vision care</Link>
-                                                <Link href="/products?category=health&type=wellness product" onClick={removeCover}>Wellness Product</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=health&type=vitamins" onClick={removeCover}>Vitamins</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=health&type=health monitor" onClick={removeCover}>Health Monitor</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=health&type=supplement" onClick={removeCover}>Supplement</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=health&type=first aid" onClick={removeCover}>First Aid</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=health&type=vision care" onClick={removeCover}>Vision care</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=health&type=wellness product" onClick={removeCover}>Wellness Product</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Baby & Maternity</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=baby and marternity&type=baby clothing" onClick={removeCover}>Baby Clothing</Link>
-                                                <Link href="/products?category=baby and marternity&type=diapers and wipes" onClick={removeCover}>Diapers & Wipes</Link>
-                                                <Link href="/products?category=baby and marternity&type=feeding supplies" onClick={removeCover}>Feeding Supplies</Link>
-                                                <Link href="/products?category=baby and marternity&type=nursery" onClick={removeCover}>Nursery (Cribs & Bedding)</Link>
-                                                <Link href="/products?category=baby and marternity&type=strollers and car seats" onClick={removeCover}>Strollers and Car Seats</Link>
-                                                <Link href="/products?category=baby and marternity&type=maternity clothing" onClick={removeCover}>Maternity Clothing</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=baby and marternity&type=baby clothing" onClick={removeCover}>Baby Clothing</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=baby and marternity&type=diapers and wipes" onClick={removeCover}>Diapers & Wipes</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=baby and marternity&type=feeding supplies" onClick={removeCover}>Feeding Supplies</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=baby and marternity&type=nursery" onClick={removeCover}>Nursery (Cribs & Bedding)</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=baby and marternity&type=strollers and car seats" onClick={removeCover}>Strollers and Car Seats</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=baby and marternity&type=maternity clothing" onClick={removeCover}>Maternity Clothing</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -315,60 +315,60 @@ const Header = () => {
                                         <div className={styles.filterContentNav}>
                                             <h3>Computers</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=computers&type=monitor" onClick={removeCover}>Monitor</Link>
-                                                <Link href="/products?category=computers&type=digital whiteboard" onClick={removeCover}>Digital Whiteboard</Link>
-                                                <Link href="/products?category=computers&type=desktops" onClick={removeCover}>Desktops</Link>
-                                                <Link href="/products?category=computers&type=laptops" onClick={removeCover}>Laptops</Link>
-                                                <Link href="/products?category=computers&type=macbooks" onClick={removeCover}>Macbooks</Link>
-                                                <Link href="/products?category=computers&type=computer assessories" onClick={removeCover}>Computer Assessories</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=computers&type=monitor" onClick={removeCover}>Monitor</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=computers&type=digital whiteboard" onClick={removeCover}>Digital Whiteboard</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=computers&type=desktops" onClick={removeCover}>Desktops</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=computers&type=laptops" onClick={removeCover}>Laptops</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=computers&type=macbooks" onClick={removeCover}>Macbooks</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=computers&type=computer assessories" onClick={removeCover}>Computer Assessories</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Smart Homes</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=smart homes&type=plugs and outlets" onClick={removeCover}>Plugs & Outlets</Link>
-                                                <Link href="/products?category=smart homes&type=detectors and sensors" onClick={removeCover}>Detectors & Sensors</Link>
-                                                <Link href="/products?category=smart homes&type=wifi and networking" onClick={removeCover}>Wifi & Networking</Link>
-                                                <Link href="/products?category=smart homes&type=cameras" onClick={removeCover}>Cameras</Link>
-                                                <Link href="/products?category=smart homes&type=locks and entry" onClick={removeCover}>Locks & Entry</Link>
-                                                <Link href="/products?category=smart homes&type=home lightening" onClick={removeCover}>Home Lightening</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=smart homes&type=plugs and outlets" onClick={removeCover}>Plugs & Outlets</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=smart homes&type=detectors and sensors" onClick={removeCover}>Detectors & Sensors</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=smart homes&type=wifi and networking" onClick={removeCover}>Wifi & Networking</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=smart homes&type=cameras" onClick={removeCover}>Cameras</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=smart homes&type=locks and entry" onClick={removeCover}>Locks & Entry</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=smart homes&type=home lightening" onClick={removeCover}>Home Lightening</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Electronics</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=electronics&type=vitamins" onClick={removeCover}>Televisions</Link>
-                                                <Link href="/products?category=electronics&type=cameras" onClick={removeCover}>Cameras</Link>
-                                                <Link href="/products?category=electronics&type=home audio" onClick={removeCover}>Home Audio</Link>
-                                                <Link href="/products?category=electronics&type=sewing machine" onClick={removeCover}>Sewing Machine</Link>
-                                                <Link href="/products?category=electronics&type=generator" onClick={removeCover}>Generators</Link>
-                                                <Link href="/products?category=electronics&type=portable power" onClick={removeCover}>Portable Power</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=electronics&type=vitamins" onClick={removeCover}>Televisions</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=electronics&type=cameras" onClick={removeCover}>Cameras</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=electronics&type=home audio" onClick={removeCover}>Home Audio</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=electronics&type=sewing machine" onClick={removeCover}>Sewing Machine</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=electronics&type=generator" onClick={removeCover}>Generators</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=electronics&type=portable power" onClick={removeCover}>Portable Power</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Gaming</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=gamining&type=playstation console" onClick={removeCover} >PlayStation Console</Link>
-                                                <Link href="/products?category=gamining&type=gaming headset" onClick={removeCover} >Gaming Headset</Link>
-                                                <Link href="/products?category=gamining&type=controllers" onClick={removeCover} >Controllers</Link>
-                                                <Link href="/products?category=gamining&type=gaming merchandise" onClick={removeCover} >Gaming Merchandise</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=gaming&type=playstation console" onClick={removeCover} >PlayStation Console</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=gaming&type=gaming headset" onClick={removeCover} >Gaming Headset</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=gaming&type=controllers" onClick={removeCover} >Controllers</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=gaming&type=gaming merchandise" onClick={removeCover} >Gaming Merchandise</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Phones & Tablets</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=phone and tablets&type=iphone" onClick={removeCover} >iPhone</Link>
-                                                <Link href="/products?category=phone and tablets&type=andriod" onClick={removeCover} >Andriod</Link>
-                                                <Link href="/products?category=phone and tablets&type=tablets" onClick={removeCover} >Tablets</Link>
-                                                <Link href="/products?category=phone and tablets&type=phone accessories" onClick={removeCover} >Phone Accessories</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=phones and tablets&type=iphone" onClick={removeCover} >iPhone</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=phones and tablets&type=andriod" onClick={removeCover} >Andriod</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=phones and tablets&type=tablets" onClick={removeCover} >Tablets</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=phones and tablets&type=phone accessories" onClick={removeCover} >Phone Accessories</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Wearables</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=wearables&type=smartwatches" onClick={removeCover}>Smartwatches</Link>
-                                                <Link href="/products?category=wearables&type=fitness bands" onClick={removeCover}>Fitness Bands</Link>
-                                                <Link href="/products?category=wearables&type=vr headset" onClick={removeCover}>VR Headsets</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=wearables&type=smartwatches" onClick={removeCover}>Smartwatches</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=wearables&type=fitness bands" onClick={removeCover}>Fitness Bands</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=wearables&type=vr headset" onClick={removeCover}>VR Headsets</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -376,27 +376,27 @@ const Header = () => {
                                         <div className={styles.filterContentNav}>
                                             <h3>Women's Fashion</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=womens fashion&type=clothing&sex=female" onClick={removeCover}>Clothing</Link>
-                                                <Link href="/products?category=womens fashion&type=shoes&sex=female" onClick={removeCover}>Shoes</Link>
-                                                <Link href="/products?category=womens fashion&type=jewery&sex=female" onClick={removeCover}>Jewery</Link>
-                                                <Link href="/products?category=womens fashion&type=watches&sex=female" onClick={removeCover}>Watches</Link>
+                                                <Link href="/products?category=fashion&sub-category=women's fashion&type=clothing&sex=female" onClick={removeCover}>Clothing</Link>
+                                                <Link href="/products?category=fashion&sub-category=women's fashion&type=shoes&sex=female" onClick={removeCover}>Shoes</Link>
+                                                <Link href="/products?category=fashion&sub-category=women's fashion&type=jewery&sex=female" onClick={removeCover}>Jewery</Link>
+                                                <Link href="/products?category=fashion&sub-category=women's fashion&type=watches&sex=female" onClick={removeCover}>Watches</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Men's Fahion</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=mens fashion&type=clothing&sex=male" onClick={removeCover}>Clothing</Link>
-                                                <Link href="/products?category=mens fashion&type=shoes&sex=male" onClick={removeCover}>Shoes</Link>
-                                                <Link href="/products?category=mens fashion&type=caps&sex=male" onClick={removeCover}>Caps</Link>
-                                                <Link href="/products?category=mens fashion&type=watches&sex=male" onClick={removeCover}>Watches</Link>
+                                                <Link href="/products?category=fashion&sub-category=men's fashion&type=clothing&sex=male" onClick={removeCover}>Clothing</Link>
+                                                <Link href="/products?category=fashion&sub-category=men's fashion&type=shoes&sex=male" onClick={removeCover}>Shoes</Link>
+                                                <Link href="/products?category=fashion&sub-category=men's fashion&type=caps&sex=male" onClick={removeCover}>Caps</Link>
+                                                <Link href="/products?category=fashion&sub-category=men's fashion&type=watches&sex=male" onClick={removeCover}>Watches</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Kids & Baby Fashion</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=kids and baby fashion&type=clothing&sex=children" onClick={removeCover}>Clothing</Link>
-                                                <Link href="/products?category=kids and baby fashion&type=shoes&sex=children" onClick={removeCover}>Shoes</Link>
-                                                <Link href="/products?category=kids and baby fashion&type=jewery&sex=children" onClick={removeCover}>Assessories</Link>
+                                                <Link href="/products?category=fashion&sub-category=kids and baby fashion&type=clothing&sex=children" onClick={removeCover}>Clothing</Link>
+                                                <Link href="/products?category=fashion&sub-category=kids and baby fashion&type=shoes&sex=children" onClick={removeCover}>Shoes</Link>
+                                                <Link href="/products?category=fashion&sub-category=kids and baby fashion&type=jewery&sex=children" onClick={removeCover}>Assessories</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -404,50 +404,50 @@ const Header = () => {
                                         <div className={styles.filterContentNav}>
                                             <h3>Dining & Kitchen</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=dining and kitchen&type=cookware" onClick={removeCover}>Cookware</Link>
-                                                <Link href="/products?category=dining and kitchen&type=utensils" onClick={removeCover}>Utensils</Link>
-                                                <Link href="/products?category=dining and kitchen&type=tableware" onClick={removeCover}>Tableware</Link>
+                                                <Link href="/products?category=home&sub-category=dining and kitchen&type=cookware" onClick={removeCover}>Cookware</Link>
+                                                <Link href="/products?category=home&sub-category=dining and kitchen&type=utensils" onClick={removeCover}>Utensils</Link>
+                                                <Link href="/products?category=home&sub-category=dining and kitchen&type=tableware" onClick={removeCover}>Tableware</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Home Decor</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=home and living&type=wall art" onClick={removeCover}>Wall Art</Link>
-                                                <Link href="/products?category=home and living&type=vases" onClick={removeCover}>Vases</Link>
+                                                <Link href="/products?category=home&sub-category=home decor&type=wall art" onClick={removeCover}>Wall Art</Link>
+                                                <Link href="/products?category=home&sub-category=home decor&type=vases" onClick={removeCover}>Vases</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Home Essentials</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=home and living&type=furniture" onClick={removeCover}>Furniture</Link>
-                                                <Link href="/products?category=home and living&type=bedding" onClick={removeCover}>Bedding</Link>
-                                                <Link href="/products?category=home and living&type=rugs" onClick={removeCover}>Rugs</Link>
-                                                <Link href="/products?category=home and living&type=curtains and windows" onClick={removeCover}>Curtains & Window</Link>
-                                                <Link href="/products?category=home and living&type=lightening and ceiling fans" onClick={removeCover}>Lighing & Ceilins Fans</Link>
+                                                <Link href="/products?category=home&sub-category=home essentials&type=furniture" onClick={removeCover}>Furniture</Link>
+                                                <Link href="/products?category=home&sub-category=home essentials&type=bedding" onClick={removeCover}>Bedding</Link>
+                                                <Link href="/products?category=home&sub-category=home essentials&type=rugs" onClick={removeCover}>Rugs</Link>
+                                                <Link href="/products?category=home&sub-category=home essentials&type=curtains and windows" onClick={removeCover}>Curtains & Window</Link>
+                                                <Link href="/products?category=home&sub-category=home essentials&type=lightening and ceiling fans" onClick={removeCover}>Lighing & Ceilins Fans</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Appliances</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=home and living&type=blenders" onClick={removeCover}>Blenders</Link>
-                                                <Link href="/products?category=home and living&type=air fryers" onClick={removeCover}>Air Fryers</Link>
-                                                <Link href="/products?category=home and living&type=electric jugs" onClick={removeCover}>Electric Jugs</Link>
+                                                <Link href="/products?category=home&sub-category=appliances&type=blenders" onClick={removeCover}>Blenders</Link>
+                                                <Link href="/products?category=home&sub-category=appliances&type=air fryers" onClick={removeCover}>Air Fryers</Link>
+                                                <Link href="/products?category=home&sub-category=appliances&type=electric jugs" onClick={removeCover}>Electric Jugs</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Luggage & Travel</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=luggage and travel&type=suitcases" onClick={removeCover}>Suitcases</Link>
-                                                <Link href="/products?category=luggage and travel&type=bag packs" onClick={removeCover}>Bag Packs</Link>
-                                                <Link href="/products?category=luggage and travel&type=travel accessories" onClick={removeCover}>Travel Assessories</Link>
+                                                <Link href="/products?category=home&sub-category=luggage and travel&type=suitcases" onClick={removeCover}>Suitcases</Link>
+                                                <Link href="/products?category=home&sub-category=luggage and travel&type=bag packs" onClick={removeCover}>Bag Packs</Link>
+                                                <Link href="/products?category=home&sub-category=luggage and travel&type=travel accessories" onClick={removeCover}>Travel Assessories</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Building Materials</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=building material&type=plumbing" onClick={removeCover}>Plumbing</Link>
-                                                <Link href="/products?category=building material&type=electrical" onClick={removeCover}>Electrical</Link>
-                                                <Link href="/products?category=building material&type=paint and supplies" onClick={removeCover}>Paint & Supplies</Link>
+                                                <Link href="/products?category=home&sub-category=building material&type=plumbing" onClick={removeCover}>Plumbing</Link>
+                                                <Link href="/products?category=home&sub-category=building material&type=electrical" onClick={removeCover}>Electrical</Link>
+                                                <Link href="/products?category=home&sub-category=building material&type=paint and supplies" onClick={removeCover}>Paint & Supplies</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -455,36 +455,36 @@ const Header = () => {
                                         <div className={styles.filterContentNav}>
                                             <h3>Car Accessories</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=car accessories&type=tyres" onClick={removeCover}>Tyres</Link>
-                                                <Link href="/products?category=car accessories&type=car rims" onClick={removeCover}>Car Rims</Link>
-                                                <Link href="/products?category=car accessories&type=cleaning kits" onClick={removeCover}>Cleaning Kits</Link>
-                                                <Link href="/products?category=car accessories&type=tools and equipment" onClick={removeCover}>Tools & Equipment</Link>
+                                                <Link href="/products?category=automative&sub-category=car accessories&type=tyres" onClick={removeCover}>Tyres</Link>
+                                                <Link href="/products?category=automative&sub-category=car accessories&type=car rims" onClick={removeCover}>Car Rims</Link>
+                                                <Link href="/products?category=automative&sub-category=car accessories&type=cleaning kits" onClick={removeCover}>Cleaning Kits</Link>
+                                                <Link href="/products?category=automative&sub-category=car accessories&type=tools and equipment" onClick={removeCover}>Tools & Equipment</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Motorcycle</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=motorcycle&type=makeup" onClick={removeCover}>Tyres</Link>
-                                                <Link href="/products?category=motorcycle&type=cleaning kits" onClick={removeCover}>Cleaning Kits</Link>
-                                                <Link href="/products?category=motorcycle&type=accessories" onClick={removeCover}>Accessories</Link>
+                                                <Link href="/products?category=automative&sub-category=motorcycle&type=makeup" onClick={removeCover}>Tyres</Link>
+                                                <Link href="/products?category=automative&sub-category=motorcycle&type=cleaning kits" onClick={removeCover}>Cleaning Kits</Link>
+                                                <Link href="/products?category=automative&sub-category=motorcycle&type=accessories" onClick={removeCover}>Accessories</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Car Care</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=car care&type=brake fluid" onClick={removeCover}>Brake Fluid</Link>
-                                                <Link href="/products?category=car care&type=oil" onClick={removeCover}>Oil</Link>
-                                                <Link href="/products?category=car care&type=additives" onClick={removeCover}>Additives</Link>
-                                                <Link href="/products?category=car care&type=lubricants" onClick={removeCover}>Lubricants</Link>
+                                                <Link href="/products?category=automative&sub-category=car care&type=brake fluid" onClick={removeCover}>Brake Fluid</Link>
+                                                <Link href="/products?category=automative&sub-category=car care&type=oil" onClick={removeCover}>Oil</Link>
+                                                <Link href="/products?category=automative&sub-category=car care&type=additives" onClick={removeCover}>Additives</Link>
+                                                <Link href="/products?category=automative&sub-category=car care&type=lubricants" onClick={removeCover}>Lubricants</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Interior Accessories</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=interior accessories&type=wheels" onClick={removeCover}>Wheels</Link>
-                                                <Link href="/products?category=interior accessories&type=trackers" onClick={removeCover}>Trackers</Link>
-                                                <Link href="/products?category=interior accessories&type=air freshners" onClick={removeCover}>Air Fresheners</Link>
-                                                <Link href="/products?category=interior accessories&type=seat covers" onClick={removeCover}>Seat Covers</Link>
+                                                <Link href="/products?category=automative&sub-category=interior design&type=wheels" onClick={removeCover}>Wheels</Link>
+                                                <Link href="/products?category=automative&sub-category=interior design&type=trackers" onClick={removeCover}>Trackers</Link>
+                                                <Link href="/products?category=automative&sub-category=interior design&type=air freshners" onClick={removeCover}>Air Fresheners</Link>
+                                                <Link href="/products?category=automative&sub-category=interior design&type=seat covers" onClick={removeCover}>Seat Covers</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -492,18 +492,18 @@ const Header = () => {
                                         <div className={styles.filterContentNav}>
                                             <h3>School Supplies</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=school supplies&type=bag packs" onClick={removeCover}>Bag Packs</Link>
-                                                <Link href="/products?category=school supplies&type=calculators" onClick={removeCover}>Calculators</Link>
-                                                <Link href="/products?category=school supplies&type=books" onClick={removeCover}>Books</Link>
+                                                <Link href="/products?category=office&sub-category=school supplies&type=bag packs" onClick={removeCover}>Bag Packs</Link>
+                                                <Link href="/products?category=office&sub-category=school supplies&type=calculators" onClick={removeCover}>Calculators</Link>
+                                                <Link href="/products?category=office&sub-category=school supplies&type=books" onClick={removeCover}>Books</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Office Accessories</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=office accessories&type=printer" onClick={removeCover}>Printers</Link>
-                                                <Link href="/products?category=office accessories&type=paper and stationery" onClick={removeCover}>Paper & Stationery</Link>
-                                                <Link href="/products?category=office accessories&type=shredders" onClick={removeCover}>Shredders</Link>
-                                                <Link href="/products?category=office accessories&type=desk organizers" onClick={removeCover}>Desk Organizers</Link>
+                                                <Link href="/products?category=office&sub-category=office accessories&type=printer" onClick={removeCover}>Printers</Link>
+                                                <Link href="/products?category=office&sub-category=office accessories&type=paper and stationery" onClick={removeCover}>Paper & Stationery</Link>
+                                                <Link href="/products?category=office&sub-category=office accessories&type=shredders" onClick={removeCover}>Shredders</Link>
+                                                <Link href="/products?category=office&sub-category=office accessories&type=desk organizers" onClick={removeCover}>Desk Organizers</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -511,12 +511,12 @@ const Header = () => {
                                         <div className={styles.filterContentNav}>
                                             <h3>Professional</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=professional&type=fresh product" onClick={removeCover}>Pharmacy</Link>
-                                                <Link href="/products?category=professional&type=meat & seafood" onClick={removeCover}>Auto Services</Link>
-                                                <Link href="/products?category=professional&type=dairy & eggs" onClick={removeCover}>Financial Services</Link>
-                                                <Link href="/products?category=professional&type=bakery" onClick={removeCover}>Optical Services</Link>
-                                                <Link href="/products?category=professional&type=pantry staples" onClick={removeCover}>Cleaning Services</Link>
-                                                <Link href="/products?category=professional&type=beverages" onClick={removeCover}>Fitness Services</Link>
+                                                <Link href="/products?category=services&sub-category=professional&type=fresh product" onClick={removeCover}>Pharmacy</Link>
+                                                <Link href="/products?category=services&sub-category=professional&type=meat & seafood" onClick={removeCover}>Auto Services</Link>
+                                                <Link href="/products?category=services&sub-category=professional&type=dairy & eggs" onClick={removeCover}>Financial Services</Link>
+                                                <Link href="/products?category=services&sub-category=professional&type=bakery" onClick={removeCover}>Optical Services</Link>
+                                                <Link href="/products?category=services&sub-category=professional&type=pantry staples" onClick={removeCover}>Cleaning Services</Link>
+                                                <Link href="/products?category=services&sub-category=professional&type=beverages" onClick={removeCover}>Fitness Services</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -628,45 +628,45 @@ const Header = () => {
                                         <div className={styles.filterContentNav}>
                                             <h3>Grocery</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=grocery&type=fresh product" onClick={removeCover}>Fresh Products</Link>
-                                                <Link href="/products?category=grocery&type=meat and seafood" onClick={removeCover}>Meat & Seafood</Link>
-                                                <Link href="/products?category=grocery&type=dairy and eggs" onClick={removeCover}>Dairy & Eggs</Link>
-                                                <Link href="/products?category=grocery&type=bakery" onClick={removeCover}>Bakery</Link>
-                                                <Link href="/products?category=grocery&type=pantry staples" onClick={removeCover}>Pantry Staples</Link>
-                                                <Link href="/products?category=grocery&type=beverages" onClick={removeCover}>Beverages</Link>
-                                                <Link href="/products?category=grocery&type=snacks and candy" onClick={removeCover}>Snacks & Candy</Link>
+                                                <Link href="/products?category=datily essentials&sub-category=grocery&type=fresh product" onClick={removeCover}>Fresh Products</Link>
+                                                <Link href="/products?category=datily essentials&sub-category=grocery&type=meat and seafood" onClick={removeCover}>Meat & Seafood</Link>
+                                                <Link href="/products?category=datily essentials&sub-category=grocery&type=dairy and eggs" onClick={removeCover}>Dairy & Eggs</Link>
+                                                <Link href="/products?category=datily essentials&sub-category=grocery&type=bakery" onClick={removeCover}>Bakery</Link>
+                                                <Link href="/products?category=datily essentials&sub-category=grocery&type=pantry staples" onClick={removeCover}>Pantry Staples</Link>
+                                                <Link href="/products?category=datily essentials&sub-category=grocery&type=beverages" onClick={removeCover}>Beverages</Link>
+                                                <Link href="/products?category=datily essentials&sub-category=grocery&type=snacks and candy" onClick={removeCover}>Snacks & Candy</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Beauty</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=beauty&type=makeup" onClick={removeCover}>Makeup</Link>
-                                                <Link href="/products?category=beauty&type=skincare" onClick={removeCover}>Skincare</Link>
-                                                <Link href="/products?category=beauty&type=haircare" onClick={removeCover}>Haircare</Link>
-                                                <Link href="/products?category=beauty&type=personal care" onClick={removeCover}>Personal Care</Link>
-                                                <Link href="/products?category=beauty&type=fragrance" onClick={removeCover}>Fragrance</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=beauty&type=makeup" onClick={removeCover}>Makeup</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=beauty&type=skincare" onClick={removeCover}>Skincare</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=beauty&type=haircare" onClick={removeCover}>Haircare</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=beauty&type=personal care" onClick={removeCover}>Personal Care</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=beauty&type=fragrance" onClick={removeCover}>Fragrance</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Health</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=health&type=vitamins" onClick={removeCover}>Vitamins</Link>
-                                                <Link href="/products?category=health&type=health monitor" onClick={removeCover}>Health Monitor</Link>
-                                                <Link href="/products?category=health&type=supplement" onClick={removeCover}>Supplement</Link>
-                                                <Link href="/products?category=health&type=first aid" onClick={removeCover}>First Aid</Link>
-                                                <Link href="/products?category=health&type=vision care" onClick={removeCover}>Vision care</Link>
-                                                <Link href="/products?category=health&type=wellness product" onClick={removeCover}>Wellness Product</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=health&type=vitamins" onClick={removeCover}>Vitamins</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=health&type=health monitor" onClick={removeCover}>Health Monitor</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=health&type=supplement" onClick={removeCover}>Supplement</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=health&type=first aid" onClick={removeCover}>First Aid</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=health&type=vision care" onClick={removeCover}>Vision care</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=health&type=wellness product" onClick={removeCover}>Wellness Product</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Baby & Maternity</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=baby and marternity&type=baby clothing" onClick={removeCover}>Baby Clothing</Link>
-                                                <Link href="/products?category=baby and marternity&type=diapers and wipes" onClick={removeCover}>Diapers & Wipes</Link>
-                                                <Link href="/products?category=baby and marternity&type=feeding supplies" onClick={removeCover}>Feeding Supplies</Link>
-                                                <Link href="/products?category=baby and marternity&type=nursery" onClick={removeCover}>Nursery (Cribs & Bedding)</Link>
-                                                <Link href="/products?category=baby and marternity&type=strollers and car seats" onClick={removeCover}>Strollers and Car Seats</Link>
-                                                <Link href="/products?category=baby and marternity&type=maternity clothing" onClick={removeCover}>Maternity Clothing</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=baby and marternity&type=baby clothing" onClick={removeCover}>Baby Clothing</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=baby and marternity&type=diapers and wipes" onClick={removeCover}>Diapers & Wipes</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=baby and marternity&type=feeding supplies" onClick={removeCover}>Feeding Supplies</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=baby and marternity&type=nursery" onClick={removeCover}>Nursery (Cribs & Bedding)</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=baby and marternity&type=strollers and car seats" onClick={removeCover}>Strollers and Car Seats</Link>
+                                                <Link href="/products?category=daily essentials&sub-category=baby and marternity&type=maternity clothing" onClick={removeCover}>Maternity Clothing</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -674,60 +674,60 @@ const Header = () => {
                                         <div className={styles.filterContentNav}>
                                             <h3>Computers</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=computers&type=monitor" onClick={removeCover}>Monitor</Link>
-                                                <Link href="/products?category=computers&type=digital whiteboard" onClick={removeCover}>Digital Whiteboard</Link>
-                                                <Link href="/products?category=computers&type=desktops" onClick={removeCover}>Desktops</Link>
-                                                <Link href="/products?category=computers&type=laptops" onClick={removeCover}>Laptops</Link>
-                                                <Link href="/products?category=computers&type=macbooks" onClick={removeCover}>Macbooks</Link>
-                                                <Link href="/products?category=computers&type=computer assessories" onClick={removeCover}>Computer Assessories</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=computers&type=monitor" onClick={removeCover}>Monitor</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=computers&type=digital whiteboard" onClick={removeCover}>Digital Whiteboard</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=computers&type=desktops" onClick={removeCover}>Desktops</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=computers&type=laptops" onClick={removeCover}>Laptops</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=computers&type=macbooks" onClick={removeCover}>Macbooks</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=computers&type=computer assessories" onClick={removeCover}>Computer Assessories</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Smart Homes</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=smart homes&type=plugs and outlets" onClick={removeCover}>Plugs & Outlets</Link>
-                                                <Link href="/products?category=smart homes&type=detectors and sensors" onClick={removeCover}>Detectors & Sensors</Link>
-                                                <Link href="/products?category=smart homes&type=wifi and networking" onClick={removeCover}>Wifi & Networking</Link>
-                                                <Link href="/products?category=smart homes&type=cameras" onClick={removeCover}>Cameras</Link>
-                                                <Link href="/products?category=smart homes&type=locks and entry" onClick={removeCover}>Locks & Entry</Link>
-                                                <Link href="/products?category=smart homes&type=home lightening" onClick={removeCover}>Home Lightening</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=smart homes&type=plugs and outlets" onClick={removeCover}>Plugs & Outlets</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=smart homes&type=detectors and sensors" onClick={removeCover}>Detectors & Sensors</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=smart homes&type=wifi and networking" onClick={removeCover}>Wifi & Networking</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=smart homes&type=cameras" onClick={removeCover}>Cameras</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=smart homes&type=locks and entry" onClick={removeCover}>Locks & Entry</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=smart homes&type=home lightening" onClick={removeCover}>Home Lightening</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Electronics</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=electronics&type=vitamins" onClick={removeCover}>Televisions</Link>
-                                                <Link href="/products?category=electronics&type=cameras" onClick={removeCover}>Cameras</Link>
-                                                <Link href="/products?category=electronics&type=home audio" onClick={removeCover}>Home Audio</Link>
-                                                <Link href="/products?category=electronics&type=sewing machine" onClick={removeCover}>Sewing Machine</Link>
-                                                <Link href="/products?category=electronics&type=generator" onClick={removeCover}>Generators</Link>
-                                                <Link href="/products?category=electronics&type=portable power" onClick={removeCover}>Portable Power</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=electronics&type=vitamins" onClick={removeCover}>Televisions</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=electronics&type=cameras" onClick={removeCover}>Cameras</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=electronics&type=home audio" onClick={removeCover}>Home Audio</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=electronics&type=sewing machine" onClick={removeCover}>Sewing Machine</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=electronics&type=generator" onClick={removeCover}>Generators</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=electronics&type=portable power" onClick={removeCover}>Portable Power</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Gaming</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=gamining&type=playstation console" onClick={removeCover} >PlayStation Console</Link>
-                                                <Link href="/products?category=gamining&type=gaming headset" onClick={removeCover} >Gaming Headset</Link>
-                                                <Link href="/products?category=gamining&type=controllers" onClick={removeCover} >Controllers</Link>
-                                                <Link href="/products?category=gamining&type=gaming merchandise" onClick={removeCover} >Gaming Merchandise</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=gaming&type=playstation console" onClick={removeCover} >PlayStation Console</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=gaming&type=gaming headset" onClick={removeCover} >Gaming Headset</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=gaming&type=controllers" onClick={removeCover} >Controllers</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=gaming&type=gaming merchandise" onClick={removeCover} >Gaming Merchandise</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Phones & Tablets</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=phone and tablets&type=iphone" onClick={removeCover} >iPhone</Link>
-                                                <Link href="/products?category=phone and tablets&type=andriod" onClick={removeCover} >Andriod</Link>
-                                                <Link href="/products?category=phone and tablets&type=tablets" onClick={removeCover} >Tablets</Link>
-                                                <Link href="/products?category=phone and tablets&type=phone accessories" onClick={removeCover} >Phone Accessories</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=phones and tablets&type=iphone" onClick={removeCover} >iPhone</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=phones and tablets&type=andriod" onClick={removeCover} >Andriod</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=phones and tablets&type=tablets" onClick={removeCover} >Tablets</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=phones and tablets&type=phone accessories" onClick={removeCover} >Phone Accessories</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Wearables</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=wearables&type=smartwatches" onClick={removeCover}>Smartwatches</Link>
-                                                <Link href="/products?category=wearables&type=fitness bands" onClick={removeCover}>Fitness Bands</Link>
-                                                <Link href="/products?category=wearables&type=vr headset" onClick={removeCover}>VR Headsets</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=wearables&type=smartwatches" onClick={removeCover}>Smartwatches</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=wearables&type=fitness bands" onClick={removeCover}>Fitness Bands</Link>
+                                                <Link href="/products?category=electronics and tech&sub-category=wearables&type=vr headset" onClick={removeCover}>VR Headsets</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -735,27 +735,27 @@ const Header = () => {
                                         <div className={styles.filterContentNav}>
                                             <h3>Women's Fashion</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=women fashion&type=clothing&sex=female" onClick={removeCover}>Clothing</Link>
-                                                <Link href="/products?category=women fashion&type=shoes&sex=female" onClick={removeCover}>Shoes</Link>
-                                                <Link href="/products?category=women fashion&type=jewery&sex=female" onClick={removeCover}>Jewery</Link>
-                                                <Link href="/products?category=women fashion&type=watches&sex=female" onClick={removeCover}>Watches</Link>
+                                                <Link href="/products?category=fashion&sub-category=women's fashion&type=clothing&sex=female" onClick={removeCover}>Clothing</Link>
+                                                <Link href="/products?category=fashion&sub-category=women's fashion&type=shoes&sex=female" onClick={removeCover}>Shoes</Link>
+                                                <Link href="/products?category=fashion&sub-category=women's fashion&type=jewery&sex=female" onClick={removeCover}>Jewery</Link>
+                                                <Link href="/products?category=fashion&sub-category=women's fashion&type=watches&sex=female" onClick={removeCover}>Watches</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Men's Fahion</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=men fashion&type=clothing&sex=male" onClick={removeCover}>Clothing</Link>
-                                                <Link href="/products?category=men fashion&type=shoes&sex=male" onClick={removeCover}>Shoes</Link>
-                                                <Link href="/products?category=men fashion&type=caps&sex=male" onClick={removeCover}>Caps</Link>
-                                                <Link href="/products?category=men fashion&type=watches&sex=male" onClick={removeCover}>Watches</Link>
+                                                <Link href="/products?category=fashion&sub-category=men's fashion&type=clothing&sex=male" onClick={removeCover}>Clothing</Link>
+                                                <Link href="/products?category=fashion&sub-category=men's fashion&type=shoes&sex=male" onClick={removeCover}>Shoes</Link>
+                                                <Link href="/products?category=fashion&sub-category=men's fashion&type=caps&sex=male" onClick={removeCover}>Caps</Link>
+                                                <Link href="/products?category=fashion&sub-category=men's fashion&type=watches&sex=male" onClick={removeCover}>Watches</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Kids & Baby Fashion</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=kids and baby fashion&type=clothing&sex=children" onClick={removeCover}>Clothing</Link>
-                                                <Link href="/products?category=kids and baby fashion&type=shoes&sex=children" onClick={removeCover}>Shoes</Link>
-                                                <Link href="/products?category=kids and baby fashion&type=jewery&sex=children" onClick={removeCover}>Assessories</Link>
+                                                <Link href="/products?category=fashion&sub-category=kids and baby fashion&type=clothing&sex=children" onClick={removeCover}>Clothing</Link>
+                                                <Link href="/products?category=fashion&sub-category=kids and baby fashion&type=shoes&sex=children" onClick={removeCover}>Shoes</Link>
+                                                <Link href="/products?category=fashion&sub-category=kids and baby fashion&type=jewery&sex=children" onClick={removeCover}>Assessories</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -763,50 +763,50 @@ const Header = () => {
                                         <div className={styles.filterContentNav}>
                                             <h3>Dining & Kitchen</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=dining and kitchen&type=cookware" onClick={removeCover}>Cookware</Link>
-                                                <Link href="/products?category=dining and kitchen&type=utensils" onClick={removeCover}>Utensils</Link>
-                                                <Link href="/products?category=dining and kitchen&type=tableware" onClick={removeCover}>Tableware</Link>
+                                                <Link href="/products?category=home&sub-category=dining and kitchen&type=cookware" onClick={removeCover}>Cookware</Link>
+                                                <Link href="/products?category=home&sub-category=dining and kitchen&type=utensils" onClick={removeCover}>Utensils</Link>
+                                                <Link href="/products?category=home&sub-category=dining and kitchen&type=tableware" onClick={removeCover}>Tableware</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Home Decor</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=home and living&type=wall art" onClick={removeCover}>Wall Art</Link>
-                                                <Link href="/products?category=home and living&type=vases" onClick={removeCover}>Vases</Link>
+                                                <Link href="/products?category=home&sub-category=home decor&type=wall art" onClick={removeCover}>Wall Art</Link>
+                                                <Link href="/products?category=home&sub-category=home decor&type=vases" onClick={removeCover}>Vases</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Home Essentials</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=home and living&type=furniture" onClick={removeCover}>Furniture</Link>
-                                                <Link href="/products?category=home and living&type=bedding" onClick={removeCover}>Bedding</Link>
-                                                <Link href="/products?category=home and living&type=rugs" onClick={removeCover}>Rugs</Link>
-                                                <Link href="/products?category=home and living&type=curtains and windows" onClick={removeCover}>Curtains & Window</Link>
-                                                <Link href="/products?category=home and living&type=lightening and ceiling fans" onClick={removeCover}>Lighing & Ceilins Fans</Link>
+                                                <Link href="/products?category=home&sub-category=home essentials&type=furniture" onClick={removeCover}>Furniture</Link>
+                                                <Link href="/products?category=home&sub-category=home essentials&type=bedding" onClick={removeCover}>Bedding</Link>
+                                                <Link href="/products?category=home&sub-category=home essentials&type=rugs" onClick={removeCover}>Rugs</Link>
+                                                <Link href="/products?category=home&sub-category=home essentials&type=curtains and windows" onClick={removeCover}>Curtains & Window</Link>
+                                                <Link href="/products?category=home&sub-category=home essentials&type=lightening and ceiling fans" onClick={removeCover}>Lighing & Ceilins Fans</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Appliances</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=home and living&type=blenders" onClick={removeCover}>Blenders</Link>
-                                                <Link href="/products?category=home and living&type=air fryers" onClick={removeCover}>Air Fryers</Link>
-                                                <Link href="/products?category=home and living&type=electric jugs" onClick={removeCover}>Electric Jugs</Link>
+                                                <Link href="/products?category=home&sub-category=appliances&type=blenders" onClick={removeCover}>Blenders</Link>
+                                                <Link href="/products?category=home&sub-category=appliances&type=air fryers" onClick={removeCover}>Air Fryers</Link>
+                                                <Link href="/products?category=home&sub-category=appliances&type=electric jugs" onClick={removeCover}>Electric Jugs</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Luggage & Travel</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=luggage and travel&type=suitcases" onClick={removeCover}>Suitcases</Link>
-                                                <Link href="/products?category=luggage and travel&type=bag packs" onClick={removeCover}>Bag Packs</Link>
-                                                <Link href="/products?category=luggage and travel&type=travel accessories" onClick={removeCover}>Travel Assessories</Link>
+                                                <Link href="/products?category=home&sub-category=luggage and travel&type=suitcases" onClick={removeCover}>Suitcases</Link>
+                                                <Link href="/products?category=home&sub-category=luggage and travel&type=bag packs" onClick={removeCover}>Bag Packs</Link>
+                                                <Link href="/products?category=home&sub-category=luggage and travel&type=travel accessories" onClick={removeCover}>Travel Assessories</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Building Materials</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=building material&type=plumbing" onClick={removeCover}>Plumbing</Link>
-                                                <Link href="/products?category=building material&type=electrical" onClick={removeCover}>Electrical</Link>
-                                                <Link href="/products?category=building material&type=paint and supplies" onClick={removeCover}>Paint & Supplies</Link>
+                                                <Link href="/products?category=home&sub-category=building material&type=plumbing" onClick={removeCover}>Plumbing</Link>
+                                                <Link href="/products?category=home&sub-category=building material&type=electrical" onClick={removeCover}>Electrical</Link>
+                                                <Link href="/products?category=home&sub-category=building material&type=paint and supplies" onClick={removeCover}>Paint & Supplies</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -814,36 +814,36 @@ const Header = () => {
                                         <div className={styles.filterContentNav}>
                                             <h3>Car Accessories</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=car accessories&type=tyres" onClick={removeCover}>Tyres</Link>
-                                                <Link href="/products?category=car accessories&type=car rims" onClick={removeCover}>Car Rims</Link>
-                                                <Link href="/products?category=car accessories&type=cleaning kits" onClick={removeCover}>Cleaning Kits</Link>
-                                                <Link href="/products?category=car accessories&type=tools and equipment" onClick={removeCover}>Tools & Equipment</Link>
+                                                <Link href="/products?category=automative&sub-category=car accessories&type=tyres" onClick={removeCover}>Tyres</Link>
+                                                <Link href="/products?category=automative&sub-category=car accessories&type=car rims" onClick={removeCover}>Car Rims</Link>
+                                                <Link href="/products?category=automative&sub-category=car accessories&type=cleaning kits" onClick={removeCover}>Cleaning Kits</Link>
+                                                <Link href="/products?category=automative&sub-category=car accessories&type=tools and equipment" onClick={removeCover}>Tools & Equipment</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Motorcycle</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=motorcycle&type=makeup" onClick={removeCover}>Tyres</Link>
-                                                <Link href="/products?category=motorcycle&type=cleaning kits" onClick={removeCover}>Cleaning Kits</Link>
-                                                <Link href="/products?category=motorcycle&type=accessories" onClick={removeCover}>Accessories</Link>
+                                                <Link href="/products?category=automative&sub-category=motorcycle&type=makeup" onClick={removeCover}>Tyres</Link>
+                                                <Link href="/products?category=automative&sub-category=motorcycle&type=cleaning kits" onClick={removeCover}>Cleaning Kits</Link>
+                                                <Link href="/products?category=automative&sub-category=motorcycle&type=accessories" onClick={removeCover}>Accessories</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Car Care</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=car care&type=brake fluid" onClick={removeCover}>Brake Fluid</Link>
-                                                <Link href="/products?category=car care&type=oil" onClick={removeCover}>Oil</Link>
-                                                <Link href="/products?category=car care&type=additives" onClick={removeCover}>Additives</Link>
-                                                <Link href="/products?category=car care&type=lubricants" onClick={removeCover}>Lubricants</Link>
+                                                <Link href="/products?category=automative&sub-category=car care&type=brake fluid" onClick={removeCover}>Brake Fluid</Link>
+                                                <Link href="/products?category=automative&sub-category=car care&type=oil" onClick={removeCover}>Oil</Link>
+                                                <Link href="/products?category=automative&sub-category=car care&type=additives" onClick={removeCover}>Additives</Link>
+                                                <Link href="/products?category=automative&sub-category=car care&type=lubricants" onClick={removeCover}>Lubricants</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Interior Accessories</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=interior accessories&type=wheels" onClick={removeCover}>Wheels</Link>
-                                                <Link href="/products?category=interior accessories&type=trackers" onClick={removeCover}>Trackers</Link>
-                                                <Link href="/products?category=interior accessories&type=air freshners" onClick={removeCover}>Air Fresheners</Link>
-                                                <Link href="/products?category=interior accessories&type=seat covers" onClick={removeCover}>Seat Covers</Link>
+                                                <Link href="/products?category=automative&sub-category=interior design&type=wheels" onClick={removeCover}>Wheels</Link>
+                                                <Link href="/products?category=automative&sub-category=interior design&type=trackers" onClick={removeCover}>Trackers</Link>
+                                                <Link href="/products?category=automative&sub-category=interior design&type=air freshners" onClick={removeCover}>Air Fresheners</Link>
+                                                <Link href="/products?category=automative&sub-category=interior design&type=seat covers" onClick={removeCover}>Seat Covers</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -851,18 +851,18 @@ const Header = () => {
                                         <div className={styles.filterContentNav}>
                                             <h3>School Supplies</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=school supplies&type=bag packs" onClick={removeCover}>Bag Packs</Link>
-                                                <Link href="/products?category=school supplies&type=calculators" onClick={removeCover}>Calculators</Link>
-                                                <Link href="/products?category=school supplies&type=books" onClick={removeCover}>Books</Link>
+                                                <Link href="/products?category=office&sub-category=school supplies&type=bag packs" onClick={removeCover}>Bag Packs</Link>
+                                                <Link href="/products?category=office&sub-category=school supplies&type=calculators" onClick={removeCover}>Calculators</Link>
+                                                <Link href="/products?category=office&sub-category=school supplies&type=books" onClick={removeCover}>Books</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Office Accessories</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=office accessories&type=printer" onClick={removeCover}>Printers</Link>
-                                                <Link href="/products?category=office accessories&type=paper and stationery" onClick={removeCover}>Paper & Stationery</Link>
-                                                <Link href="/products?category=office accessories&type=shredders" onClick={removeCover}>Shredders</Link>
-                                                <Link href="/products?category=office accessories&type=desk organizers" onClick={removeCover}>Desk Organizers</Link>
+                                                <Link href="/products?category=office&sub-category=office accessories&type=printer" onClick={removeCover}>Printers</Link>
+                                                <Link href="/products?category=office&sub-category=office accessories&type=paper and stationery" onClick={removeCover}>Paper & Stationery</Link>
+                                                <Link href="/products?category=office&sub-category=office accessories&type=shredders" onClick={removeCover}>Shredders</Link>
+                                                <Link href="/products?category=office&sub-category=office accessories&type=desk organizers" onClick={removeCover}>Desk Organizers</Link>
                                             </div>
                                         </div>
                                     </div>
@@ -870,12 +870,12 @@ const Header = () => {
                                         <div className={styles.filterContentNav}>
                                             <h3>Professional</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=professional&type=fresh product" onClick={removeCover}>Pharmacy</Link>
-                                                <Link href="/products?category=professional&type=meat & seafood" onClick={removeCover}>Auto Services</Link>
-                                                <Link href="/products?category=professional&type=dairy & eggs" onClick={removeCover}>Financial Services</Link>
-                                                <Link href="/products?category=professional&type=bakery" onClick={removeCover}>Optical Services</Link>
-                                                <Link href="/products?category=professional&type=pantry staples" onClick={removeCover}>Cleaning Services</Link>
-                                                <Link href="/products?category=professional&type=beverages" onClick={removeCover}>Fitness Services</Link>
+                                                <Link href="/products?category=services&sub-category=professional&type=fresh product" onClick={removeCover}>Pharmacy</Link>
+                                                <Link href="/products?category=services&sub-category=professional&type=meat & seafood" onClick={removeCover}>Auto Services</Link>
+                                                <Link href="/products?category=services&sub-category=professional&type=dairy & eggs" onClick={removeCover}>Financial Services</Link>
+                                                <Link href="/products?category=services&sub-category=professional&type=bakery" onClick={removeCover}>Optical Services</Link>
+                                                <Link href="/products?category=services&sub-category=professional&type=pantry staples" onClick={removeCover}>Cleaning Services</Link>
+                                                <Link href="/products?category=services&sub-category=professional&type=beverages" onClick={removeCover}>Fitness Services</Link>
                                             </div>
                                         </div>
                                     </div>

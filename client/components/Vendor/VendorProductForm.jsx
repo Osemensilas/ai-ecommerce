@@ -18,25 +18,130 @@ import { AddCircle, RemoveCircle } from "@mui/icons-material";
 import axios from "axios";
 
 const categoryOptions = {
+  "Daily Essentials": {
+    Grocery: [
+      "Fresh Products",
+      "Meat and Seafood",
+      "Dairy and Eggs",
+      "Bakery",
+      "Pantry Staples",
+      "Beverages",
+      "Snacks and Candy",
+    ],
+    Beauty: [
+      "Makeup",
+      "Skincare",
+      "Haircare",
+      "Personal Care",
+      "Fragrance",
+    ],
+    Health: [
+      "Vitamins",
+      "Health Monitor",
+      "Supplement",
+      "First Aid",
+      "Vision Care",
+      "Wellness Product",
+    ],
+    "Baby and Maternity": [
+      "Baby Clothing",
+      "Diapers and Wipes",
+      "Feeding Supplies",
+      "Nursery (Cribs and Bedding)",
+      "Strollers and Car Seats",
+      "Maternity Clothing",
+    ],
+  },
+
+  "Electronics and Tech": {
+    Computers: [
+      "Monitor",
+      "Digital Whiteboard",
+      "Desktops",
+      "Laptops",
+      "Macbooks",
+      "Computer Accessories",
+    ],
+    "Smart Homes": [
+      "Plugs and Outlets",
+      "Detectors and Sensors",
+      "Wifi and Networking",
+      "Cameras",
+      "Locks and Entry",
+      "Home Lightening",
+    ],
+    Electronics: [
+      "Televisions",
+      "Cameras",
+      "Home Audio",
+      "Sewing Machine",
+      "Generators",
+      "Portable Power",
+    ],
+    Gaming: [
+      "PlayStation Console",
+      "Gaming Headset",
+      "Controllers",
+      "Gaming Merchandise",
+    ],
+    "Phones and Tablets": [
+      "iPhone",
+      "Android",
+      "Tablets",
+      "Phone Accessories",
+    ],
+    Wearables: [
+      "Smartwatches",
+      "Fitness Bands",
+      "VR Headsets",
+    ],
+  },
+
   Fashion: {
-    "Men's Clothing": ["T-Shirts", "Jeans", "Suits"],
-    "Women's Clothing": ["Dresses", "Tops", "Skirts"],
-    Shoes: ["Sneakers", "Heels", "Sandals"],
+    "Women's Fashion": ["Clothing", "Shoes", "Jewelry", "Watches"],
+    "Men's Fashion": ["Clothing", "Shoes", "Caps", "Watches"],
+    "Kids and Baby Fashion": ["Clothing", "Shoes", "Accessories"],
   },
-  Electronics: {
-    Phones: ["Smartphones", "Feature Phones"],
-    Laptops: ["Gaming Laptops", "MacBooks"],
-    Accessories: ["Chargers", "Earphones", "Power Banks"],
+
+  Home: {
+    "Dining and Kitchen": ["Cookware", "Utensils", "Tableware"],
+    "Home Decor": ["Wall Art", "Vases"],
+    "Home Essentials": [
+      "Furniture",
+      "Bedding",
+      "Rugs",
+      "Curtains and Windows",
+      "Lighting and Ceiling Fans",
+    ],
+    Appliances: ["Blenders", "Air Fryers", "Electric Jugs"],
+    "Luggage and Travel": ["Suitcases", "Bag Packs", "Travel Accessories"],
+    "Building Materials": ["Plumbing", "Electrical", "Paint and Supplies"],
   },
-  Beauty: {
-    Makeup: ["Lipsticks", "Foundations"],
-    Fragrances: ["Perfumes", "Body Sprays"],
+
+  Automotive: {
+    "Car Accessories": ["Tyres", "Car Rims", "Cleaning Kits", "Tools and Equipment"],
+    Motorcycle: ["Tyres", "Cleaning Kits", "Accessories"],
+    "Car Care": ["Brake Fluid", "Oil", "Additives", "Lubricants"],
+    "Interior Accessories": ["Wheels", "Trackers", "Air Fresheners", "Seat Covers"],
   },
-  "Home & Kitchen": {
-    Furniture: ["Chairs", "Tables"],
-    Appliances: ["Blenders", "Cookers"],
+
+  Office: {
+    "School Supplies": ["Bag Packs", "Calculators", "Books"],
+    "Office Accessories": ["Printers", "Paper and Stationery", "Shredders", "Desk Organizers"],
+  },
+
+  Services: {
+    Professional: [
+      "Pharmacy",
+      "Auto Services",
+      "Financial Services",
+      "Optical Services",
+      "Cleaning Services",
+      "Fitness Services",
+    ],
   },
 };
+
 
 export default function ProductForm() {
   const [product, setProduct] = useState({

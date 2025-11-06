@@ -4,21 +4,28 @@ import productstyles from '../../app/css/product.module.css';
 import styles from '../../app/css/single.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-// import FAQs from '@/components/FAQs';
+import { useSearchParams } from "next/navigation";
 import RecentlyViewed from '@/components/RecentlyViewed';
 import SimilarProduct from '@/components/SimilarProduct';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import FAQ from '@/components/Faq';
 import Footer from '@/components/Footer';
+import axios from 'axios';
+
 
 const Product = () => {
+
+    const searchParams = useSearchParams();
+
+    const productId = searchParams.get('product_id');
 
     const [quantity, setQuantity] = useState(1);
     const [image, setImage] = useState('/jacket.png');
     const [image1, setImage1] = useState('/jean.png');
     const [image2, setImage2] = useState('/jacket.png');
     const [image3, setImage3] = useState('/menblack.png');
+    const [fetchedProduct, setFetchProduct] = useState(null);
 
     const image1Clicked = () => {
         setImage(image1);
@@ -96,6 +103,30 @@ const Product = () => {
         addToCartContainer.classList.add(styles.show);
         cartBtn.classList.remove(styles.show);
     }
+
+    useEffect(() => {
+        async function getProducts() {
+
+            const url = `https://ahiaserver-api.onrender.com/api/products/${productId}`;
+            
+            try {
+                const response = await axios.get(url, {
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Host": "api.ahiaglobal.com",
+                    },
+                });
+
+                console.log(response.data);
+
+                setFetchProduct(response.data);
+            } catch (error) {
+                console.error("Error fetching products:", error);
+            }
+        }
+
+        getProducts();
+    },[])
     
     return ( 
         <>
@@ -130,7 +161,7 @@ const Product = () => {
                     <div className={styles.productContainerRight}>
                         <div className={styles.productContainerRightTop}>
                             <div className={styles.productDescriptionHeader}  > 
-                                <h2>Flor Green</h2>
+                                <h2>{fetchedProduct.name}</h2>
                                 <p>-40%</p>
                             </div>
                             <div className={styles.productPrice}>
