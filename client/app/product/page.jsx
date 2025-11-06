@@ -4,7 +4,7 @@ import productstyles from '../../app/css/product.module.css';
 import styles from '../../app/css/single.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-// import FAQs from '@/components/FAQs';
+import { Suspense } from 'react';
 import RecentlyViewed from '@/components/RecentlyViewed';
 import SimilarProduct from '@/components/SimilarProduct';
 import { useState, useEffect } from 'react';
@@ -23,11 +23,11 @@ const Product = () => {
     console.log(productIdentity);
 
     const [quantity, setQuantity] = useState(1);
-    const [image, setImage] = useState('/jacket.png');
-    const [image1, setImage1] = useState('/jean.png');
-    const [image2, setImage2] = useState('/jacket.png');
-    const [image3, setImage3] = useState('/menblack.png');
-    const [filteredProduct, setFilteredProduct] = useState(null);
+    const [image, setImage] = useState('');
+    const [image1, setImage1] = useState('');
+    const [image2, setImage2] = useState('');
+    const [image3, setImage3] = useState('');
+    const [filteredProduct, setFilteredProduct] = useState('');
 
     const image1Clicked = () => {
         setImage(image1);
@@ -121,6 +121,10 @@ const Product = () => {
                 console.log(response.data);
 
                 setFilteredProduct(response.data);
+                setImage(response.data.images[0]);
+                setImage1(response.data.images[0]);
+                setImage2(response.data.images[1]);
+                setImage3(response.data.images[2]);
             } catch (error) {
                 console.error("Error fetching products:", error);
             }
@@ -132,11 +136,12 @@ const Product = () => {
     return ( 
         <>
         <Header />
+        <Suspense fallback={<div>Loading...</div>}>
         <section id="product">
             <div className={productstyles.pageLocation}>
-                <p>Beauty</p>
+                <p>{filteredProduct.subcategory}</p>
                 <p><i className="fa fa-angle-right"></i></p>
-                <p>Haircare</p>
+                <p>{filteredProduct.typeCategory}</p>
             </div>
             <div className={styles.productContainer}>
                 <div className={styles.ProudctConatinerMain}>
@@ -162,12 +167,12 @@ const Product = () => {
                     <div className={styles.productContainerRight}>
                         <div className={styles.productContainerRightTop}>
                             <div className={styles.productDescriptionHeader}  > 
-                                <h2>Flor Green</h2>
+                                <h2>{"filteredProduct.name"}</h2>
                                 <p>-40%</p>
                             </div>
                             <div className={styles.productPrice}>
-                                <h2>₦{Number(7500).toLocaleString()} - ₦{Number(11500).toLocaleString()}</h2>
-                                <p>₦{Number(11500).toLocaleString()}</p>
+                                <h2>₦{Number(filteredProduct.price.current).toLocaleString()}</h2>
+                                <p>₦{Number(filteredProduct.price.old).toLocaleString()}</p>
                             </div>
                             <div className={productstyles.productCardReviewItem}>
                                 <p style={{fontSize: '18px'}}>7.0</p>
@@ -185,7 +190,9 @@ const Product = () => {
                             <div className={styles.productDescriptionHeader}>
                                 <h2>Product Variations</h2>
                             </div>
-                            <div className={styles.productSize}>
+                            <div className={`${styles.productSize}
+                                ${filteredProduct.category === "Fashion" ? "" : styles.hide}
+                                `}>
                                 <button className="productSize active">UK 8</button>
                                 <button className="productSize">UK 9</button>
                                 <button className="productSize">UK 10</button>
@@ -348,7 +355,7 @@ const Product = () => {
                             <header className={styles.productDescriptionContentHeader}>
                                 <h2>Product Details</h2>
                             </header>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, dicta repellat error provident aperiam eum, ut voluptatem temporibus soluta officia nemo. Quaerat dignissimos in molestias modi perferendis quae explicabo iste.</p>
+                            <p>{filteredProduct.description}</p>
                         </div>
                         <div className={styles.productDescriptionBottomContent}>
                             <header className={styles.productDescriptionContentHeader}>
@@ -375,6 +382,7 @@ const Product = () => {
                 </div>
             </div>
         </section>
+        <Suspense />
         <FAQ />
         <Footer />
         </>

@@ -508,6 +508,10 @@
     border: 1px solid var(--primary);
 }
 
+.productSize.hide{
+    display: none;
+}
+
 @media screen and (max-width: 1000px) and (min-width: 768px){
     .productContainer {
         padding: 20px 10px;
