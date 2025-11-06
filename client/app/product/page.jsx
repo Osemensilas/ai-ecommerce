@@ -12,12 +12,15 @@ import Header from '@/components/Header';
 import FAQ from '@/components/Faq';
 import Footer from '@/components/Footer';
 import { useSearchParams } from "next/navigation";
+import axios from 'axios';
 
 const Product = () => {
 
     const searchParams = useSearchParams();
 
     const productIdentity = searchParams.get("product_id");
+
+    console.log(productIdentity);
 
     const [quantity, setQuantity] = useState(1);
     const [image, setImage] = useState('/jacket.png');
