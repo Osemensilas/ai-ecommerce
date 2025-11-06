@@ -674,52 +674,52 @@ const Header = () => {
                                         <div className={styles.filterContentNav}>
                                             <h3>Computers</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=electronics and tech&sub-category=computers&type=monitor" onClick={removeCover}>Monitor</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=computers&type=digital whiteboard" onClick={removeCover}>Digital Whiteboard</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=computers&type=desktops" onClick={removeCover}>Desktops</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=computers&type=laptops" onClick={removeCover}>Laptops</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=computers&type=macbooks" onClick={removeCover}>Macbooks</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=computers&type=computer assessories" onClick={removeCover}>Computer Assessories</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=computers&type=monitor" onClick={removeCover}>Monitor</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=computers&type=digital whiteboard" onClick={removeCover}>Digital Whiteboard</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=computers&type=desktops" onClick={removeCover}>Desktops</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=computers&type=laptops" onClick={removeCover}>Laptops</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=computers&type=macbooks" onClick={removeCover}>Macbooks</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=computers&type=computer assessories" onClick={removeCover}>Computer Assessories</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Smart Homes</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=electronics and tech&sub-category=smart homes&type=plugs and outlets" onClick={removeCover}>Plugs & Outlets</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=smart homes&type=detectors and sensors" onClick={removeCover}>Detectors & Sensors</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=smart homes&type=wifi and networking" onClick={removeCover}>Wifi & Networking</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=smart homes&type=cameras" onClick={removeCover}>Cameras</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=smart homes&type=locks and entry" onClick={removeCover}>Locks & Entry</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=smart homes&type=home lightening" onClick={removeCover}>Home Lightening</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=smart homes&type=plugs and outlets" onClick={removeCover}>Plugs & Outlets</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=smart homes&type=detectors and sensors" onClick={removeCover}>Detectors & Sensors</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=smart homes&type=wifi and networking" onClick={removeCover}>Wifi & Networking</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=smart homes&type=cameras" onClick={removeCover}>Cameras</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=smart homes&type=locks and entry" onClick={removeCover}>Locks & Entry</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=smart homes&type=home lightening" onClick={removeCover}>Home Lightening</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Electronics</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=electronics and tech&sub-category=electronics&type=vitamins" onClick={removeCover}>Televisions</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=electronics&type=cameras" onClick={removeCover}>Cameras</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=electronics&type=home audio" onClick={removeCover}>Home Audio</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=electronics&type=sewing machine" onClick={removeCover}>Sewing Machine</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=electronics&type=generator" onClick={removeCover}>Generators</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=electronics&type=portable power" onClick={removeCover}>Portable Power</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Electronics&type=Vitamins" onClick={removeCover}>Televisions</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Electronics&type=Cameras" onClick={removeCover}>Cameras</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Electronics&type=Home Audio" onClick={removeCover}>Home Audio</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Electronics&type=Sewing Machine" onClick={removeCover}>Sewing Machine</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Electronics&type=Generator" onClick={removeCover}>Generators</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Electronics&type=Portable Power" onClick={removeCover}>Portable Power</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Gaming</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=electronics and tech&sub-category=gaming&type=playstation console" onClick={removeCover} >PlayStation Console</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=gaming&type=gaming headset" onClick={removeCover} >Gaming Headset</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=gaming&type=controllers" onClick={removeCover} >Controllers</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=gaming&type=gaming merchandise" onClick={removeCover} >Gaming Merchandise</Link>
+                                                <Link href="/products?category=Electronics and tech&sub-category=Gaming&type=Playstation Console" onClick={removeCover} >PlayStation Console</Link>
+                                                <Link href="/products?category=Electronics and tech&sub-category=Gaming&type=Gaming Headset" onClick={removeCover} >Gaming Headset</Link>
+                                                <Link href="/products?category=Electronics and tech&sub-category=Gaming&type=Controllers" onClick={removeCover} >Controllers</Link>
+                                                <Link href="/products?category=Electronics and tech&sub-category=Gaming&type=Gaming Merchandise" onClick={removeCover} >Gaming Merchandise</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>
                                             <h3>Phones & Tablets</h3>
                                             <div className={styles.filterContentNavigationList}>
-                                                <Link href="/products?category=electronics and tech&sub-category=phones and tablets&type=iphone" onClick={removeCover} >iPhone</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=phones and tablets&type=andriod" onClick={removeCover} >Andriod</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=phones and tablets&type=tablets" onClick={removeCover} >Tablets</Link>
-                                                <Link href="/products?category=electronics and tech&sub-category=phones and tablets&type=phone accessories" onClick={removeCover} >Phone Accessories</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Phones and Tablets&type=iPhone" onClick={removeCover} >iPhone</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Phones and Tablets&type=Andriod" onClick={removeCover} >Andriod</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Phones and Tablets&type=Tablets" onClick={removeCover} >Tablets</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Phones and Tablets&type=Phone Accessories" onClick={removeCover} >Phone Accessories</Link>
                                             </div>
                                         </div>
                                         <div className={styles.filterContentNav}>

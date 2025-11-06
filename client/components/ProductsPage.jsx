@@ -362,7 +362,7 @@ export default function ProductsPage() {
     setMainFilter(["Brand", ...new Set(withoutBrand)]);
 
   async function getProducts() {
-      const url = `https://ahiaserver-api.onrender.com/api/products/filter`;
+      const url = `https://ahiaserver-api.onrender.com/api/products/filter?category=${category}&subCategory=${subCategory}`;
       const newUrl = "https://ahiaserver-api.onrender.com/api/products/filter?category=electronics and tech&subcategory=phones and tablets&typeCategory=andriod";
       try {
         const response = await axios.get(url, {
