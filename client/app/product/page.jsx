@@ -382,7 +382,7 @@ const Product = () => {
                 </div>
             </div>
         </section>
-        <Suspense />
+        </Suspense>
         <FAQ />
         <Footer />
         </>
