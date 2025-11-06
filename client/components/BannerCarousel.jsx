@@ -21,6 +21,11 @@ const banners = [
     image: "AhiaGlobal.png",
     alt: "Special Deals Banner 3",
   },
+  {
+    id: 0,
+    image: "/ahiaglobal0.png",
+    alt: "Special Deals Banner 1",
+  },
 ];
 
 export default function BannerCarousel() {
@@ -29,27 +34,31 @@ export default function BannerCarousel() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 100,
-    slidesToShow: 1,
+    speed: 20,
+    slidesToShow: isMobile ? 1 : 2,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 4000,
     arrows: true,
   };
 
+
+
   return (
-    <div style={{ width: "100%", margin: "0 auto" }}>
+    <div style={{ width: "100vw", margin: "0 auto" }}>
       <Slider {...settings}>
         {banners.map((banner) => (
-          <div key={banner.id} style={{ width: "100%", height: "400px" }}>
+          <div key={banner.id} style={{ width: "100%", height: "300px" }}>
             <img
               src={banner.image}
               alt={banner.alt}
-              style={{ width: "100%", height: isMobile ? "20vh" :  "400px", objectFit: "cover" }}
+              style={{ width: "100%", height: isMobile ? "20vh" : "250px", objectFit: "cover" }}
             />
           </div>
         ))}
       </Slider>
     </div>
   );
+
+
 }
