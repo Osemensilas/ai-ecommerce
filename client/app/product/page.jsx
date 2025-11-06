@@ -7,13 +7,15 @@ import Link from 'next/link';
 // import FAQs from '@/components/FAQs';
 import RecentlyViewed from '@/components/RecentlyViewed';
 import SimilarProduct from '@/components/SimilarProduct';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import FAQ from '@/components/Faq';
 import Footer from '@/components/Footer';
 import { useSearchParams } from "next/navigation";
 
 const Product = () => {
+
+    const searchParams = useSearchParams();
 
     const productIdentity = searchParams.get("product_id");
 
@@ -100,6 +102,29 @@ const Product = () => {
         addToCartContainer.classList.add(styles.show);
         cartBtn.classList.remove(styles.show);
     }
+
+    useEffect(() => {
+        async function getProduct() {
+            const url = `https://ahiaserver-api.onrender.com/api/products/${productIdentity}`;
+    
+            try {
+                const response = await axios.get(url, {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Host": "api.ahiaglobal.com",
+                },
+                });
+
+                console.log(response.data);
+
+                setFilteredProduct(response.data);
+            } catch (error) {
+                console.error("Error fetching products:", error);
+            }
+        }
+
+        getProduct();
+    },[])
     
     return ( 
         <>
