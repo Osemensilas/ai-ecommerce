@@ -27,7 +27,7 @@ const Product = () => {
     const [image1, setImage1] = useState('');
     const [image2, setImage2] = useState('');
     const [image3, setImage3] = useState('');
-    const [filteredProduct, setFilteredProduct] = useState('');
+    const [filteredProduct, setFilteredProduct] = useState({});
 
     const image1Clicked = () => {
         setImage(image1);
@@ -107,6 +107,7 @@ const Product = () => {
     }
 
     useEffect(() => {
+        if (!productIdentity) return;
         async function getProduct() {
             const url = `https://ahiaserver-api.onrender.com/api/products/${productIdentity}`;
     
@@ -121,10 +122,10 @@ const Product = () => {
                 console.log(response.data);
 
                 setFilteredProduct(response.data);
-                setImage(response.data.images[0]);
-                setImage1(response.data.images[0]);
-                setImage2(response.data.images[1]);
-                setImage3(response.data.images[2]);
+                setImage(response.data.images[0] || '/default.jpg');
+                setImage1(response.data.images[0] || '/default.jpg');
+                setImage2(response.data.images[1] || '/default.jpg');
+                setImage3(response.data.images[2] || '/default.jpg');
             } catch (error) {
                 console.error("Error fetching products:", error);
             }
@@ -132,6 +133,11 @@ const Product = () => {
 
         getProduct();
     },[])
+
+    if (!filteredProduct || !filteredProduct.price || !filteredProduct.images) {
+        return <div>Loading product...</div>;
+    }
+
     
     return ( 
         <>
@@ -147,18 +153,18 @@ const Product = () => {
                 <div className={styles.ProudctConatinerMain}>
                     <div className={styles.productContainerLeft}>
                         <div className={styles.productConatinerImage}>
-                            <Image src={image} alt="product image" className={styles.productImage} fill />
+                            <Image src={image || "/fallback.png"} alt="product image" className={styles.productImage} fill />
                         </div>
                         <div className={styles.productContainerBottom}>
                             <div className={styles.productContainerBottomImages}>
                                 <div className={styles.productContainerBottomImage}>
-                                    <Image src={image1} onClick={image1Clicked} alt="product image" className={styles.productImage} fill />
+                                    <Image src={image1 || "/fallback.png"} onClick={image1Clicked} alt="product image" className={styles.productImage} fill />
                                 </div>
                                 <div className={styles.productContainerBottomImage}>
-                                    <Image src={image2} onClick={image2Clicked} alt="product image" className={styles.productImage} fill />
+                                    <Image src={image2 || "/fallback.png"} onClick={image2Clicked} alt="product image" className={styles.productImage} fill />
                                 </div>
                                 <div className={styles.productContainerBottomImage}>
-                                    <Image src={image3} onClick={image3Clicked} alt="product image" className={styles.productImage} fill />
+                                    <Image src={image3 || "/fallback.png"} onClick={image3Clicked} alt="product image" className={styles.productImage} fill />
                                 </div>
                             </div> 
                             <button onClick={seeProductInfo} style={{border: 'none', cursor: 'pointer', marginTop: '20px'}}><h2>Product Information</h2></button>
@@ -167,12 +173,12 @@ const Product = () => {
                     <div className={styles.productContainerRight}>
                         <div className={styles.productContainerRightTop}>
                             <div className={styles.productDescriptionHeader}  > 
-                                <h2>{"filteredProduct.name"}</h2>
+                                <h2>{filteredProduct.name}</h2>
                                 <p>-40%</p>
                             </div>
                             <div className={styles.productPrice}>
-                                <h2>₦{Number(filteredProduct.price.current).toLocaleString()}</h2>
-                                <p>₦{Number(filteredProduct.price.old).toLocaleString()}</p>
+                                <h2>₦{Number(filteredProduct.price.current || 0).toLocaleString()}</h2>
+                                <p>₦{Number(filteredProduct.price.old || 0).toLocaleString()}</p>
                             </div>
                             <div className={productstyles.productCardReviewItem}>
                                 <p style={{fontSize: '18px'}}>7.0</p>
