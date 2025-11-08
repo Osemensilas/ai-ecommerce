@@ -481,6 +481,13 @@ export default function ProductsPage() {
 
   console.log(filteredProducts);
 
+  useEffect(() => {
+    if (!type) return;
+
+    const catFilter = dbProducts.filter(item => item.type === type);
+    
+  }, [type]);
+
   const indexOfLast = currentPage * productsPerPage;
   const indexOfFirst = indexOfLast - productsPerPage;
   const currentProducts = filteredProducts.slice(indexOfFirst, indexOfLast);
