@@ -462,7 +462,21 @@ export default function ProductsPage() {
     const matchCategory = category === "All Products" || category.toLowerCase() === item.category.toLowerCase();
     //const matchSubCategory = subCategory.toLowerCase() === item.subcategory.toLowerCase();
 
-    return matchCategory;
+    const groupedFilters = selectedMainCat.reduce((acc, { field, value }) => {
+      if (!acc[field]) {
+        acc[field] = [];
+      }
+      acc[field].push(value);
+      return acc;
+    }, {});
+    
+    const matchMainCategories =
+    Object.keys(groupedFilters).every((field) => {
+      const productValue = String(item[field])?.toLowerCase();
+      return groupedFilters[field].some((val) => val === productValue);
+    });
+
+    return matchCategory && matchMainCategories;
   });
 
   console.log(filteredProducts);
