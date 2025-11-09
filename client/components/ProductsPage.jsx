@@ -366,12 +366,7 @@ export default function ProductsPage() {
       
       //const newUrl = "https://ahiaserver-api.onrender.com/api/products/filter?category=Electronics and Tech&subcategory=Phones and Tablets&typeCategory=Andriod";
       try {
-        const response = await axios.get(url, {
-          headers: {
-            "Content-Type": "application/json",
-            "Host": "api.ahiaglobal.com",
-          },
-        });
+        const response = await axios.get(url);
 
         console.log(response.data);
 

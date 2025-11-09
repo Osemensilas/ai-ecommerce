@@ -34,11 +34,11 @@ export default function BannerCarousel() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 20,
+    speed: 2,
     slidesToShow: isMobile ? 1 : 2,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 1000,
     arrows: true,
   };
 
@@ -52,7 +52,7 @@ export default function BannerCarousel() {
             <img
               src={banner.image}
               alt={banner.alt}
-              style={{ width: "100%", height: isMobile ? "20vh" : "250px", objectFit: "cover" }}
+              style={{ width: "100%", height: isMobile ? "17vh" : "250px", objectFit: "cover" }}
             />
           </div>
         ))}
