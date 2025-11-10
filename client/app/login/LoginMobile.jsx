@@ -16,10 +16,11 @@ import { Visibility, VisibilityOff, Google, Apple } from '@mui/icons-material';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import axios from 'axios';
+import { useAuthStore } from '@/components/auth/Auth';
 
 const LoginMobile = () => {
   const router = useRouter();
+  const { login } = useAuthStore();
 
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [showPassword, setShowPassword] = useState(false);
@@ -49,10 +50,23 @@ const LoginMobile = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post('https://ahiaserver-api.onrender.com/api/auth/login', formData);
-    //   localStorage.setItem('user', JSON.stringify(res.data));
+      // ✅ Use Zustand store login
+      await login(formData.email, formData.password);
+
+        const { user, token } = useAuthStore.getState();
+
+    // console.log('User:', user);
+    // console.log('Token:', token);
+
+    if (user && token) {
       router.push('/');
+    } else {
+      setError('Login failed. Please check your credentials.');
+      return;
+    }
+      // router.push('/');s
     } catch (err) {
+      console.error(err);
       setError(err.response?.data?.message || 'Login failed, try again');
     } finally {
       setLoading(false);

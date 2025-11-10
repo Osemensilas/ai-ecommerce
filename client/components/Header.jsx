@@ -4,14 +4,18 @@
 import styles from "../app/css/header.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { Typography, useMediaQuery } from "@mui/material";
+import { Avatar, Typography, useMediaQuery } from "@mui/material";
 import { useState, useEffect } from 'react';
 import { usePathname, useRouter } from "next/navigation";
 import { ShoppingBasket } from "lucide-react";
+import { useAuthStore } from '@/components/auth/Auth';
 
 
 const Header = () => {
     const [borderColor, setBorderColor] = useState("#4cc933ff");
+    const { user, token } = useAuthStore();
+    const username = user ? user.username : null;
+    // console.log('Username in Header:', username);
 
     useEffect(() => {
         const colors = [
@@ -34,7 +38,7 @@ const Header = () => {
             "#2980b9",   // navy blue
         ];
 
-
+        // 
         const interval = setInterval(() => {
             const randomColor = colors[Math.floor(Math.random() * colors.length)];
             setBorderColor(randomColor);
@@ -121,11 +125,19 @@ const Header = () => {
                                             Solo-HiTech
                                         </div>
                                     </div>
-                                    <div className={`${styles.visitor} ${userPresent ? styles.hide : ""}`}>
-                                        <Link href="/login">
-                                            <i className="fa fa-user"></i>
-                                        </Link>
-                                    </div>
+                                    {user ? (
+                                        <a href="/user" style={{ textDecoration: 'none' }}  >
+                                            <Avatar sx={{ bgcolor: '#1976d2', cursor: 'pointer' }}>
+                                                {username ? username.charAt(0).toUpperCase() : 'U'}
+                                            </Avatar>
+                                        </a>
+                                    ) : (
+                                        <div className={`${styles.visitor} ${userPresent ? styles.hide : ""}`}>
+                                            <Link href="/login">
+                                                <i className="fa fa-user"></i>
+                                            </Link>
+                                        </div>
+                                    )}
                                 </li>
                                 <li className={styles.navItem}>
                                     <Link href={"/cart"} className={styles.shoppingCart}>
@@ -180,7 +192,7 @@ const Header = () => {
                                     }}
                                 >
                                     <Typography>
-                                        All 
+                                        All
                                     </Typography>
                                     <i className="fa fa-angle-down"></i>
                                 </button>
@@ -215,16 +227,16 @@ const Header = () => {
                                 <li style={{ flex: "0 0 auto" }}>
                                     <Link href="/products?category=gift-shop"> <Typography>Sports</Typography> </Link>
                                 </li>
-                                  <li style={{ flex: "0 0 auto" }}>
+                                <li style={{ flex: "0 0 auto" }}>
                                     <Link href="/products?category=gift-shop"> <Typography>Automotive</Typography> </Link>
                                 </li>
-                                  <li style={{ flex: "0 0 auto" }}>
+                                <li style={{ flex: "0 0 auto" }}>
                                     <Link href="/products?category=gift-shop"> <Typography>Craft</Typography> </Link>
                                 </li>
-                                  <li style={{ flex: "0 0 auto" }}>
+                                <li style={{ flex: "0 0 auto" }}>
                                     <Link href="/products?category=gift-shop"> <Typography>Bags</Typography> </Link>
                                 </li>
-                                  <li style={{ flex: "0 0 auto" }}>
+                                <li style={{ flex: "0 0 auto" }}>
                                     <Link href="/products?category=gift-shop"> <Typography>Toy</Typography> </Link>
                                 </li>
                             </ul>
@@ -538,20 +550,19 @@ const Header = () => {
                                 <input type="text" className={styles.searchInput} placeholder="Search Product (e.g., Belts, Necklaces, Smart Tvs, ...)" />
                             </form>
                             <ul className={styles.navList}>
-                                <li className={styles.navItem}>
-                                    <div className={`${styles.activeUser} ${userPresent ? "" : styles.hide}`}>
-                                        <div className="">
-                                            <i className="fa fa-user"></i>
-                                            Solo-HiTech
-                                        </div>
-                                    </div>
+                                {user ? (
+                                    <a href="/user" style={{ textDecoration: 'none' }}  >
+                                        <Avatar sx={{ bgcolor: '#1976d2', cursor: 'pointer' }}>
+                                            {username ? username.charAt(0).toUpperCase() : 'U'}
+                                        </Avatar>
+                                    </a>
+                                ) : (
                                     <div className={`${styles.visitor} ${userPresent ? styles.hide : ""}`}>
                                         <Link href="/login">
                                             <i className="fa fa-user"></i>
-                                            Login
                                         </Link>
                                     </div>
-                                </li>
+                                )}
                                 <li className={styles.navItem}>
                                     <Link href={"/cart"} className={styles.shoppingCart}>
                                         <div className={styles.shoppingCartImg}>

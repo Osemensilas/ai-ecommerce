@@ -5,10 +5,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { useRouter } from "next/navigation";
-import axios from "axios";
+import { useAuthStore } from '@/components/auth/Auth';
 
 const Signup = () => {
   const router = useRouter();
+  const { register } = useAuthStore();
 
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -33,7 +34,6 @@ const Signup = () => {
   const formSubmitted = async () => {
     let emailVal = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    // validations
     if (!formData.email || !formData.password || !formData.password2) {
       setError("All fields are required");
       return;
@@ -44,21 +44,24 @@ const Signup = () => {
     }
     if (formData.password !== formData.password2) {
       setError("Passwords do not match");
-      return; 
+      return;
     }
 
+    setError('');
+    setLoading(true);
+
     try {
-      setError('');
-      setLoading(true);
+      // ✅ Wait for the register function from Zustand
+      await register(formData.username, formData.email, formData.password);
+      const { user, token } = useAuthStore.getState();
 
-      const response = await axios.post("https://ahiaserver-api.onrender.com/api/auth/register", {
-        username: formData.username,
-        email: formData.email,
-        password: formData.password,
-      });
+      // if (user && token) {
+      //   router.push('/');
+      // } else {
+      //   setError(' Registration failed. Please check your credentials.');
+      //   return;
+      // }
 
-      console.log("Signup success:", response.data);
-      router.push('/login');
     } catch (err) {
       console.error("Signup error:", err);
       setError(err.response?.data?.message || "Signup failed, try again.");

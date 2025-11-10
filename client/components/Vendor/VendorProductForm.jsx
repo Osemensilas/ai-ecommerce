@@ -402,14 +402,14 @@ export default function ProductForm() {
           </Grid>
 
           <Grid item xs={12}>
-            {loading ? <Typography variant="body1" color="primary">
+            {/* {loading ? <Typography variant="body1" color="primary">
               <LinearProgress /> Uploading...
             </Typography>
-              :
+              : */}
               <Button type="submit" variant="contained" color="primary" fullWidth>
                 Submit Product
               </Button>
-            }
+            {/* } */}
           </Grid>
         </Grid>
       </Box>

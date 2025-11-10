@@ -54,7 +54,7 @@ const Product = () => {
         qtyInputValue -= 1;
         qtyInput.value = qtyInputValue;
 
-        if (qtyInputValue < 1){
+        if (qtyInputValue < 1) {
             qtyInput.value = 1;
         }
     }
@@ -75,7 +75,7 @@ const Product = () => {
             setQuantity(numValue);
         }
     };
-        
+
     const handleBlur = () => {
         if (quantity === "" || quantity <= 0) {
             setQuantity(1);
@@ -84,13 +84,13 @@ const Product = () => {
 
     const seeProductInfo = () => {
         let productDescription = document.querySelector(`.${styles.productDescriptionContainer}`);
-        
+
         productDescription.classList.add(styles.active);
     }
 
     const removeDescription = () => {
         let productDescription = document.querySelector(`.${styles.productDescriptionContainer}`);
-        
+
         productDescription.classList.remove(styles.active);
     }
 
@@ -106,13 +106,13 @@ const Product = () => {
         if (!productIdentity) return;
         async function getProduct() {
             const url = `https://ahiaserver-api.onrender.com/api/products/${productIdentity}`;
-    
+
             try {
                 const response = await axios.get(url, {
-                headers: {
-                    "Content-Type": "application/json",
-                    "Host": "api.ahiaglobal.com",
-                },
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Host": "api.ahiaglobal.com",
+                    },
                 });
 
                 console.log(response.data);
@@ -128,112 +128,54 @@ const Product = () => {
         }
 
         getProduct();
-    },[])
+    }, [])
 
     if (!filteredProduct || !filteredProduct.price || !filteredProduct.images) {
         return <div>Loading product...</div>;
     }
 
-    return ( 
+    return (
         <>
-        <section id="product">
-            <div className={productstyles.pageLocation}>
-                <p>{filteredProduct.subcategory}</p>
-                <p><i className="fa fa-angle-right"></i></p>
-                <p>{filteredProduct.typeCategory}</p>
-            </div>
-            <div className={styles.productContainer}>
-                <div className={styles.ProudctConatinerMain}>
-                    <div className={styles.productContainerLeft}>
-                        <div className={styles.productConatinerImage}>
-                            <Image src={image || "/fallback.png"} alt="product image" className={styles.productImage} fill />
-                        </div>
-                        <div className={styles.productContainerBottom}>
-                            <div className={styles.productContainerBottomImages}>
-                                <div className={styles.productContainerBottomImage}>
-                                    <Image src={image1 || "/fallback.png"} onClick={image1Clicked} alt="product image" className={styles.productImage} fill />
-                                </div>
-                                <div className={styles.productContainerBottomImage}>
-                                    <Image src={image2 || "/fallback.png"} onClick={image2Clicked} alt="product image" className={styles.productImage} fill />
-                                </div>
-                                <div className={styles.productContainerBottomImage}>
-                                    <Image src={image3 || "/fallback.png"} onClick={image3Clicked} alt="product image" className={styles.productImage} fill />
-                                </div>
-                            </div> 
-                            <button onClick={seeProductInfo} style={{border: 'none', cursor: 'pointer', marginTop: '20px'}}><h2>Product Information</h2></button>
-                        </div>
-                    </div>
-                    <div className={styles.productContainerRight}>
-                        <div className={styles.productContainerRightTop}>
-                            <div className={styles.productDescriptionHeader}  > 
-                                <h2>{filteredProduct.name}</h2>
-                                <p>-40%</p>
-                            </div>
-                            <div className={styles.productPrice}>
-                                <h2>₦{Number(filteredProduct.price.current || 0).toLocaleString()}</h2>
-                                <p>₦{Number(filteredProduct.price.old || 0).toLocaleString()}</p>
-                            </div>
-                            <div className={productstyles.productCardReviewItem}>
-                                <p style={{fontSize: '18px'}}>7.0</p>
-                                <div className={productstyles.productCardStars}>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                </div>
-                                <p className={styles.ratingColor}>60,483 reatings</p>
-                            </div>
-                        </div>
-                        <div className={styles.productContainerRightMiddle}>
-                            <div className={styles.productDescriptionHeader}>
-                                <h2>Product Variations</h2>
-                            </div>
-                            <div className={`${styles.productSize}
-                                ${filteredProduct.category === "Fashion" ? "" : styles.hide}
-                                `}>
-                                <button className="productSize active">UK 8</button>
-                                <button className="productSize">UK 9</button>
-                                <button className="productSize">UK 10</button>
-                                <button className="productSize out">UK 11</button>
-                                <button className="productSize">UK 12</button>
-                                <button className="productSize out">UK 13</button>
-                            </div>
-                            <div className={styles.productQtyContainer}>
-                                <div className={styles.productQty}>
-                                    <h3>Qty</h3>
-                                </div>
-                                <div className={styles.increaseBtn}>
-                                    <button onClick={reduceBtnClicked} className="reduceBtn">-</button>
-                                    <input type="number" value={quantity} onBlur={handleBlur} onChange={handleChanged}  className="priceInput" />
-                                    <button onClick={increaseBtnClicked} className="increaseBtn active">+</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className={styles.productContainerRightBottom}>
-                            <form onSubmit={(e) => e.preventDefault()} className={styles.submitBtnForm}>
-                                <button onClick={addToCartClicked} className={`${styles.cartBtnMain} ${styles.show}`}><i className="fa fa-shopping-cart"></i>Add to Cart</button>
-                                <div className={styles.viewCartConatiner}>
-                                    <Link href={"/"}>Continue Shopping</Link>
-                                    <Link href={"/cart"}>Go to Cart</Link>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+            <section id="product">
+                <div className={productstyles.pageLocation}>
+                    <p>{filteredProduct.subcategory}</p>
+                    <p><i className="fa fa-angle-right"></i></p>
+                    <p>{filteredProduct.typeCategory}</p>
                 </div>
-                <div className={styles.customerFeedbackContainer}>
-                    <header className={styles.customerFeedbackHeader}>
-                        <h2>Verified Customer Feedback</h2>
-                        <Link href="/">View All</Link>
-                    </header>
-                    <div className={styles.customerFeedback}>
-                        <div className={styles.customerFeedbackLeft}>
-                            <div className={styles.customerUserFeedback}>
-                                <div className={styles.userName}>
-                                    <i className="fa fa-user"></i>
-                                    James
+                <div className={styles.productContainer}>
+                    <div className={styles.ProudctConatinerMain}>
+                        <div className={styles.productContainerLeft}>
+                            <div className={styles.productConatinerImage}>
+                                <img src={image} style={{ width: "auto", height: "20rem" }} alt="" />
+                                {/* <Image src={image || "/fallback.png"} alt="product image" className={styles.productImage}  fill /> */}
+                            </div>
+                            <div className={styles.productContainerBottom}>
+                                <div className={styles.productContainerBottomImages}>
+                                    <div className={styles.productContainerBottomImage}>
+                                        <Image src={image1 || "/fallback.png"} onClick={image1Clicked} alt="product image" className={styles.productImage} fill />
+                                    </div>
+                                    <div className={styles.productContainerBottomImage}>
+                                        <Image src={image2 || "/fallback.png"} onClick={image2Clicked} alt="product image" className={styles.productImage} fill />
+                                    </div>
+                                    <div className={styles.productContainerBottomImage}>
+                                        <Image src={image3 || "/fallback.png"} onClick={image3Clicked} alt="product image" className={styles.productImage} fill />
+                                    </div>
+                                </div>
+                                <button onClick={seeProductInfo} style={{ border: 'none', cursor: 'pointer', marginTop: '20px' }}><h2>Product Information</h2></button>
+                            </div>
+                        </div>
+                        <div className={styles.productContainerRight}>
+                            <div className={styles.productContainerRightTop}>
+                                <div className={styles.productDescriptionHeader}  >
+                                    <h2>{filteredProduct.name}</h2>
+                                    <p>-40%</p>
+                                </div>
+                                <div className={styles.productPrice}>
+                                    <h2>₦{Number(filteredProduct.price.current || 0).toLocaleString()}</h2>
+                                    <p>₦{Number(filteredProduct.price.old || 0).toLocaleString()}</p>
                                 </div>
                                 <div className={productstyles.productCardReviewItem}>
+                                    <p style={{ fontSize: '18px' }}>7.0</p>
                                     <div className={productstyles.productCardStars}>
                                         <i className="fa fa-star"></i>
                                         <i className="fa fa-star"></i>
@@ -241,148 +183,221 @@ const Product = () => {
                                         <i className="fa fa-star"></i>
                                         <i className="fa fa-star"></i>
                                     </div>
+                                    <p className={styles.ratingColor}>60,483 reatings</p>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit culpa maiores aperiam modi minima cumque odio unde, animi possimus voluptates enim accusamus fugit ab, magnam, autem provident ipsum officiis quaerat.</p>
                             </div>
-                            <div className={styles.customerUserFeedback}>
-                                <div className={styles.userName}>
-                                    <i className="fa fa-user"></i>
-                                    James
+                            <div className={styles.productContainerRightMiddle}>
+                                <div className={styles.productDescriptionHeader}>
+                                    <h2>Product Variations</h2>
                                 </div>
-                                <div className={productstyles.productCardReviewItem}>
-                                    <div className={productstyles.productCardStars}>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
+                                <div className={styles.productVariants}>
+                                    <h4>Available Variants:</h4>
+                                    <div className={styles.variantList}>
+                                        {filteredProduct?.variants?.map((variant, index) => (
+                                            <button key={index} className={styles.variantButton}>
+                                                {variant.color} — {variant.storage}
+                                            </button>
+                                        ))}
                                     </div>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit culpa maiores aperiam modi minima cumque odio unde, animi possimus voluptates enim accusamus fugit ab, magnam, autem provident ipsum officiis quaerat.</p>
-                            </div>
-                            <div className={styles.customerUserFeedback}>
-                                <div className={styles.userName}>
-                                    <i className="fa fa-user"></i>
-                                    James
-                                </div>
-                                <div className={productstyles.productCardReviewItem}>
-                                    <div className={productstyles.productCardStars}>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
-                                        <i className="fa fa-star"></i>
+
+                                <div className={styles.productQtyContainer}>
+                                    <div className={styles.productQty}>
+                                        <h3>Qty</h3>
+                                    </div>
+                                    <div className={styles.increaseBtn}>
+                                        <button onClick={reduceBtnClicked} className="reduceBtn">-</button>
+                                        <input type="number" value={quantity} onBlur={handleBlur} onChange={handleChanged} className="priceInput" />
+                                        <button onClick={increaseBtnClicked} className="increaseBtn active">+</button>
                                     </div>
                                 </div>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit culpa maiores aperiam modi minima cumque odio unde, animi possimus voluptates enim accusamus fugit ab, magnam, autem provident ipsum officiis quaerat.</p>
+                            </div>
+                            <div className={styles.productContainerRightBottom}>
+                                <form onSubmit={(e) => e.preventDefault()} className={styles.submitBtnForm}>
+                                    <button onClick={addToCartClicked} className={`${styles.cartBtnMain} ${styles.show}`}><i className="fa fa-shopping-cart"></i>Add to Cart</button>
+                                    <div className={styles.viewCartConatiner}>
+                                        <Link href={"/"}>Continue Shopping</Link>
+                                        <Link href={"/cart"}>Go to Cart</Link>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                        <div className={styles.customerFeedbackRight}>
-                            <h2>4.9/5.0</h2>
-                            <div className="reviewStars">
-                                <i className="fa fa-star"></i>
-                                <i className="fa fa-star"></i>
-                                <i className="fa fa-star thirdStar"></i>
-                                <i className="fa fa-star"></i>
-                                <i className="fa fa-star"></i>
+                    </div>
+                    <div className={styles.customerFeedbackContainer}>
+                        <header className={styles.customerFeedbackHeader}>
+                            <h2>Verified Customer Feedback</h2>
+                            <Link href="/">View All</Link>
+                        </header>
+                        <div className={styles.customerFeedback}>
+                            <div className={styles.customerFeedbackLeft}>
+                                <div className={styles.customerUserFeedback}>
+                                    <div className={styles.userName}>
+                                        <i className="fa fa-user"></i>
+                                        James
+                                    </div>
+                                    <div className={productstyles.productCardReviewItem}>
+                                        <div className={productstyles.productCardStars}>
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit culpa maiores aperiam modi minima cumque odio unde, animi possimus voluptates enim accusamus fugit ab, magnam, autem provident ipsum officiis quaerat.</p>
+                                </div>
+                                <div className={styles.customerUserFeedback}>
+                                    <div className={styles.userName}>
+                                        <i className="fa fa-user"></i>
+                                        James
+                                    </div>
+                                    <div className={productstyles.productCardReviewItem}>
+                                        <div className={productstyles.productCardStars}>
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit culpa maiores aperiam modi minima cumque odio unde, animi possimus voluptates enim accusamus fugit ab, magnam, autem provident ipsum officiis quaerat.</p>
+                                </div>
+                                <div className={styles.customerUserFeedback}>
+                                    <div className={styles.userName}>
+                                        <i className="fa fa-user"></i>
+                                        James
+                                    </div>
+                                    <div className={productstyles.productCardReviewItem}>
+                                        <div className={productstyles.productCardStars}>
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit culpa maiores aperiam modi minima cumque odio unde, animi possimus voluptates enim accusamus fugit ab, magnam, autem provident ipsum officiis quaerat.</p>
+                                </div>
                             </div>
-                            <div className={styles.productsRatingsContent}>
-                                <div className={styles.productsRatingsContainer}>
-                                    <h3>{5} star</h3>
-                                    <div className={styles.line}>
-                                        <div
-                                        className={styles.lineFill}
-                                        style={{ width: `${76}%` }}
-                                        ></div>
-                                    </div>
-                                    <h3>{76}%</h3>
+                            <div className={styles.customerFeedbackRight}>
+                                <h2>4.9/5.0</h2>
+                                <div className="reviewStars">
+                                    <i className="fa fa-star"></i>
+                                    <i className="fa fa-star"></i>
+                                    <i className="fa fa-star thirdStar"></i>
+                                    <i className="fa fa-star"></i>
+                                    <i className="fa fa-star"></i>
                                 </div>
-                                <div className={styles.productsRatingsContainer}>
-                                    <h3>{4} star</h3>
-                                    <div className={styles.line}>
-                                        <div
-                                        className={styles.lineFill}
-                                        style={{ width: `${15}%` }}
-                                        ></div>
+                                <div className={styles.productsRatingsContent}>
+                                    <div className={styles.productsRatingsContainer}>
+                                        <h3>{5} star</h3>
+                                        <div className={styles.line}>
+                                            <div
+                                                className={styles.lineFill}
+                                                style={{ width: `${76}%` }}
+                                            ></div>
+                                        </div>
+                                        <h3>{76}%</h3>
                                     </div>
-                                    <h3>{15}%</h3>
+                                    <div className={styles.productsRatingsContainer}>
+                                        <h3>{4} star</h3>
+                                        <div className={styles.line}>
+                                            <div
+                                                className={styles.lineFill}
+                                                style={{ width: `${15}%` }}
+                                            ></div>
+                                        </div>
+                                        <h3>{15}%</h3>
+                                    </div>
+                                    <div className={styles.productsRatingsContainer}>
+                                        <h3>{3} star</h3>
+                                        <div className={styles.line}>
+                                            <div
+                                                className={styles.lineFill}
+                                                style={{ width: `${6}%` }}
+                                            ></div>
+                                        </div>
+                                        <h3>{6}%</h3>
+                                    </div>
+                                    <div className={styles.productsRatingsContainer}>
+                                        <h3>{2} star</h3>
+                                        <div className={styles.line}>
+                                            <div
+                                                className={styles.lineFill}
+                                                style={{ width: `${2}%` }}
+                                            ></div>
+                                        </div>
+                                        <h3>{2}%</h3>
+                                    </div>
+                                    <div className={styles.productsRatingsContainer}>
+                                        <h3>{1} star</h3>
+                                        <div className={styles.line}>
+                                            <div
+                                                className={styles.lineFill}
+                                                style={{ width: `${1}%` }}
+                                            ></div>
+                                        </div>
+                                        <h3>{1}%</h3>
+                                    </div>
                                 </div>
-                                <div className={styles.productsRatingsContainer}>
-                                    <h3>{3} star</h3>
-                                    <div className={styles.line}>
-                                        <div
-                                        className={styles.lineFill}
-                                        style={{ width: `${6}%` }}
-                                        ></div>
-                                    </div>
-                                    <h3>{6}%</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <SimilarProduct />
+                    <RecentlyViewed />
+                </div>
+                <div className={styles.productDescriptionContainer}>
+                    <div className={styles.prodDesContainer}>
+                        <div className={styles.productDescriptionContainerTop}>
+                            <button onClick={removeDescription}><i className="fa fa-times"></i></button>
+                        </div>
+                        <div className={styles.productDescriptionContainerBottom}>
+                            <div className={styles.productDescriptionTopContent}>
+                                <header className={styles.productDescriptionContentHeader}>
+                                    <h2>Product Details</h2>
+                                </header>
+                                <p>{filteredProduct.description}</p>
+                            </div>
+                            <div className={styles.productDescriptionBottomContent}>
+                                <div className={styles.productSpecifications}>
+                                    <header className={styles.productDescriptionContentHeader}>
+                                        <h2>Technical Specifications</h2>
+                                    </header>
+                                    <table className={styles.specTable}>
+                                        <tbody>
+                                            {filteredProduct?.specifications?.map((spec, index) => (
+                                                <tr key={index}>
+                                                    <td><strong>{spec.key}</strong></td>
+                                                    <td>{spec.value}</td>
+                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
                                 </div>
-                                <div className={styles.productsRatingsContainer}>
-                                    <h3>{2} star</h3>
-                                    <div className={styles.line}>
-                                        <div
-                                        className={styles.lineFill}
-                                        style={{ width: `${2}%` }}
-                                        ></div>
+
+                                <div className={styles.productDescriptionContentMain}>
+                                    <div className={styles.productDescriptionContentMainLeft}>
+                                        <ul>
+                                            <li>SKU: {filteredProduct?.specificationDetails?.sku || "N/A"}</li>
+                                            <li>Product Line: {filteredProduct?.specificationDetails?.productLine || "N/A"}</li>
+                                            <li>Production Country: {filteredProduct?.specificationDetails?.productionCountry || "N/A"}</li>
+                                            <li>Weight (Kg): {filteredProduct?.specificationDetails?.weight || "N/A"}</li>
+                                            <li>Color: {filteredProduct?.specificationDetails?.color || "N/A"}</li>
+                                            <li>Care Label: {filteredProduct?.specificationDetails?.careLabel || "N/A"}</li>
+                                        </ul>
                                     </div>
-                                    <h3>{2}%</h3>
-                                </div>
-                                <div className={styles.productsRatingsContainer}>
-                                    <h3>{1} star</h3>
-                                    <div className={styles.line}>
-                                        <div
-                                        className={styles.lineFill}
-                                        style={{ width: `${1}%` }}
-                                        ></div>
+                                    <div className={styles.productDescriptionContentMainRight}>
+                                        <h2>What's in the box?</h2>
+                                        <p>One unit of free flowing dress</p>
                                     </div>
-                                    <h3>{1}%</h3>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <SimilarProduct />
-                <RecentlyViewed />
-            </div>
-            <div className={styles.productDescriptionContainer}>
-                <div className={styles.prodDesContainer}>
-                    <div className={styles.productDescriptionContainerTop}>
-                        <button onClick={removeDescription}><i className="fa fa-times"></i></button>
-                    </div>
-                    <div className={styles.productDescriptionContainerBottom}>
-                        <div className={styles.productDescriptionTopContent}>
-                            <header className={styles.productDescriptionContentHeader}>
-                                <h2>Product Details</h2>
-                            </header>
-                            <p>{filteredProduct.description}</p>
-                        </div>
-                        <div className={styles.productDescriptionBottomContent}>
-                            <header className={styles.productDescriptionContentHeader}>
-                                <h2>Specification Details</h2>
-                            </header>
-                            <div className={styles.productDescriptionContentMain}>
-                                <div className={styles.productDescriptionContentMainLeft}>
-                                    <ul>
-                                        <li>SKU: FEKMC24895585NDSBFDVY84B9</li>
-                                        <li>Product Line: FEKMC24895585NDSBFDVY84B9</li>
-                                        <li>Production Country: Nigeria</li>
-                                        <li>Weight (Kg): 1</li>
-                                        <li>Color: Green</li>
-                                        <li>Care Label: Hand and Machine Wash</li>
-                                    </ul>
-                                </div>
-                                <div className={styles.productDescriptionContentMainRight}>
-                                    <h2>What's in the box?</h2>
-                                    <p>One unit of free flowing dress</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </section>
         </>
-     );
+    );
 }
- 
+
 export default Product;
