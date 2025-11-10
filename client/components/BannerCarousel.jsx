@@ -80,7 +80,7 @@ export default function BannerCarousel() {
   const isMobile = useMediaQuery("(max-width:768px)");
 
   const settings = {
-    dots: true,
+    // dots: true,
     infinite: true,
     speed: 2,
     slidesToShow: isMobile ? 1 : 2,
