@@ -1,12 +1,23 @@
 'use client';
 
 import styles from '../../app/css/user.module.css';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import PersonalInformation from './components/PersonalInformation';
 import PaymentMethod from './components/PaymentMethod';
 import Security from './components/Security';
+import { useAuthStore } from '../auth/Auth';
 
 const UserProfile = () => {
+        const logout = useAuthStore((state) => state.logout); 
+        const router = useRouter();
+    
+        const handleLogout = () => { 
+            console.log('Logging out...');
+            logout(); // clears the user & token
+            router.push('/login'); // redirect to login page
+        };
+    
+    
 
     const pathName = usePathname();
 

@@ -8,11 +8,12 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import { useMediaQuery } from '@mui/material';
 import LoginMobile from './LoginMobile';
-
+import { useAuthStore } from '@/components/auth/Auth';
 
 const Login = () => {
     const isMobile = useMediaQuery("(max-width:768px)");
     const router = useRouter();
+    const { login } = useAuthStore();
 
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
@@ -39,20 +40,25 @@ const Login = () => {
         if (!emailVal.test(formData.email)) {
             setError("Invalid email address");
             return;
-        }   
+        }
 
         setError('');
         setLoading(true);
 
         try {
-            // ✅ Call your backend login API
-            const res = await axios.post("https://ahiaserver-api.onrender.com/api/auth/login", formData);
+            await login(formData.email, formData.password); // ✅ Use Zustand store
 
-            // ✅ Save user/token to localStorage (or cookies)
-            localStorage.setItem("user", JSON.stringify(res.data));
+            const { user, token } = useAuthStore.getState();
 
-            // ✅ Redirect to homepage
-            router.push('/');
+            // console.log('User:', user);
+            // console.log('Token:', token);
+
+            if (user && token) {
+                router.push('/');
+            } else {
+                setError('Login failed. Please check your credentials.');
+            }
+
         } catch (err) {
             console.error(err);
             setError(err.response?.data?.message || "Login failed, try again");
@@ -61,13 +67,12 @@ const Login = () => {
         }
     };
 
+
     return (
         <>
-
-
-            {isMobile ? <LoginMobile /> :
-
-
+            {isMobile ? (
+                <LoginMobile />
+            ) : (
                 <>
                     <section id="login">
                         <div className={styles.signinTop}>
@@ -81,9 +86,8 @@ const Login = () => {
                                 </div>
                                 <div className={styles.onpage}>
                                     <div className={styles.formMiddle}>
-                                        <div className={`${styles.formError} ${error ? styles.active : ""}`}>
-                                            {error}
-                                        </div>
+                                        {error && <div className={`${styles.formError} ${styles.active}`}>{error}</div>}
+
                                         <div className={styles.formDetails}>
                                             <label htmlFor="email">Email</label>
                                             <input
@@ -96,8 +100,8 @@ const Login = () => {
                                                 placeholder="Enter your email"
                                             />
                                         </div>
+
                                         <div className={styles.formDetails}>
-                                            {/* /etc/dovecot/conf.d/10-master.conf */}
                                             <label htmlFor="password">Password</label>
                                             <input
                                                 type={showPassword ? "text" : "password"}
@@ -112,6 +116,7 @@ const Login = () => {
                                                 <i className={`fa ${showPassword ? "fa-eye-slash" : "fa-eye"}`}></i>
                                             </button>
                                         </div>
+
                                         <div className={styles.formSubmitBtnContainer}>
                                             <button
                                                 type="submit"
@@ -122,6 +127,7 @@ const Login = () => {
                                                 {loading ? "Logging in..." : "Login"}
                                             </button>
                                         </div>
+
                                         <div className={styles.linksContainer}>
                                             <div className={styles.formNewUser}>
                                                 Are you new? <Link href={"/signup"}>Create Account</Link>
@@ -131,7 +137,9 @@ const Login = () => {
                                             </div>
                                         </div>
                                     </div>
+
                                     <p>or</p>
+
                                     <div className={styles.formBottom}>
                                         <div className={styles.formSubmitBtnContainerThirdParty}>
                                             <button type="button" className={styles.formGoogleBtn}>
@@ -154,9 +162,9 @@ const Login = () => {
                         <p>© 2025 AhiaGlogal Limited. All rights reserved</p>
                     </div>
                 </>
-            }
+            )}
         </>
     );
-}
+};
 
 export default Login;
