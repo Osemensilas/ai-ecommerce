@@ -455,7 +455,8 @@ export default function ProductsPage() {
   const filteredProducts = dbProducts.filter((item) => {
 
     const matchCategory = category === "All Products" || category.toLowerCase() === item.category.toLowerCase();
-    //const matchSubCategory = subCategory.toLowerCase() === item.subcategory.toLowerCase();
+    const matchesPrice = item.price.current >= minVal && item.price.current <= maxVal;
+    const matchesBrand = brandSearch === "" || item.brand.toLowerCase().includes(brandSearch.toLowerCase());
 
     const groupedFilters = selectedMainCat.reduce((acc, { field, value }) => {
       if (!acc[field]) {
@@ -471,7 +472,7 @@ export default function ProductsPage() {
       return groupedFilters[field].some((val) => val === productValue);
     });
 
-    return matchCategory && matchMainCategories;
+    return matchCategory && matchMainCategories && matchesBrand && matchesPrice;
   });
 
   console.log(filteredProducts);
