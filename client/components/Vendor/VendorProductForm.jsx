@@ -16,6 +16,12 @@ import {
 } from "@mui/material";
 import { AddCircle, RemoveCircle } from "@mui/icons-material";
 import axios from "axios";
+import { useAuthStore } from "../auth/Auth";
+import { jwtDecode } from "jwt-decode";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+
+
 
 const categoryOptions = {
   "Daily Essentials": {
@@ -144,6 +150,41 @@ const categoryOptions = {
 
 
 export default function ProductForm() {
+
+  const { user, token } = useAuthStore();
+  const logout = useAuthStore((state) => state.logout);
+  console.log("Authenticated User in ProductForm:", user, token);
+
+  const router = useRouter();
+
+    const handleLogout = () => { 
+        console.log('Logging out...');
+        logout(); // clears the user & token
+        router.push('/login'); // redirect to login page
+    };
+
+  useEffect(() => {
+    if (token) {
+      try {
+        const decoded = jwtDecode(token);
+        const currentTime = Date.now() / 1000;
+
+        if (decoded.exp < currentTime) {
+          alert("⚠️ Session expired. Please log in again.");
+           handleLogout();
+          router.push("/login");
+        }
+      } catch (error) {
+        console.error("Invalid token:", error);
+        alert("⚠️ Authentication error. Please log in again.");
+        router.push("/login");
+      }
+    } else {
+      router.push("/login");
+    }
+  }, [token, router]);
+
+
   const [product, setProduct] = useState({
     name: "",
     slug: "",
@@ -161,8 +202,8 @@ export default function ProductForm() {
       careLabel: "",
       dimension: "",
     },
-    stock: { available: true, quantity: "" },
-    seller: { name: "" },
+    stock: { available: true, quantity: 0 },
+    seller: { id: user?._id, name: "" },
     shipping: { delivery_time: "", shipping_fee: "", return_policy: "" },
     specifications: [],
     variants: [],
@@ -270,7 +311,7 @@ export default function ProductForm() {
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
- 
+
       console.log("Response:", response);
 
       if (response.status === 201) {
@@ -345,6 +386,34 @@ export default function ProductForm() {
             </TextField>
           </Grid>
 
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label="Brand"
+              fullWidth
+              name="brand"
+              value={product.brand}
+              onChange={handleChange}
+            />
+          </Grid>
+
+          <Grid item xs={12} sm={6}>
+            <TextField
+              label="Quantity in Stock"
+              type="number"
+              fullWidth
+              required
+              value={product.stock.quantity}
+              onChange={(e) =>
+                setProduct((prev) => ({
+                  ...prev,
+                  stock: { ...prev.stock, quantity: e.target.value },
+                }))
+              }
+            />
+          </Grid>
+
+
+
           <Grid item xs={12} sm={4}>
             <TextField label="Current Price (₦)" type="number" fullWidth required value={product.price.current} onChange={(e) => setProduct((prev) => ({ ...prev, price: { ...prev.price, current: e.target.value } }))} />
           </Grid>
@@ -402,14 +471,14 @@ export default function ProductForm() {
           </Grid>
 
           <Grid item xs={12}>
-            {/* {loading ? <Typography variant="body1" color="primary">
+            {loading ? <Typography variant="body1" color="primary">
               <LinearProgress /> Uploading...
             </Typography>
-              : */}
-              <Button type="submit" variant="contained" color="primary" fullWidth>
-                Submit Product
-              </Button>
-            {/* } */}
+              :
+            <Button type="submit" variant="contained" color="primary" fullWidth>
+              Submit Product
+            </Button>
+            }
           </Grid>
         </Grid>
       </Box>

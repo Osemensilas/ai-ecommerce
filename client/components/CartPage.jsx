@@ -18,6 +18,11 @@ import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import styles from '../app/css/cart.module.css';
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useAuthStore } from "./auth/Auth";
+import { jwtDecode } from "jwt-decode";
+// import { useRouter } from "next/navigation";
+
 
 const cartItems = [
     {
@@ -59,6 +64,39 @@ export default function CartPage() {
     const [page, setPage] = useState(1);
     const [isItem, setIsItem] = useState(true);
     const [activeUser, setActiveUser] = useState(true);
+    const logout = useAuthStore((state) => state.logout);
+    //   console.log("Authenticated User in ProductForm:", user, token);
+        const {user, token } = useAuthStore();
+    const router = useRouter();
+
+    const handleLogout = () => {
+        console.log('Logging out...');
+        logout();
+        router.push('/login');
+    };
+
+
+    const handleCheckAuth = () => {
+        if (token) {
+            try {
+                const decoded = jwtDecode(token);
+                const currentTime = Date.now() / 1000;
+
+                if (decoded.exp < currentTime) {
+                    alert("⚠️ Session expired. Please log in again.");
+                    handleLogout();
+                    router.push("/login");
+                }
+            } catch (error) {
+                console.error("Invalid token:", error);
+                alert("⚠️ Authentication error. Please log in again.");
+                router.push("/login");
+            }
+        } else {
+            router.push("/login");
+        }
+
+    }
 
 
     const handleChange = (event, value) => {
@@ -154,6 +192,7 @@ export default function CartPage() {
                             </Typography>
                         </Box>
                         <Button
+                            onClick={handleCheckAuth}
                             variant="contained"
                             // color="primary"
                             fullWidth

@@ -15,7 +15,16 @@ const Header = () => {
     const [borderColor, setBorderColor] = useState("#4cc933ff");
     const { user, token } = useAuthStore();
     const username = user ? user.username : null;
-    // console.log('Username in Header:', username);
+
+
+      const logout = useAuthStore((state) => state.logout);
+    //   console.log("Authenticated User in ProductForm:", user, token);
+    
+      const router = useRouter();
+    
+  
+    
+
 
     useEffect(() => {
         const colors = [
