@@ -10,6 +10,7 @@ const nextConfig = {
   },
 
   images: {
+    domains: ["ahiaserver-api.onrender.com"],
     remotePatterns: [
       {
         protocol: 'https',

@@ -10,11 +10,9 @@ import axios from "axios";
 export default function ProductsPage() {
   const searchParams = useSearchParams();
 
-  const category = searchParams.get("category") || "All Products";
-  const subCategory = searchParams.get("sub-category");
-  const type = searchParams.get("type");
-
-  console.log(type);
+  const category = searchParams.get("category") || "All Category";
+  const subCategory = searchParams.get("sub-category") || "All Sub-category";
+  const type = searchParams.get("type") || "All Type";
 
   const [minVal, setMinVal] = useState(0);
   const [maxVal, setMaxVal] = useState(500000);
@@ -363,10 +361,19 @@ export default function ProductsPage() {
     const withoutBrand = options.filter(opt => opt !== "Brand");
     setMainFilter(["Brand", ...new Set(withoutBrand)]);
 
-  async function getProducts() {
+    async function getProducts() {
 
-      const url = `https://ahiaserver-api.onrender.com/api/products/filter?category=${category}&subcategory=${subCategory}&typeCategory=${type}`;
-    
+      const baseUrl = "https://ahiaserver-api.onrender.com/api/products/filter";
+      const params = new URLSearchParams();
+
+      if (category && category !== "All Category") params.append("category", category);
+      if (subCategory && subCategory !== "All Sub-category") params.append("subcategory", subCategory);
+      if (type && type !== "All Type") params.append("typeCategory", type);
+
+      const url = `${baseUrl}${params.toString() ? "?" + params.toString() : ""}`;
+
+      console.log("Fetching from:", url);
+
       try {
         const response = await axios.get(url);
 
@@ -379,7 +386,7 @@ export default function ProductsPage() {
     }
 
     getProducts();
-  }, [type]);
+  }, [type, category, subCategory]);
 
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -454,22 +461,30 @@ export default function ProductsPage() {
     
   }
 
-  const filteredProducts = dbProducts.filter((item) => {
+  let filteredProducts = dbProducts.filter((item) => {
+    // Match category (skip if "All Category")
+    const matchCategory =
+      category === "All Category" ||
+      category.toLowerCase() === item.category.toLowerCase();
 
-    const matchCategory = category === "All Products" || category.toLowerCase() === item.category.toLowerCase();
-    const matchesPrice = item.price.current >= minVal && item.price.current <= maxVal;
-    const matchesBrand = brandSearch === "" || item.brand.toLowerCase().includes(brandSearch.toLowerCase());
+    // Match price range
+    const matchesPrice =
+      item.price.current >= minVal && item.price.current <= maxVal;
 
+    // Match brand (skip if brandSearch is empty)
+    const matchesBrand =
+      brandSearch === "" ||
+      item.brand?.toLowerCase().includes(brandSearch.toLowerCase());
+
+    // Group selected filters by field
     const groupedFilters = selectedMainCat.reduce((acc, { field, value }) => {
-      if (!acc[field]) {
-        acc[field] = [];
-      }
-      acc[field].push(value);
+      if (!acc[field]) acc[field] = [];
+      acc[field].push(value.toLowerCase());
       return acc;
     }, {});
-    
-    const matchMainCategories =
-    Object.keys(groupedFilters).every((field) => {
+
+    // Match additional filters (e.g., size, color)
+    const matchMainCategories = Object.keys(groupedFilters).every((field) => {
       const productValue = String(item[field])?.toLowerCase();
       return groupedFilters[field].some((val) => val === productValue);
     });
@@ -478,6 +493,7 @@ export default function ProductsPage() {
   });
 
   console.log(filteredProducts);
+
 
   useEffect(() => {
     if (!type) return;
@@ -640,7 +656,13 @@ export default function ProductsPage() {
               currentProducts.map((item, index) => (
                 <div key={index} className={styles.productCard}>
                   <div className={styles.productCardTop}>
-                    <Image src={item.images[0]} className={styles.productImg} alt={item.name} fill sizes="(max-width: 768px) 100vw, 50vw" /> {/* Added sizes for perf */}
+                    <Image src={
+                       item.images && item.images[0]
+                      ? item.images[0].startsWith("http")
+                        ? item.images[0]
+                        : `https://ahiaserver-api.onrender.com/${item.images[0]}`
+                      : "/"
+                    } className={styles.productImg} alt={item.name} fill sizes="(max-width: 768px) 100vw, 50vw" /> {/* Added sizes for perf */}
                   </div>
                   <div className={styles.productCardBottom}>
                     <div className={styles.productCartPriceContainer}>
