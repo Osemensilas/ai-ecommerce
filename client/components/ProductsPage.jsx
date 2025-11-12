@@ -46,280 +46,284 @@ export default function ProductsPage() {
     const catContainer = [
       {
         id: 1,
-        name: "grocery",
+        name: "Grocery",
         items: [
-          { id: 1, item: "Fresh Products", url: "/products?category=grocery&type=fresh product", type: "fresh product" },
-          { id: 2, item: "Meat & Seafood", url: "/products?category=grocery&type=meat and seafood", type: "meat and seafood" },
-          { id: 3, item: "Dairy & Eggs", url: "/products?category=grocery&type=dairy and eggs", type: "dairy and eggs" },
-          { id: 4, item: "Bakery", url: "/products?category=grocery&type=bakery", type: "bakery" },
-          { id: 5, item: "Pantry Staples", url: "/products?category=grocery&type=pantry staples", type: "pantry staples" },
-          { id: 6, item: "Beverages", url: "/products?category=grocery&type=beverages", type: "beverages" },
-          { id: 7, item: "Snacks & Candy", url: "/products?category=grocery&type=snacks and candy", type: "snacks and candy" }
+          { id: 1, item: "Fresh Products", url: "/products?category=Daily Essentials&sub-category=Grocery&type=Fresh Product", type: "Fresh Product" },
+          { id: 2, item: "Meat & Seafood", url: "/products?category=Daily Essentials&sub-category=Grocery&type=Meat and Seafood", type: "Meat and Seafood" },
+          { id: 3, item: "Dairy & Eggs", url: "/products?category=Daily Essentials&sub-category=Grocery&type=Dairy and Eggs", type: "Dairy and Eggs" },
+          { id: 4, item: "Bakery", url: "/products?category=Daily Essentials&sub-category=Grocery&type=Bakery", type: "Bakery" },
+          { id: 5, item: "Pantry Staples", url: "/products?category=Daily Essentials&sub-category=Grocery&type=Pantry Staples", type: "Pantry Staples" },
+          { id: 6, item: "Beverages", url: "/products?category=Daily Essentials&sub-category=Grocery&type=Beverages", type: "Beverages" },
+          { id: 7, item: "Snacks & Candy", url: "/products?category=Daily Essentials&sub-category=Grocery&type=Snacks and Candy", type: "Snacks and Candy" }
         ]
       },
       {
         id: 2,
-        name: "beauty",
+        name: "Beauty",
         items: [
-          { id: 1, item: "Makeup", url: "/products?category=beauty&type=makeup", type: "makeup" },
-          { id: 2, item: "Skincare", url: "/products?category=beauty&type=skincare", type: "skincare" },
-          { id: 3, item: "Haircare", url: "/products?category=beauty&type=haircare", type: "haircare" },
-          { id: 4, item: "Personal Care", url: "/products?category=beauty&type=personal care", type: "personal care" },
-          { id: 5, item: "Fragrance", url: "/products?category=beauty&type=fragrance", type: "fragrance" }
+          { id: 1, item: "Makeup", url: "/products?category=Daily Essentials&sub-category=Beauty&type=Makeup", type: "Makeup" },
+          { id: 2, item: "Skincare", url: "/products?category=Daily Essentials&sub-category=Beauty&type=Skincare", type: "Skincare" },
+          { id: 3, item: "Haircare", url: "/products?category=Daily Essentials&sub-category=Beauty&type=Haircare", type: "Haircare" },
+          { id: 4, item: "Personal Care", url: "/products?category=Daily Essentials&sub-category=Beauty&type=Personal Care", type: "Personal Care" },
+          { id: 5, item: "Fragrance", url: "/products?category=Daily Essentials&sub-category=Beauty&type=Fragrance", type: "Fragrance" }
         ]
       },
       {
         id: 3,
-        name: "health",
+        name: "Health",
         items: [
-          { id: 1, item: "Vitamins", url: "/products?category=health&type=vitamins", type: "vitamins" },
-          { id: 2, item: "Health Monitor", url: "/products?category=health&type=health monitor", type: "health monitor" },
-          { id: 3, item: "Supplement", url: "/products?category=health&type=supplement", type: "supplement" },
-          { id: 4, item: "First Aid", url: "/products?category=health&type=first aid", type: "first aid" },
-          { id: 5, item: "Vision Care", url: "/products?category=health&type=vision care", type: "vision care" },
-          { id: 6, item: "Wellness Product", url: "/products?category=health&type=wellness product", type: "wellness product" }
+          { id: 1, item: "Vitamins", url: "/products?category=Daily Essentials&sub-category=Health&type=Vitamins", type: "Vitamins" },
+          { id: 2, item: "Health Monitor", url: "/products?category=Daily Essentials&sub-category=Health&type=Health Monitor", type: "Health Monitor" },
+          { id: 3, item: "Supplement", url: "/products?category=Daily Essentials&sub-category=Health&type=Supplement", type: "Supplement" },
+          { id: 4, item: "First Aid", url: "/products?category=Daily Essentials&sub-category=Health&type=First Aid", type: "First Aid" },
+          { id: 5, item: "Vision Care", url: "/products?category=Daily Essentials&sub-category=Health&type=Vision Care", type: "Vision Care" },
+          { id: 6, item: "Wellness Product", url: "/products?category=Daily Essentials&sub-category=Health&type=Wellness Product", type: "Wellness Product" }
         ]
       },
       {
         id: 4,
-        name: "baby and maternity",
+        name: "Baby & Maternity",
         items: [
-          { id: 1, item: "Baby Clothing", url: "/products?category=baby and maternity&type=baby clothing", type: "baby clothing" },
-          { id: 2, item: "Diapers & Wipes", url: "/products?category=baby and maternity&type=diapers and wipes", type: "diapers and wipes" },
-          { id: 3, item: "Feeding Supplies", url: "/products?category=baby and maternity&type=feeding supplies", type: "feeding supplies" },
-          { id: 4, item: "Nursery (Cribs & Bedding)", url: "/products?category=baby and maternity&type=nursery", type: "nursery" },
-          { id: 5, item: "Strollers and Car Seats", url: "/products?category=baby and maternity&type=strollers and car seats", type: "strollers and car seats" },
-          { id: 6, item: "Maternity Clothing", url: "/products?category=baby and maternity&type=maternity clothing", type: "maternity clothing" }
+          { id: 1, item: "Baby Clothing", url: "/products?category=Daily Essentials&sub-category=Baby and Marternity&type=Baby Clothing", type: "Baby Clothing" },
+          { id: 2, item: "Diapers & Wipes", url: "/products?category=Daily Essentials&sub-category=Baby and Marternity&type=Diapers and Wipes", type: "Diapers and Wipes" },
+          { id: 3, item: "Feeding Supplies", url: "/products?category=Daily Essentials&sub-category=Baby and Marternity&type=Feeding Supplies", type: "Feeding Supplies" },
+          { id: 4, item: "Nursery (Cribs & Bedding)", url: "/products?category=Daily Essentials&sub-category=Baby and Marternity&type=Nursery", type: "Nursery" },
+          { id: 5, item: "Strollers and Car Seats", url: "/products?category=Daily Essentials&sub-category=Baby and Marternity&type=Strollers and Car Seats", type: "Strollers and Car Seats" },
+          { id: 6, item: "Maternity Clothing", url: "/products?category=Daily Essentials&sub-category=Baby and Marternity&type=Maternity Clothing", type: "Maternity Clothing" }
         ]
       },
       {
         id: 5,
-        name: "computers",
+        name: "Computers",
         items: [
-          { id: 1, item: "Monitor", url: "/products?category=computers&type=monitor", type: "monitor" },
-          { id: 2, item: "Digital Whiteboard", url: "/products?category=computers&type=digital whiteboard", type: "digital whiteboard" },
-          { id: 3, item: "Desktops", url: "/products?category=computers&type=desktops", type: "desktops" },
-          { id: 4, item: "Laptops", url: "/products?category=computers&type=laptops", type: "laptops" },
-          { id: 5, item: "Macbooks", url: "/products?category=computers&type=macbooks", type: "macbooks" },
-          { id: 6, item: "Computer Accessories", url: "/products?category=computers&type=computer accessories", type: "computer accessories" }
+          { id: 1, item: "Monitor", url: "/products?category=Electronics and Tech&sub-category=Computers&type=Monitor", type: "Monitor" },
+          { id: 2, item: "Digital Whiteboard", url: "/products?category=Electronics and Tech&sub-category=Computers&type=Digital Whiteboard", type: "Digital Whiteboard" },
+          { id: 3, item: "Desktops", url: "/products?category=Electronics and Tech&sub-category=Computers&type=Desktops", type: "Desktops" },
+          { id: 4, item: "Laptops", url: "/products?category=Electronics and Tech&sub-category=Computers&type=Laptops", type: "Laptops" },
+          { id: 5, item: "Macbooks", url: "/products?category=Electronics and Tech&sub-category=Computers&type=Macbooks", type: "Macbooks" },
+          { id: 6, item: "Computer Accessories", url: "/products?category=Electronics and Tech&sub-category=Computers&type=Computer Assessories", type: "Computer Assessories" }
         ]
       },
       {
         id: 6,
-        name: "smart homes",
+        name: "Smart Homes",
         items: [
-          { id: 1, item: "Plugs & Outlets", url: "/products?category=smart homes&type=plugs and outlets", type: "plugs and outlets" },
-          { id: 2, item: "Detectors & Sensors", url: "/products?category=smart homes&type=detectors and sensors", type: "detectors and sensors" },
-          { id: 3, item: "Wifi & Networking", url: "/products?category=smart homes&type=wifi and networking", type: "wifi and networking" },
-          { id: 4, item: "Cameras", url: "/products?category=smart homes&type=cameras", type: "cameras" },
-          { id: 5, item: "Locks & Entry", url: "/products?category=smart homes&type=locks and entry", type: "locks and entry" },
-          { id: 6, item: "Home Lightening", url: "/products?category=smart homes&type=home lightening", type: "home lightening" }
+          { id: 1, item: "Plugs & Outlets", url: "/products?category=Electronics and Tech&sub-category=Smart Homes&type=Plugs and Outlets", type: "Plugs and Outlets" },
+          { id: 2, item: "Detectors & Sensors", url: "/products?category=Electronics and Tech&sub-category=Smart Homes&type=Detectors and Sensors", type: "Detectors and Sensors" },
+          { id: 3, item: "Wifi & Networking", url: "/products?category=Electronics and Tech&sub-category=Smart Homes&type=Wifi and Networking", type: "Wifi and Networking" },
+          { id: 4, item: "Cameras", url: "/products?category=Electronics and Tech&sub-category=Smart Homes&type=Cameras", type: "Cameras" },
+          { id: 5, item: "Locks & Entry", url: "/products?category=Electronics and Tech&sub-category=Smart Homes&type=Locks and Entry", type: "Locks and Entry" },
+          { id: 6, item: "Home Lightening", url: "/products?category=Electronics and Tech&sub-category=Smart Homes&type=Home Lightening", type: "Home Lightening" }
         ]
       },
       {
         id: 7,
-        name: "electronics",
+        name: "Electronics",
         items: [
-          { id: 1, item: "Televisions", url: "/products?category=electronics&type=televisions", type: "televisions" },
-          { id: 2, item: "Cameras", url: "/products?category=electronics&type=cameras", type: "cameras" },
-          { id: 3, item: "Home Audio", url: "/products?category=electronics&type=home audio", type: "home audio" },
-          { id: 4, item: "Sewing Machine", url: "/products?category=electronics&type=sewing machine", type: "sewing machine" },
-          { id: 5, item: "Generators", url: "/products?category=electronics&type=generators", type: "generators" },
-          { id: 6, item: "Portable Power", url: "/products?category=electronics&type=portable power", type: "portable power" }
+          { id: 1, item: "Televisions", url: "/products?category=Electronics and Tech&sub-category=Electronics&type=Vitamins", type: "Vitamins" }, // note: matches snippet (has 'Vitamins')
+          { id: 2, item: "Cameras", url: "/products?category=Electronics and Tech&sub-category=Electronics&type=Cameras", type: "Cameras" },
+          { id: 3, item: "Home Audio", url: "/products?category=Electronics and Tech&sub-category=Electronics&type=Home Audio", type: "Home Audio" },
+          { id: 4, item: "Sewing Machine", url: "/products?category=Electronics and Tech&sub-category=Electronics&type=Sewing Machine", type: "Sewing Machine" },
+          { id: 5, item: "Generators", url: "/products?category=Electronics and Tech&sub-category=Electronics&type=Generator", type: "Generator" },
+          { id: 6, item: "Portable Power", url: "/products?category=Electronics and Tech&sub-category=Electronics&type=Portable Power", type: "Portable Power" }
         ]
       },
       {
         id: 8,
-        name: "gaming",
+        name: "Gaming",
         items: [
-          { id: 1, item: "PlayStation Console", url: "/products?category=gaming&type=playstation console", type: "playstation console" },
-          { id: 2, item: "Gaming Headset", url: "/products?category=gaming&type=gaming headset", type: "gaming headset" },
-          { id: 3, item: "Controllers", url: "/products?category=gaming&type=controllers", type: "controllers" },
-          { id: 4, item: "Gaming Merchandise", url: "/products?category=gaming&type=gaming merchandise", type: "gaming merchandise" }
+          { id: 1, item: "PlayStation Console", url: "/products?category=Electronics and tech&sub-category=Gaming&type=Playstation Console", type: "Playstation Console" },
+          { id: 2, item: "Gaming Headset", url: "/products?category=Electronics and tech&sub-category=Gaming&type=Gaming Headset", type: "Gaming Headset" },
+          { id: 3, item: "Controllers", url: "/products?category=Electronics and tech&sub-category=Gaming&type=Controllers", type: "Controllers" },
+          { id: 4, item: "Gaming Merchandise", url: "/products?category=Electronics and tech&sub-category=Gaming&type=Gaming Merchandise", type: "Gaming Merchandise" }
         ]
       },
       {
         id: 9,
-        name: "phones & tablets",
+        name: "Phones & Tablets",
         items: [
-          { id: 1, item: "iPhone", url: "/products?category=phones and tablets&type=iphone", type: "iphone" },
-          { id: 2, item: "Android", url: "/products?category=phones and tablets&type=android", type: "android" },
-          { id: 3, item: "Tablets", url: "/products?category=phones and tablets&type=tablets", type: "tablets" },
-          { id: 4, item: "Phone Accessories", url: "/products?category=phones and tablets&type=phone accessories", type: "phone accessories" }
+          { id: 1, item: "iPhone", url: "/products?category=Electronics and Tech&sub-category=Phones and Tablets&type=iPhone", type: "iPhone" },
+          { id: 2, item: "Android", url: "/products?category=Electronics and Tech&sub-category=Phones and Tablets&type=Android", type: "Android" },
+          { id: 3, item: "Tablets", url: "/products?category=Electronics and Tech&sub-category=Phones and Tablets&type=Tablets", type: "Tablets" },
+          { id: 4, item: "Phone Accessories", url: "/products?category=Electronics and Tech&sub-category=Phones and Tablets&type=Phone Accessories", type: "Phone Accessories" }
         ]
       },
       {
         id: 10,
-        name: "wearables",
+        name: "Wearables",
         items: [
-          { id: 1, item: "Smartwatches", url: "/products?category=wearables&type=smartwatches", type: "smartwatches" },
-          { id: 2, item: "Fitness Bands", url: "/products?category=wearables&type=fitness bands", type: "fitness bands" },
-          { id: 3, item: "VR Headsets", url: "/products?category=wearables&type=vr headsets", type: "vr headsets" }
+          { id: 1, item: "Smartwatches", url: "/products?category=electronics and tech&sub-category=Wearables&type=Smartwatches", type: "Smartwatches" },
+          { id: 2, item: "Fitness Bands", url: "/products?category=electronics and tech&sub-category=Wearables&type=Fitness bands", type: "Fitness bands" },
+          { id: 3, item: "VR Headsets", url: "/products?category=electronics and tech&sub-category=Wearables&type=VR Headset", type: "VR Headset" }
         ]
       },
       {
         id: 11,
-        name: "women's fashion",
+        name: "Women's Fashion",
         items: [
-          { id: 1, item: "Clothing", url: "/products?category=women's fashion&type=clothing&sex=female", type: "clothing" },
-          { id: 2, item: "Shoes", url: "/products?category=women's fashion&type=shoes&sex=female", type: "shoes" },
-          { id: 3, item: "Jewelry", url: "/products?category=women's fashion&type=jewelry&sex=female", type: "jewelry" },
-          { id: 4, item: "Watches", url: "/products?category=women's fashion&type=watches&sex=female", type: "watches" }
+          { id: 1, item: "Clothing", url: "/products?category=Fashion&sub-category=Women's Fashion&type=Clothing", type: "Clothing" },
+          { id: 2, item: "Shoes", url: "/products?category=Fashion&sub-category=Women's Fashion&type=Shoes", type: "Shoes" },
+          { id: 3, item: "Jewelry", url: "/products?category=Fashion&sub-category=Women's Fashion&type=Jewery", type: "Jewery" },
+          { id: 4, item: "Watches", url: "/products?category=Fashion&sub-category=Women's Fashion&type=Watches", type: "Watches" }
         ]
       },
       {
         id: 12,
-        name: "men's fashion",
+        name: "Men's Fashion",
         items: [
-          { id: 1, item: "Clothing", url: "/products?category=men's fashion&type=clothing&sex=male", type: "clothing" },
-          { id: 2, item: "Shoes", url: "/products?category=men's fashion&type=shoes&sex=male", type: "shoes" },
-          { id: 3, item: "Caps", url: "/products?category=men's fashion&type=caps&sex=male", type: "caps" },
-          { id: 4, item: "Watches", url: "/products?category=men's fashion&type=watches&sex=male", type: "watches" }
+          { id: 1, item: "Clothing", url: "/products?category=Fashion&sub-category=Men's Fashion&type=Clothing", type: "Clothing" },
+          { id: 2, item: "Shoes", url: "/products?category=Fashion&sub-category=Men's Fashion&type=Shoes", type: "Shoes" },
+          { id: 3, item: "Caps", url: "/products?category=Fashion&sub-category=Men's Fashion&type=Caps", type: "Caps" },
+          { id: 4, item: "Watches", url: "/products?category=Fashion&sub-category=Men's Fashion&type=Watches", type: "Watches" }
         ]
       },
       {
         id: 13,
-        name: "kids & baby fashion",
+        name: "Kids and Baby Fashion",
         items: [
-          { id: 1, item: "Clothing", url: "/products?category=kids and baby fashion&type=clothing&sex=children", type: "clothing" },
-          { id: 2, item: "Shoes", url: "/products?category=kids and baby fashion&type=shoes&sex=children", type: "shoes" },
-          { id: 3, item: "Accessories", url: "/products?category=kids and baby fashion&type=accessories&sex=children", type: "accessories" }
+          { id: 1, item: "Clothing", url: "/products?category=Fashion&sub-category=Kids and Baby Fashion&type=Clothing", type: "Clothing" },
+          { id: 2, item: "Shoes", url: "/products?category=Fashion&sub-category=Kids and Baby Fashion&type=Shoes", type: "Shoes" },
+          { id: 3, item: "Accessories", url: "/products?category=Fashion&sub-category=Kids and Baby Fashion&type=Jewery", type: "Jewery" }
         ]
       },
       {
         id: 14,
         name: "dining & kitchen",
         items: [
-          { id: 1, item: "Cookware", url: "/products?category=dining and kitchen&type=cookware", type: "cookware" },
-          { id: 2, item: "Utensils", url: "/products?category=dining and kitchen&type=utensils", type: "utensils" },
-          { id: 3, item: "Tableware", url: "/products?category=dining and kitchen&type=tableware", type: "tableware" }
+          { id: 1, item: "Cookware", url: "/products?category=Home&sub-category=Dining and Kitchen&type=Cookware", type: "Cookware" },
+          { id: 2, item: "Utensils", url: "/products?category=Home&sub-category=Dining and Kitchen&type=Utensils", type: "Utensils" },
+          { id: 3, item: "Tableware", url: "/products?category=Home&sub-category=Dining and Kitchen&type=Tableware", type: "Tableware" }
         ]
       },
       {
         id: 15,
         name: "home decor",
         items: [
-          { id: 1, item: "Wall Art", url: "/products?category=home decor&type=wall art", type: "wall art" },
-          { id: 2, item: "Vases", url: "/products?category=home decor&type=vases", type: "vases" }
+          { id: 1, item: "Wall Art", url: "/products?category=Home&sub-category=Home Decor&type=Wall Art", type: "Wall Art" },
+          { id: 2, item: "Vases", url: "/products?category=Home&sub-category=Home Decor&type=Vases", type: "Vases" }
         ]
       },
       {
         id: 16,
         name: "home essentials",
         items: [
-          { id: 1, item: "Furniture", url: "/products?category=home essentials&type=furniture", type: "furniture" },
-          { id: 2, item: "Bedding", url: "/products?category=home essentials&type=bedding", type: "bedding" },
-          { id: 3, item: "Rugs", url: "/products?category=home essentials&type=rugs", type: "rugs" },
-          { id: 4, item: "Curtains & Window", url: "/products?category=home essentials&type=curtains and window", type: "curtains and window" },
-          { id: 5, item: "Lighting & Ceiling Fans", url: "/products?category=home essentials&type=lighting and ceiling fans", type: "lighting and ceiling fans" }
+          { id: 1, item: "Furniture", url: "/products?category=Home&sub-category=Home Essentials&type=Furniture", type: "Furniture" },
+          { id: 2, item: "Bedding", url: "/products?category=Home&sub-category=Home Essentials&type=Bedding", type: "Bedding" },
+          { id: 3, item: "Rugs", url: "/products?category=Home&sub-category=Home Essentials&type=Rugs", type: "Rugs" },
+          { id: 4, item: "Curtains & Window", url: "/products?category=Home&sub-category=Home Essentials&type=Curtains and Windows", type: "Curtains and Windows" },
+          { id: 5, item: "Lighting & Ceiling Fans", url: "/products?category=Home&sub-category=Home Essentials&type=Lightening and Ceiling Fans", type: "Lightening and Ceiling Fans" }
         ]
       },
       {
         id: 17,
         name: "appliances",
         items: [
-          { id: 1, item: "Blenders", url: "/products?category=appliances&type=blenders", type: "blenders" },
-          { id: 2, item: "Air Fryers", url: "/products?category=appliances&type=air fryers", type: "air fryers" },
-          { id: 3, item: "Electric Jugs", url: "/products?category=appliances&type=electric jugs", type: "electric jugs" }
+          { id: 1, item: "Blenders", url: "/products?category=Home&sub-category=Appliances&type=Blenders", type: "Blenders" },
+          { id: 2, item: "Air Fryers", url: "/products?category=Home&sub-category=Appliances&type=Air Fryers", type: "Air Fryers" },
+          { id: 3, item: "Electric Jugs", url: "/products?category=Home&sub-category=Appliances&type=Electric Jugs", type: "Electric Jugs" }
         ]
       },
       {
         id: 18,
         name: "luggage & travel",
         items: [
-          { id: 1, item: "Suitcases", url: "/products?category=luggage and travel&type=suitcases", type: "suitcases" },
-          { id: 2, item: "Bag Packs", url: "/products?category=luggage and travel&type=bag packs", type: "bag packs" },
-          { id: 3, item: "Travel Accessories", url: "/products?category=luggage and travel&type=travel accessories", type: "travel accessories" }
+          { id: 1, item: "Suitcases", url: "/products?category=Home&sub-category=Luggage and Travel&type=Suitcases", type: "Suitcases" },
+          { id: 2, item: "Bag Packs", url: "/products?category=Home&sub-category=Luggage and Travel&type=Bag Packs", type: "Bag Packs" },
+          { id: 3, item: "Travel Accessories", url: "/products?category=Home&sub-category=Luggage and Travel&type=Travel Accessories", type: "Travel Accessories" }
         ]
       },
       {
         id: 19,
         name: "building materials",
         items: [
-          { id: 1, item: "Plumbing", url: "/products?category=building materials&type=plumbing", type: "plumbing" },
-          { id: 2, item: "Electrical", url: "/products?category=building materials&type=electrical", type: "electrical" },
-          { id: 3, item: "Paint & Supplies", url: "/products?category=building materials&type=paint and supplies", type: "paint and supplies" }
+          { id: 1, item: "Plumbing", url: "/products?category=Home&sub-category=Building Material&type=Plumbing", type: "Plumbing" },
+          { id: 2, item: "Electrical", url: "/products?category=Home&sub-category=Building Material&type=Electrical", type: "Electrical" },
+          { id: 3, item: "Paint & Supplies", url: "/products?category=Home&sub-category=Building Material&type=Paint and Supplies", type: "Paint and Supplies" }
         ]
       },
       {
         id: 20,
-        name: "car accessories",
+        name: "Car Accessories",
         items: [
-          { id: 1, item: "Tyres", url: "/products?category=car accessories&type=tyres", type: "tyres" },
-          { id: 2, item: "Car Rims", url: "/products?category=car accessories&type=car rims", type: "car rims" },
-          { id: 3, item: "Cleaning Kits", url: "/products?category=car accessories&type=cleaning kits", type: "cleaning kits" },
-          { id: 4, item: "Tools & Equipment", url: "/products?category=car accessories&type=tools and equipment", type: "tools and equipment" }
+          { id: 1, item: "Tyres", url: "/products?category=Automative&sub-category=Car Accessories&type=Tyres", type: "Tyres" },
+          { id: 2, item: "Car Rims", url: "/products?category=Automative&sub-category=Car Accessories&type=Car Rims", type: "Car Rims" },
+          { id: 3, item: "Cleaning Kits", url: "/products?category=Automative&sub-category=Car Accessories&type=Cleaning Kits", type: "Cleaning Kits" },
+          { id: 4, item: "Tools & Equipment", url: "/products?category=Automative&sub-category=Car Accessories&type=Tools and Equipment", type: "Tools and Equipment" }
         ]
       },
       {
         id: 21,
-        name: "motorcycle",
+        name: "Motorcycle",
         items: [
-          { id: 1, item: "Tyres", url: "/products?category=motorcycle&type=tyres", type: "tyres" },
-          { id: 2, item: "Cleaning Kits", url: "/products?category=motorcycle&type=cleaning kits", type: "cleaning kits" },
-          { id: 3, item: "Accessories", url: "/products?category=motorcycle&type=accessories", type: "accessories" }
+          { id: 1, item: "Tyres", url: "/products?category=Automative&sub-category=Motorcycle&type=Makeup", type: "Makeup" }, // matches snippet (type=Makeup)
+          { id: 2, item: "Cleaning Kits", url: "/products?category=Automative&sub-category=Motorcycle&type=Cleaning Kits", type: "Cleaning Kits" },
+          { id: 3, item: "Accessories", url: "/products?category=Automative&sub-category=Motorcycle&type=Accessories", type: "Accessories" }
         ]
       },
       {
         id: 22,
-        name: "car care",
+        name: "Car Care",
         items: [
-          { id: 1, item: "Brake Fluid", url: "/products?category=car care&type=brake fluid", type: "brake fluid" },
-          { id: 2, item: "Oil", url: "/products?category=car care&type=oil", type: "oil" },
-          { id: 3, item: "Additives", url: "/products?category=car care&type=additives", type: "additives" },
-          { id: 4, item: "Lubricants", url: "/products?category=car care&type=lubricants", type: "lubricants" }
+          { id: 1, item: "Brake Fluid", url: "/products?category=Automative&sub-category=Car Care&type=Brake Fluid", type: "Brake Fluid" },
+          { id: 2, item: "Oil", url: "/products?category=Automative&sub-category=Car Care&type=Oil", type: "Oil" },
+          { id: 3, item: "Additives", url: "/products?category=Automative&sub-category=Car Care&type=Additives", type: "Additives" },
+          { id: 4, item: "Lubricants", url: "/products?category=Automative&sub-category=Car Care&type=Lubricants", type: "Lubricants" }
         ]
       },
       {
         id: 23,
-        name: "interior accessories",
+        name: "Interior Accessories",
         items: [
-          { id: 1, item: "Wheels", url: "/products?category=interior accessories&type=wheels", type: "wheels" },
-          { id: 2, item: "Trackers", url: "/products?category=interior accessories&type=trackers", type: "trackers" },
-          { id: 3, item: "Air Fresheners", url: "/products?category=interior accessories&type=air fresheners", type: "air fresheners" },
-          { id: 4, item: "Seat Covers", url: "/products?category=interior accessories&type=seat covers", type: "seat covers" }
+          { id: 1, item: "Wheels", url: "/products?category=Automative&sub-category=Interior Design&type=Wheels", type: "Wheels" },
+          { id: 2, item: "Trackers", url: "/products?category=Automative&sub-category=Interior Design&type=Trackers", type: "Trackers" },
+          { id: 3, item: "Air Fresheners", url: "/products?category=Automative&sub-category=Interior Design&type=Air Freshners", type: "Air Freshners" },
+          { id: 4, item: "Seat Covers", url: "/products?category=Automative&sub-category=Interior Design&type=Seat Covers", type: "Seat Covers" }
         ]
       },
       {
         id: 24,
-        name: "school supplies",
+        name: "School Supplies",
         items: [
-          { id: 1, item: "Notebooks", url: "/products?category=school supplies&type=notebooks", type: "notebooks" },
-          { id: 2, item: "Pens & Pencils", url: "/products?category=school supplies&type=pens and pencils", type: "pens and pencils" },
-          { id: 3, item: "Art Supplies", url: "/products?category=school supplies&type=art supplies", type: "art supplies" }
+          { id: 1, item: "Notebooks", url: "/products?category=Office&sub-category=School Supplies&type=Bag Packs", type: "Bag Packs" },
+          { id: 2, item: "Pens & Pencils", url: "/products?category=Office&sub-category=School Supplies&type=Calculators", type: "Calculators" },
+          { id: 3, item: "Art Supplies", url: "/products?category=Office&sub-category=School Supplies&type=Books", type: "Books" }
         ]
       },
       {
         id: 25,
-        name: "office accessories",
+        name: "Office Accessories",
         items: [
-          { id: 1, item: "Printers", url: "/products?category=office accessories&type=printers", type: "printers" },
-          { id: 2, item: "Stationery", url: "/products?category=office accessories&type=stationery", type: "stationery" },
-          { id: 3, item: "Desk Organizers", url: "/products?category=office accessories&type=desk organizers", type: "desk organizers" },
-          { id: 4, item: "Office Chairs", url: "/products?category=office accessories&type=office chairs", type: "office chairs" }
+          { id: 1, item: "Printers", url: "/products?category=Office&sub-category=Office Accessories&type=Printer", type: "Printer" },
+          { id: 2, item: "Stationery", url: "/products?category=Office&sub-category=Office Accessories&type=Paper and Stationery", type: "Paper and Stationery" },
+          { id: 3, item: "Desk Organizers", url: "/products?category=Office&sub-category=Office Accessories&type=Shredders", type: "Shredders" },
+          { id: 4, item: "Office Chairs", url: "/products?category=Office&sub-category=Office Accessories&type=Desk Organizers", type: "Desk Organizers" }
         ]
       },
       {
         id: 26,
-        name: "professional services",
+        name: "Professional",
         items: [
-          { id: 1, item: "Legal Services", url: "/products?category=professional services&type=legal services", type: "legal services" },
-          { id: 2, item: "Accounting", url: "/products?category=professional services&type=accounting", type: "accounting" },
-          { id: 3, item: "Consulting", url: "/products?category=professional services&type=consulting", type: "consulting" },
-          { id: 4, item: "Cleaning Services", url: "/products?category=professional services&type=cleaning services", type: "cleaning services" },
-          { id: 5, item: "Repair & Maintenance", url: "/products?category=professional services&type=repair and maintenance", type: "repair and maintenance" },
-          { id: 6, item: "Tutoring", url: "/products?category=professional services&type=tutoring", type: "tutoring" }
+          { id: 1, item: "Legal Services", url: "/products?category=Services&sub-category=Professional&type=Pharmacy", type: "Pharmacy" },
+          { id: 2, item: "Accounting", url: "/products?category=Services&sub-category=Professional&type=Auto Services", type: "Auto Services" },
+          { id: 3, item: "Consulting", url: "/products?category=Services&sub-category=Professional&type=Financial Services", type: "Financial Services" },
+          { id: 4, item: "Cleaning Services", url: "/products?category=Services&sub-category=Professional&type=Optical Services", type: "Optical Services" },
+          { id: 5, item: "Repair & Maintenance", url: "/products?category=Services&sub-category=Professional&type=Cleaning Services", type: "Cleaning Services" },
+          { id: 6, item: "Tutoring", url: "/products?category=Services&sub-category=Professional&type=Fitness Services", type: "Fitness Services" }
         ]
       }
     ];
 
-    const selectedCategory = catContainer.find(cat => cat.name === category);
+
+    const selectedCategory = catContainer.find((cat => cat.name === subCategory));
+    
     if (selectedCategory) {
       setNavMenu(selectedCategory.items);
     } else {
       setNavMenu([]);
     }
   }, [category])
+
+
 
   const filterOptions = {
     shoes: ["Color", "Size", "Brand", "Material"],
@@ -509,6 +513,8 @@ export default function ProductsPage() {
   const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  console.log("Here is the mini-nav", navMenu);
 
   return (
     <>
