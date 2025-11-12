@@ -514,8 +514,6 @@ export default function ProductsPage() {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  console.log("Here is the mini-nav", navMenu);
-
   return (
     <>
       <div className={styles.page}>
