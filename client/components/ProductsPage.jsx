@@ -14,6 +14,8 @@ export default function ProductsPage() {
   const subCategory = searchParams.get("sub-category");
   const type = searchParams.get("type");
 
+  console.log(type);
+
   const [minVal, setMinVal] = useState(0);
   const [maxVal, setMaxVal] = useState(500000);
   const [navMenu, setNavMenu] = useState([]);
@@ -362,9 +364,9 @@ export default function ProductsPage() {
     setMainFilter(["Brand", ...new Set(withoutBrand)]);
 
   async function getProducts() {
-      const url = `https://ahiaserver-api.onrender.com/api/products/filter?category=${category}&subcategory=${subCategory}`;
-      
-      //const newUrl = "https://ahiaserver-api.onrender.com/api/products/filter?category=Electronics and Tech&subcategory=Phones and Tablets&typeCategory=Andriod";
+
+      const url = `https://ahiaserver-api.onrender.com/api/products/filter?category=${category}&subcategory=${subCategory}&typeCategory=${type}`;
+    
       try {
         const response = await axios.get(url);
 

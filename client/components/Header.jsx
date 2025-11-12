@@ -379,7 +379,7 @@ const Header = () => {
                                             <h3>Phones & Tablets</h3>
                                             <div className={styles.filterContentNavigationList}>
                                                 <Link href="/products?category=Electronics and Tech&sub-category=Phones and Tablets&type=iPhone" onClick={removeCover} >iPhone</Link>
-                                                <Link href="/products?category=Electronics and Tech&sub-category=Phones and Tablets&type=Andriod" onClick={removeCover} >Andriod</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Phones and Tablets&type=Android" onClick={removeCover} >Andriod</Link>
                                                 <Link href="/products?category=Electronics and Tech&sub-category=Phones and Tablets&type=Tablets" onClick={removeCover} >Tablets</Link>
                                                 <Link href="/products?category=Electronics and Tech&sub-category=Phones and Tablets&type=Phone Accessories" onClick={removeCover} >Phone Accessories</Link>
                                             </div>
@@ -737,7 +737,7 @@ const Header = () => {
                                             <h3>Phones & Tablets</h3>
                                             <div className={styles.filterContentNavigationList}>
                                                 <Link href="/products?category=Electronics and Tech&sub-category=Phones and Tablets&type=iPhone" onClick={removeCover} >iPhone</Link>
-                                                <Link href="/products?category=Electronics and Tech&sub-category=Phones and Tablets&type=Andriod" onClick={removeCover} >Andriod</Link>
+                                                <Link href="/products?category=Electronics and Tech&sub-category=Phones and Tablets&type=Android" onClick={removeCover} >Andriod</Link>
                                                 <Link href="/products?category=Electronics and Tech&sub-category=Phones and Tablets&type=Tablets" onClick={removeCover} >Tablets</Link>
                                                 <Link href="/products?category=Electronics and Tech&sub-category=Phones and Tablets&type=Phone Accessories" onClick={removeCover} >Phone Accessories</Link>
                                             </div>
