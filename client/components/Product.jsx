@@ -13,7 +13,6 @@ import { useCartStore } from './auth/Cart';
 
 const Product = () => {
 
-    const { addToCart } = useCartStore();
     const searchParams = useSearchParams();
 
     const productIdentity = searchParams.get("product_id");
@@ -39,50 +38,46 @@ const Product = () => {
         setImage(image3);
     }
 
-    const increaseBtnClicked = (e) => {
-        let increaseBtn = e.currentTarget;
-        let qtyInput = increaseBtn.parentElement.children[1];
-        let qtyInputValue = parseInt(qtyInput.value);
 
-        qtyInputValue += 1;
-        qtyInput.value = qtyInputValue;
-    }
+    const increaseBtnClicked = () => {
+        setQuantity((q) => {
+            const cur = Number(q) || 0;
+            return cur + 1;
+        });
+    };
 
-    const reduceBtnClicked = (e) => {
-        let increaseBtn = e.currentTarget;
-        let qtyInput = increaseBtn.parentElement.children[1];
-        let qtyInputValue = parseInt(qtyInput.value);
 
-        qtyInputValue -= 1;
-        qtyInput.value = qtyInputValue;
+    const reduceBtnClicked = () => {
+        setQuantity((q) => {
+            const cur = Number(q) || 1;
+            return Math.max(1, cur - 1);
+        });
+    };
 
-        if (qtyInputValue < 1) {
-            qtyInput.value = 1;
-        }
-    }
 
     const handleChanged = (e) => {
-        let value = e.currentTarget.value;
+        const value = e.currentTarget.value;
 
         if (value === "") {
             setQuantity("");
             return;
         }
 
-        let numValue = Number(value);
+        const numValue = Number(value);
 
         if (isNaN(numValue) || numValue <= 0) {
             setQuantity(1);
         } else {
-            setQuantity(numValue);
+            setQuantity(Math.floor(numValue));
         }
     };
 
     const handleBlur = () => {
-        if (quantity === "" || quantity <= 0) {
+        if (quantity === "" || Number(quantity) <= 0) {
             setQuantity(1);
         }
     };
+
 
     const seeProductInfo = () => {
         let productDescription = document.querySelector(`.${styles.productDescriptionContainer}`);
@@ -105,11 +100,13 @@ const Product = () => {
     }
 
     const addProductToCart = () => {
+        // console.log("Adding to cart:", filteredProduct, "Quantity:", quantity); 
         useCartStore.getState().addToCart({
             ...filteredProduct,
             quantity: quantity,
         });
     };
+
 
     useEffect(() => {
         if (!productIdentity) return;
@@ -117,12 +114,7 @@ const Product = () => {
             const url = `https://ahiaserver-api.onrender.com/api/products/${productIdentity}`;
 
             try {
-                const response = await axios.get(url, {
-                    headers: {
-                        "Content-Type": "application/json",
-                        "Host": "api.ahiaglobal.com",
-                    },
-                });
+                const response = await axios.get(url);
 
                 console.log(response.data);
 
@@ -216,14 +208,23 @@ const Product = () => {
                                     </div>
                                     <div className={styles.increaseBtn}>
                                         <button onClick={reduceBtnClicked} className="reduceBtn">-</button>
-                                        <input type="number" value={quantity} onBlur={handleBlur} onChange={handleChanged} className="priceInput" />
+
+                                        <input
+                                            type="number"
+                                            value={quantity}
+                                            onBlur={handleBlur}
+                                            onChange={handleChanged}
+                                            className="priceInput"
+                                            min={1}
+                                        />
+
                                         <button onClick={increaseBtnClicked} className="increaseBtn active">+</button>
+
                                     </div>
                                 </div>
                             </div>
                             <div className={styles.productContainerRightBottom}>
                                 <form onSubmit={(e) => e.preventDefault()} className={styles.submitBtnForm}>
-
                                     <button
                                         onClick={() => {
                                             addToCartClicked();
@@ -231,9 +232,8 @@ const Product = () => {
                                         }}
                                         className={`${styles.cartBtnMain} ${styles.show}`}
                                     >
-                                        <i className="fa fa-shopping-cart"></i>Add to Cart
+                                        <i className="fa fa-shopping-cart"></i> Add to Cart
                                     </button>
-
 
                                     <div className={styles.viewCartConatiner}>
                                         <Link href={"/"}>Continue Shopping</Link>

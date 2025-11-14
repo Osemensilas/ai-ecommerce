@@ -369,7 +369,7 @@ export default function ProductsPage() {
     setMainFilter(["Brand", ...new Set(withoutBrand)]);
 
     async function getProducts() {
-<<<<<<< HEAD
+
 
       const baseUrl = "https://ahiaserver-api.onrender.com/api/products/filter";
       const params = new URLSearchParams();
@@ -382,11 +382,6 @@ export default function ProductsPage() {
 
       console.log("Fetching from:", url);
 
-=======
-      const url = `https://ahiaserver-api.onrender.com/api/products/filter?category=${category}&subcategory=${subCategory}`;
-
-      //const newUrl = "https://ahiaserver-api.onrender.com/api/products/filter?category=Electronics and Tech&subcategory=Phones and Tablets&typeCategory=Andriod";
->>>>>>> 0fd155b (solo)
       try {
         const response = await axios.get(url);
 
@@ -496,19 +491,13 @@ export default function ProductsPage() {
       return acc;
     }, {});
 
-<<<<<<< HEAD
+
     // Match additional filters (e.g., size, color)
     const matchMainCategories = Object.keys(groupedFilters).every((field) => {
       const productValue = String(item[field])?.toLowerCase();
       return groupedFilters[field].some((val) => val === productValue);
     });
-=======
-    const matchMainCategories =
-      Object.keys(groupedFilters).every((field) => {
-        const productValue = String(item[field])?.toLowerCase();
-        return groupedFilters[field].some((val) => val === productValue);
-      });
->>>>>>> 0fd155b (solo)
+
 
     return matchCategory && matchMainCategories && matchesBrand && matchesPrice;
   });
@@ -675,12 +664,12 @@ export default function ProductsPage() {
               <p>No product in the category</p>
             ) : (
               currentProducts.map((item, index) => (
-<<<<<<< HEAD
+                <Link href={`/product?product_id=${item._id}`} key={index} className={styles.productCardLink}> 
                 <div key={index} className={styles.productCard}>
                   <div className={styles.productCardTop}>
                     <Image src={
                        item.images && item.images[0]
-                      ? item.images[0].startsWith("http")
+                      ? item.images[0].startsWith("http") 
                         ? item.images[0]
                         : `https://ahiaserver-api.onrender.com/${item.images[0]}`
                       : "/"
@@ -690,12 +679,6 @@ export default function ProductsPage() {
                     <div className={styles.productCartPriceContainer}>
                       <h2>₦{Number(item.price.current).toLocaleString()}</h2>
                       {/* <p>{item.stock === "in-stock" ? "In Stock" : item.stock}</p> */}
-=======
-                <Link href={`/product?product_id=${item._id}`}> {/* Use dynamic id */}
-                  <div key={index} className={styles.productCard}>
-                    <div className={styles.productCardTop} style={{ background: "transparent" }} >
-                      <Image src={item.images[0]} className={styles.productImg} alt={item.name} fill sizes="" /> {/* Added sizes for perf */}
->>>>>>> 0fd155b (solo)
                     </div>
                     <div className={styles.productCardBottom}>
                       <div className={styles.productCartPriceContainer}>
@@ -727,6 +710,7 @@ export default function ProductsPage() {
                         <ShoppingCartSharp style={{ width: "15px" }} product={item} />
                       </div>
                     </div>
+                  </div>
                   </div>
                 </Link>
               ))

@@ -1,5 +1,5 @@
-import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 export const useCartStore = create(
   persist(
@@ -10,15 +10,17 @@ export const useCartStore = create(
       addToCart: (product) => {
         const existing = get().cart.find((item) => item._id === product._id);
         let updatedCart;
+
         if (existing) {
           updatedCart = get().cart.map((item) =>
             item._id === product._id
-              ? { ...item, quantity: item.quantity + 1 }
+              ? { ...item, quantity: item.quantity + product.quantity }
               : item
           );
         } else {
-          updatedCart = [...get().cart, { ...product, quantity: 1 }];
+          updatedCart = [...get().cart, { ...product }];
         }
+
         set({
           cart: updatedCart,
           total: updatedCart.reduce((sum, i) => sum + i.price * i.quantity, 0),
@@ -36,7 +38,7 @@ export const useCartStore = create(
       clearCart: () => set({ cart: [], total: 0 }),
     }),
     {
-      name: 'cart-storage', // persist cart in localStorage
+      name: "cart-storage", // persist cart in localStorage
     }
   )
 );

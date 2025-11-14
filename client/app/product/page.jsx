@@ -8,7 +8,7 @@ const ProductPage = () => {
     return ( 
         <>
         <Header />
-        <ProductWrapper />
+        <ProductWrapper /> 
         <FAQ />
         <Footer />
         </>
