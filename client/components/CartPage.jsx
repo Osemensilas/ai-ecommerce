@@ -20,44 +20,52 @@ import styles from '../app/css/cart.module.css';
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuthStore } from "./auth/Auth";
+import { useCartStore } from "./auth/Cart";
 import { jwtDecode } from "jwt-decode";
 // import { useRouter } from "next/navigation";
 
-
-const cartItems = [
+const cartItems1 = [
     {
         id: 1,
-        title: "55'' Human Hair",
-        price: 450000,
-        condition: "NEW",
-        color: "BLACK",
-        image: "/jacket.png",
+        title: "Apple iPhone 13 Pro Max",
+        condition: "New",
+        color: "Silver",
+        price: 120000,
+        image: "/iphone13promax.jpg",
     },
     {
         id: 2,
-        title: "Amore Nesco",
-        price: 60000,
-        condition: "NEW",
-        color: "WHITE",
-        image: "autowatch.png",
+        title: "Samsung Galaxy S21 Ultra",
+        condition: "New",
+        color: "Phantom Black",
+        price: 110000,
+        image: "/samsungs21ultra.jpg",
     },
     {
         id: 3,
-        title: "Designer Shirt",
-        price: 75000,
-        condition: "NEW",
-        color: "BLUE",
-        image: "men.png",
+        title: "Google Pixel 6 Pro",
+        condition: "New",
+        color: "Stormy Black",
+        price: 90000,
+        image: "/googlepixel6pro.jpg",
     },
     {
         id: 4,
-        title: "Luxury Bag",
-        price: 150000,
-        condition: "NEW",
-        color: "BROWN",
-        image: "hair1.png",
+        title: "OnePlus 9 Pro",
+        condition: "New",
+        color: "Pine Green",
+        price: 85000,
+        image: "/oneplus9pro.jpg",
     },
-];
+    {
+        id: 5,
+        title: "Sony Xperia 1 III",
+        condition: "New",
+        color: "Frosted Black",
+        price: 95000,
+        image: "/sonyxperia1iii.jpg",
+    },
+]
 
 export default function CartPage() {
     const itemsPerPage = 3;
@@ -66,7 +74,7 @@ export default function CartPage() {
     const [activeUser, setActiveUser] = useState(true);
     const logout = useAuthStore((state) => state.logout);
     //   console.log("Authenticated User in ProductForm:", user, token);
-        const {user, token } = useAuthStore();
+    const { user, token } = useAuthStore();
     const router = useRouter();
 
     const handleLogout = () => {
@@ -74,6 +82,17 @@ export default function CartPage() {
         logout();
         router.push('/login');
     };
+
+
+    const cartItems = useCartStore((state) => state.cart);
+    console.log("Cart Items from Store:", cartItems);
+
+    const {removeFromCart} = useCartStore();
+
+    const deletItem = (id) => {
+        removeFromCart(id);
+    }
+
 
 
     const handleCheckAuth = () => {
@@ -106,7 +125,7 @@ export default function CartPage() {
     const startIndex = (page - 1) * itemsPerPage;
     const selectedItems = cartItems.slice(startIndex, startIndex + itemsPerPage);
 
-    const total = cartItems.reduce((sum, item) => sum + item.price, 0);
+    const total = cartItems.reduce((sum, item) => sum + item.price.current, 0);
 
     return (
         <Box sx={{ p: 4, bgcolor: "#fafafa", minHeight: "100vh", width: '100vw' }}>
@@ -127,21 +146,24 @@ export default function CartPage() {
                                     <CardMedia
                                         component="img"
                                         sx={{ width: 120, height: 120, borderRadius: 2 }}
-                                        image={item.image}
-                                        alt={item.title}
+                                        image={item.images[0]}
+                                        alt={item.name}
                                     />
                                     <CardContent sx={{ flex: "1 0 auto" }}>
-                                        <Typography variant="h6" fontWeight="bold">
-                                            {item.title}
+                                        <Typography variant="" fontWeight="">
+                                            {item.name}
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary">
-                                            Condition: {item.condition} | Color: {item.color}
+                                         Quantity: {item.quantity} 
                                         </Typography>
-                                        <Typography variant="h6" color="#0c0483f5" mt={1}>
-                                            ₦{item.price.toLocaleString()}
+                                        <Typography variant="" color="#0c0483f5" mt={1}>
+                                            ₦{item.price.current}
+                                        </Typography>
+                                        <Typography variant="body2" color="text.secondary" sx={{ textDecoration: 'line-through' }}>
+                                            ₦{item.price.old} 
                                         </Typography>
                                     </CardContent>
-                                    <IconButton color="error">
+                                    <IconButton onClick={() => deletItem(item._id)}  color="error">
                                         <DeleteIcon />
                                     </IconButton>
                                 </Card>

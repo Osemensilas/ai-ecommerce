@@ -6,6 +6,9 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import axios from "axios";
+import { ShoppingCartSharp } from "@mui/icons-material";
+import { Typography } from "@mui/material";
+
 
 export default function ProductsPage() {
   const searchParams = useSearchParams();
@@ -366,6 +369,7 @@ export default function ProductsPage() {
     setMainFilter(["Brand", ...new Set(withoutBrand)]);
 
     async function getProducts() {
+<<<<<<< HEAD
 
       const baseUrl = "https://ahiaserver-api.onrender.com/api/products/filter";
       const params = new URLSearchParams();
@@ -378,6 +382,11 @@ export default function ProductsPage() {
 
       console.log("Fetching from:", url);
 
+=======
+      const url = `https://ahiaserver-api.onrender.com/api/products/filter?category=${category}&subcategory=${subCategory}`;
+
+      //const newUrl = "https://ahiaserver-api.onrender.com/api/products/filter?category=Electronics and Tech&subcategory=Phones and Tablets&typeCategory=Andriod";
+>>>>>>> 0fd155b (solo)
       try {
         const response = await axios.get(url);
 
@@ -462,7 +471,7 @@ export default function ProductsPage() {
   }
 
   const filterClicked = () => {
-    
+
   }
 
   let filteredProducts = dbProducts.filter((item) => {
@@ -487,11 +496,19 @@ export default function ProductsPage() {
       return acc;
     }, {});
 
+<<<<<<< HEAD
     // Match additional filters (e.g., size, color)
     const matchMainCategories = Object.keys(groupedFilters).every((field) => {
       const productValue = String(item[field])?.toLowerCase();
       return groupedFilters[field].some((val) => val === productValue);
     });
+=======
+    const matchMainCategories =
+      Object.keys(groupedFilters).every((field) => {
+        const productValue = String(item[field])?.toLowerCase();
+        return groupedFilters[field].some((val) => val === productValue);
+      });
+>>>>>>> 0fd155b (solo)
 
     return matchCategory && matchMainCategories && matchesBrand && matchesPrice;
   });
@@ -503,7 +520,7 @@ export default function ProductsPage() {
     if (!type) return;
 
     const catFilter = dbProducts.filter(item => item.type === type);
-    
+
   }, [type]);
 
   const indexOfLast = currentPage * productsPerPage;
@@ -658,6 +675,7 @@ export default function ProductsPage() {
               <p>No product in the category</p>
             ) : (
               currentProducts.map((item, index) => (
+<<<<<<< HEAD
                 <div key={index} className={styles.productCard}>
                   <div className={styles.productCardTop}>
                     <Image src={
@@ -672,25 +690,45 @@ export default function ProductsPage() {
                     <div className={styles.productCartPriceContainer}>
                       <h2>₦{Number(item.price.current).toLocaleString()}</h2>
                       {/* <p>{item.stock === "in-stock" ? "In Stock" : item.stock}</p> */}
+=======
+                <Link href={`/product?product_id=${item._id}`}> {/* Use dynamic id */}
+                  <div key={index} className={styles.productCard}>
+                    <div className={styles.productCardTop} style={{ background: "transparent" }} >
+                      <Image src={item.images[0]} className={styles.productImg} alt={item.name} fill sizes="" /> {/* Added sizes for perf */}
+>>>>>>> 0fd155b (solo)
                     </div>
-                    <div className={styles.productCardName}>
-                      <h2>{item.name}</h2>
-                    </div>
-                    <div className={styles.productCardReview}>
-                      <div className={styles.productCardReviewItem}>
-                        <div className={styles.productCardStars}>
-                          {[...Array(5)].map((_, i) => (
-                            <i key={i} className="fa fa-star" style={{ color: i < Math.floor(item.rating) ? 'gold' : 'gray' }}></i> // Dynamic stars
-                          ))}
-                        </div>
-                        <p>{item.rating}</p>
+                    <div className={styles.productCardBottom}>
+                      <div className={styles.productCartPriceContainer}>
+  
+                        <Typography style={{ textDecoration: "", color: "black" }} >
+                          ₦{Number(item.price.current).toLocaleString()}
+                        </Typography>
+
+                        <Typography style={{ textDecoration: "line-through", color: "gray" }} >
+                          ₦{Number(item.price.old).toLocaleString()}
+                        </Typography>
+                        {/* <p>{item.stock === "in-stock" ? "In Stock" : item.stock}</p> */}
                       </div>
-                      <Link href={`/product?product_id=${item._id}`}> {/* Use dynamic id */}
-                        <i className="fa fa-arrow-right"></i> Add
-                      </Link>
+                      <div className={styles.productCardName}>
+                        {/* <h2>{item.name}</h2> */}
+                        <Typography style={{ color: "black" }} >
+                          {item.name.length > 40 ? item.name.substring(0, 40) + "..." : item.name}
+                        </Typography>
+                      </div>
+                      <div className={styles.productCardReview}>
+                        <div className={styles.productCardReviewItem}>
+                          <div className={styles.productCardStars}>
+                            {[...Array(5)].map((_, i) => (
+                              <i key={i} className="fa fa-star" style={{ color: i < Math.floor(item.rating) ? 'gold' : 'gray' }}></i> // Dynamic stars
+                            ))}
+                          </div>
+                          <p>{item.rating}</p>
+                        </div>
+                        <ShoppingCartSharp style={{ width: "15px" }} product={item} />
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))
             )}
           </div>

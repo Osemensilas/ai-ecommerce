@@ -9,21 +9,26 @@ import { useState, useEffect } from 'react';
 import { usePathname, useRouter } from "next/navigation";
 import { ShoppingBasket } from "lucide-react";
 import { useAuthStore } from '@/components/auth/Auth';
+import { useCartStore } from '@/components/auth/Cart';
 
 
 const Header = () => {
     const [borderColor, setBorderColor] = useState("#4cc933ff");
     const { user, token } = useAuthStore();
     const username = user ? user.username : null;
+    const cartItems = useCartStore((state) => state.cart);
+    const numberOfItemsInCart = cartItems.length;
+
+    // console.log("Cart Items in Header:", cartItems.length);
 
 
-      const logout = useAuthStore((state) => state.logout);
+    const logout = useAuthStore((state) => state.logout);
     //   console.log("Authenticated User in ProductForm:", user, token);
-    
-      const router = useRouter();
-    
-  
-    
+
+    const router = useRouter();
+
+
+
 
 
     useEffect(() => {
@@ -152,7 +157,9 @@ const Header = () => {
                                     <Link href={"/cart"} className={styles.shoppingCart}>
                                         <div className={styles.shoppingCartImg}>
                                             <i className="fa fa-shopping-cart"></i>
-                                            <p>1</p>
+                                            <p>
+                                                {numberOfItemsInCart > 0 ? numberOfItemsInCart : ""}
+                                            </p>
                                         </div>
                                     </Link>
                                 </li>
@@ -576,7 +583,9 @@ const Header = () => {
                                     <Link href={"/cart"} className={styles.shoppingCart}>
                                         <div className={styles.shoppingCartImg}>
                                             <i className="fa fa-shopping-cart"></i>
-                                            <p>1</p>
+                                            <p>
+                                                {numberOfItemsInCart > 0 ? numberOfItemsInCart : ""}
+                                            </p>
                                         </div>
                                         cart
                                     </Link>

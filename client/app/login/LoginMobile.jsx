@@ -58,7 +58,7 @@ const LoginMobile = () => {
     // console.log('User:', user);
     // console.log('Token:', token);
 
-    if (user && token) {
+    if (user && token)  {
       router.push('/');
     } else {
       setError('Login failed. Please check your credentials.');

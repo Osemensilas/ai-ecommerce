@@ -7,8 +7,11 @@ import { useEffect, useState } from 'react';
 import { color } from 'framer-motion';
 import { Typography } from '@mui/material';
 import CartPage from '../../components/CartPage';
+import { useCartStore } from '@/components/auth/Cart';
 
 const Page = () => {
+    const cartItems = useCartStore((state) => state.cart);
+    console.log("Cart Items in Page:", cartItems);
     const [itemsPresent, setItemsPresent] = useState(true);
 
     const items = [

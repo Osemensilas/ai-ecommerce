@@ -9,9 +9,11 @@ import SimilarProduct from '@/components/SimilarProduct';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from "next/navigation";
 import axios from 'axios';
+import { useCartStore } from './auth/Cart';
 
 const Product = () => {
 
+    const { addToCart } = useCartStore();
     const searchParams = useSearchParams();
 
     const productIdentity = searchParams.get("product_id");
@@ -101,6 +103,13 @@ const Product = () => {
         addToCartContainer.classList.add(styles.show);
         cartBtn.classList.remove(styles.show);
     }
+
+    const addProductToCart = () => {
+        useCartStore.getState().addToCart({
+            ...filteredProduct,
+            quantity: quantity,
+        });
+    };
 
     useEffect(() => {
         if (!productIdentity) return;
@@ -214,7 +223,18 @@ const Product = () => {
                             </div>
                             <div className={styles.productContainerRightBottom}>
                                 <form onSubmit={(e) => e.preventDefault()} className={styles.submitBtnForm}>
-                                    <button onClick={addToCartClicked} className={`${styles.cartBtnMain} ${styles.show}`}><i className="fa fa-shopping-cart"></i>Add to Cart</button>
+
+                                    <button
+                                        onClick={() => {
+                                            addToCartClicked();
+                                            addProductToCart();
+                                        }}
+                                        className={`${styles.cartBtnMain} ${styles.show}`}
+                                    >
+                                        <i className="fa fa-shopping-cart"></i>Add to Cart
+                                    </button>
+
+
                                     <div className={styles.viewCartConatiner}>
                                         <Link href={"/"}>Continue Shopping</Link>
                                         <Link href={"/cart"}>Go to Cart</Link>

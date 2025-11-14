@@ -8,15 +8,7 @@ import Security from './components/Security';
 import { useAuthStore } from '../auth/Auth';
 
 const UserProfile = () => {
-        const logout = useAuthStore((state) => state.logout); 
-        const router = useRouter();
-    
-        const handleLogout = () => { 
-            console.log('Logging out...');
-            logout(); // clears the user & token
-            router.push('/login'); // redirect to login page
-        };
-    
+     
     
 
     const pathName = usePathname();

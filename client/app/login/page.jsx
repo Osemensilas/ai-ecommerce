@@ -57,7 +57,7 @@ const Login = () => {
                 router.push('/');
             } else {
                 setError('Login failed. Please check your credentials.');
-            }
+            } 
 
         } catch (err) {
             console.error(err);
