@@ -24,48 +24,6 @@ import { useCartStore } from "./auth/Cart";
 import { jwtDecode } from "jwt-decode";
 // import { useRouter } from "next/navigation";
 
-const cartItems1 = [
-    {
-        id: 1,
-        title: "Apple iPhone 13 Pro Max",
-        condition: "New",
-        color: "Silver",
-        price: 120000,
-        image: "/iphone13promax.jpg",
-    },
-    {
-        id: 2,
-        title: "Samsung Galaxy S21 Ultra",
-        condition: "New",
-        color: "Phantom Black",
-        price: 110000,
-        image: "/samsungs21ultra.jpg",
-    },
-    {
-        id: 3,
-        title: "Google Pixel 6 Pro",
-        condition: "New",
-        color: "Stormy Black",
-        price: 90000,
-        image: "/googlepixel6pro.jpg",
-    },
-    {
-        id: 4,
-        title: "OnePlus 9 Pro",
-        condition: "New",
-        color: "Pine Green",
-        price: 85000,
-        image: "/oneplus9pro.jpg",
-    },
-    {
-        id: 5,
-        title: "Sony Xperia 1 III",
-        condition: "New",
-        color: "Frosted Black",
-        price: 95000,
-        image: "/sonyxperia1iii.jpg",
-    },
-]
 
 export default function CartPage() {
     const itemsPerPage = 3;
@@ -87,7 +45,7 @@ export default function CartPage() {
     const cartItems = useCartStore((state) => state.cart);
     console.log("Cart Items from Store:", cartItems);
 
-    const {removeFromCart} = useCartStore();
+    const { removeFromCart } = useCartStore();
 
     const deletItem = (id) => {
         removeFromCart(id);
@@ -132,7 +90,7 @@ export default function CartPage() {
             <Grid container spacing={4} justifyContent="space-around" alignItems="" >
                 {/* Left Section - Cart Items */}
                 <Grid item xs={12} md={8} width="45%" >
-                    <Typography variant="h5" fontWeight="bold" mb={2}>
+                    <Typography variant="h5" fontWeight="" mb={2}>
                         Cart ({cartItems.length})
                     </Typography>
                     {isItem ? <>
@@ -146,7 +104,7 @@ export default function CartPage() {
                                     <CardMedia
                                         component="img"
                                         sx={{ width: 120, height: 120, borderRadius: 2 }}
-                                        image={item.images[0]}
+                                        image={item.image ? item?.images[0] : ""}
                                         alt={item.name}
                                     />
                                     <CardContent sx={{ flex: "1 0 auto" }}>
@@ -154,16 +112,16 @@ export default function CartPage() {
                                             {item.name}
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary">
-                                         Quantity: {item.quantity} 
+                                            Quantity: {item.quantity}
                                         </Typography>
                                         <Typography variant="" color="#0c0483f5" mt={1}>
                                             ₦{item.price.current}
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary" sx={{ textDecoration: 'line-through' }}>
-                                            ₦{item.price.old} 
+                                            ₦{item.price.old}
                                         </Typography>
                                     </CardContent>
-                                    <IconButton onClick={() => deletItem(item._id)}  color="error">
+                                    <IconButton onClick={() => deletItem(item._id)} color="error">
                                         <DeleteIcon />
                                     </IconButton>
                                 </Card>
@@ -229,9 +187,11 @@ export default function CartPage() {
                         <Stack direction="row" spacing={2}>
                             {/* <CreditCardIcon fontSize="large" color="action" />
                              */}
-                            <img src="/paystack.png" alt="" style={{ width: "50px", height: "10px" }} />
-                            <img src="/paypal1.png" alt="" style={{ width: "50px", height: "10px" }} />
-                            <img src="/Flutterwave.png" alt="" style={{ width: "55px", height: "15px" }} />
+                            <img src="/paystack.png" alt="" style={{ width: "50px", height: "20px" }} />
+                            <img src="/paypal1.png" alt="" style={{ width: "50px", height: "20px" }} />
+                            <img src="/Flutterwave.png" alt="" style={{ width: "55px", height: "20px" }} />
+                            <img src="/visa.png" alt="" style={{ width: "50px", height: "30px" }} />
+                            <img src="/mastercard.png" alt="" style={{ width: "55px", height: "30px" }} />
                         </Stack>
                     </Card>
 

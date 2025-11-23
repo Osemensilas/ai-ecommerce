@@ -153,15 +153,16 @@ export default function ProductForm() {
 
   const { user, token } = useAuthStore();
   const logout = useAuthStore((state) => state.logout);
+  // price: { currency: "NGN", current: "", old: "", discount_percentage: 0 },
   console.log("Authenticated User in ProductForm:", user, token);
 
   const router = useRouter();
 
-    const handleLogout = () => { 
-        console.log('Logging out...');
-        logout(); // clears the user & token
-        router.push('/login'); // redirect to login page
-    };
+  const handleLogout = () => {
+    console.log('Logging out...');
+    logout(); // clears the user & token
+    router.push('/login'); // redirect to login page
+  };
 
   useEffect(() => {
     if (token) {
@@ -171,7 +172,7 @@ export default function ProductForm() {
 
         if (decoded.exp < currentTime) {
           alert("⚠️ Session expired. Please log in again.");
-           handleLogout();
+          handleLogout();
           router.push("/login");
         }
       } catch (error) {
@@ -193,7 +194,7 @@ export default function ProductForm() {
     typeCategory: "",
     brand: "",
     description: "",
-    price: { current: "", old: "", discount_percentage: 0 },
+    price: { currency: "NGN", current: "", old: "", discount_percentage: 0 },
     specificationDetails: {
       productionCountry: "",
       weight: "",
@@ -377,7 +378,7 @@ export default function ProductForm() {
             </TextField>
           </Grid>
           <Grid item xs={12} sm={4}>
-            <TextField select label="Type Category" fullWidth required name="typeCategory" value={product.typeCategory} onChange={handleChange}>
+            <TextField select label="Type Category" required name="typeCategory" value={product.typeCategory} onChange={handleChange}>
               {typeCategories.map((type) => (
                 <MenuItem key={type} value={type}>
                   {type}
@@ -412,14 +413,58 @@ export default function ProductForm() {
             />
           </Grid>
 
+          <Grid item xs={12} sm={4}>
+            <TextField
+              select
+              label="Currency"
+              fullWidth
+              value={product.price.currency}
+              onChange={(e) =>
+                setProduct((prev) => ({
+                  ...prev,
+                  price: { ...prev.price, currency: e.target.value },
+                }))
+              }
+            >
+              <MenuItem value="NGN">Naira (₦)</MenuItem>
+              <MenuItem value="USD">US Dollar ($)</MenuItem>
+            </TextField>
+          </Grid>
+
+
 
 
           <Grid item xs={12} sm={4}>
-            <TextField label="Current Price (₦)" type="number" fullWidth required value={product.price.current} onChange={(e) => setProduct((prev) => ({ ...prev, price: { ...prev.price, current: e.target.value } }))} />
+            <TextField
+              label={`Current Price (${product.price.currency === "USD" ? "$" : "₦"})`}
+              type="number"
+              fullWidth
+              required
+              value={product.price.current}
+              onChange={(e) =>
+                setProduct((prev) => ({
+                  ...prev,
+                  price: { ...prev.price, current: e.target.value },
+                }))
+              }
+            />
           </Grid>
+
           <Grid item xs={12} sm={4}>
-            <TextField label="Old Price (₦)" type="number" fullWidth value={product.price.old} onChange={(e) => setProduct((prev) => ({ ...prev, price: { ...prev.price, old: e.target.value } }))} />
+            <TextField
+              label={`Old Price (${product.price.currency === "USD" ? "$" : "₦"})`}
+              type="number"
+              fullWidth
+              value={product.price.old}
+              onChange={(e) =>
+                setProduct((prev) => ({
+                  ...prev,
+                  price: { ...prev.price, old: e.target.value },
+                }))
+              }
+            />
           </Grid>
+
           <Grid item xs={12} sm={4}>
             <TextField label="Discount (%)" type="number" fullWidth value={product.price.discount_percentage} onChange={(e) => setProduct((prev) => ({ ...prev, price: { ...prev.price, discount_percentage: e.target.value } }))} />
           </Grid>
@@ -475,9 +520,9 @@ export default function ProductForm() {
               <LinearProgress /> Uploading...
             </Typography>
               :
-            <Button type="submit" variant="contained" color="primary" fullWidth>
-              Submit Product
-            </Button>
+              <Button type="submit" variant="contained" color="primary" fullWidth>
+                Submit Product
+              </Button>
             }
           </Grid>
         </Grid>

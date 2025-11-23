@@ -13,7 +13,7 @@ export default function CTA() {
     <>
         <BannerCarousel />
         <SpecialOffers />
-        <BestSelling />
+        {/* <BestSelling /> */}
         <TopSeller />
         <HotSales />
         <NewOfers />

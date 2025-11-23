@@ -52,6 +52,9 @@ const VendorOrders = () => {
                     <button className={styles.productsContentTopBtn}>
                         Analytics
                     </button>
+                    <button className={styles.productsContentTopBtn}>
+                        Completed
+                    </button>
                 </div>
                 <form className={styles.productsContentForm}>
                     <div className={styles.productsContentMiddleLeft}>
