@@ -37,7 +37,8 @@ export const useCartStore = create(
         }
       },
 
-      removeFromCart: async (userId, productId) => {
+      removeFromCart: async (productId, userId) => {
+        console.log(userId , productId)
         if (!userId) return;
         try {
           const res = await axios.delete(`${API_URL}/remove/${userId}/${productId}`);
